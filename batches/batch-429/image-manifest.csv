@@ -1,0 +1,6 @@
+source_row,article_title,image_filename,batch,status,notes
+87,Revenue Cycle Analyst vs In-House Staff,revenue-cycle-analyst-vs-in-house-staff.webp,batch-429,generated,CMS ID: 2383; validated 1200x630 WebP; 8-pixel white frame; OCR found no readable text
+88,Revenue Cycle Specialist vs In-House Staff,revenue-cycle-specialist-vs-in-house-staff.webp,batch-429,failed,CMS ID: 2384; rejected during visual validation because the generated render contained a solid lower-edge wave; no final WebP committed
+91,Telehealth Virtual Assistant Pricing by Hours,telehealth-virtual-assistant-pricing-by-hours.webp,batch-429,generated,CMS ID: 1813; validated 1200x630 WebP; 8-pixel white frame; OCR found no readable text
+92,Telehealth Virtual Assistant Salary Range,telehealth-virtual-assistant-salary-range.webp,batch-429,generated,CMS ID: 1580; validated 1200x630 WebP; 8-pixel white frame; OCR found no readable text
+93,Telephone Triage Virtual Assistant Salary Range,telephone-triage-virtual-assistant-salary-range.webp,batch-429,failed,CMS ID: 1588; rejected during visual validation because the generated render contained extra background people; no final WebP committed
