@@ -1,0 +1,32 @@
+{
+  "zocdoc": {
+    "url": "https://www.zocdoc.com/resources/",
+    "status": 200,
+    "finalUrl": "https://www.zocdoc.com/resources/",
+    "covers": 13
+  },
+  "attio": {
+    "url": "https://attio.com/blog",
+    "status": 200,
+    "finalUrl": "https://attio.com/blog",
+    "covers": 1
+  },
+  "jane": {
+    "url": "https://jane.app/blog",
+    "status": 200,
+    "finalUrl": "https://jane.app/blog",
+    "covers": 4
+  },
+  "hint": {
+    "url": "https://www.hint.com/blog",
+    "status": 200,
+    "finalUrl": "https://www.hint.com/blog",
+    "covers": 13
+  },
+  "athenahealth": {
+    "url": "https://www.athenahealth.com/resources/blog",
+    "status": 200,
+    "finalUrl": "https://www.athenahealth.com/resources/blog",
+    "covers": 13
+  }
+}

@@ -1,0 +1,229 @@
+[
+ {
+  "out": "01-dermatology-vma",
+  "title": "What Does a Dermatology VMA Do?",
+  "cat": "Role explainer",
+  "spec": {
+   "layout": "frame",
+   "palette": "deep",
+   "icon": "magnifier",
+   "photo": "../photos/what-does-a-dermatology-vma-do.webp",
+   "focal": [
+    72,
+    25
+   ],
+   "card": {
+    "eyebrow": "Prior auth",
+    "title": "Biologic approved",
+    "sub": "Biologic \u00b7 submitted 8:15 AM",
+    "status": "Patient notified"
+   }
+  }
+ },
+ {
+  "out": "02-triage-cost",
+  "title": "How Much Does a Telephone Triage Virtual Assistant Cost?",
+  "cat": "Cost",
+  "spec": {
+   "layout": "stat",
+   "palette": "blue",
+   "photo": "../photos/how-much-does-a-telephone-triage-virtual-assistant-cost.webp",
+   "focal": [
+    30,
+    22
+   ],
+   "stat": {
+    "eyebrow": "Cost guide",
+    "value": "$4\u20138",
+    "label": "per hour, healthcare-trained VA"
+   }
+  }
+ },
+ {
+  "out": "03-best-billing",
+  "title": "10 Best Medical Billing Virtual Assistant Companies (2026)",
+  "cat": "Best-of",
+  "spec": {
+   "layout": "numeral",
+   "palette": "tint",
+   "num": "10",
+   "eyebrow": "Companies \u00b7 2026",
+   "label": "Medical billing VAs, compared",
+   "photo": "../photos/10-best-medical-billing-virtual-assistant-companies-2026.webp",
+   "focal": [
+    43,
+    22
+   ]
+  }
+ },
+ {
+  "out": "04-radiology-vs",
+  "title": "Radiology Virtual Medical Assistant vs. In-House Staff",
+  "cat": "Comparison",
+  "spec": {
+   "layout": "split",
+   "palette": "deep",
+   "photo": "../photos/radiology-virtual-medical-assistant-vs-in-house-staff-cost-pros-and-which-to-choose.webp",
+   "focal": [
+    62,
+    25
+   ],
+   "photo2": "../photos/medical-office-staff-turnover-what-it-costs-and-how-to-cut-it.webp",
+   "focal2": [
+    28,
+    25
+   ]
+  }
+ },
+ {
+  "out": "05-scribe-epic",
+  "title": "How a Scribe Works in Epic?",
+  "cat": "Software & EHR",
+  "spec": {
+   "layout": "frame",
+   "palette": "blue",
+   "icon": "wave",
+   "photo": "../photos/how-a-scribe-works-in-epic.webp",
+   "focal": [
+    78,
+    25
+   ],
+   "card": {
+    "eyebrow": "Visit note",
+    "title": "Chart ready to sign",
+    "sub": "Epic \u00b7 drafted during visit",
+    "status": "Sent to provider"
+   }
+  }
+ },
+ {
+  "out": "06-hipaa",
+  "title": "Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs",
+  "cat": "Compliance",
+  "spec": {
+   "layout": "duotone",
+   "palette": "deep",
+   "icon": "shield",
+   "photo": "../photos/can-a-virtual-assistant-be-hipaa-compliant-safeguards-training-and-baas.webp",
+   "focal": [
+    40,
+    25
+   ],
+   "zoom": 1.7
+  }
+ },
+ {
+  "out": "07-earn-region",
+  "title": "How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region",
+  "cat": "Cost",
+  "spec": {
+   "layout": "frame",
+   "palette": "tint",
+   "icon": "globe",
+   "photo": "../photos/how-much-do-virtual-medical-assistants-earn-sourced-pay-ranges-by-region.webp",
+   "focal": [
+    75,
+    25
+   ],
+   "card": {
+    "eyebrow": "Pay guide",
+    "title": "Regional pay ranges",
+    "sub": "Sourced, side by side",
+    "status": "Updated for 2026"
+   }
+  }
+ },
+ {
+  "out": "08-office-mgr-questions",
+  "title": "Virtual Medical Office Manager Interview Questions",
+  "cat": "Hiring",
+  "spec": {
+   "layout": "numeral",
+   "palette": "deep",
+   "num": "?",
+   "eyebrow": "Interview guide",
+   "label": "Office manager questions to ask",
+   "photo": "../photos/virtual-medical-office-manager-interview-questions.webp",
+   "focal": [
+    55,
+    25
+   ]
+  }
+ },
+ {
+  "out": "09-hire-case-manager",
+  "title": "How to Hire a Virtual Case Manager",
+  "cat": "Hiring",
+  "spec": {
+   "layout": "frame",
+   "palette": "tint",
+   "icon": "person",
+   "photo": "../photos/how-to-hire-a-virtual-case-manager.webp",
+   "focal": [
+    68,
+    22
+   ],
+   "card": {
+    "eyebrow": "Hiring",
+    "title": "Candidate shortlisted",
+    "sub": "Case management \u00b7 4 yrs RN",
+    "status": "Interview booked"
+   }
+  }
+ },
+ {
+  "out": "10-vet-tech",
+  "title": "Virtual Veterinary Technician: The Complete Guide",
+  "cat": "Role explainer",
+  "spec": {
+   "layout": "frame",
+   "palette": "blue",
+   "icon": "paw",
+   "photo": "../photos/virtual-veterinary-technician-the-complete-guide.webp",
+   "focal": [
+    52,
+    25
+   ],
+   "card": {
+    "eyebrow": "Patient reminders",
+    "title": "Vaccine recalls sent",
+    "sub": "Rabies booster \u00b7 14 pets due",
+    "status": "Owners confirmed"
+   }
+  }
+ },
+ {
+  "out": "11-bilingual-dental-vs",
+  "title": "Bilingual Virtual Dental Receptionist vs. In-House Staff",
+  "cat": "Comparison",
+  "spec": {
+   "layout": "split",
+   "palette": "blue",
+   "photo": "../photos/bilingual-virtual-dental-receptionist-vs-in-house-staff-cost-pros-and-which-to-choose.webp",
+   "focal": [
+    55,
+    25
+   ],
+   "photo2": "../photos/virtual-medical-office-manager-interview-questions.webp",
+   "focal2": [
+    55,
+    25
+   ]
+  }
+ },
+ {
+  "out": "12-turnover",
+  "title": "Medical Office Staff Turnover, What It Costs and How to Cut It",
+  "cat": "Cost",
+  "spec": {
+   "layout": "duotone",
+   "palette": "blue",
+   "icon": "people",
+   "photo": "../photos/medical-office-staff-turnover-what-it-costs-and-how-to-cut-it.webp",
+   "focal": [
+    28,
+    25
+   ]
+  }
+ }
+]

@@ -5,7 +5,6 @@
   "linear": "https://linear.app/blog",
   "notion": "https://www.notion.com/blog",
   "intercom": "https://www.intercom.com/blog/",
-  "gusto": "https://gusto.com/resources",
   "deel": "https://www.deel.com/blog/",
   "ramp": "https://ramp.com/blog",
   "mercury": "https://mercury.com/blog",
@@ -13,11 +12,12 @@
   "loom": "https://www.loom.com/blog",
   "zocdoc": "https://www.zocdoc.com/resources/",
   "oscar": "https://www.hioscar.com/blog",
-  "headway": "https://headway.co/resources",
   "weave": "https://www.getweave.com/blog/",
   "nexhealth": "https://www.nexhealth.com/blog",
   "jane": "https://jane.app/blog",
   "simplepractice": "https://www.simplepractice.com/blog/",
-  "doctolib": "https://about.doctolib.com/news/",
-  "honesttaskers": "https://honesttaskers.com/articles"
+  "honesttaskers": "https://honesttaskers.com/articles",
+  "spruce": "https://sprucehealth.com/blog",
+  "hint": "https://www.hint.com/blog",
+  "athenahealth": "https://www.athenahealth.com/resources/blog"
 }

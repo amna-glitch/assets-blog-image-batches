@@ -2,7 +2,7 @@
 // Run from blog-image-research/:  node research/capture.js [site ...]
 // Output per site: research/<site>/index-1440.png, index-390.png, covers/NN.<ext>, covers.json
 // Covers are found by rendered size, not URL patterns: every image (or CSS background) that is
-// rendered at least 240x120 on the 1440px index page and sits inside a link counts as a card cover.
+// rendered at least 180x90 on the 1440px index page and sits inside a link counts as a card cover.
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require(process.env.PW_MODULE || 'playwright');
@@ -46,8 +46,10 @@ function findCovers() {
   const consider = (el, src) => {
     if (!src || src.startsWith('data:') || seen.has(src)) return;
     const r = el.getBoundingClientRect();
-    if (r.width < 240 || r.height < 120) return;
-    const a = el.closest('a[href]');
+    if (r.width < 180 || r.height < 90) return;
+    // The link may wrap the image, or sit beside it in the same card (title-only links).
+    let a = el.closest('a[href]');
+    for (let p = el.parentElement, i = 0; !a && p && i < 6; p = p.parentElement, i++) a = p.querySelector('a[href]');
     if (!a) return;
     seen.add(src);
     const card = a.closest('article, li, [class*="card" i], [class*="post" i]') || a;
@@ -57,7 +59,7 @@ function findCovers() {
       y: Math.round(r.top + window.scrollY) });
   };
   document.querySelectorAll('img').forEach(img => consider(img, best(img)));
-  document.querySelectorAll('a[href] *').forEach(el => {
+  document.querySelectorAll('body *').forEach(el => {
     const bg = getComputedStyle(el).backgroundImage;
     if (bg && bg.startsWith('url(')) consider(el, bg.slice(4, -1).replace(/["']/g, ''));
   });
