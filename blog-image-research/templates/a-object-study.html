@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- Direction A: Object Study. One healthcare/admin object, drawn large in monoline, on a flat brand field.
-     Spec: {"icon":"tooth","field":"deep"|"blue"|"light"} -->
+     Spec: {"icon":"tooth","field":"deep"|"blue"|"light","layout":"band"|"center"} -->
 <html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><script src="icons.js"></script>
 <style>
   .plate { position: absolute; left: 600px; top: 315px; width: 420px; height: 420px; margin: -210px 0 0 -210px; border-radius: 50%; }
@@ -9,7 +9,13 @@
 </style></head>
 <body><div class="canvas" id="c"><div class="rule" id="rule"></div><div class="plate" id="plate"></div><div class="center obj" id="obj"></div><div class="sig"></div></div>
 <script>
-  const s = htSpec({ icon: 'tooth', field: 'deep' });
+  const s = htSpec({ icon: 'tooth', field: 'deep', layout: 'band' });
+  // band: key art inside the strip honesttaskers.com's listing card leaves visible (source x 115-1085, y 0-353).
+  // center: classic centred composition for other placements.
+  const L = s.layout === 'center' ? { cy: 315, plate: 420, obj: 300 } : { cy: 180, plate: 300, obj: 210 };
+  for (const [id, d] of [['plate', L.plate], ['obj', L.obj]]) Object.assign(document.getElementById(id).style,
+    { width: d + 'px', height: d + 'px', top: L.cy + 'px', margin: `${-d / 2}px 0 0 ${-d / 2}px` });
+  document.getElementById('rule').style.top = L.cy + 'px';
   const fields = {
     deep:  { bg: '#162da1', plate: '#2345ff', ink: '#ffffff', rule: 'rgba(255,255,255,.14)' },
     blue:  { bg: '#2345ff', plate: '#3e59ff', ink: '#ffffff', rule: 'rgba(255,255,255,.18)' },
@@ -20,6 +26,7 @@
   c.style.background = f.bg;
   document.getElementById('plate').style.background = f.plate;
   document.getElementById('rule').style.background = f.rule;
-  document.getElementById('obj').innerHTML = htIcon(s.icon, 300, 5, f.ink, '#2dd0e8');
+  document.getElementById('obj').innerHTML = htIcon(s.icon, L.obj, s.layout === 'center' ? 5 : 6, f.ink, '#2dd0e8');
+  if (s.layout !== 'center') htFloor(c, s.field === 'light');
   htGuides(c);
 </script></body></html>

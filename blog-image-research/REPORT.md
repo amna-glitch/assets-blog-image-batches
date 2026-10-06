@@ -18,7 +18,7 @@ Prepared 2026-10-06. Covers Steps 1–5 of the brief. The AI prompts are in [PRO
 **What each step is based on:**
 
 - **Step 2 (Rippling and Calendly): your four desktop screenshots.** Two are of Rippling's blog list and two are of Calendly's blog grid, saved in [research/rippling/](research/rippling/) and [research/calendly/](research/calendly/). I cropped every thumbnail, measured its card ratio and sampled its colors. That's 7 Rippling thumbnails (6 unique artworks) and 6 complete Calendly thumbnails plus 4 partial ones. Every claim in Section 2 comes from those crops. **Limits:** desktop only, about one screen per site, no mobile view, no article-page hero, no source files (so the ratios are listing-card ratios, not native image sizes).
-- **Step 3 (your images): from the source files.** This repo holds the featured images themselves: 1,926 WebP files across 441 batches, plus manifests that map each image to its article title. I measured all of them, looked at 72 spread evenly from `batch-001` to `batch-435`, and looked at 3 at full size. I still haven't seen your **live listing page**, so the grid mock-ups use a neutral 3-column card layout.
+- **Step 3 (your images): from the source files.** This repo holds the featured images themselves: 1,926 WebP files across 441 batches, plus manifests that map each image to its article title. I measured all of them, looked at 72 spread evenly from `batch-001` to `batch-435`, and looked at 3 at full size. Your **live listing page and an article hero** come from two more desktop screenshots you sent ([research/honesttaskers/](research/honesttaskers/)). I measured your listing card from them and built a replica (§3, *Your live listing card*). I still haven't seen your mobile layout.
 - **Steps 4–6: built on the audit plus the reference rules in Section 2.**
 
 The capture script [research/capture.js](research/capture.js) is ready if you later allow those domains in the environment's network settings ([docs](https://code.claude.com/docs/en/cloud-environments#network-access)). It would add mobile screenshots, native image sizes and a larger sample.
@@ -35,6 +35,7 @@ The capture script [research/capture.js](research/capture.js) is ready if you la
 | Automated index screenshots (1440 / 390) | Blocked (see §0). Replaced by your desktop screenshots for Rippling and Calendly. |
 | Rippling thumbnails | 7 cards at **384×240 (1.60:1, i.e. 16:10)**, about 16px corner radius → [research/rippling/](research/rippling/) `r1…r6` |
 | Calendly thumbnails | 6 cards at **592×314–321 (1.84–1.89:1)**, about 24px corner radius, 1px border → [research/calendly/](research/calendly/) `c1…c6` |
+| honesttaskers.com live layout | 2 desktop screenshots: the `/articles` listing (2 cards) and an article hero → [research/honesttaskers/live-listing-screenshot.jpg](research/honesttaskers/live-listing-screenshot.jpg), [live-article-hero-screenshot.jpg](research/honesttaskers/live-article-hero-screenshot.jpg) |
 | Your featured images | 1,926 files in `batches/*/`; **1,921 readable, all exactly 1200×630 (1.905:1)**, WebP |
 | Corrupt files | 5 in `batch-343` are not valid WebP (`what-a-bariatric-vma-does`, `what-does-a-bariatric-vma-do`, `tasks-to-delegate-in-a-bariatric-practice`, `tasks-to-delegate-in-a-fertility-practice`, `what-are-the-benefits-of-a-fertility-vma`). If those went live, the posts show broken images. |
 | Distinct article titles | 1,903 |
@@ -133,22 +134,45 @@ Close-ups:
 | ![HIPAA interview Qs](research/honesttaskers/hipaa-safeguarded-virtual-assistant-interview-questions.jpg) | ![Telephone triage cost](research/honesttaskers/how-much-does-a-telephone-triage-virtual-assistant-cost.jpg) |
 | ![Claims VA](research/honesttaskers/what-does-a-medical-insurance-claims-virtual-assistant-do.jpg) | |
 
+### Your live listing card (the most important finding)
+
+![Live listing](research/honesttaskers/live-listing-screenshot.jpg)
+
+These numbers are measured from your 2× screenshot, in CSS px:
+
+| Part | Measurement |
+|---|---|
+| Layout | Two columns, the right one staggered about 40px lower; each card has a dotted grey frame; square corners |
+| Image box | **456×296 (about 1.54:1)**. Your 1200×630 (1.905:1) image fills it with `object-fit: cover`, which cuts **about 115px off each side** of the source. |
+| Text panel | White, starting **166px down the image box (56%)**, inset 20px from the left and running 20px past the right edge. It **covers the lower 44% of the image.** |
+| What a reader actually sees | **Source x 115–1085, y 0–353**: a 2.75:1 strip across the top of the image (plus a 40px sliver on the left) |
+| Article page hero | Full container width (about 1905px at 2×) at the native ratio, showing the **whole** image |
+
+I checked this mapping against the vet post visible in both screenshots. In the hero, the dog on the left sits at about 5–16% of the image width; in the listing card it appears pressed against the left edge (0–8%), which is what a centred cover crop predicts.
+
+**What this means:**
+- **In the listing, readers see only the top half of every image.** For your current images that's a face and a crop of the UI-card cluster. The checkmark, the desk and the lower cards are all hidden behind the panel.
+- **On the article page, everything is visible,** including the large corner checkmark (bottom right of the hero screenshot).
+- **Any centred composition gets cut in half in the listing.** My first-pass templates had exactly that problem (art centred at y 315). §4 and §5 now use a **band layout**: all key art sits inside x 160–1040, y 40–330.
+- **Also on the card:** the read-time label says "11 min read **read**" on both cards in the screenshot. That's a template typo.
+
 ### Issues, ranked
 
 | # | Issue | Evidence (seen or measured) | Severity |
 |---|---|---|---|
 | 1 | **One picture for 1,900 articles.** The series identity is "smiling headset person + floating cards", so every card looks the same and the reader has no reason to stop on any one of them. | 72/72 sampled share the composition; see the "before" grid below | **High** |
 | 2 | **Synthetic stock people.** Glossy AI faces, a handful of repeated archetypes, identical poses (hand to headset, holding a paper). Practice owners see this look in ads every day. It reads as generic or AI, and it implies these are your VAs when they aren't. By contrast, Rippling shows a real employee only in that employee's spotlight post, and Calendly's photos are candid and varied. | Every sampled image; reference crops `r4`, `c2`, `c4` | **High** |
-| 3 | **Corner checkmark badge.** A big translucent tick sits in almost every image. It means nothing about the article and borrows the visual language of ad creatives ("approved!"). Across a grid it repeats like a watermark. | Visible in essentially all 72 (faint on a few) | **High** |
+| 3 | **Corner checkmark badge.** A big translucent tick sits in almost every image. It means nothing about the article and borrows the visual language of ad creatives ("approved!"). Your listing panel hides it, but the article hero shows it at full size: it's the largest single shape in the hero screenshot. | Visible in essentially all 72 (faint on a few); live hero screenshot | **High** |
 | 4 | **No focal point; UI-card clutter.** 3–6 glass cards, each with 3–8 placeholder bars and 1–3 icons, add up to roughly 10–20 small elements per image. At a ~400px card width the bars turn to noise and the specialty icon (the only differentiator) is about 15px tall. | Full-size views; mock grid | **High** |
 | 5 | **The image doesn't signal article type.** A cost post, a "vs." post, a top-10 list and an interview-questions post look identical. *"Radiology VMA vs. In-House Staff"* shows one person, with nothing being compared. | 12-card "before" grid | **High** |
-| 6 | **Glare, streaks and glassmorphism.** Calendly uses gradients too, so the gradient itself isn't the problem. The problem is *how* yours are used: high-contrast blue→cyan washes coming in from the corners, light streaks, frosted cards and soft shadows on every image. Calendly's gradients are soft, low-contrast backdrops with no glare; Rippling uses one same-hue gradient at most. | Every sampled image vs. `c1`–`c6`, `r2` | **Med** |
-| 7 | **Off-brand colors.** Wood desks, green plants, skin tones and warm clinic light, plus **red/yellow/green status dots**, **orange coins**, a **yellow padlock**, purple chips and an **orange warning triangle**. In a 200-image sample, a median **46% of pixels** sit far from your 5-color kit (RGB distance > 90 from every brand color). | Measurement + close-ups | **Med** |
-| 8 | **Baked-in 8px white frame.** It shows up as a white inset inside the card (visible in the "before" grid) and fights any rounded corner or tinted card background. | 200/200 measured: exactly 8px on all four sides | **Med** |
-| 9 | **Crop fragility.** The person sits on the left or right third and the cards on the other. A centre 4:3 or 1:1 crop (mobile cards, social) cuts a face or the card cluster. | Composition in all samples | **Med** |
-| 10 | **Clickbait micro-cues.** Warning triangles, red alert sirens, "?" bubbles and red "X" marks inside the cards. Small, but they add urgency the article doesn't earn. | e.g. turnover post (⚠), triage post (siren), batch-139 (✗) | **Low** |
-| 11 | **No text on images.** This is right. Titles aren't repeated and there are no emojis or exclamation marks. Keep it. | 72/72 | ✓ |
-| 12 | **Hygiene.** 5 corrupt files, plus near-duplicate posts such as *"What Does a Dermatology VMA Do?"* / *"What a Dermatology VMA Does?"* and the stray "?" in *"How a Scribe Works in Epic?"*. That's an SEO problem, not a design one, but it adds to the content-farm impression. | Manifests | **Low** |
+| 6 | **The listing card hides 44% of every image.** This is a site-layout problem, not an image problem, but it decides what every image can show. Any centred subject loses its lower half. | Measured from the live screenshot (above) | **High** |
+| 7 | **Glare, streaks and glassmorphism.** Calendly uses gradients too, so the gradient itself isn't the problem. The problem is *how* yours are used: high-contrast blue→cyan washes coming in from the corners, light streaks, frosted cards and soft shadows on every image. Calendly's gradients are soft, low-contrast backdrops with no glare; Rippling uses one same-hue gradient at most. | Every sampled image vs. `c1`–`c6`, `r2` | **Med** |
+| 8 | **Off-brand colors.** Wood desks, green plants, skin tones and warm clinic light, plus **red/yellow/green status dots**, **orange coins**, a **yellow padlock**, purple chips and an **orange warning triangle**. In a 200-image sample, a median **46% of pixels** sit far from your 5-color kit (RGB distance > 90 from every brand color). | Measurement + close-ups | **Med** |
+| 9 | **Baked-in 8px white frame.** It shows up as a white inset inside the card (visible in the "before" grid) and fights any rounded corner or tinted card background. | 200/200 measured: exactly 8px on all four sides | **Med** |
+| 10 | **Crop fragility.** The person sits on the left or right third and the cards on the other. Your live card shows only the top 56%, so it cuts through the cards and torsos, and the specialty icons in the lower cards disappear. A centre 4:3 or 1:1 crop (social) cuts a face or the card cluster. | Composition in all samples; live listing screenshot | **Med** |
+| 11 | **Clickbait micro-cues.** Warning triangles, red alert sirens, "?" bubbles and red "X" marks inside the cards. Small, but they add urgency the article doesn't earn. | e.g. turnover post (⚠), triage post (siren), batch-139 (✗) | **Low** |
+| 12 | **No text on images.** This is right. Titles aren't repeated and there are no emojis or exclamation marks. Keep it. | 72/72 | ✓ |
+| 13 | **Hygiene.** 5 corrupt files, plus near-duplicate posts such as *"What Does a Dermatology VMA Do?"* / *"What a Dermatology VMA Does?"* and the stray "?" in *"How a Scribe Works in Epic?"*. That's an SEO problem, not a design one, but it adds to the content-farm impression. | Manifests | **Low** |
 
 ### Image by image (the 12 in the grid mock)
 
@@ -169,11 +193,13 @@ Close-ups:
 
 ### The grid as a whole
 
-**Desktop:** a wall of near-identical blue-washed photos. The eye has nothing to anchor on, the category label and title do all the work, and the checkmarks line up in the same corner row after row like a watermark.
+**In your real card layout (replica):** each card shows a strip of a smiling face plus fragments of UI cards. Every strip looks the same, so the title and category pill do all the work. The specialty cue (a paw, a tooth) usually falls below the panel line or is too small to read.
 
-![Before – desktop](renders/contact-sheet-before-1440.png)
+![Before – replica of your listing](renders/ht-listing-before-1000.png)
 
-**Mobile:** each card is a cluttered thumbnail with a face and UI fragments. The specialty icon (the only unique element) is about 10px tall. See [renders/contact-sheet-before-390.png](renders/contact-sheet-before-390.png).
+**In a neutral 3-column grid** the problem is the same: a wall of near-identical blue-washed photos, with checkmarks lining up in the same corner row after row like a watermark. See [renders/contact-sheet-before-1440.png](renders/contact-sheet-before-1440.png).
+
+**Mobile:** I haven't seen your mobile layout. In the assumed mobile replica, each card is a cluttered strip whose specialty icon is about 8px tall. See [renders/ht-listing-before-390.png](renders/ht-listing-before-390.png).
 
 ### Side by side: references, your current images, and the proposal
 
@@ -215,13 +241,13 @@ Close-ups:
 |---|---|
 | Master canvas | **1200×630** (OG image; matches your existing files, so the CMS needs no change) |
 | Listing-card ratio | Your live grid couldn't be inspected. In the references, Rippling crops to 16:10 and Calendly to about 1.87:1. All five directions survive **16:10 (1008×630), 16:9 (1120×630), 4:3 (840×630) and 1:1 (630×630) centre crops**. |
-| Safe zone | Key art stays inside the **1:1 centre zone: x 285–915**. Type (Direction E only) stays inside the **4:3 zone: x 180–1020**. See [renders/safe-zones/_overview.png](renders/safe-zones/_overview.png). |
+| Safe zone | **Listing band (the default):** all key art and type stay inside **x 160–1040, y 40–330**. That's the part of the image your listing card leaves visible (source x 115–1085, y 0–353) minus a margin. Below y 353 there is only a quiet **floor tone**, so the full frame (article hero, social share) reads as an object on a ledge rather than a top-heavy banner. **Centre layout** (`"layout":"center"`) puts the art at y 315 inside the 1:1 zone (x 285–915); use it if the listing card changes. Guides: [renders/safe-zones/_overview.png](renders/safe-zones/_overview.png) (solid cyan = listing band). |
 | Margins and grid | 72px outer margin (6 × 12px baseline); 12-column grid, 72px columns, 24px gutters |
 | Fields | `#162da1` deep, `#2345ff` primary, or `#eef1ff` light tint. **Never pure white**: white cards disappear into a white page (I tested this; see §5). |
 | Inks | `#ffffff`, `#162da1`, `#2345ff`, `#3e59ff`; tint `#c9d1ff` for de-emphasised shapes |
 | Accent | `#2dd0e8` teal on **one element per image**, plus the signature dot. Never a fill field or gradient. |
 | Max colors | 1 field + 2 inks + teal |
-| Signature | A 16px teal dot, centred 72px from the bottom-left corner, in every image. It's the quiet series mark. It falls outside the 1:1 crop by design, so square crops stay pure. |
+| Signature | A 16px teal dot, centred 72px from the bottom-left corner, in every image. It appears on the article hero and in social shares, **not** in your listing, where the panel covers it. In the listing, the palette and the line style carry the series. |
 | Icon style | Original monoline set ([templates/icons.js](templates/icons.js)): 120-unit grid, round caps and joins, no fills. Stroke **5–9 units** on the 120-unit grid (bigger icons get the lower number), so drawn lines land between 6.3px and 12.5px at 1200w. Never thinner than 2px once scaled to a 400px card. |
 | Corner radius | 14px on bars; circles for plates and nodes. The image itself has **no** corner radius or frame; the site's card applies the radius. |
 | Never | People, photos, gradients, drop shadows, glass or blur, checkmark badges, arrows-as-hype, red/orange/yellow, emojis, more than one focal object, the article title |
@@ -236,9 +262,9 @@ Close-ups:
 
 **Specs:**
 - **Field:** deep `#162da1` (default), primary `#2345ff`, or light `#eef1ff`. Compliance is always deep.
-- **Plate:** a 420px circle centred at (600, 315), one step lighter than the field (or white on the light field).
-- **Object:** 300px, centred, stroke 5 in white (or deep ink on light). The icon's `.ac` element is teal.
-- **Horizon:** a 2px rule across the canvas at y 315, 14–18% white.
+- **Plate:** a 300px circle centred at (600, 180), one step lighter than the field (or white on the light field). In the centre layout it's 420px at (600, 315).
+- **Object:** 210px, centred on the plate, stroke 6 in white (or deep ink on light). In the centre layout it's 300px at stroke 5. The icon's `.ac` element is teal.
+- **Horizon:** a 2px rule across the canvas through the plate's centre, 14–18% white. The floor tone starts at y 353.
 - **Text:** none.
 - **Variable:** `icon`, chosen by specialty: tooth (dental), paw (vet), magnifier (derm), stethoscope (general), heart (cardio), eye (ophthalmology), ear (ENT), brain (behavioural), rx (pharmacy), spine (chiro), shield/lock (compliance).
 
@@ -263,8 +289,8 @@ Close-ups:
 
 **Specs:**
 - **Layout:** left half `#eef1ff` (the incumbent, e.g. in-house); right half `#2345ff` (the virtual option).
-- **Objects:** 210px, centred at x 420 and x 780, so both survive a 1:1 crop. Stroke 6. The left object is deep ink with no accent; the right object is white with a teal accent.
-- **Seam:** a 28px teal dot at (600, 315) with an 8px tint ring. This is where "vs." would be, without the letters.
+- **Objects:** 180px, centred at (420, 180) and (780, 180). In the centre layout they're 210px at y 315. Stroke 6. The left object is deep ink with no accent; the right object is white with a teal accent. There's no floor: the split runs the full height.
+- **Seam:** a 28px teal dot on the seam at the objects' height, with an 8px tint ring. This is where "vs." would be, without the letters.
 - **Text:** none.
 - **Variables:** `left` (clinic by default), `right` (headset, laptop, globe for bilingual or offshore).
 
@@ -288,7 +314,7 @@ Close-ups:
 
 **Specs:**
 - **Field:** light `#eef1ff` or deep `#162da1`.
-- **Chart box:** x 330–870, y 150–480 (inside the 1:1 zone). 3–5 bars with 36px gaps; when bars float, they become pills with 84px gaps so they read as ranges.
+- **Chart box:** x 330–870, y 92–345, so the baseline sits just above the panel line. In the centre layout it's y 150–480. 3–5 bars with 36px gaps; when bars float, they become pills with 84px gaps so they read as ranges.
 - **Colors:** bars in tint `#c9d1ff` (or `#2345ff` on deep); the hero bar in `#2345ff` (or white on deep); a 24px teal marker dot 20px above the hero bar.
 - **Baseline:** 4px rule.
 - **Text:** none. No axis labels, no $, no numbers. Numbers on a thumbnail are a promise the image can't source.
@@ -315,8 +341,8 @@ Close-ups:
 **Specs:**
 - **Field:** `#2345ff` or `#162da1`.
 - **Line:** one bezier from the left margin to the right margin, 4px, 55% white.
-- **Nodes:** 132px circles at (372, 390), (600, 240), (828, 390), all inside the 1:1 zone. The first two are outlined (4px white); the last is filled white.
-- **Icons:** 84px, stroke 9, white. The final node's icon is blue with a teal accent.
+- **Nodes:** 112px circles at (380, 236), (600, 112), (820, 236); in the centre layout, 132px at (372, 390), (600, 240), (828, 390). The first two are outlined (4px white); the last is filled white.
+- **Icons:** 72px (84px in the centre layout), stroke 9, white. The final node's icon is blue with a teal accent.
 - **Text:** none.
 - **Variable:** `steps`, three icon names. For example: wave → document → check (scribe); document → person → check (hiring); clipboard → calendar → spine (chiro tasks).
 
@@ -341,8 +367,8 @@ Close-ups:
 
 **Specs:**
 - **Field:** `#eef1ff` or `#162da1`.
-- **Numeral:** 380px, weight 700, tracking −0.05em, `#2345ff` (white on deep), starting at x 285. "?" uses the same size.
-- **Text block:** at x 680, 300px wide. A 40×4px teal tick, then a 26px uppercase eyebrow (tracking 0.1em, `#3e59ff`, or teal on deep), then a 52px label at weight 600, line height 1.08, deep ink.
+- **Numeral:** 290px (380px in the centre layout), weight 700, tracking −0.05em, `#2345ff` (white on deep), starting at x 285 and vertically centred at y 180. "?" uses the same size.
+- **Text block:** at x 680, 300px wide, vertically centred with the numeral. A 40×4px teal tick, then a 26px uppercase eyebrow (tracking 0.1em, `#3e59ff`, or teal on deep), then a 52px label at weight 600, line height 1.08, deep ink.
 - **Type rules:** the label is **2–4 words, 6 maximum** across label and eyebrow combined, sentence case, no punctuation, **never the title**. Sequel Sans when available; the fallback is Inter Display.
 
 **Do:** use the real count from the title; keep the label to the role ("Pharmacy VAs").
@@ -371,8 +397,10 @@ templates/
   e-numeral-plate.html    ?spec={"num":"10","eyebrow":"Companies · 2026","label":"Medical billing VAs","field":"light|deep"}
   jobs.json               title -> template + spec (15 real titles)
   render.js               node render.js [jobs.json] [outDir] [--guides]
-  contact-sheet.html      mock blog index (before/after, desktop/mobile)
+  contact-sheet.html      neutral mock blog index (before/after, desktop/mobile)
   render-contact-sheets.js
+  ht-listing-mock.html    replica of the honesttaskers.com/articles card (measured)
+  render-ht-listing.js
 ```
 
 To make a new image, add an entry to `jobs.json` and run `PW_MODULE=/opt/node-tools/node_modules/playwright node templates/render.js`. Add `--guides` to overlay the 16:10, 16:9, 4:3 and 1:1 crop lines.
@@ -385,13 +413,20 @@ To make a new image, add an entry to `jobs.json` and run `PW_MODULE=/opt/node-to
 - "Q&A" overflowed the 1:1 safe zone; I replaced it with "?".
 - The eyebrow text was about 7px at card size; it went from 22 to 26px and the label from 44 to 52px.
 - Floating range bars looked like random blocks; they're now pills with wider gaps.
+- **Your live card hid the lower half of my first-pass art.** I moved all art into the listing band and added the floor tone so the full frame still balances.
 - **White-field cards disappeared into the white page** in the grid mock, so every light field is now `#eef1ff`.
 
-**Contact sheet: proposed series, 12 real titles, desktop:**
+**The proposed series in a replica of your real listing card (6 real titles):**
+
+![After – replica of your listing](renders/ht-listing-after-1000.png)
+
+[Before, same titles](renders/ht-listing-before-1000.png) · Assumed mobile layout: [after](renders/ht-listing-after-390.png) · [before](renders/ht-listing-before-390.png)
+
+**The full series as a 12-card contact sheet (neutral grid, full frames):**
 
 ![After – desktop](renders/contact-sheet-after-1440.png)
 
-Mobile: [after](renders/contact-sheet-after-390.png) · [before](renders/contact-sheet-before-390.png). Individual PNGs are in [renders/](renders/).
+Neutral-grid mobile: [after](renders/contact-sheet-after-390.png) · [before](renders/contact-sheet-before-390.png). Individual PNGs are in [renders/](renders/).
 
 **Known limits of the renders:**
 - Inter stands in for Sequel Sans, which will change Direction E's numerals the most.
@@ -403,6 +438,11 @@ Mobile: [after](renders/contact-sheet-after-390.png) · [before](renders/contact
 ## 6. Rollout notes
 
 - **Re-render, don't regenerate.** Directions B–E are deterministic code, so 1,900 images can be re-rendered in minutes from a title→spec mapping. Direction A can be code (as here) or AI-generated with the prompts in PROMPTS.md.
+- **Consider fixing the listing card.** Its text panel covers 44% of every image. Three options, roughly from least to most work:
+  - **(a) Keep it.** The templates' default band layout is built for the card as it is today.
+  - **(b) Reduce the overlap to ~15–20% of the image height.**
+  - **(c) Put the panel below the image.**
+  With (b) or (c), switch the templates to `"layout":"center"` and drop the floor tone; the full frame then works everywhere. Separately, fix the "11 min read read" label.
 - **Start with the posts that look most alike:** the 251 "vs. In-House" posts (B) and the 353 "N Best" posts (E). Their titles already contain everything the spec needs, so the mapping can be automated.
 - **Remove the 8px white frame** from any image you keep.
 - **Fix the 5 corrupt `batch-343` files** before anything else ships.

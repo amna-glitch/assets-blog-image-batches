@@ -46,9 +46,14 @@ window.htSpec = function (defaults) {
   } catch (e) { return defaults; }
 };
 
-// Optional crop guides: 16:10, 16:9, 4:3 and 1:1 centre crops of the 1200x630 canvas.
+// Optional crop guides: 16:10, 16:9, 4:3 and 1:1 centre crops, plus the honesttaskers.com listing band (solid) of the 1200x630 canvas.
 window.htGuides = function (canvas) {
   if (new URLSearchParams(location.search).get('guides') !== '1') return;
   canvas.classList.add('guides');
-  ['r1610', 'r169', 'r43', 'r11'].forEach(c => { const d = document.createElement('div'); d.className = 'g ' + c; canvas.appendChild(d); });
+  ['r1610', 'r169', 'r43', 'r11', 'ht'].forEach(c => { const d = document.createElement('div'); d.className = 'g ' + c; canvas.appendChild(d); });
+};
+
+window.htFloor = function (canvas, light) {
+  const f = document.createElement('div'); f.className = 'floor' + (light ? ' on-light' : '');
+  canvas.insertBefore(f, canvas.firstChild);
 };

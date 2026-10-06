@@ -1,7 +1,7 @@
 <!doctype html>
 <!-- Direction E: Numeral Plate. Ranked lists, question sets, FAQ posts. The only direction that uses type.
      One large numeral (or "?" / "Q&A" when the post has no count) and a 2-4 word label. Never the full title.
-     Spec: {"num":"10","eyebrow":"Companies · 2026","label":"Medical billing VAs","field":"white"} -->
+     Spec: {"num":"10","eyebrow":"Companies · 2026","label":"Medical billing VAs","field":"light"|"deep","layout":"band"|"center"} -->
 <html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><script src="icons.js"></script>
 <style>
   .num { position: absolute; left: 285px; top: 50%; transform: translateY(-54%); font-weight: 700; font-size: 380px;
@@ -14,17 +14,20 @@
 <body><div class="canvas" id="c"><div class="num" id="num"></div>
 <div class="txt"><div class="tick"></div><div class="eyebrow" id="eb"></div><div class="label" id="lb"></div></div><div class="sig"></div></div>
 <script>
-  const s = htSpec({ num: '10', eyebrow: 'Companies · 2026', label: 'Medical billing VAs', field: 'light' });
+  const s = htSpec({ num: '10', eyebrow: 'Companies · 2026', label: 'Medical billing VAs', field: 'light', layout: 'band' });
+  const band = s.layout !== 'center';
+  if (band) { document.getElementById('num').style.top = '180px'; document.querySelector('.txt').style.top = '180px'; }
   const dark = s.field === 'deep';
   const c = document.getElementById('c');
   c.style.background = dark ? '#162da1' : '#eef1ff';
   const num = document.getElementById('num');
   num.textContent = s.num; num.style.color = dark ? '#ffffff' : '#2345ff';
-  if (s.num.length > 2) num.style.fontSize = '300px';
+  num.style.fontSize = (band ? (s.num.length > 2 ? 230 : 290) : (s.num.length > 2 ? 300 : 380)) + 'px';
   // Keep the numeral clear of the label column whatever its width.
   requestAnimationFrame(() => { const r = num.getBoundingClientRect(); if (r.right > 630) num.style.left = Math.max(72, 285 - (r.right - 630)) + 'px'; });
   document.getElementById('eb').textContent = s.eyebrow;
   document.getElementById('eb').style.color = dark ? '#2dd0e8' : '#3e59ff';
   const lb = document.getElementById('lb'); lb.textContent = s.label; lb.style.color = dark ? '#ffffff' : '#162da1';
+  if (band) htFloor(c, !dark);
   htGuides(c);
 </script></body></html>
