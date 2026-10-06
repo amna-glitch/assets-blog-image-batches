@@ -30,6 +30,24 @@ There is one template per direction. Each has a **fixed style block** that never
 
 (Field variants: replace `deep blue #162da1` with `primary blue #2345ff` or `pale blue-white #eef1ff with deep blue #162da1 lines`. Pick one per specialty and keep it fixed.)
 
+### A-3D: dimensional variant (optional)
+
+This variant borrows Rippling's *principle* (one rendered object on a single-hue field), not its look. Rippling uses plum fields and metallic or pink isometric objects. This variant uses matte white clay, a front three-quarter view and your blues. Pick either A or A-3D for the whole series; never mix them.
+
+**STYLE (fixed)**
+> Minimal editorial 3D illustration: one single object made of smooth matte white clay with softly rounded edges, seen from a gentle front three-quarter angle, centred and taking up about 45% of the image height. Exactly one small part of the object is matte teal #2dd0e8. Soft, even studio light from the upper left, with one soft contact shadow directly beneath. The background is a perfectly flat, seamless deep blue #162da1 with no horizon and no texture. Very generous empty space. Calm, quiet, precise. Wide 1.9:1 format, subject inside the central square.
+
+**SUBJECT (variable)**
+> `[ONE object that stands for the role or specialty], with the teal part being [one part]`
+
+**NEGATIVE:** shared negative, plus `metallic, chrome, glossy, isometric grid, purple, magenta, pink, multiple objects, pedestal, floor line, reflections`
+
+**Examples**
+1. *A Day in the Life of a Bilingual Virtual Dental Receptionist*
+   > SUBJECT: a single molar tooth, with the teal part being a small rounded highlight on the crown
+2. *Can Offshore Virtual Assistants Access PHI? What HIPAA Actually Says*
+   > SUBJECT: a padlock, with the teal part being the keyhole
+
 ---
 
 ## B. Two Fields

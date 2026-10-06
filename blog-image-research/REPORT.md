@@ -6,7 +6,7 @@ Prepared 2026-10-06. Covers Steps 1–5 of the brief. The AI prompts are in [PRO
 
 ## 0. Read this first: what I could and could not see
 
-**The live sites were unreachable from this session.** The environment's network policy returned `403` for every host involved:
+**This session couldn't reach the live sites.** Its network policy returned `403` for every host involved:
 
 | Host | Headless Chromium | curl | Server-side fetch |
 |---|---|---|---|
@@ -15,15 +15,13 @@ Prepared 2026-10-06. Covers Steps 1–5 of the brief. The AI prompts are in [PRO
 | `honesttaskers.com` | `ERR_TUNNEL_CONNECTION_FAILED` | `CONNECT 403` | `EGRESS_BLOCKED` |
 | Common image CDNs (ctfassets, sanity, webflow, prismic) | blocked | blocked | — |
 
-A realistic user agent doesn't help: the block sits in the session's egress policy, not in the sites themselves. The full capture script is written and tested up to that block ([research/capture.js](research/capture.js)).
+**What each step is based on:**
 
-**What that means for each step:**
+- **Step 2 (Rippling and Calendly): your four desktop screenshots.** Two are of Rippling's blog list and two are of Calendly's blog grid, saved in [research/rippling/](research/rippling/) and [research/calendly/](research/calendly/). I cropped every thumbnail, measured its card ratio and sampled its colors. That's 7 Rippling thumbnails (6 unique artworks) and 6 complete Calendly thumbnails plus 4 partial ones. Every claim in Section 2 comes from those crops. **Limits:** desktop only, about one screen per site, no mobile view, no article-page hero, no source files (so the ratios are listing-card ratios, not native image sizes).
+- **Step 3 (your images): from the source files.** This repo holds the featured images themselves: 1,926 WebP files across 441 batches, plus manifests that map each image to its article title. I measured all of them, looked at 72 spread evenly from `batch-001` to `batch-435`, and looked at 3 at full size. I still haven't seen your **live listing page**, so the grid mock-ups use a neutral 3-column card layout.
+- **Steps 4–6: built on the audit plus the reference rules in Section 2.**
 
-- **Step 2 (Rippling and Calendly analysis): not done.** Your rule is that every claim about a site must come from an image I viewed. I viewed none of theirs, so this report says nothing about how those blogs look. Section 2 explains how to finish it.
-- **Step 3 (your images): done thoroughly, from a better source than the website.** This repo holds the featured images themselves: 1,926 WebP files across 441 batches, plus manifests that map each image to its article title. I measured all of them, looked at 72 spread evenly from `batch-001` to `batch-435`, and looked at 3 at full size. The one thing I could **not** see is your live listing page (its card ratio, corner radius and page background). The grid mock-ups below therefore use a neutral 3-column card layout, not your real CSS.
-- **Steps 4–6: done.** They are built from the audit and from general editorial-design practice. Rules in this report that would normally come from Rippling or Calendly are labelled **working rule**. Check them against those sites once access is open.
-
-**To finish Step 2:** add `www.rippling.com`, `calendly.com`, `honesttaskers.com` and their image CDNs under *Allowed domains* in the environment's network settings ([docs](https://code.claude.com/docs/en/cloud-environments#network-access)). Then run `PW_MODULE=/opt/node-tools/node_modules/playwright node blog-image-research/research/capture.js` and ask me to complete Section 2.
+The capture script [research/capture.js](research/capture.js) is ready if you later allow those domains in the environment's network settings ([docs](https://code.claude.com/docs/en/cloud-environments#network-access)). It would add mobile screenshots, native image sizes and a larger sample.
 
 **Font:** Sequel Sans is not installed here. All renders use **Inter Display / Inter** as the fallback. [templates/base.css](templates/base.css) has a commented `@font-face` block: drop the Sequel Sans `.woff2` files beside it and re-render.
 
@@ -34,13 +32,15 @@ A realistic user agent doesn't help: the block sits in the session's egress poli
 | Item | Result |
 |---|---|
 | Playwright | Node Playwright and Chromium were already installed. Nothing was installed. |
-| Reference and own index screenshots (1440 / 390) | Blocked (see §0) |
+| Automated index screenshots (1440 / 390) | Blocked (see §0). Replaced by your desktop screenshots for Rippling and Calendly. |
+| Rippling thumbnails | 7 cards at **384×240 (1.60:1, i.e. 16:10)**, about 16px corner radius → [research/rippling/](research/rippling/) `r1…r6` |
+| Calendly thumbnails | 6 cards at **592×314–321 (1.84–1.89:1)**, about 24px corner radius, 1px border → [research/calendly/](research/calendly/) `c1…c6` |
 | Your featured images | 1,926 files in `batches/*/`; **1,921 readable, all exactly 1200×630 (1.905:1)**, WebP |
 | Corrupt files | 5 in `batch-343` are not valid WebP (`what-a-bariatric-vma-does`, `what-does-a-bariatric-vma-do`, `tasks-to-delegate-in-a-bariatric-practice`, `tasks-to-delegate-in-a-fertility-practice`, `what-are-the-benefits-of-a-fertility-vma`). If those went live, the posts show broken images. |
 | Distinct article titles | 1,903 |
-| Viewed | 72 sampled images (list in [research/honesttaskers/audit-sample-files.txt](research/honesttaskers/audit-sample-files.txt)), 3 at full size, and 12 more in a mock grid |
+| Viewed | 72 of your images (list in [research/honesttaskers/audit-sample-files.txt](research/honesttaskers/audit-sample-files.txt)), 3 at full size, 12 more in a mock grid; 13 reference thumbnails |
 
-Sample sheets (each holds 12 images, in batch order):
+Sample sheets of your images (each holds 12, in batch order):
 
 ![Audit sheet 1](research/honesttaskers/audit-sheet-1.jpg)
 ![Audit sheet 4](research/honesttaskers/audit-sheet-4.jpg)
@@ -49,36 +49,70 @@ All six: [1](research/honesttaskers/audit-sheet-1.jpg) · [2](research/honesttas
 
 ---
 
-## 2. Reference sites (Step 2): blocked
+## 2. Reference sites (Step 2)
 
-I make no claims here about Rippling's or Calendly's images, because I could not view any of them.
+### Rippling
 
-Once capture runs, each site gets the same template:
+![Rippling index](research/rippling/index-screenshot-1.jpg)
 
-| Dimension | What I'll record |
-|---|---|
-| Composition | Focal-object count and placement, share of negative space (measured, not guessed) |
-| Color | Background treatment, colors per image (palette quantization), how accent color is used |
-| Typography | Text present or not, word count, weight and size relative to the canvas |
-| Imagery | 3D, flat, UI crop, photo, icon or geometric |
-| Series mechanics | What repeats from post to post and what changes |
-| Density | Whitespace ratio |
-| Ratio and crop | Native image ratio vs. listing card ratio vs. article hero ratio |
+**Listing layout:** a single-column list. Each row has a thumbnail on the left (384×240, 16:10, rounded about 16px), then category | date, title and excerpt on the right.
 
-I'll then write 6–8 rules per site and re-score Section 3's comparison table against them.
+| Post | What's in the image | Sampled colors |
+|---|---|---|
+| macOS 27 is coming… | One metallic coin with an embossed **"27"**, centred, on a flat field | Field `#6f135b` covers 73% |
+| Open enrollment, without the fire drill | Isometric silver laptop with paper pages fanning out of the screen; a long soft shadow | Plum gradient, light left to near-black right (`#632253` → `#25081e`) |
+| 51 Employee Engagement Statistics | A cluster of 7 abstract 3D "people" tokens (cylinder head on a half-disc body) in lilac-pink | Field `#430838` covers 71%; tokens `#8d4f85` |
+| Meet the Ripplers: Ciara Buckley | **Real employee photo, duotoned plum**, on a card with a small name caption, a few tiny icons and a logo tile | Plum family only |
+| The 11 best recruiting software… | **The same people-cluster artwork** as the engagement post | Field `#4a0139` covers 66% |
+| Introducing Rippling Helpdesk | Flat **product UI** diagram (one "Helpdesk Agent" pill feeding three icon tiles) above a faded grid of UI chips | Warm grey field `#e3d8d3` |
+| SOC 2 Compliance… (partly visible) | Isometric certificate with a rosette seal | Magenta field |
 
-### Working rules used in place of Step 2
+**Rippling's rules:**
+1. **Every field is one hue.** All six editorial and story images sit in one plum/magenta range; variety comes from lighter or darker values, never a second hue.
+2. **One object or one tight cluster, centred**, about 45–60% of the card height. The field covers roughly 65–75% of the image.
+3. **One rendering language for editorial posts:** soft-lit 3D, three-quarter or isometric view, matte or metal materials, soft contact shadows.
+4. **No headline text.** A number appears only when the number *is* the subject ("27" as a physical coin). The "51 statistics" post did **not** put 51 on the image.
+5. **The background is flat or a single same-hue gradient.** No multicolor, glare, streaks or badges.
+6. **The post type picks the mode.** Editorial posts get an object; product launches get real product UI on a neutral field; people stories get a real employee photo, duotoned into the brand hue.
+7. **Real people only, and only when the story is about that person.**
+8. **Art is reused within a topic.** Two HR posts share one image. This trades per-post novelty for series consistency, and it only works because the style is so restrained.
 
-These come from general editorial-design practice, not from the reference sites. Steps 4–5 are built on them, and they're the rules I'll re-check against the references.
+### Calendly
 
-1. **One focal object per image.** It takes up 25–45% of the canvas height, and 55%+ of the canvas is empty field.
-2. **Flat fields, few colors.** Each image uses one background color plus at most two ink colors. No photographic backgrounds.
-3. **The accent is a single element.** It is never a wash or a field.
-4. **The image never repeats the title.** Where type appears at all, it's ≤ 6 words and reads at card size.
-5. **The series is held together by rules, not by repeating one picture.** Shared stroke weight, palette, margins and a signature mark do the work; the subject changes every time.
-6. **The image says the article type at a glance.** Cost, comparison, list and how-to posts should look different from each other.
-7. **The subject sits in a centre safe zone** so 16:9, 4:3 and 1:1 crops all keep it.
-8. **No people unless they're real.** Synthetic stock people cost a healthcare brand credibility.
+![Calendly index](research/calendly/index-screenshot-1.jpg)
+
+**Listing layout:** a 3-column grid with the image on top (about 1.84–1.89:1, close to your 1.905). Corners are rounded about 24px with a 1px light border, and there's one wide featured card. Below each image sit a category pill and date, the title, an excerpt and tag chips.
+
+| Post | What's in the image | Background |
+|---|---|---|
+| 4 ways to turn social media engagement into booked meetings | A large Calendly tile surrounded by white rounded logo tiles (TikTok, Meta, LinkedIn, Linktree) | Soft multi-hue gradient (lavender `#ddbbde`, periwinkle `#adb7e9`, blue) |
+| Introducing the new Calendly | Two real product UI cards ("Book with Callie", "Project Sync / Share recap") plus a **candid photo** of a woman with a laptop | Soft gradient with faint horizontal bands |
+| What is Calendly Notetaker… | A real recap card (summary, action items, transcript) plus a video-call card showing two people | Navy to violet gradient (`#1d4986`) |
+| Create and send invoices… | An invoice UI card and table with **real amounts** ($305.45, Past due / Sent / Paid), plus a candid photo of a laughing woman | Light warm neutral with **soft pastel vertical pills** |
+| 8 Calendly and Zapier automations | **Two white tiles bridged into one shape**: the Calendly logo and the Zapier mark | Sky-blue gradient (`#8bbee8`) |
+| Calendly MCP… | **Three bridged tiles**: the Claude, MCP and OpenAI marks | Soft pastel gradient |
+| Bottom row (partial) | Single UI cards: a profile with notes, a list of payment packages ($950.00…), a "Purchase complete" receipt | Pastel vertical pills |
+
+**Calendly's rules:**
+1. **One backdrop system for every image:** a soft, low-contrast multi-hue gradient, or a light neutral with a row of pastel pills. No glare and no light streaks.
+2. **One to three foreground elements, large and centred,** with the backdrop showing around them.
+3. **UI is always real product UI with specific, legible content** (names, amounts, statuses). Never placeholder bars.
+4. **Integrations get a logo lockup:** white rounded tiles, bridged into one shape when they connect.
+5. **People are candid and varied** (laughing, looking off-camera, on a call), and they appear next to the product they're using. There's no posed "agent" archetype and no headsets.
+6. **No headline or caption on the image.** The only text is text that belongs to the UI.
+7. **One family of rounded shapes** (tiles, cards, pills) at a consistent radius, with soft shadows.
+8. **Colors outside the brand appear only when they're the subject** (partner logos such as Zapier's orange).
+
+### What this means for Honest Taskers
+
+- **Calendly is the cautionary example.** Its ingredients are close to yours: gradients, floating UI cards, people at laptops. It reads as credible because each card shows **real** UI with specific content, there are 1–2 cards rather than 3–6, the people are candid and different from each other, the gradient is soft, and nothing is a badge. Your images copy the ingredients but fake each one: placeholder bars, one stock VA pose, a corner checkmark stamp. And Honest Taskers sells people and service, not software, so there is no real product UI to show. That's why I don't propose a Calendly-style direction.
+- **Rippling is the closer model:** one hue throughout, one object, one rendering language, mostly empty field, and real people only in real people stories. The five directions in Section 4 follow those principles in your blues. They use flat monoline drawing rather than 3D, so the result is yours and not a copy. If you want more depth, PROMPTS.md includes a matte-3D variant of Direction A.
+- **Worth borrowing as principles (not artwork):**
+  - **The post type picks the mode.** Both sites do this, and it's the basis of my one-direction-per-category mapping.
+  - **A real-people mode.** If you have consented photos of your actual VAs or clients, a deep-blue duotone treatment fits VA spotlights and case studies. Never AI faces.
+- **Confirmed by both:** no title text on images; a number on the image only when it's the subject.
+- **One caution against my own work:** Direction E (a numeral for every listicle) goes further than Rippling, which kept "51" off its statistics post. I still recommend E for the 353 "N Best … Companies" posts, because the count is the clearest difference between them. But that's my call, not a pattern taken from the references.
+- **Card ratios:** Rippling crops to 16:10, Calendly to about 1.87:1. Your 1200×630 sits natively in a Calendly-style grid. All five directions keep their key art inside the 1:1 centre zone, so they also survive 16:10 (crop x 96–1104).
 
 ---
 
@@ -104,11 +138,11 @@ Close-ups:
 | # | Issue | Evidence (seen or measured) | Severity |
 |---|---|---|---|
 | 1 | **One picture for 1,900 articles.** The series identity is "smiling headset person + floating cards", so every card looks the same and the reader has no reason to stop on any one of them. | 72/72 sampled share the composition; see the "before" grid below | **High** |
-| 2 | **Synthetic stock people.** Glossy AI faces, a handful of repeated archetypes, identical poses (hand to headset, holding a paper). Practice owners see this look in ads every day. It reads as generic or AI, and it implies these are your VAs when they aren't. | Every sampled image | **High** |
+| 2 | **Synthetic stock people.** Glossy AI faces, a handful of repeated archetypes, identical poses (hand to headset, holding a paper). Practice owners see this look in ads every day. It reads as generic or AI, and it implies these are your VAs when they aren't. By contrast, Rippling shows a real employee only in that employee's spotlight post, and Calendly's photos are candid and varied. | Every sampled image; reference crops `r4`, `c2`, `c4` | **High** |
 | 3 | **Corner checkmark badge.** A big translucent tick sits in almost every image. It means nothing about the article and borrows the visual language of ad creatives ("approved!"). Across a grid it repeats like a watermark. | Visible in essentially all 72 (faint on a few) | **High** |
 | 4 | **No focal point; UI-card clutter.** 3–6 glass cards, each with 3–8 placeholder bars and 1–3 icons, add up to roughly 10–20 small elements per image. At a ~400px card width the bars turn to noise and the specialty icon (the only differentiator) is about 15px tall. | Full-size views; mock grid | **High** |
 | 5 | **The image doesn't signal article type.** A cost post, a "vs." post, a top-10 list and an interview-questions post look identical. *"Radiology VMA vs. In-House Staff"* shows one person, with nothing being compared. | 12-card "before" grid | **High** |
-| 6 | **Gradients, glow and glassmorphism.** Blue→cyan washes, light streaks, frosted cards and soft shadows on every image. Taken together they read as template-store or ad, not editorial. | Every sampled image | **Med** |
+| 6 | **Glare, streaks and glassmorphism.** Calendly uses gradients too, so the gradient itself isn't the problem. The problem is *how* yours are used: high-contrast blue→cyan washes coming in from the corners, light streaks, frosted cards and soft shadows on every image. Calendly's gradients are soft, low-contrast backdrops with no glare; Rippling uses one same-hue gradient at most. | Every sampled image vs. `c1`–`c6`, `r2` | **Med** |
 | 7 | **Off-brand colors.** Wood desks, green plants, skin tones and warm clinic light, plus **red/yellow/green status dots**, **orange coins**, a **yellow padlock**, purple chips and an **orange warning triangle**. In a 200-image sample, a median **46% of pixels** sit far from your 5-color kit (RGB distance > 90 from every brand color). | Measurement + close-ups | **Med** |
 | 8 | **Baked-in 8px white frame.** It shows up as a white inset inside the card (visible in the "before" grid) and fights any rounded corner or tinted card background. | 200/200 measured: exactly 8px on all four sides | **Med** |
 | 9 | **Crop fragility.** The person sits on the left or right third and the cards on the other. A centre 4:3 or 1:1 crop (mobile cards, social) cuts a face or the card cluster. | Composition in all samples | **Med** |
@@ -141,18 +175,21 @@ Close-ups:
 
 **Mobile:** each card is a cluttered thumbnail with a face and UI fragments. The specialty icon (the only unique element) is about 10px tall. See [renders/contact-sheet-before-390.png](renders/contact-sheet-before-390.png).
 
-### Current images against the working rules
+### Side by side: references, your current images, and the proposal
 
-| Working rule | Current images | Proposed system |
-|---|---|---|
-| 1 focal object, 55%+ empty field | ✗ person + 3–6 cards + checkmark; under 15% empty | ✓ one object or one structure; 60–75% field |
-| Flat field, ≤ 3 colors | ✗ photo + gradient; ~46% off-palette pixels | ✓ 1 field + ≤ 2 inks, kit colors only |
-| Accent is one element | ✗ cyan wash everywhere, plus red/yellow/orange chips | ✓ one teal element + the signature dot |
-| No title on the image; type ≤ 6 words | ✓ no text | ✓ no text, except Direction E (≤ 6 words) |
-| Series held by rules, subject varies | ✗ series held by repeating one picture | ✓ shared stroke, margins, palette, signature dot |
-| Says the article type at a glance | ✗ every type looks the same | ✓ one direction per type |
-| Subject in centre safe zone | ✗ subject on thirds | ✓ key art inside the 1:1 centre zone |
-| No synthetic people | ✗ AI people in every image | ✓ none |
+| Rule | Rippling | Calendly | Your current images | Proposed system |
+|---|---|---|---|---|
+| Focal elements | 1 object or cluster | 1–3 large elements | ✗ person + 3–6 cards + checkmark | ✓ 1 object or 1 structure |
+| Empty field | ~65–75% | ~40–55% | ✗ under 15% | ✓ 60–75% |
+| Background | One hue, flat or same-hue gradient | One soft backdrop system | ✗ photo + cyan glare and streaks | ✓ flat kit color |
+| Color outside the brand | None | Only partner logos | ✗ ~46% of pixels (wood, plants, red/yellow/orange chips) | ✓ none |
+| Text on image | None (number only as the object) | Only real UI text | ✓ none | ✓ none, except E (≤ 6 words) |
+| UI shown | Real product UI only | Real product UI with real content | ✗ fake UI with placeholder bars | ✓ none |
+| People | Real employees, spotlight posts only | Candid and varied | ✗ AI stock archetype in every image | ✓ none (real-people duotone mode optional) |
+| Badges and stamps | None | None | ✗ corner checkmark on almost all | ✓ none |
+| Mode follows post type | Yes (object / UI / person) | Yes (logos / UI / photo) | ✗ one mode for everything | ✓ one direction per category |
+| What makes it a series | Hue lock + rendering lock | Backdrop + shape-family lock | Repeating one picture | Palette + stroke + margins + signature dot |
+| Survives centre crops | Yes, centred | Yes, centred | ✗ subject on thirds | ✓ key art in the 1:1 zone |
 
 ---
 
@@ -177,7 +214,7 @@ Close-ups:
 | Spec | Value |
 |---|---|
 | Master canvas | **1200×630** (OG image; matches your existing files, so the CMS needs no change) |
-| Listing-card ratio | Your live grid couldn't be inspected. All five directions are built to survive **16:9 (1120×630), 4:3 (840×630) and 1:1 (630×630) centre crops**. |
+| Listing-card ratio | Your live grid couldn't be inspected. In the references, Rippling crops to 16:10 and Calendly to about 1.87:1. All five directions survive **16:10 (1008×630), 16:9 (1120×630), 4:3 (840×630) and 1:1 (630×630) centre crops**. |
 | Safe zone | Key art stays inside the **1:1 centre zone: x 285–915**. Type (Direction E only) stays inside the **4:3 zone: x 180–1020**. See [renders/safe-zones/_overview.png](renders/safe-zones/_overview.png). |
 | Margins and grid | 72px outer margin (6 × 12px baseline); 12-column grid, 72px columns, 24px gutters |
 | Fields | `#162da1` deep, `#2345ff` primary, or `#eef1ff` light tint. **Never pure white**: white cards disappear into a white page (I tested this; see §5). |
@@ -298,7 +335,7 @@ Close-ups:
 
 ### E. Numeral Plate
 
-**Concept:** the editorial cover. One oversized numeral and a few quiet words. It's the only direction with type, because a ranked list *is* a number.
+**Concept:** the editorial cover. One oversized numeral and a few quiet words. It's the only direction with type, because a ranked list *is* a number. (Rippling puts a number on an image only when the number is the subject, and E follows that rule: use it only where the count is the point of the post.)
 
 **Use for:** "N Best … Companies (2026)" (353 posts), interview-question sets and "Common Questions" FAQ posts. For posts without a count, use "?".
 
@@ -338,7 +375,7 @@ templates/
   render-contact-sheets.js
 ```
 
-To make a new image, add an entry to `jobs.json` and run `PW_MODULE=/opt/node-tools/node_modules/playwright node templates/render.js`. Add `--guides` to overlay the 16:9, 4:3 and 1:1 crop lines.
+To make a new image, add an entry to `jobs.json` and run `PW_MODULE=/opt/node-tools/node_modules/playwright node templates/render.js`. Add `--guides` to overlay the 16:10, 16:9, 4:3 and 1:1 crop lines.
 
 **What I fixed after looking at my own renders:**
 - The tooth's accent read as a smiley; it's now a highlight on the crown.

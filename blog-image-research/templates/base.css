@@ -30,6 +30,7 @@ html, body { width: var(--w); height: var(--h); overflow: hidden; background: va
 .center { position: absolute; display: flex; align-items: center; justify-content: center; }
 /* Safe-zone guides (add ?guides=1 to any template URL) */
 .guides .g { position: absolute; top: 0; height: 100%; border: 2px dashed rgba(255,0,128,.8); pointer-events: none; }
+.guides .g.r1610 { left: 96px; width: 1008px; }
 .guides .g.r169 { left: 40px; width: 1120px; }
 .guides .g.r43  { left: 180px; width: 840px; }
 .guides .g.r11  { left: 285px; width: 630px; }
