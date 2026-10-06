@@ -1,16 +1,15 @@
 // Step 1 capture for the reference blogs and honesttaskers.com/articles.
-// Not run yet: the session's network policy blocked all three hosts (proxy 403).
-// Once the domains are allowed, run:  node research/capture.js   (from blog-image-research/)
+// Blocked so far by the session network policy (proxy 403); needs outbound access to these domains.
+// Once the domains are allowed, run:  node research/capture.js [site ...]   (from blog-image-research/)
 // Output per site: research/<site>/index-1440.png, index-390.png, images/*, images.json
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require(process.env.PW_MODULE || 'playwright');
 
-const SITES = {
-  rippling: 'https://www.rippling.com/blog',
-  calendly: 'https://calendly.com/blog',
-  honesttaskers: 'https://honesttaskers.com/articles',
-};
+// Site list: research/sites.json (name -> blog index URL). Pass names as args to capture a subset.
+const ALL = JSON.parse(fs.readFileSync(path.join(__dirname, 'sites.json'), 'utf8'));
+const pick = process.argv.slice(2);
+const SITES = pick.length ? Object.fromEntries(pick.map(k => [k, ALL[k]])) : ALL;
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36';
 const MIN_ARTICLES = 12;
 
