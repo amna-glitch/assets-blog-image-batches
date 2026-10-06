@@ -1,0 +1,223 @@
+[
+ {
+  "out": "a1-what-does-a-dermatology-vma-do",
+  "tpl": "a-object-study.html",
+  "title": "What Does a Dermatology VMA Do?",
+  "cat": "Role explainer",
+  "spec": {
+   "icon": "magnifier",
+   "field": "deep"
+  }
+ },
+ {
+  "out": "a2-day-in-the-life-bilingual-virtual-dental-receptionist",
+  "tpl": "a-object-study.html",
+  "title": "A Day in the Life of a Bilingual Virtual Dental Receptionist",
+  "cat": "Role explainer",
+  "spec": {
+   "icon": "tooth",
+   "field": "blue"
+  }
+ },
+ {
+  "out": "a3-can-a-virtual-assistant-be-hipaa-compliant",
+  "tpl": "a-object-study.html",
+  "title": "Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs",
+  "cat": "Compliance",
+  "spec": {
+   "icon": "shield",
+   "field": "deep"
+  }
+ },
+ {
+  "out": "a4-virtual-veterinary-technician-complete-guide",
+  "tpl": "a-object-study.html",
+  "title": "Virtual Veterinary Technician: The Complete Guide",
+  "cat": "Role explainer",
+  "spec": {
+   "icon": "paw",
+   "field": "light"
+  }
+ },
+ {
+  "out": "b1-radiology-vma-vs-in-house-staff",
+  "tpl": "b-two-fields.html",
+  "title": "Radiology Virtual Medical Assistant vs. In-House Staff: Cost, Pros, and Which to Choose",
+  "cat": "Comparison",
+  "spec": {
+   "left": "clinic",
+   "right": "headset"
+  }
+ },
+ {
+  "out": "b2-bilingual-virtual-dental-receptionist-vs-in-house",
+  "tpl": "b-two-fields.html",
+  "title": "Bilingual Virtual Dental Receptionist vs. In-House Staff: Cost, Pros, and Which to Choose",
+  "cat": "Comparison",
+  "spec": {
+   "left": "clinic",
+   "right": "globe"
+  }
+ },
+ {
+  "out": "c1-telephone-triage-va-cost",
+  "tpl": "c-quiet-metric.html",
+  "title": "How Much Does a Telephone Triage Virtual Assistant Cost?",
+  "cat": "Cost",
+  "spec": {
+   "bars": [
+    [
+     0,
+     0.92
+    ],
+    [
+     0,
+     0.7
+    ],
+    [
+     0,
+     0.36
+    ]
+   ],
+   "hi": 2,
+   "field": "light",
+   "icon": null
+  }
+ },
+ {
+  "out": "c2-how-much-do-vmas-earn-by-region",
+  "tpl": "c-quiet-metric.html",
+  "title": "How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region",
+  "cat": "Cost",
+  "spec": {
+   "bars": [
+    [
+     0.42,
+     0.88
+    ],
+    [
+     0.3,
+     0.7
+    ],
+    [
+     0.16,
+     0.46
+    ],
+    [
+     0.22,
+     0.58
+    ]
+   ],
+   "hi": 2,
+   "field": "deep",
+   "icon": null
+  }
+ },
+ {
+  "out": "c3-medical-office-staff-turnover-costs",
+  "tpl": "c-quiet-metric.html",
+  "title": "Medical Office Staff Turnover, What It Costs and How to Cut It",
+  "cat": "Cost",
+  "spec": {
+   "bars": [
+    [
+     0,
+     0.34
+    ],
+    [
+     0,
+     0.52
+    ],
+    [
+     0,
+     0.7
+    ],
+    [
+     0,
+     0.94
+    ]
+   ],
+   "hi": 3,
+   "field": "light",
+   "icon": null
+  }
+ },
+ {
+  "out": "d1-how-a-scribe-works-in-epic",
+  "tpl": "d-path.html",
+  "title": "How a Scribe Works in Epic?",
+  "cat": "Software & EHR",
+  "spec": {
+   "steps": [
+    "wave",
+    "document",
+    "check"
+   ],
+   "field": "blue"
+  }
+ },
+ {
+  "out": "d2-how-to-hire-a-virtual-case-manager",
+  "tpl": "d-path.html",
+  "title": "How to Hire a Virtual Case Manager",
+  "cat": "Hiring",
+  "spec": {
+   "steps": [
+    "document",
+    "person",
+    "check"
+   ],
+   "field": "deep"
+  }
+ },
+ {
+  "out": "d3-tasks-to-delegate-chiropractic-practice",
+  "tpl": "d-path.html",
+  "title": "Tasks to Delegate in a Chiropractic Practice",
+  "cat": "Tasks",
+  "spec": {
+   "steps": [
+    "clipboard",
+    "calendar",
+    "spine"
+   ],
+   "field": "blue"
+  }
+ },
+ {
+  "out": "e1-10-best-medical-billing-va-companies-2026",
+  "tpl": "e-numeral-plate.html",
+  "title": "10 Best Medical Billing Virtual Assistant Companies (2026)",
+  "cat": "Best-of",
+  "spec": {
+   "num": "10",
+   "eyebrow": "Companies \u00b7 2026",
+   "label": "Medical billing VAs",
+   "field": "light"
+  }
+ },
+ {
+  "out": "e2-7-best-pharmacy-va-companies-2026",
+  "tpl": "e-numeral-plate.html",
+  "title": "7 Best Pharmacy Virtual Assistant Companies (2026)",
+  "cat": "Best-of",
+  "spec": {
+   "num": "7",
+   "eyebrow": "Companies \u00b7 2026",
+   "label": "Pharmacy VAs",
+   "field": "deep"
+  }
+ },
+ {
+  "out": "e3-virtual-medical-office-manager-interview-questions",
+  "tpl": "e-numeral-plate.html",
+  "title": "Virtual Medical Office Manager Interview Questions",
+  "cat": "Hiring",
+  "spec": {
+   "num": "?",
+   "eyebrow": "Interview guide",
+   "label": "Office manager",
+   "field": "light"
+  }
+ }
+]
