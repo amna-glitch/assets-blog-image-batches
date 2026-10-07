@@ -1,26 +1,80 @@
 {
-  "figma": {
-    "url": "https://www.figma.com/es-la/blog/",
+  "onemedical": {
+    "url": "https://www.onemedical.com/blog/",
     "status": 200,
-    "finalUrl": "https://www.figma.com/es-la/blog/",
-    "covers": 14
+    "finalUrl": "https://www.onemedical.com/blog/",
+    "covers": 11
   },
-  "buffer": {
-    "url": "https://buffer.com/resources/",
+  "elation": {
+    "url": "https://www.elationhealth.com/resources/blogs",
     "status": 200,
-    "finalUrl": "https://buffer.com/resources/",
+    "finalUrl": "https://www.elationhealth.com/resources/blogs/",
     "covers": 16
   },
-  "mailchimp": {
-    "url": "https://mailchimp.com/es/resources/",
+  "springhealth": {
+    "url": "https://www.springhealth.com/blog",
     "status": 200,
-    "finalUrl": "https://mailchimp.com/es/resources/",
+    "finalUrl": "https://www.springhealth.com/blog",
     "covers": 16
   },
-  "hubspot": {
-    "url": "https://blog.hubspot.com/",
+  "modernhealth": {
+    "url": "https://www.modernhealth.com/post",
+    "status": 404,
+    "finalUrl": "https://www.modernhealth.com/post",
+    "covers": 5
+  },
+  "carbonhealth": {
+    "url": "https://carbonhealth.com/blog",
     "status": 200,
-    "finalUrl": "https://blog.hubspot.com/",
+    "finalUrl": "https://carbonhealth.com/blog",
+    "covers": 16
+  },
+  "phreesia": {
+    "url": "https://www.phreesia.com/blog/",
+    "status": 200,
+    "finalUrl": "https://www.phreesia.com/articles/",
+    "covers": 12
+  },
+  "doximity": {
+    "url": "https://blog.doximity.com/",
+    "status": 200,
+    "finalUrl": "https://blog.doximity.com/",
+    "covers": 16
+  },
+  "headspace": {
+    "url": "https://www.headspace.com/articles",
+    "status": 200,
+    "finalUrl": "https://www.headspace.com/articles",
+    "covers": 16
+  },
+  "squarespace": {
+    "url": "https://www.squarespace.com/blog",
+    "status": 200,
+    "finalUrl": "https://www.squarespace.com/blog",
+    "covers": 16
+  },
+  "shopify": {
+    "url": "https://www.shopify.com/blog",
+    "status": 200,
+    "finalUrl": "https://www.shopify.com/blog",
+    "covers": 11
+  },
+  "ahrefs": {
+    "url": "https://ahrefs.com/blog/",
+    "status": 200,
+    "finalUrl": "https://ahrefs.com/blog/",
+    "covers": 3
+  },
+  "gong": {
+    "url": "https://www.gong.io/blog/",
+    "status": 200,
+    "finalUrl": "https://www.gong.io/blog",
+    "covers": 15
+  },
+  "lattice": {
+    "url": "https://lattice.com/blog",
+    "status": 200,
+    "finalUrl": "https://lattice.com/blog",
     "covers": 16
   }
 }

@@ -1,0 +1,228 @@
+<title>Honest Taskers Cover Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a filterable library: intro, filter chips, a dense 3-up grid of covers, then notes. */
+:root { --bg:#f5f6fb; --surface:#fff; --ink:#0f1640; --muted:#5a6286; --line:#dde1f0; --accent:#2345ff; --bad:#c2410c;
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; --bad:#fb923c; color-scheme:dark } }
+:root[data-theme="dark"] { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; --bad:#fb923c; color-scheme:dark }
+body { background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); }
+.wrap { max-width:1240px; margin:0 auto; padding-inline:20px; padding-block:40px 80px; }
+h1,h2 { font-family:var(--display); text-wrap:balance; letter-spacing:-.015em; line-height:1.1; margin:0; }
+h1 { font-size:clamp(2rem,5vw,3.2rem); max-width:22ch; } h2 { font-size:1.6rem; margin-top:56px; }
+.eyebrow { font:500 .76rem var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.lede { max-width:66ch; color:var(--muted); font-size:1.08rem; margin-top:14px; }
+.stats { display:flex; flex-wrap:wrap; gap:28px; margin-top:24px; font:500 .82rem var(--mono); color:var(--muted); }
+.stats b { display:block; font:700 1.7rem/1.1 var(--display); color:var(--ink); }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin:32px 0 18px; position:sticky; top:env(safe-area-inset-top,0px); background:var(--bg); padding-block:10px; z-index:2; }
+.chip { font:600 .88rem var(--body); color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:7px 14px; cursor:pointer; }
+.chip.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+.chip:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:22px; }
+.card { margin:0; min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.card img { width:100%; aspect-ratio:1200/630; object-fit:cover; display:block; }
+.card figcaption { padding:12px 14px 14px; display:grid; gap:4px; }
+.top { display:flex; gap:10px; align-items:baseline; } .top b { font-family:var(--display); font-size:1.02rem; }
+.no { font:500 .78rem var(--mono); color:var(--accent); }
+.fam { margin-left:auto; font:500 .7rem var(--mono); color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+.ref { font-size:.86rem; color:var(--accent); } .use { font-size:.84rem; color:var(--muted); line-height:1.4; }
+.blogs { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; } .blogs span { font-size:.86rem; padding:4px 10px; border-radius:999px; background:var(--surface); border:1px solid var(--line); }
+.notes { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:16px; }
+.note { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px; } .note.bad { border-left:4px solid var(--bad); }
+.note h3 { margin:0 0 6px; font:600 1.02rem var(--display); } .note p { margin:0; font-size:.93rem; color:var(--muted); }
+ol { max-width:70ch; padding-left:1.2em; } li { margin:6px 0; }
+</style>
+<div class="wrap">
+<div class="eyebrow">Cover library · October 2026</div>
+<h1>79 cover styles for Honest Taskers articles</h1>
+<p class="lede">I captured the blog listing pages of 52 well-known SaaS and healthcare companies, looked at their cover images, and rebuilt each distinct technique in Honest Taskers colours and icons. Every example below is rendered on one of your real article titles. Filter by family to compare.</p>
+<div class="stats"><div><b>52</b>blogs studied</div><div><b>600+</b>cover images captured</div><div><b>79</b>styles built</div><div><b>7</b>families</div></div>
+<div class="chips" role="group" aria-label="Filter styles"><button class="chip on" data-f="all">All 79</button><button class="chip" data-f="Photo">Photo · 17</button><button class="chip" data-f="Product UI">Product UI · 15</button><button class="chip" data-f="Type">Type · 11</button><button class="chip" data-f="Graphic">Graphic · 17</button><button class="chip" data-f="Illustration">Illustration · 6</button><button class="chip" data-f="Data">Data · 5</button><button class="chip" data-f="Editorial">Editorial · 8</button></div>
+<div class="grid" id="grid"><figure class="card" data-fam="Photo"><img src="a/s01.jpg" alt="Practice Scene cover" loading="lazy">
+<figcaption><div class="top"><span class="no">01</span><b>Practice Scene</b><span class="fam">Photo</span></div>
+<div class="ref">After Figma</div><div class="use">Role guides, day in the life</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s02.jpg" alt="App Card cover" loading="lazy">
+<figcaption><div class="top"><span class="no">02</span><b>App Card</b><span class="fam">Product UI</span></div>
+<div class="ref">After Calendly, Buffer</div><div class="use">Tasks, benefits, how-to</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s03.jpg" alt="Arch Portrait cover" loading="lazy">
+<figcaption><div class="top"><span class="no">03</span><b>Arch Portrait</b><span class="fam">Photo</span></div>
+<div class="ref">After HubSpot</div><div class="use">Hiring, interview questions, vs. In-House</div></figcaption></figure><figure class="card" data-fam="Illustration"><img src="a/s04.jpg" alt="Ink on Colour cover" loading="lazy">
+<figcaption><div class="top"><span class="no">04</span><b>Ink on Colour</b><span class="fam">Illustration</span></div>
+<div class="ref">After Mailchimp</div><div class="use">Compliance, policy</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s05.jpg" alt="Software Bridge cover" loading="lazy">
+<figcaption><div class="top"><span class="no">05</span><b>Software Bridge</b><span class="fam">Product UI</span></div>
+<div class="ref">After Calendly, Buffer</div><div class="use">EHR and software posts</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s06.jpg" alt="Number Cover cover" loading="lazy">
+<figcaption><div class="top"><span class="no">06</span><b>Number Cover</b><span class="fam">Type</span></div>
+<div class="ref">After Stripe, Mailchimp</div><div class="use">&quot;N Best&quot; lists</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s07.jpg" alt="Line Drawing cover" loading="lazy">
+<figcaption><div class="top"><span class="no">07</span><b>Line Drawing</b><span class="fam">Graphic</span></div>
+<div class="ref">After Linear</div><div class="use">Scribe, call and process posts</div></figcaption></figure><figure class="card" data-fam="Illustration"><img src="a/s08.jpg" alt="Ink Sketch cover" loading="lazy">
+<figcaption><div class="top"><span class="no">08</span><b>Ink Sketch</b><span class="fam">Illustration</span></div>
+<div class="ref">After Notion</div><div class="use">Skills posts</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s09.jpg" alt="Sculpted Object cover" loading="lazy">
+<figcaption><div class="top"><span class="no">09</span><b>Sculpted Object</b><span class="fam">Graphic</span></div>
+<div class="ref">After Mercury, Rippling</div><div class="use">Specialty roles, compliance</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s10.jpg" alt="Big Word cover" loading="lazy">
+<figcaption><div class="top"><span class="no">10</span><b>Big Word</b><span class="fam">Type</span></div>
+<div class="ref">After Ramp</div><div class="use">Cost guides, FAQs</div></figcaption></figure><figure class="card" data-fam="Editorial"><img src="a/s11.jpg" alt="Guide Book cover" loading="lazy">
+<figcaption><div class="top"><span class="no">11</span><b>Guide Book</b><span class="fam">Editorial</span></div>
+<div class="ref">After Zocdoc, Mailchimp</div><div class="use">&quot;The Complete Guide&quot; posts</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s12.jpg" alt="Circle Portrait cover" loading="lazy">
+<figcaption><div class="top"><span class="no">12</span><b>Circle Portrait</b><span class="fam">Photo</span></div>
+<div class="ref">After Spruce Health, NexHealth</div><div class="use">Day in the life, spotlights</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s13.jpg" alt="Product Screen cover" loading="lazy">
+<figcaption><div class="top"><span class="no">13</span><b>Product Screen</b><span class="fam">Product UI</span></div>
+<div class="ref">After Jane, Hint</div><div class="use">EHR access and security</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s14.jpg" alt="Soft Gradient Card cover" loading="lazy">
+<figcaption><div class="top"><span class="no">14</span><b>Soft Gradient Card</b><span class="fam">Graphic</span></div>
+<div class="ref">After Intercom, Calendly</div><div class="use">Benefits · Benefits of a Remote Patient Monitoring Assistant</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s15.jpg" alt="Halftone Photo cover" loading="lazy">
+<figcaption><div class="top"><span class="no">15</span><b>Halftone Photo</b><span class="fam">Photo</span></div>
+<div class="ref">After Zendesk, Gong</div><div class="use">Skills · Virtual Medical Receptionist Skills</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s16.jpg" alt="Blue Duotone Photo cover" loading="lazy">
+<figcaption><div class="top"><span class="no">16</span><b>Blue Duotone Photo</b><span class="fam">Photo</span></div>
+<div class="ref">After Phreesia, Help Scout</div><div class="use">Role explainer · A Day in the Life of a Medical Billing Virtual Assistant</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s17.jpg" alt="Photo on Colour Block cover" loading="lazy">
+<figcaption><div class="top"><span class="no">17</span><b>Photo on Colour Block</b><span class="fam">Photo</span></div>
+<div class="ref">After HubSpot, Grammarly</div><div class="use">Role explainer · A Day in the Life of a Virtual Patient Intake Coordinator</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s18.jpg" alt="Icon Stickers cover" loading="lazy">
+<figcaption><div class="top"><span class="no">18</span><b>Icon Stickers</b><span class="fam">Graphic</span></div>
+<div class="ref">After Slack</div><div class="use">Tasks · Which Tasks Can You Delegate to a Bilingual Virtual Medical Receptionist?</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s19.jpg" alt="Sticky Notes cover" loading="lazy">
+<figcaption><div class="top"><span class="no">19</span><b>Sticky Notes</b><span class="fam">Product UI</span></div>
+<div class="ref">After Original (Miro whiteboard idea)</div><div class="use">Tasks · Tasks to Delegate in a Chiropractic Practice</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s20.jpg" alt="Task Board cover" loading="lazy">
+<figcaption><div class="top"><span class="no">20</span><b>Task Board</b><span class="fam">Product UI</span></div>
+<div class="ref">After ClickUp</div><div class="use">Role explainer · A Day in the Life of a Virtual Denial Management Specialist</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s21.jpg" alt="Chat Thread cover" loading="lazy">
+<figcaption><div class="top"><span class="no">21</span><b>Chat Thread</b><span class="fam">Product UI</span></div>
+<div class="ref">After Aircall, Phreesia</div><div class="use">FAQ · Medical Answering Service: Common Questions</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s22.jpg" alt="Call Screen cover" loading="lazy">
+<figcaption><div class="top"><span class="no">22</span><b>Call Screen</b><span class="fam">Product UI</span></div>
+<div class="ref">After Aircall</div><div class="use">Cost · How Much Does a Telephone Triage Virtual Assistant Cost?</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s23.jpg" alt="Month Calendar cover" loading="lazy">
+<figcaption><div class="top"><span class="no">23</span><b>Month Calendar</b><span class="fam">Product UI</span></div>
+<div class="ref">After ClickUp</div><div class="use">Best-of · 7 Best Companies to Hire a Virtual Veterinary Scheduler</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s24.jpg" alt="Paper Checklist cover" loading="lazy">
+<figcaption><div class="top"><span class="no">24</span><b>Paper Checklist</b><span class="fam">Product UI</span></div>
+<div class="ref">After Original</div><div class="use">Hiring · Virtual Medical Office Manager Interview Questions</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s25.jpg" alt="Isometric Blocks cover" loading="lazy">
+<figcaption><div class="top"><span class="no">25</span><b>Isometric Blocks</b><span class="fam">Graphic</span></div>
+<div class="ref">After Slack, Airtable</div><div class="use">Software &amp; EHR · How Does a Biller Work in Dentrix?</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s26.jpg" alt="Icon Pattern cover" loading="lazy">
+<figcaption><div class="top"><span class="no">26</span><b>Icon Pattern</b><span class="fam">Graphic</span></div>
+<div class="ref">After Loom</div><div class="use">Role explainer · A Day in the Life of a Bilingual Virtual Dental Receptionist</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s27.jpg" alt="Bauhaus Shapes cover" loading="lazy">
+<figcaption><div class="top"><span class="no">27</span><b>Bauhaus Shapes</b><span class="fam">Graphic</span></div>
+<div class="ref">After Figma</div><div class="use">Role explainer · What Does a Dermatology VMA Do?</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s28.jpg" alt="Big Quote cover" loading="lazy">
+<figcaption><div class="top"><span class="no">28</span><b>Big Quote</b><span class="fam">Type</span></div>
+<div class="ref">After Carbon Health</div><div class="use">Opinion · Are Virtual Medical Assistants Worth It? The Numbers Behind the Decision</div></figcaption></figure><figure class="card" data-fam="Data"><img src="a/s29.jpg" alt="Line Chart cover" loading="lazy">
+<figcaption><div class="top"><span class="no">29</span><b>Line Chart</b><span class="fam">Data</span></div>
+<div class="ref">After ClickUp</div><div class="use">Cost · Medical Office Staff Turnover, What It Costs and How to Cut It</div></figcaption></figure><figure class="card" data-fam="Data"><img src="a/s30.jpg" alt="Donut Ring cover" loading="lazy">
+<figcaption><div class="top"><span class="no">30</span><b>Donut Ring</b><span class="fam">Data</span></div>
+<div class="ref">After Grammarly</div><div class="use">Benefits · Benefits of a Virtual Assistant for Wellness Centers</div></figcaption></figure><figure class="card" data-fam="Data"><img src="a/s31.jpg" alt="Dot Map cover" loading="lazy">
+<figcaption><div class="top"><span class="no">31</span><b>Dot Map</b><span class="fam">Data</span></div>
+<div class="ref">After Doximity</div><div class="use">Comparison · US-Based vs. Offshore Mental Health Virtual Assistant: Cost</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s32.jpg" alt="Numbered Steps cover" loading="lazy">
+<figcaption><div class="top"><span class="no">32</span><b>Numbered Steps</b><span class="fam">Type</span></div>
+<div class="ref">After Original</div><div class="use">Hiring · How to Hire a Virtual Case Manager</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s33.jpg" alt="Before / After Slider cover" loading="lazy">
+<figcaption><div class="top"><span class="no">33</span><b>Before / After Slider</b><span class="fam">Photo</span></div>
+<div class="ref">After ClickUp</div><div class="use">Comparison · Bilingual Virtual Medical Assistant vs. In-House Staff</div></figcaption></figure><figure class="card" data-fam="Illustration"><img src="a/s34.jpg" alt="Envelope cover" loading="lazy">
+<figcaption><div class="top"><span class="no">34</span><b>Envelope</b><span class="fam">Illustration</span></div>
+<div class="ref">After Mailchimp</div><div class="use">Benefits · What Are the Benefits of a Bilingual Virtual Dental Receptionist?</div></figcaption></figure><figure class="card" data-fam="Editorial"><img src="a/s35.jpg" alt="Magazine Cover cover" loading="lazy">
+<figcaption><div class="top"><span class="no">35</span><b>Magazine Cover</b><span class="fam">Editorial</span></div>
+<div class="ref">After Mailchimp, Doximity</div><div class="use">Guide · Bilingual Virtual Dental Receptionist: The Complete Guide</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s36.jpg" alt="Polaroid Stack cover" loading="lazy">
+<figcaption><div class="top"><span class="no">36</span><b>Polaroid Stack</b><span class="fam">Photo</span></div>
+<div class="ref">After Shopify</div><div class="use">Role explainer · A Day in the Life of a Bilingual Virtual Medical Receptionist</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s37.jpg" alt="Blueprint Grid cover" loading="lazy">
+<figcaption><div class="top"><span class="no">37</span><b>Blueprint Grid</b><span class="fam">Graphic</span></div>
+<div class="ref">After Zapier</div><div class="use">Software &amp; EHR · What Tools and Software Does a Virtual Denial Management Specialist Use?</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s38.jpg" alt="Dark Console cover" loading="lazy">
+<figcaption><div class="top"><span class="no">38</span><b>Dark Console</b><span class="fam">Product UI</span></div>
+<div class="ref">After Webflow, Linear</div><div class="use">Software &amp; EHR · Can a Virtual Assistant Work in Your EHR? How Remote Access Works</div></figcaption></figure><figure class="card" data-fam="Illustration"><img src="a/s39.jpg" alt="Paper Cut Layers cover" loading="lazy">
+<figcaption><div class="top"><span class="no">39</span><b>Paper Cut Layers</b><span class="fam">Illustration</span></div>
+<div class="ref">After Headspace</div><div class="use">Benefits · Benefits for Behavioral Health Practices</div></figcaption></figure><figure class="card" data-fam="Illustration"><img src="a/s40.jpg" alt="Friendly Blob cover" loading="lazy">
+<figcaption><div class="top"><span class="no">40</span><b>Friendly Blob</b><span class="fam">Illustration</span></div>
+<div class="ref">After Headspace</div><div class="use">Benefits · Benefits of a Virtual Assistant for Wellness Centers</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s41.jpg" alt="Icon Grid Highlight cover" loading="lazy">
+<figcaption><div class="top"><span class="no">41</span><b>Icon Grid Highlight</b><span class="fam">Graphic</span></div>
+<div class="ref">After Zapier</div><div class="use">Tasks · Which Tasks Can You Delegate to a Veterinary Billing Virtual Assistant?</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s42.jpg" alt="Giant Question cover" loading="lazy">
+<figcaption><div class="top"><span class="no">42</span><b>Giant Question</b><span class="fam">Type</span></div>
+<div class="ref">After Original (Phreesia Q&amp;A)</div><div class="use">Hiring · Bilingual Virtual Medical Receptionist Interview Questions</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s43.jpg" alt="ID Badge cover" loading="lazy">
+<figcaption><div class="top"><span class="no">43</span><b>ID Badge</b><span class="fam">Photo</span></div>
+<div class="ref">After Original</div><div class="use">Hiring · Bilingual Virtual Medical Assistant Job Description</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s44.jpg" alt="Receipt cover" loading="lazy">
+<figcaption><div class="top"><span class="no">44</span><b>Receipt</b><span class="fam">Product UI</span></div>
+<div class="ref">After Calendly, Phreesia</div><div class="use">Role explainer · A Day in the Life of a Medical Billing Virtual Assistant</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s45.jpg" alt="Intake Form cover" loading="lazy">
+<figcaption><div class="top"><span class="no">45</span><b>Intake Form</b><span class="fam">Product UI</span></div>
+<div class="ref">After Jane</div><div class="use">Role explainer · A Day in the Life of a Virtual Patient Intake Coordinator</div></figcaption></figure><figure class="card" data-fam="Data"><img src="a/s46.jpg" alt="Venn Diagram cover" loading="lazy">
+<figcaption><div class="top"><span class="no">46</span><b>Venn Diagram</b><span class="fam">Data</span></div>
+<div class="ref">After Phreesia</div><div class="use">Comparison · Virtual Medical Coder: Agency vs. Freelancer</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s47.jpg" alt="Orbit Diagram cover" loading="lazy">
+<figcaption><div class="top"><span class="no">47</span><b>Orbit Diagram</b><span class="fam">Graphic</span></div>
+<div class="ref">After Dovetail, Slack</div><div class="use">Software &amp; EHR · What Tools and Software Does a Virtual Denial Management Specialist Use?</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s48.jpg" alt="Window Stack cover" loading="lazy">
+<figcaption><div class="top"><span class="no">48</span><b>Window Stack</b><span class="fam">Product UI</span></div>
+<div class="ref">After Lattice</div><div class="use">Best-of · 7 Best Medical Billing Outsourcing Companies</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s49.jpg" alt="Annotated Photo cover" loading="lazy">
+<figcaption><div class="top"><span class="no">49</span><b>Annotated Photo</b><span class="fam">Photo</span></div>
+<div class="ref">After Original</div><div class="use">Skills · Virtual Medical Receptionist Skills</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s50.jpg" alt="Spotlight Portrait cover" loading="lazy">
+<figcaption><div class="top"><span class="no">50</span><b>Spotlight Portrait</b><span class="fam">Photo</span></div>
+<div class="ref">After Phreesia</div><div class="use">Role explainer · A Day in the Life of a Virtual Referral Coordinator</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s51.jpg" alt="Headshot Grid cover" loading="lazy">
+<figcaption><div class="top"><span class="no">51</span><b>Headshot Grid</b><span class="fam">Photo</span></div>
+<div class="ref">After NexHealth</div><div class="use">Best-of · 7 Best Certified Coding Specialist Companies (2026)</div></figcaption></figure><figure class="card" data-fam="Editorial"><img src="a/s52.jpg" alt="Certificate Seal cover" loading="lazy">
+<figcaption><div class="top"><span class="no">52</span><b>Certificate Seal</b><span class="fam">Editorial</span></div>
+<div class="ref">After Phreesia</div><div class="use">Compliance · Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s53.jpg" alt="Swiss Poster cover" loading="lazy">
+<figcaption><div class="top"><span class="no">53</span><b>Swiss Poster</b><span class="fam">Type</span></div>
+<div class="ref">After Ramp</div><div class="use">Services · Pharmacy Medical Billing Outsourcing: Services</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s54.jpg" alt="Voice to Note cover" loading="lazy">
+<figcaption><div class="top"><span class="no">54</span><b>Voice to Note</b><span class="fam">Product UI</span></div>
+<div class="ref">After Aircall</div><div class="use">Role explainer · A Day in the Life of a Virtual Medical Scribe</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s55.jpg" alt="Versus Stack cover" loading="lazy">
+<figcaption><div class="top"><span class="no">55</span><b>Versus Stack</b><span class="fam">Type</span></div>
+<div class="ref">After Hotjar</div><div class="use">Best-of · 7 Best Dental Billing Outsourcing Companies</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s56.jpg" alt="Spot Circle cover" loading="lazy">
+<figcaption><div class="top"><span class="no">56</span><b>Spot Circle</b><span class="fam">Type</span></div>
+<div class="ref">After Grammarly</div><div class="use">FAQ · After-Hours Medical Answering Service: Common Questions</div></figcaption></figure><figure class="card" data-fam="Editorial"><img src="a/s57.jpg" alt="Serif Headline + UI cover" loading="lazy">
+<figcaption><div class="top"><span class="no">57</span><b>Serif Headline + UI</b><span class="fam">Editorial</span></div>
+<div class="ref">After Aircall</div><div class="use">Cost · Bilingual Virtual Medical Assistant Pricing by Hours</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s58.jpg" alt="Glossy Icon Tiles cover" loading="lazy">
+<figcaption><div class="top"><span class="no">58</span><b>Glossy Icon Tiles</b><span class="fam">Graphic</span></div>
+<div class="ref">After Pitch</div><div class="use">Tasks · Which Tasks Can You Delegate to a Veterinary Billing Virtual Assistant?</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s59.jpg" alt="Photo with Colour Rays cover" loading="lazy">
+<figcaption><div class="top"><span class="no">59</span><b>Photo with Colour Rays</b><span class="fam">Photo</span></div>
+<div class="ref">After Miro</div><div class="use">Role explainer · A Day in the Life of a Bilingual Virtual Medical Receptionist</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s60.jpg" alt="Circuit Grid cover" loading="lazy">
+<figcaption><div class="top"><span class="no">60</span><b>Circuit Grid</b><span class="fam">Graphic</span></div>
+<div class="ref">After Zapier</div><div class="use">Software &amp; EHR · Can a Virtual Assistant Work in Your EHR? How Remote Access Works</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s61.jpg" alt="Op-Art Rings cover" loading="lazy">
+<figcaption><div class="top"><span class="no">61</span><b>Op-Art Rings</b><span class="fam">Graphic</span></div>
+<div class="ref">After Webflow</div><div class="use">Role explainer · A Day in the Life of a Virtual Patient Follow-Up Coordinator</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s62.jpg" alt="Wireframe Globe cover" loading="lazy">
+<figcaption><div class="top"><span class="no">62</span><b>Wireframe Globe</b><span class="fam">Graphic</span></div>
+<div class="ref">After Webflow</div><div class="use">Comparison · US-Based vs. Offshore Virtual Insurance Verification Specialist: Cost</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s63.jpg" alt="Multilingual Type cover" loading="lazy">
+<figcaption><div class="top"><span class="no">63</span><b>Multilingual Type</b><span class="fam">Type</span></div>
+<div class="ref">After Webflow</div><div class="use">Guide · Bilingual Virtual Dental Receptionist: The Complete Guide</div></figcaption></figure><figure class="card" data-fam="Editorial"><img src="a/s64.jpg" alt="Serif Editorial Card cover" loading="lazy">
+<figcaption><div class="top"><span class="no">64</span><b>Serif Editorial Card</b><span class="fam">Editorial</span></div>
+<div class="ref">After Elation</div><div class="use">Opinion · Are Virtual Medical Assistants Worth It? The Numbers Behind the Decision</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s65.jpg" alt="Release Card cover" loading="lazy">
+<figcaption><div class="top"><span class="no">65</span><b>Release Card</b><span class="fam">Type</span></div>
+<div class="ref">After Spring Health</div><div class="use">Cost · How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s66.jpg" alt="Twin Rounded Photos cover" loading="lazy">
+<figcaption><div class="top"><span class="no">66</span><b>Twin Rounded Photos</b><span class="fam">Photo</span></div>
+<div class="ref">After Spring Health</div><div class="use">Role explainer · A Day in the Life of a Bilingual Virtual Dental Receptionist</div></figcaption></figure><figure class="card" data-fam="Illustration"><img src="a/s67.jpg" alt="Paint Strokes cover" loading="lazy">
+<figcaption><div class="top"><span class="no">67</span><b>Paint Strokes</b><span class="fam">Illustration</span></div>
+<div class="ref">After Carbon Health</div><div class="use">Benefits · Benefits for Concierge Medicine Practices</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s68.jpg" alt="Location Pin cover" loading="lazy">
+<figcaption><div class="top"><span class="no">68</span><b>Location Pin</b><span class="fam">Photo</span></div>
+<div class="ref">After Carbon Health</div><div class="use">Comparison · US-Based vs. Offshore Mental Health Virtual Assistant: Cost</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s69.jpg" alt="Q&amp;A Circles cover" loading="lazy">
+<figcaption><div class="top"><span class="no">69</span><b>Q&amp;A Circles</b><span class="fam">Photo</span></div>
+<div class="ref">After Phreesia</div><div class="use">Hiring · Virtual Medical Office Manager Interview Questions</div></figcaption></figure><figure class="card" data-fam="Data"><img src="a/s70.jpg" alt="Network Graph cover" loading="lazy">
+<figcaption><div class="top"><span class="no">70</span><b>Network Graph</b><span class="fam">Data</span></div>
+<div class="ref">After Doximity</div><div class="use">Role explainer · A Day in the Life of a Virtual Denial Management Specialist</div></figcaption></figure><figure class="card" data-fam="Editorial"><img src="a/s71.jpg" alt="Report Cover cover" loading="lazy">
+<figcaption><div class="top"><span class="no">71</span><b>Report Cover</b><span class="fam">Editorial</span></div>
+<div class="ref">After Doximity</div><div class="use">Cost · How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s72.jpg" alt="Pixel Dither cover" loading="lazy">
+<figcaption><div class="top"><span class="no">72</span><b>Pixel Dither</b><span class="fam">Graphic</span></div>
+<div class="ref">After Dovetail, Gong</div><div class="use">Software &amp; EHR · Can a Virtual Assistant Work in Your EHR? How Remote Access Works</div></figcaption></figure><figure class="card" data-fam="Editorial"><img src="a/s73.jpg" alt="Podcast Cover cover" loading="lazy">
+<figcaption><div class="top"><span class="no">73</span><b>Podcast Cover</b><span class="fam">Editorial</span></div>
+<div class="ref">After Help Scout</div><div class="use">Role explainer · A Day in the Life of a Virtual Referral Coordinator</div></figcaption></figure><figure class="card" data-fam="Product UI"><img src="a/s74.jpg" alt="Settings Toggles cover" loading="lazy">
+<figcaption><div class="top"><span class="no">74</span><b>Settings Toggles</b><span class="fam">Product UI</span></div>
+<div class="ref">After Help Scout</div><div class="use">Tasks · Which Tasks Can You Delegate to a Bilingual Virtual Medical Receptionist?</div></figcaption></figure><figure class="card" data-fam="Type"><img src="a/s75.jpg" alt="Ticker Band cover" loading="lazy">
+<figcaption><div class="top"><span class="no">75</span><b>Ticker Band</b><span class="fam">Type</span></div>
+<div class="ref">After Zendesk</div><div class="use">FAQ · Medical Answering Service: Common Questions</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s76.jpg" alt="Cell Grid cover" loading="lazy">
+<figcaption><div class="top"><span class="no">76</span><b>Cell Grid</b><span class="fam">Graphic</span></div>
+<div class="ref">After Airtable</div><div class="use">Software &amp; EHR · What Tools and Software Does a Virtual Denial Management Specialist Use?</div></figcaption></figure><figure class="card" data-fam="Editorial"><img src="a/s77.jpg" alt="Headline + Document cover" loading="lazy">
+<figcaption><div class="top"><span class="no">77</span><b>Headline + Document</b><span class="fam">Editorial</span></div>
+<div class="ref">After Lattice</div><div class="use">Guide · Virtual Medical Assistant: The Complete Guide</div></figcaption></figure><figure class="card" data-fam="Graphic"><img src="a/s78.jpg" alt="Glossy Object on Gradient cover" loading="lazy">
+<figcaption><div class="top"><span class="no">78</span><b>Glossy Object on Gradient</b><span class="fam">Graphic</span></div>
+<div class="ref">After Shopify</div><div class="use">Benefits · Benefits of a Remote Patient Monitoring Assistant</div></figcaption></figure><figure class="card" data-fam="Photo"><img src="a/s79.jpg" alt="Tilted Photo Cards cover" loading="lazy">
+<figcaption><div class="top"><span class="no">79</span><b>Tilted Photo Cards</b><span class="fam">Photo</span></div>
+<div class="ref">After Shopify</div><div class="use">Role explainer · A Day in the Life of a Medical Billing Virtual Assistant</div></figcaption></figure></div>
+
+<h2>Blogs studied</h2>
+<div class="blogs"><span>Rippling</span><span>Calendly</span><span>Stripe</span><span>Linear</span><span>Notion</span><span>Intercom</span><span>Deel</span><span>Ramp</span><span>Mercury</span><span>Attio</span><span>Loom</span><span>Zocdoc</span><span>Oscar Health</span><span>Weave</span><span>NexHealth</span><span>Jane</span><span>SimplePractice</span><span>Spruce Health</span><span>Hint Health</span><span>athenahealth</span><span>Figma</span><span>Buffer</span><span>Mailchimp</span><span>HubSpot</span><span>Hotjar</span><span>ClickUp</span><span>Miro</span><span>Aircall</span><span>Grammarly</span><span>Pitch</span><span>Dropbox</span><span>Slack</span><span>Zapier</span><span>Webflow</span><span>Dovetail</span><span>Help Scout</span><span>Zendesk</span><span>monday.com</span><span>Airtable</span><span>Lattice</span><span>Gong</span><span>Ahrefs</span><span>Shopify</span><span>Squarespace</span><span>Headspace</span><span>One Medical</span><span>Elation Health</span><span>Spring Health</span><span>Modern Health</span><span>Carbon Health</span><span>Phreesia</span><span>Doximity</span></div>
+
+<h2>Notes</h2>
+<div class="notes">
+<div class="note"><h3>"After" means the idea, not the artwork</h3><p>Each style borrows a layout or technique from the named blog. None uses their artwork, logos or illustrations. Styles marked "Original" are mine, built for gaps in your categories.</p></div>
+<div class="note"><h3>Photos are stand-ins</h3><p>Photo styles use crops of your current images, so old floating cards show at some edges. New photos without built-in UI will make them cleaner.</p></div>
+<div class="note"><h3>Needs a photographer or illustrator</h3><p>Some of the best covers seen can't be templated: Squarespace and Zendesk editorial portraits, One Medical still-life objects, monday.com and Oscar character illustration. They're worth commissioning for flagship posts.</p></div>
+<div class="note bad"><h3>Seen, and avoided</h3><p>Ahrefs-style YouTube thumbnails (shouting text over a face), Intercom-style full titles on the image, and icons floating over a desk scene. They look busy in a grid and repeat your current problem.</p></div>
+</div>
+
+<h2>How to use 79 styles without chaos</h2>
+<ol>
+<li>Pick 8 to 12 as your core set, at least one per family. Keep the rest for special posts.</li>
+<li>Map each article type to one or two styles, so the type decides the cover.</li>
+<li>No two neighbouring cards in the same family.</li>
+<li>Same palette, icon set and type on every cover. That's what keeps 79 styles looking like one brand.</li>
+<li>No prices or figures on covers until your team confirms them.</li>
+</ol>
+</div>
+<script>
+  const chips = document.querySelectorAll('.chip'), cards = document.querySelectorAll('.card');
+  chips.forEach(ch => ch.addEventListener('click', () => {
+    chips.forEach(c => c.classList.toggle('on', c === ch));
+    cards.forEach(cd => { cd.hidden = ch.dataset.f !== 'all' && cd.dataset.fam !== ch.dataset.f; });
+  }));
+</script>

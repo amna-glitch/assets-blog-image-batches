@@ -1,0 +1,634 @@
+[
+ {
+  "n": 1,
+  "name": "Practice Scene",
+  "fam": "Photo",
+  "ref": "Figma",
+  "use": "Role guides, day in the life",
+  "img": "s01.jpg"
+ },
+ {
+  "n": 2,
+  "name": "App Card",
+  "fam": "Product UI",
+  "ref": "Calendly, Buffer",
+  "use": "Tasks, benefits, how-to",
+  "img": "s02.jpg"
+ },
+ {
+  "n": 3,
+  "name": "Arch Portrait",
+  "fam": "Photo",
+  "ref": "HubSpot",
+  "use": "Hiring, interview questions, vs. In-House",
+  "img": "s03.jpg"
+ },
+ {
+  "n": 4,
+  "name": "Ink on Colour",
+  "fam": "Illustration",
+  "ref": "Mailchimp",
+  "use": "Compliance, policy",
+  "img": "s04.jpg"
+ },
+ {
+  "n": 5,
+  "name": "Software Bridge",
+  "fam": "Product UI",
+  "ref": "Calendly, Buffer",
+  "use": "EHR and software posts",
+  "img": "s05.jpg"
+ },
+ {
+  "n": 6,
+  "name": "Number Cover",
+  "fam": "Type",
+  "ref": "Stripe, Mailchimp",
+  "use": "\"N Best\" lists",
+  "img": "s06.jpg"
+ },
+ {
+  "n": 7,
+  "name": "Line Drawing",
+  "fam": "Graphic",
+  "ref": "Linear",
+  "use": "Scribe, call and process posts",
+  "img": "s07.jpg"
+ },
+ {
+  "n": 8,
+  "name": "Ink Sketch",
+  "fam": "Illustration",
+  "ref": "Notion",
+  "use": "Skills posts",
+  "img": "s08.jpg"
+ },
+ {
+  "n": 9,
+  "name": "Sculpted Object",
+  "fam": "Graphic",
+  "ref": "Mercury, Rippling",
+  "use": "Specialty roles, compliance",
+  "img": "s09.jpg"
+ },
+ {
+  "n": 10,
+  "name": "Big Word",
+  "fam": "Type",
+  "ref": "Ramp",
+  "use": "Cost guides, FAQs",
+  "img": "s10.jpg"
+ },
+ {
+  "n": 11,
+  "name": "Guide Book",
+  "fam": "Editorial",
+  "ref": "Zocdoc, Mailchimp",
+  "use": "\"The Complete Guide\" posts",
+  "img": "s11.jpg"
+ },
+ {
+  "n": 12,
+  "name": "Circle Portrait",
+  "fam": "Photo",
+  "ref": "Spruce Health, NexHealth",
+  "use": "Day in the life, spotlights",
+  "img": "s12.jpg"
+ },
+ {
+  "n": 13,
+  "name": "Product Screen",
+  "fam": "Product UI",
+  "ref": "Jane, Hint",
+  "use": "EHR access and security",
+  "img": "s13.jpg"
+ },
+ {
+  "n": 14,
+  "name": "Soft Gradient Card",
+  "fam": "Graphic",
+  "ref": "Intercom, Calendly",
+  "use": "Benefits \u00b7 Benefits of a Remote Patient Monitoring Assistant",
+  "img": "s14.jpg"
+ },
+ {
+  "n": 15,
+  "name": "Halftone Photo",
+  "fam": "Photo",
+  "ref": "Zendesk, Gong",
+  "use": "Skills \u00b7 Virtual Medical Receptionist Skills",
+  "img": "s15.jpg"
+ },
+ {
+  "n": 16,
+  "name": "Blue Duotone Photo",
+  "fam": "Photo",
+  "ref": "Phreesia, Help Scout",
+  "use": "Role explainer \u00b7 A Day in the Life of a Medical Billing Virtual Assistant",
+  "img": "s16.jpg"
+ },
+ {
+  "n": 17,
+  "name": "Photo on Colour Block",
+  "fam": "Photo",
+  "ref": "HubSpot, Grammarly",
+  "use": "Role explainer \u00b7 A Day in the Life of a Virtual Patient Intake Coordinator",
+  "img": "s17.jpg"
+ },
+ {
+  "n": 18,
+  "name": "Icon Stickers",
+  "fam": "Graphic",
+  "ref": "Slack",
+  "use": "Tasks \u00b7 Which Tasks Can You Delegate to a Bilingual Virtual Medical Receptionist?",
+  "img": "s18.jpg"
+ },
+ {
+  "n": 19,
+  "name": "Sticky Notes",
+  "fam": "Product UI",
+  "ref": "Original (Miro whiteboard idea)",
+  "use": "Tasks \u00b7 Tasks to Delegate in a Chiropractic Practice",
+  "img": "s19.jpg"
+ },
+ {
+  "n": 20,
+  "name": "Task Board",
+  "fam": "Product UI",
+  "ref": "ClickUp",
+  "use": "Role explainer \u00b7 A Day in the Life of a Virtual Denial Management Specialist",
+  "img": "s20.jpg"
+ },
+ {
+  "n": 21,
+  "name": "Chat Thread",
+  "fam": "Product UI",
+  "ref": "Aircall, Phreesia",
+  "use": "FAQ \u00b7 Medical Answering Service: Common Questions",
+  "img": "s21.jpg"
+ },
+ {
+  "n": 22,
+  "name": "Call Screen",
+  "fam": "Product UI",
+  "ref": "Aircall",
+  "use": "Cost \u00b7 How Much Does a Telephone Triage Virtual Assistant Cost?",
+  "img": "s22.jpg"
+ },
+ {
+  "n": 23,
+  "name": "Month Calendar",
+  "fam": "Product UI",
+  "ref": "ClickUp",
+  "use": "Best-of \u00b7 7 Best Companies to Hire a Virtual Veterinary Scheduler",
+  "img": "s23.jpg"
+ },
+ {
+  "n": 24,
+  "name": "Paper Checklist",
+  "fam": "Product UI",
+  "ref": "Original",
+  "use": "Hiring \u00b7 Virtual Medical Office Manager Interview Questions",
+  "img": "s24.jpg"
+ },
+ {
+  "n": 25,
+  "name": "Isometric Blocks",
+  "fam": "Graphic",
+  "ref": "Slack, Airtable",
+  "use": "Software & EHR \u00b7 How Does a Biller Work in Dentrix?",
+  "img": "s25.jpg"
+ },
+ {
+  "n": 26,
+  "name": "Icon Pattern",
+  "fam": "Graphic",
+  "ref": "Loom",
+  "use": "Role explainer \u00b7 A Day in the Life of a Bilingual Virtual Dental Receptionist",
+  "img": "s26.jpg"
+ },
+ {
+  "n": 27,
+  "name": "Bauhaus Shapes",
+  "fam": "Graphic",
+  "ref": "Figma",
+  "use": "Role explainer \u00b7 What Does a Dermatology VMA Do?",
+  "img": "s27.jpg"
+ },
+ {
+  "n": 28,
+  "name": "Big Quote",
+  "fam": "Type",
+  "ref": "Carbon Health",
+  "use": "Opinion \u00b7 Are Virtual Medical Assistants Worth It? The Numbers Behind the Decision",
+  "img": "s28.jpg"
+ },
+ {
+  "n": 29,
+  "name": "Line Chart",
+  "fam": "Data",
+  "ref": "ClickUp",
+  "use": "Cost \u00b7 Medical Office Staff Turnover, What It Costs and How to Cut It",
+  "img": "s29.jpg"
+ },
+ {
+  "n": 30,
+  "name": "Donut Ring",
+  "fam": "Data",
+  "ref": "Grammarly",
+  "use": "Benefits \u00b7 Benefits of a Virtual Assistant for Wellness Centers",
+  "img": "s30.jpg"
+ },
+ {
+  "n": 31,
+  "name": "Dot Map",
+  "fam": "Data",
+  "ref": "Doximity",
+  "use": "Comparison \u00b7 US-Based vs. Offshore Mental Health Virtual Assistant: Cost",
+  "img": "s31.jpg"
+ },
+ {
+  "n": 32,
+  "name": "Numbered Steps",
+  "fam": "Type",
+  "ref": "Original",
+  "use": "Hiring \u00b7 How to Hire a Virtual Case Manager",
+  "img": "s32.jpg"
+ },
+ {
+  "n": 33,
+  "name": "Before / After Slider",
+  "fam": "Photo",
+  "ref": "ClickUp",
+  "use": "Comparison \u00b7 Bilingual Virtual Medical Assistant vs. In-House Staff",
+  "img": "s33.jpg"
+ },
+ {
+  "n": 34,
+  "name": "Envelope",
+  "fam": "Illustration",
+  "ref": "Mailchimp",
+  "use": "Benefits \u00b7 What Are the Benefits of a Bilingual Virtual Dental Receptionist?",
+  "img": "s34.jpg"
+ },
+ {
+  "n": 35,
+  "name": "Magazine Cover",
+  "fam": "Editorial",
+  "ref": "Mailchimp, Doximity",
+  "use": "Guide \u00b7 Bilingual Virtual Dental Receptionist: The Complete Guide",
+  "img": "s35.jpg"
+ },
+ {
+  "n": 36,
+  "name": "Polaroid Stack",
+  "fam": "Photo",
+  "ref": "Shopify",
+  "use": "Role explainer \u00b7 A Day in the Life of a Bilingual Virtual Medical Receptionist",
+  "img": "s36.jpg"
+ },
+ {
+  "n": 37,
+  "name": "Blueprint Grid",
+  "fam": "Graphic",
+  "ref": "Zapier",
+  "use": "Software & EHR \u00b7 What Tools and Software Does a Virtual Denial Management Specialist Use?",
+  "img": "s37.jpg"
+ },
+ {
+  "n": 38,
+  "name": "Dark Console",
+  "fam": "Product UI",
+  "ref": "Webflow, Linear",
+  "use": "Software & EHR \u00b7 Can a Virtual Assistant Work in Your EHR? How Remote Access Works",
+  "img": "s38.jpg"
+ },
+ {
+  "n": 39,
+  "name": "Paper Cut Layers",
+  "fam": "Illustration",
+  "ref": "Headspace",
+  "use": "Benefits \u00b7 Benefits for Behavioral Health Practices",
+  "img": "s39.jpg"
+ },
+ {
+  "n": 40,
+  "name": "Friendly Blob",
+  "fam": "Illustration",
+  "ref": "Headspace",
+  "use": "Benefits \u00b7 Benefits of a Virtual Assistant for Wellness Centers",
+  "img": "s40.jpg"
+ },
+ {
+  "n": 41,
+  "name": "Icon Grid Highlight",
+  "fam": "Graphic",
+  "ref": "Zapier",
+  "use": "Tasks \u00b7 Which Tasks Can You Delegate to a Veterinary Billing Virtual Assistant?",
+  "img": "s41.jpg"
+ },
+ {
+  "n": 42,
+  "name": "Giant Question",
+  "fam": "Type",
+  "ref": "Original (Phreesia Q&A)",
+  "use": "Hiring \u00b7 Bilingual Virtual Medical Receptionist Interview Questions",
+  "img": "s42.jpg"
+ },
+ {
+  "n": 43,
+  "name": "ID Badge",
+  "fam": "Photo",
+  "ref": "Original",
+  "use": "Hiring \u00b7 Bilingual Virtual Medical Assistant Job Description",
+  "img": "s43.jpg"
+ },
+ {
+  "n": 44,
+  "name": "Receipt",
+  "fam": "Product UI",
+  "ref": "Calendly, Phreesia",
+  "use": "Role explainer \u00b7 A Day in the Life of a Medical Billing Virtual Assistant",
+  "img": "s44.jpg"
+ },
+ {
+  "n": 45,
+  "name": "Intake Form",
+  "fam": "Product UI",
+  "ref": "Jane",
+  "use": "Role explainer \u00b7 A Day in the Life of a Virtual Patient Intake Coordinator",
+  "img": "s45.jpg"
+ },
+ {
+  "n": 46,
+  "name": "Venn Diagram",
+  "fam": "Data",
+  "ref": "Phreesia",
+  "use": "Comparison \u00b7 Virtual Medical Coder: Agency vs. Freelancer",
+  "img": "s46.jpg"
+ },
+ {
+  "n": 47,
+  "name": "Orbit Diagram",
+  "fam": "Graphic",
+  "ref": "Dovetail, Slack",
+  "use": "Software & EHR \u00b7 What Tools and Software Does a Virtual Denial Management Specialist Use?",
+  "img": "s47.jpg"
+ },
+ {
+  "n": 48,
+  "name": "Window Stack",
+  "fam": "Product UI",
+  "ref": "Lattice",
+  "use": "Best-of \u00b7 7 Best Medical Billing Outsourcing Companies",
+  "img": "s48.jpg"
+ },
+ {
+  "n": 49,
+  "name": "Annotated Photo",
+  "fam": "Photo",
+  "ref": "Original",
+  "use": "Skills \u00b7 Virtual Medical Receptionist Skills",
+  "img": "s49.jpg"
+ },
+ {
+  "n": 50,
+  "name": "Spotlight Portrait",
+  "fam": "Photo",
+  "ref": "Phreesia",
+  "use": "Role explainer \u00b7 A Day in the Life of a Virtual Referral Coordinator",
+  "img": "s50.jpg"
+ },
+ {
+  "n": 51,
+  "name": "Headshot Grid",
+  "fam": "Photo",
+  "ref": "NexHealth",
+  "use": "Best-of \u00b7 7 Best Certified Coding Specialist Companies (2026)",
+  "img": "s51.jpg"
+ },
+ {
+  "n": 52,
+  "name": "Certificate Seal",
+  "fam": "Editorial",
+  "ref": "Phreesia",
+  "use": "Compliance \u00b7 Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs",
+  "img": "s52.jpg"
+ },
+ {
+  "n": 53,
+  "name": "Swiss Poster",
+  "fam": "Type",
+  "ref": "Ramp",
+  "use": "Services \u00b7 Pharmacy Medical Billing Outsourcing: Services",
+  "img": "s53.jpg"
+ },
+ {
+  "n": 54,
+  "name": "Voice to Note",
+  "fam": "Product UI",
+  "ref": "Aircall",
+  "use": "Role explainer \u00b7 A Day in the Life of a Virtual Medical Scribe",
+  "img": "s54.jpg"
+ },
+ {
+  "n": 55,
+  "name": "Versus Stack",
+  "fam": "Type",
+  "ref": "Hotjar",
+  "use": "Best-of \u00b7 7 Best Dental Billing Outsourcing Companies",
+  "img": "s55.jpg"
+ },
+ {
+  "n": 56,
+  "name": "Spot Circle",
+  "fam": "Type",
+  "ref": "Grammarly",
+  "use": "FAQ \u00b7 After-Hours Medical Answering Service: Common Questions",
+  "img": "s56.jpg"
+ },
+ {
+  "n": 57,
+  "name": "Serif Headline + UI",
+  "fam": "Editorial",
+  "ref": "Aircall",
+  "use": "Cost \u00b7 Bilingual Virtual Medical Assistant Pricing by Hours",
+  "img": "s57.jpg"
+ },
+ {
+  "n": 58,
+  "name": "Glossy Icon Tiles",
+  "fam": "Graphic",
+  "ref": "Pitch",
+  "use": "Tasks \u00b7 Which Tasks Can You Delegate to a Veterinary Billing Virtual Assistant?",
+  "img": "s58.jpg"
+ },
+ {
+  "n": 59,
+  "name": "Photo with Colour Rays",
+  "fam": "Photo",
+  "ref": "Miro",
+  "use": "Role explainer \u00b7 A Day in the Life of a Bilingual Virtual Medical Receptionist",
+  "img": "s59.jpg"
+ },
+ {
+  "n": 60,
+  "name": "Circuit Grid",
+  "fam": "Graphic",
+  "ref": "Zapier",
+  "use": "Software & EHR \u00b7 Can a Virtual Assistant Work in Your EHR? How Remote Access Works",
+  "img": "s60.jpg"
+ },
+ {
+  "n": 61,
+  "name": "Op-Art Rings",
+  "fam": "Graphic",
+  "ref": "Webflow",
+  "use": "Role explainer \u00b7 A Day in the Life of a Virtual Patient Follow-Up Coordinator",
+  "img": "s61.jpg"
+ },
+ {
+  "n": 62,
+  "name": "Wireframe Globe",
+  "fam": "Graphic",
+  "ref": "Webflow",
+  "use": "Comparison \u00b7 US-Based vs. Offshore Virtual Insurance Verification Specialist: Cost",
+  "img": "s62.jpg"
+ },
+ {
+  "n": 63,
+  "name": "Multilingual Type",
+  "fam": "Type",
+  "ref": "Webflow",
+  "use": "Guide \u00b7 Bilingual Virtual Dental Receptionist: The Complete Guide",
+  "img": "s63.jpg"
+ },
+ {
+  "n": 64,
+  "name": "Serif Editorial Card",
+  "fam": "Editorial",
+  "ref": "Elation",
+  "use": "Opinion \u00b7 Are Virtual Medical Assistants Worth It? The Numbers Behind the Decision",
+  "img": "s64.jpg"
+ },
+ {
+  "n": 65,
+  "name": "Release Card",
+  "fam": "Type",
+  "ref": "Spring Health",
+  "use": "Cost \u00b7 How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region",
+  "img": "s65.jpg"
+ },
+ {
+  "n": 66,
+  "name": "Twin Rounded Photos",
+  "fam": "Photo",
+  "ref": "Spring Health",
+  "use": "Role explainer \u00b7 A Day in the Life of a Bilingual Virtual Dental Receptionist",
+  "img": "s66.jpg"
+ },
+ {
+  "n": 67,
+  "name": "Paint Strokes",
+  "fam": "Illustration",
+  "ref": "Carbon Health",
+  "use": "Benefits \u00b7 Benefits for Concierge Medicine Practices",
+  "img": "s67.jpg"
+ },
+ {
+  "n": 68,
+  "name": "Location Pin",
+  "fam": "Photo",
+  "ref": "Carbon Health",
+  "use": "Comparison \u00b7 US-Based vs. Offshore Mental Health Virtual Assistant: Cost",
+  "img": "s68.jpg"
+ },
+ {
+  "n": 69,
+  "name": "Q&A Circles",
+  "fam": "Photo",
+  "ref": "Phreesia",
+  "use": "Hiring \u00b7 Virtual Medical Office Manager Interview Questions",
+  "img": "s69.jpg"
+ },
+ {
+  "n": 70,
+  "name": "Network Graph",
+  "fam": "Data",
+  "ref": "Doximity",
+  "use": "Role explainer \u00b7 A Day in the Life of a Virtual Denial Management Specialist",
+  "img": "s70.jpg"
+ },
+ {
+  "n": 71,
+  "name": "Report Cover",
+  "fam": "Editorial",
+  "ref": "Doximity",
+  "use": "Cost \u00b7 How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region",
+  "img": "s71.jpg"
+ },
+ {
+  "n": 72,
+  "name": "Pixel Dither",
+  "fam": "Graphic",
+  "ref": "Dovetail, Gong",
+  "use": "Software & EHR \u00b7 Can a Virtual Assistant Work in Your EHR? How Remote Access Works",
+  "img": "s72.jpg"
+ },
+ {
+  "n": 73,
+  "name": "Podcast Cover",
+  "fam": "Editorial",
+  "ref": "Help Scout",
+  "use": "Role explainer \u00b7 A Day in the Life of a Virtual Referral Coordinator",
+  "img": "s73.jpg"
+ },
+ {
+  "n": 74,
+  "name": "Settings Toggles",
+  "fam": "Product UI",
+  "ref": "Help Scout",
+  "use": "Tasks \u00b7 Which Tasks Can You Delegate to a Bilingual Virtual Medical Receptionist?",
+  "img": "s74.jpg"
+ },
+ {
+  "n": 75,
+  "name": "Ticker Band",
+  "fam": "Type",
+  "ref": "Zendesk",
+  "use": "FAQ \u00b7 Medical Answering Service: Common Questions",
+  "img": "s75.jpg"
+ },
+ {
+  "n": 76,
+  "name": "Cell Grid",
+  "fam": "Graphic",
+  "ref": "Airtable",
+  "use": "Software & EHR \u00b7 What Tools and Software Does a Virtual Denial Management Specialist Use?",
+  "img": "s76.jpg"
+ },
+ {
+  "n": 77,
+  "name": "Headline + Document",
+  "fam": "Editorial",
+  "ref": "Lattice",
+  "use": "Guide \u00b7 Virtual Medical Assistant: The Complete Guide",
+  "img": "s77.jpg"
+ },
+ {
+  "n": 78,
+  "name": "Glossy Object on Gradient",
+  "fam": "Graphic",
+  "ref": "Shopify",
+  "use": "Benefits \u00b7 Benefits of a Remote Patient Monitoring Assistant",
+  "img": "s78.jpg"
+ },
+ {
+  "n": 79,
+  "name": "Tilted Photo Cards",
+  "fam": "Photo",
+  "ref": "Shopify",
+  "use": "Role explainer \u00b7 A Day in the Life of a Medical Billing Virtual Assistant",
+  "img": "s79.jpg"
+ }
+]
