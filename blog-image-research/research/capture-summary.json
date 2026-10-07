@@ -1,4 +1,148 @@
 {
+  "hotjar": {
+    "url": "https://www.hotjar.com/blog/",
+    "status": 200,
+    "finalUrl": "https://contentsquare.com/blog/",
+    "covers": 9
+  },
+  "servicetitan": {
+    "url": "https://www.servicetitan.com/blog",
+    "status": 200,
+    "finalUrl": "https://www.servicetitan.com/blog",
+    "covers": 0
+  },
+  "clickup": {
+    "url": "https://clickup.com/blog/",
+    "status": 200,
+    "finalUrl": "https://clickup.com/blog/",
+    "covers": 16
+  },
+  "miro": {
+    "url": "https://miro.com/blog/",
+    "status": 200,
+    "finalUrl": "https://miro.com/blog/",
+    "covers": 11
+  },
+  "aircall": {
+    "url": "https://aircall.io/blog/",
+    "status": 200,
+    "finalUrl": "https://aircall.io/blog/",
+    "covers": 16
+  },
+  "grammarly": {
+    "url": "https://www.grammarly.com/blog/",
+    "status": 200,
+    "finalUrl": "https://www.grammarly.com/blog/",
+    "covers": 10
+  },
+  "pitch": {
+    "url": "https://pitch.com/blog",
+    "status": 200,
+    "finalUrl": "https://pitch.com/blog",
+    "covers": 11
+  },
+  "dropbox": {
+    "url": "https://blog.dropbox.com/",
+    "status": 200,
+    "finalUrl": "https://blog.dropbox.com/",
+    "covers": 16
+  },
+  "asana": {
+    "url": "https://asana.com/resources",
+    "status": 200,
+    "finalUrl": "https://asana.com/resources",
+    "covers": 0
+  },
+  "slack": {
+    "url": "https://slack.com/blog",
+    "status": 200,
+    "finalUrl": "https://slack.com/blog",
+    "covers": 15
+  },
+  "zapier": {
+    "url": "https://zapier.com/blog/",
+    "status": 200,
+    "finalUrl": "https://zapier.com/blog/",
+    "covers": 16
+  },
+  "webflow": {
+    "url": "https://webflow.com/blog",
+    "status": 200,
+    "finalUrl": "https://webflow.com/blog",
+    "covers": 16
+  },
+  "canva": {
+    "url": "https://www.canva.com/learn/",
+    "status": 403,
+    "finalUrl": "https://www.canva.com/learn/",
+    "covers": 0
+  },
+  "dovetail": {
+    "url": "https://dovetail.com/blog/",
+    "status": 200,
+    "finalUrl": "https://dovetail.com/blog/",
+    "covers": 16
+  },
+  "helpscout": {
+    "url": "https://www.helpscout.com/blog/",
+    "status": 200,
+    "finalUrl": "https://www.helpscout.com/blog/",
+    "covers": 14
+  },
+  "zendesk": {
+    "url": "https://www.zendesk.com/blog/",
+    "status": 200,
+    "finalUrl": "https://www.zendesk.com/blog/",
+    "covers": 16
+  },
+  "monday": {
+    "url": "https://monday.com/blog/",
+    "status": 200,
+    "finalUrl": "https://monday.com/blog",
+    "covers": 16
+  },
+  "airtable": {
+    "url": "https://www.airtable.com/articles",
+    "status": 200,
+    "finalUrl": "https://www.airtable.com/articles",
+    "covers": 10
+  },
+  "lattice": {
+    "url": "https://lattice.com/blog",
+    "status": 200,
+    "finalUrl": "https://lattice.com/blog",
+    "covers": 16
+  },
+  "gong": {
+    "url": "https://www.gong.io/blog/",
+    "status": 200,
+    "finalUrl": "https://www.gong.io/blog",
+    "covers": 15
+  },
+  "ahrefs": {
+    "url": "https://ahrefs.com/blog/",
+    "status": 200,
+    "finalUrl": "https://ahrefs.com/blog/",
+    "covers": 3
+  },
+  "shopify": {
+    "url": "https://www.shopify.com/blog",
+    "status": 200,
+    "finalUrl": "https://www.shopify.com/blog",
+    "covers": 11
+  },
+  "squarespace": {
+    "url": "https://www.squarespace.com/blog",
+    "status": 200,
+    "finalUrl": "https://www.squarespace.com/blog",
+    "covers": 16
+  },
+  "headspace": {
+    "url": "https://www.headspace.com/articles",
+    "status": 200,
+    "finalUrl": "https://www.headspace.com/articles",
+    "covers": 16
+  },
   "onemedical": {
     "url": "https://www.onemedical.com/blog/",
     "status": 200,
@@ -39,42 +183,6 @@
     "url": "https://blog.doximity.com/",
     "status": 200,
     "finalUrl": "https://blog.doximity.com/",
-    "covers": 16
-  },
-  "headspace": {
-    "url": "https://www.headspace.com/articles",
-    "status": 200,
-    "finalUrl": "https://www.headspace.com/articles",
-    "covers": 16
-  },
-  "squarespace": {
-    "url": "https://www.squarespace.com/blog",
-    "status": 200,
-    "finalUrl": "https://www.squarespace.com/blog",
-    "covers": 16
-  },
-  "shopify": {
-    "url": "https://www.shopify.com/blog",
-    "status": 200,
-    "finalUrl": "https://www.shopify.com/blog",
-    "covers": 11
-  },
-  "ahrefs": {
-    "url": "https://ahrefs.com/blog/",
-    "status": 200,
-    "finalUrl": "https://ahrefs.com/blog/",
-    "covers": 3
-  },
-  "gong": {
-    "url": "https://www.gong.io/blog/",
-    "status": 200,
-    "finalUrl": "https://www.gong.io/blog",
-    "covers": 15
-  },
-  "lattice": {
-    "url": "https://lattice.com/blog",
-    "status": 200,
-    "finalUrl": "https://lattice.com/blog",
     "covers": 16
   }
 }
