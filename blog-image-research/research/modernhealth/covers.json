@@ -8,9 +8,7 @@
     "renderedH": 418,
     "cardRatio": 3.445,
     "y": 98,
-    "file": "covers/01.webp",
-    "nativeW": 2880,
-    "nativeH": 836
+    "file": "covers/01.webp"
   },
   {
     "src": "https://cdn.prod.website-files.com/5f39912be9da2f5c8fc5cc45/62d9a56214cb4a825c5f94aa_Frame%2038.webp",
@@ -21,9 +19,7 @@
     "renderedH": 798,
     "cardRatio": 1.806,
     "y": 516,
-    "file": "covers/02.webp",
-    "nativeW": 2882,
-    "nativeH": 1444
+    "file": "covers/02.webp"
   },
   {
     "src": "https://cdn.prod.website-files.com/6283df812d4b65bdb8f75388/62bb51b5e607bbcae4543d50_Image.jpg",
@@ -34,9 +30,7 @@
     "renderedH": 235,
     "cardRatio": 1.446,
     "y": 698,
-    "file": "covers/03.jpg",
-    "nativeW": 720,
-    "nativeH": 464
+    "file": "covers/03.jpg"
   },
   {
     "src": "https://cdn.prod.website-files.com/6283df812d4b65bdb8f75388/62bb52baa0ee4623b158a0ea_Image-1.jpg",
@@ -47,9 +41,7 @@
     "renderedH": 235,
     "cardRatio": 1.446,
     "y": 698,
-    "file": "covers/04.jpg",
-    "nativeW": 720,
-    "nativeH": 464
+    "file": "covers/04.jpg"
   },
   {
     "src": "https://cdn.prod.website-files.com/6283df812d4b65bdb8f75388/62bb52c8d354e1cab77a64b7_Image-2.jpg",
@@ -60,8 +52,6 @@
     "renderedH": 235,
     "cardRatio": 1.446,
     "y": 698,
-    "file": "covers/05.jpg",
-    "nativeW": 720,
-    "nativeH": 464
+    "file": "covers/05.jpg"
   }
 ]
