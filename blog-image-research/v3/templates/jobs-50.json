@@ -432,7 +432,8 @@
   "spec": {
    "style": "question",
    "root": "../",
-   "q": "How do you switch languages mid-call?"
+   "q": "Switching languages mid-call",
+   "icon": "globe"
   }
  },
  {
@@ -913,7 +914,7 @@
     20
    ],
    "tag": "Remote",
-   "head": "US-based or offshore?"
+   "head": "US-based or offshore"
   }
  },
  {
@@ -1035,7 +1036,7 @@
    "style": "ticker",
    "root": "../",
    "band": "Common questions",
-   "head": "Who answers<br>after hours?"
+   "head": "After-hours<br>answers"
   }
  },
  {

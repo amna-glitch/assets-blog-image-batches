@@ -254,7 +254,7 @@
   // 42 Giant question (FAQ / interview posts)
   S.question = () => {
     bg(TI);
-    txt(250, -40, '?', `font:800 460px/1 ${F};color:${B}`);
+    tile(250, 50, 250, 250, ico(s.icon || 'headset', 160, 6), { borderRadius: 60 });
     add('card', css({ left: 560, top: 90, width: 420, padding: '24px 28px' }), `<div style="font:600 18px ${F};color:${M};letter-spacing:.08em;text-transform:uppercase">Asked often</div><div style="font:700 30px/1.2 ${F};color:${INK};margin-top:10px">${s.q}</div>`);
   };
   // 43 ID badge (job descriptions / role spotlights)
