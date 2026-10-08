@@ -1,0 +1,58 @@
+<title>Cover Series System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: short intro, the gradient comparison, 10 covers in a 2-up grid, then the listing replica. */
+:root { --bg:#f5f6fb; --surface:#fff; --ink:#0f1640; --muted:#5a6286; --line:#dde1f0; --accent:#2345ff;
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; color-scheme:dark } }
+:root[data-theme="dark"] { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; color-scheme:dark }
+body { background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); }
+.wrap { max-width:1180px; margin:0 auto; padding-inline:20px; padding-block:40px 80px; }
+h1,h2 { font-family:var(--display); text-wrap:balance; letter-spacing:-.015em; line-height:1.1; margin:0; }
+h1 { font-size:clamp(2rem,5vw,3rem); max-width:22ch; } h2 { font-size:1.6rem; margin-top:52px; }
+.eyebrow { font:500 .76rem var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.lede { max-width:66ch; color:var(--muted); font-size:1.06rem; margin-top:14px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(440px,1fr)); gap:24px; margin-top:20px; }
+figure { margin:0; min-width:0; } figure img { width:100%; border-radius:12px; display:block; border:1px solid var(--line); }
+figcaption { margin-top:10px; display:grid; gap:2px; } figcaption b { font-family:var(--display); font-size:1rem; } figcaption span { color:var(--muted); font-size:.9rem; }
+.pair { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:16px; }
+.pair figcaption { font:500 .78rem var(--mono); color:var(--muted); margin:0 0 8px; }
+.listing { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; margin-top:16px; align-items:start; }
+.listing img { width:100%; border:1px solid var(--line); border-radius:10px; background:#fff; }
+ul { padding-left:1.2em; } li { margin:6px 0; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } .pair, .listing { grid-template-columns:1fr; } }
+.rules { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:16px; }
+.box { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 22px; }
+.box h3 { font-family:var(--display); margin:0 0 6px; font-size:1.1rem; }
+table { width:100%; border-collapse:collapse; margin-top:12px; font-size:.95rem; } td,th { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font:500 .74rem var(--mono); text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+.tw { overflow-x:auto; }
+@media (max-width:760px) { .rules { grid-template-columns:1fr; } }
+</style>
+<div class="wrap">
+<div class="eyebrow">Cover designs · round 7 · series system</div>
+<h1>One cover frame, a different story inside it</h1>
+<p class="lede">Stripe, Mercury and Calendly feel consistent because every cover uses the same frame: same background, same headline spot, same kind of object. Only the subject changes. This locks your covers the same way. Across 1,900 articles the gradient, the headline position, the white card and the round icon badge never move. The headline, the icon and what's drawn inside the card change per article, so no two covers look the same, yet every one reads as Honest Taskers.</p>
+<h2>What stays the same on every cover</h2>
+<div class="rules">
+<div class="box"><h3>Fixed</h3><ul>
+<li>Your current gradient, always light on the left and electric blue on the right, with the cyan wave bottom-right</li>
+<li>White kicker pill with a teal dot, top-left</li>
+<li>Headline in dark ink, same position, same size (54px; steps down only to keep 3 lines)</li>
+<li>One white card on the right: 400×250, 24px radius, same shadow</li>
+<li>One blue icon badge overlapping the card's top-right corner</li>
+<li>Logo bottom-left (hidden by the listing panel; shows on social shares)</li>
+<li>No prices, no question marks</li></ul></div>
+<div class="box"><h3>Changes per article</h3><div class="tw"><table><tr><th>Slot</th><th>Set by</th><th>Example</th></tr>
+<tr><td>kicker words</td><td>Article type</td><td>Software &amp; EHR, Cost guide, Compliance, Comparison, Best of 2026…</td></tr><tr><td>headline</td><td>Short version of the title, 3–7 words, max 3 lines</td><td>“What a triage VA really costs”</td></tr><tr><td>badge icon</td><td>The subject (specialty or task)</td><td>tooth, paw, spine, phone, shield…</td></tr><tr><td>card contents</td><td>One of 10 card types, picked by article type</td><td>note, cost, call, masked, versus, ranked, trend, profile, day, tasks, ranges</td></tr></table></div></div>
+</div>
+<h2>The 10 covers in the series</h2>
+<div class="grid"><figure><img src="a/01-scribe.jpg" alt="How a Scribe Works in Epic?" loading="lazy"><figcaption><b>How a Scribe Works in Epic?</b><span>Kicker: Software & EHR · card: note</span></figcaption></figure><figure><img src="a/02-triage.jpg" alt="How Much Does a Telephone Triage Virtual Assistant Cost?" loading="lazy"><figcaption><b>How Much Does a Telephone Triage Virtual Assistant Cost?</b><span>Kicker: Cost guide · card: call</span></figcaption></figure><figure><img src="a/03-hipaa.jpg" alt="Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs" loading="lazy"><figcaption><b>Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs</b><span>Kicker: Compliance · card: masked</span></figcaption></figure><figure><img src="a/04-bilingual.jpg" alt="Bilingual Virtual Dental Receptionist vs. In-House Staff: Cost, Pros, and Which to Choose" loading="lazy"><figcaption><b>Bilingual Virtual Dental Receptionist vs. In-House Staff: Cost, Pros, and Which to Choose</b><span>Kicker: Comparison · card: versus</span></figcaption></figure><figure><img src="a/05-best.jpg" alt="10 Best Medical Billing Virtual Assistant Companies (2026)" loading="lazy"><figcaption><b>10 Best Medical Billing Virtual Assistant Companies (2026)</b><span>Kicker: Best of 2026 · card: ranked</span></figcaption></figure><figure><img src="a/06-turnover.jpg" alt="Medical Office Staff Turnover, What It Costs and How to Cut It" loading="lazy"><figcaption><b>Medical Office Staff Turnover, What It Costs and How to Cut It</b><span>Kicker: Practice operations · card: trend</span></figcaption></figure><figure><img src="a/07-vet.jpg" alt="Virtual Veterinary Technician: The Complete Guide" loading="lazy"><figcaption><b>Virtual Veterinary Technician: The Complete Guide</b><span>Kicker: Complete guide · card: profile</span></figcaption></figure><figure><img src="a/08-referral.jpg" alt="A Day in the Life of a Virtual Referral Coordinator" loading="lazy"><figcaption><b>A Day in the Life of a Virtual Referral Coordinator</b><span>Kicker: Role explainer · card: day</span></figcaption></figure><figure><img src="a/09-chiro.jpg" alt="Tasks to Delegate in a Chiropractic Practice" loading="lazy"><figcaption><b>Tasks to Delegate in a Chiropractic Practice</b><span>Kicker: Delegation · card: tasks</span></figcaption></figure><figure><img src="a/10-pay.jpg" alt="How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region" loading="lazy"><figcaption><b>How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region</b><span>Kicker: Pay guide · card: ranges</span></figcaption></figure></div>
+<h2>On your articles page</h2>
+<p class="lede">The same 10 covers in a replica of the honesttaskers.com/articles card. The headline and card sit in the part the white panel doesn't cover.</p>
+<div class="listing"><img src="a/listing-1000.jpg" alt="Desktop listing replica" loading="lazy"><img src="a/listing-390.jpg" alt="Mobile listing replica" loading="lazy"></div>
+<h2>Which card goes with which article</h2>
+<div class="box" style="margin-top:16px"><div class="tw"><table><tr><th>Card</th><th>Use for</th></tr><tr><td><code>note</code></td><td>Software &amp; EHR, workflows</td></tr><tr><td><code>cost</code></td><td>Cost and pricing guides (no figures)</td></tr><tr><td><code>call</code></td><td>Phones, triage, answering, reception</td></tr><tr><td><code>masked</code></td><td>HIPAA, security, compliance</td></tr><tr><td><code>versus</code></td><td>X vs Y, in-house vs virtual</td></tr><tr><td><code>ranked</code></td><td>Best-of and top-N lists</td></tr><tr><td><code>trend</code></td><td>Operations, turnover, growth, stats</td></tr><tr><td><code>profile</code></td><td>Complete guides by specialty (pet, patient, practice)</td></tr><tr><td><code>day</code></td><td>Role explainers, a day in the life (uses a photo)</td></tr><tr><td><code>tasks</code></td><td>Tasks to delegate, checklists</td></tr><tr><td><code>ranges</code></td><td>Pay and salary by region (no figures)</td></tr></table></div></div>
+<p class="lede">To make a new cover: pick the card for the article type, write a 3–7 word headline, and choose the icon. Everything else is fixed by the template (<code>v6/templates/cover.html</code>). Spec: <code>v6/SERIES.md</code>.</p>
+</div>

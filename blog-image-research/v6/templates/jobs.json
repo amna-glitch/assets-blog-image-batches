@@ -1,0 +1,267 @@
+[
+ {
+  "out": "01-scribe",
+  "title": "How a Scribe Works in Epic?",
+  "cat": "Software & EHR",
+  "spec": {
+   "kicker": "Software & EHR",
+   "headline": "Scribe in Epic, start to finish",
+   "icon": "stethoscope",
+   "visual": "note",
+   "data": {
+    "title": "Visit note",
+    "tag": "Epic",
+    "status": "Ready to sign"
+   }
+  }
+ },
+ {
+  "out": "02-triage",
+  "title": "How Much Does a Telephone Triage Virtual Assistant Cost?",
+  "cat": "Cost",
+  "spec": {
+   "kicker": "Cost guide",
+   "headline": "What a triage VA really costs",
+   "icon": "phone",
+   "visual": "call",
+   "data": {
+    "title": "Incoming call",
+    "sub": "Triage line",
+    "rows": [
+     [
+      "Chest pain",
+      "Urgent"
+     ],
+     [
+      "Fever, 3 days",
+      "Same day"
+     ],
+     [
+      "Refill request",
+      "Routine"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "03-hipaa",
+  "title": "Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs",
+  "cat": "Compliance",
+  "spec": {
+   "kicker": "Compliance",
+   "headline": "HIPAA-safe virtual assistants",
+   "icon": "shield",
+   "visual": "masked",
+   "data": {
+    "title": "Patient chart",
+    "rows": [
+     [
+      "Name",
+      180
+     ],
+     [
+      "DOB",
+      90
+     ],
+     [
+      "Diagnosis",
+      160
+     ],
+     [
+      "Insurance ID",
+      130
+     ]
+    ],
+    "chips": [
+     "BAA signed",
+     "Trained",
+     "Logged"
+    ]
+   }
+  }
+ },
+ {
+  "out": "04-bilingual",
+  "title": "Bilingual Virtual Dental Receptionist vs. In-House Staff: Cost, Pros, and Which to Choose",
+  "cat": "Comparison",
+  "spec": {
+   "kicker": "Comparison",
+   "headline": "Bilingual VA vs. in‑house front desk",
+   "icon": "tooth",
+   "visual": "versus",
+   "data": {
+    "a": {
+     "title": "In-house",
+     "rows": [
+      "One language",
+      "Office hours",
+      "Hiring, training"
+     ]
+    },
+    "b": {
+     "title": "Bilingual VA",
+     "rows": [
+      "English + Spanish",
+      "Extended hours",
+      "Ready to start"
+     ]
+    }
+   }
+  }
+ },
+ {
+  "out": "05-best",
+  "title": "10 Best Medical Billing Virtual Assistant Companies (2026)",
+  "cat": "Best-of",
+  "spec": {
+   "kicker": "Best of 2026",
+   "headline": "10 best medical billing VA companies",
+   "icon": "document",
+   "visual": "ranked",
+   "data": {
+    "title": "Ranked shortlist",
+    "icons": [
+     "document",
+     "coin",
+     "shield"
+    ]
+   }
+  }
+ },
+ {
+  "out": "06-turnover",
+  "title": "Medical Office Staff Turnover, What It Costs and How to Cut It",
+  "cat": "Cost",
+  "spec": {
+   "kicker": "Practice operations",
+   "headline": "The real cost of staff turnover",
+   "icon": "people",
+   "visual": "trend",
+   "data": {
+    "title": "Turnover cost",
+    "sub": "Hiring, training, lost visits",
+    "chips": [
+     "Open role",
+     "Open role",
+     "Training"
+    ]
+   }
+  }
+ },
+ {
+  "out": "07-vet",
+  "title": "Virtual Veterinary Technician: The Complete Guide",
+  "cat": "Guide",
+  "spec": {
+   "kicker": "Complete guide",
+   "headline": "The virtual vet tech guide",
+   "icon": "paw",
+   "visual": "profile",
+   "data": {
+    "title": "Bella · Labrador",
+    "sub": "Patient profile",
+    "rows": [
+     [
+      "Rabies booster",
+      "Reminder sent"
+     ],
+     [
+      "Dental check",
+      "Booked"
+     ],
+     [
+      "Lab results",
+      "Shared"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "08-referral",
+  "title": "A Day in the Life of a Virtual Referral Coordinator",
+  "cat": "Role explainer",
+  "spec": {
+   "kicker": "Role explainer",
+   "headline": "A day as a referral coordinator",
+   "icon": "calendar",
+   "visual": "day",
+   "photo": "photos/a-day-in-the-life-of-a-virtual-referral-coordinator.webp",
+   "focal": [
+    60,
+    20
+   ],
+   "data": {
+    "title": "Today",
+    "rows": [
+     [
+      "8:30",
+      "Referral to cardiology"
+     ],
+     [
+      "11:00",
+      "Prior auth approved"
+     ],
+     [
+      "2:15",
+      "Patient booked"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "09-chiro",
+  "title": "Tasks to Delegate in a Chiropractic Practice",
+  "cat": "Tasks",
+  "spec": {
+   "kicker": "Delegation",
+   "headline": "Chiro tasks to hand off",
+   "icon": "spine",
+   "visual": "tasks",
+   "data": {
+    "title": "Task list",
+    "done": 3,
+    "rows": [
+     "Insurance checks",
+     "Recall calls",
+     "Visit reminders"
+    ]
+   }
+  }
+ },
+ {
+  "out": "10-pay",
+  "title": "How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region",
+  "cat": "Cost",
+  "spec": {
+   "kicker": "Pay guide",
+   "headline": "VMA pay, region by region",
+   "icon": "globe",
+   "visual": "ranges",
+   "data": {
+    "title": "Pay ranges",
+    "sub": "Sourced, by region",
+    "rows": [
+     [
+      "North America",
+      0.3,
+      0.8
+     ],
+     [
+      "Latin America",
+      0.15,
+      0.5
+     ],
+     [
+      "Philippines",
+      0.1,
+      0.4
+     ]
+    ],
+    "note": "Sources cited"
+   }
+  }
+ }
+]

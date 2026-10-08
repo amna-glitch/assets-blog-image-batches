@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- Replica of the honesttaskers.com/articles card, measured from a 2x screenshot (2026-10-06):
+     image box 456x296 (about 1.54:1) with object-fit: cover; a white text panel starts 166px down the image,
+     inset 20px from the left and running 20px past the right edge; dotted frame; two staggered columns.
+     ?set=after|before&w=1000|390 -->
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; background: #ffffff; font-family: "Source Sans 3", "Inter", Arial, sans-serif; }
+  .wrap { width: 1000px; margin: 0 auto; padding: 40px 0 80px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; }
+  .col.right { padding-top: 40px; }
+  .card { position: relative; width: 456px; margin: 0 0 60px 12px; padding-bottom: 14px; }
+  .card::before { content: ""; position: absolute; inset: -10px 6px -10px -10px; border: 2px dotted #d6d9e0; z-index: 0; }
+  .img { position: relative; z-index: 1; width: 456px; height: 296px; overflow: hidden; }
+  .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .panel { position: relative; z-index: 2; margin: -130px -20px 0 20px; background: #fff; padding: 20px 20px 22px; box-shadow: 0 1px 2px rgba(0,0,0,.04); min-height: 140px; }
+  .t { font-size: 19px; line-height: 1.32; color: #1e3264; margin-bottom: 14px; }
+  .meta { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; }
+  .pill { background: #eef0f4; border-radius: 12px; padding: 6px 9px; font-size: 7.5px; letter-spacing: .02em; color: #1e3264; text-transform: uppercase; }
+  .rt { font-size: 8px; color: #8a90a0; }
+  .ex { font-size: 9.5px; line-height: 1.55; color: #7a8090; width: 340px; }
+  .arrow { position: absolute; right: 20px; bottom: 22px; width: 32px; height: 32px; border: 1.5px solid #2345ff; color: #2345ff; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  body.m .wrap { width: 358px; grid-template-columns: 1fr; padding: 24px 16px; } body.m .col.right { padding-top: 0; }
+  body.m .card, body.m .img { width: 330px; } body.m .ex { width: 230px; } body.m .img { height: 214px; } body.m .panel { margin-top: -94px; }
+  .lbl { grid-column: 1 / -1; font: 600 13px Inter, Arial; color: #5a6488; margin: 0 0 22px 2px; }
+</style></head>
+<body><div class="wrap" id="w"></div>
+<script src="contact-sheet-data.js"></script>
+<script>
+  const q = new URLSearchParams(location.search), set = q.get('set') || 'after', w = +(q.get('w') || 1000);
+  if (w < 600) document.body.classList.add('m');
+  const items = window.CS[set].slice(0, w < 600 ? 4 : 10).map(i => ({ ...i, img: i.img.replace('../renders/', '../renders/').replace('../research/', '../research/') }));
+  const card = i => `<div class="card"><div class="img"><img src="${i.img}"></div><div class="panel"><div class="t">${i.title}</div>
+    <div class="meta"><span class="pill">${i.cat}</span><span class="rt">11 min read</span></div>
+    <div class="ex">A short excerpt sits here, two or three lines long, describing what the article covers for practice owners and office managers.</div>
+    <div class="arrow">&rarr;</div></div></div>`;
+  const L = items.filter((_, k) => k % 2 === 0), R = items.filter((_, k) => k % 2 === 1);
+  document.getElementById('w').innerHTML = `<div class="lbl">${set === 'after' ? 'Proposed images' : 'Current images'} in a replica of the honesttaskers.com/articles card${w < 600 ? ' (mobile layout assumed)' : ''}</div>` +
+    (w < 600 ? `<div class="col">${items.map(card).join('')}</div>` : `<div class="col">${L.map(card).join('')}</div><div class="col right">${R.map(card).join('')}</div>`);
+</script></body></html>
