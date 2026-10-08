@@ -283,25 +283,24 @@ S.s46 = { title: 'How to Measure the ROI of a Virtual Medical Assistant', style:
 
 // s47 Winding road: a career path climbing into the distance, flags with role icons along the way.
 S.s47 = { title: 'Healthcare Virtual Assistant Career Path and Where the Role Can Lead', style: 'Winding road', draw({ svg, P }) {
-  const pts = spline([[120, 720], [380, 470], [760, 380], [880, 300], [560, 230], [600, 150], [860, 105], [990, 70]], 40);
-  const N = pts.length, W = i => 250 * Math.pow(1 - i / (N - 1), 1.6) + 12;
+  const pts = spline([[330, 760], [520, 560], [860, 420], [905, 320], [700, 262], [520, 215], [620, 152], [860, 112], [985, 96]], 40);
+  const N = pts.length, W = i => 215 * Math.pow(1 - i / (N - 1), 1.7) + 10;
   let s = '';
-  // distant hills
-  s += `<path d="M115 210 C 300 150, 420 190, 560 160 S 860 120, 1085 150 L1085 360 L115 360Z" fill="#fff" opacity=".14"/>`;
-  s += `<path d="M115 270 C 300 230, 480 270, 680 240 S 960 220, 1085 250 L1085 400 L115 400Z" fill="#fff" opacity=".12"/>`;
+  // distant hills (full width, soft)
+  s += `<path d="M0 150 C 220 110, 420 150, 600 122 S 960 80, 1200 120 L1200 630 L0 630Z" fill="#fff" opacity=".12"/>`;
+  s += `<path d="M0 230 C 260 190, 460 240, 700 205 S 1020 190, 1200 215 L1200 630 L0 630Z" fill="#fff" opacity=".12"/>`;
   let edge = '', road = '';
   for (let i = 1; i < N; i++) { const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
     edge += `<path d="M${x0} ${y0} L${x1} ${y1}" stroke="${P.sky}" stroke-width="${W(i) + 10}" stroke-linecap="round"/>`;
     road += `<path d="M${x0} ${y0} L${x1} ${y1}" stroke="#fff" stroke-width="${W(i)}" stroke-linecap="round"/>`; }
   s += `<g>${edge}</g><g>${road}</g>`;
-  // centre dashes
-  for (let i = 2; i < N - 1; i += 4) { const [x0, y0] = pts[i], [x1, y1] = pts[i + 1]; s += `<path d="M${x0} ${y0} L${x1} ${y1}" stroke="${P.teal}" stroke-width="${Math.max(2, W(i) * .05)}" stroke-linecap="round"/>`; }
-  // flags
-  const flag = (i, n, top) => { const [x, y] = pts[i], ph = top ? 110 : 96;
-    return `<g filter="url(#soft)"><path d="M${x} ${y} V${y - ph}" stroke="${P.deep}" stroke-width="5" stroke-linecap="round"/><path d="M${x} ${y - ph} h66 l-12 20 12 20 h-66z" fill="${top ? P.teal : '#fff'}"/></g>
-      <circle cx="${x}" cy="${y - ph - 46}" r="30" fill="${top ? '#fff' : 'url(#gB)'}" filter="url(#soft)"/>${icon(n, x, y - ph - 46, 38, 5, top ? P.blue : '#fff', top ? P.teal : '#fff')}`; };
-  const at = f => Math.round(f * (N - 1));
-  s += flag(at(.27), 'headset') + flag(at(.47), 'clipboard') + flag(at(.68), 'people') + flag(N - 1, 'shield', true);
+  for (let i = 2; i < N - 2; i += 4) { const [x0, y0] = pts[i], [x1, y1] = pts[i + 1]; s += `<path d="M${x0} ${y0} L${x1} ${y1}" stroke="${P.teal}" stroke-width="${Math.max(2, W(i) * .05)}" stroke-linecap="round"/>`; }
+  // milestone flags: pole planted at the road edge, the banner carries the role icon
+  const flag = (x, y, n, sz, top) => { const ph = sz * 1.5, bw = sz * 1.15, bh = sz * .8;
+    return `<g filter="url(#soft)"><ellipse cx="${x}" cy="${y}" rx="${sz * .16}" ry="${sz * .06}" fill="${P.deep}" opacity=".3"/><path d="M${x} ${y} V${y - ph}" stroke="${P.deep}" stroke-width="${Math.max(3, sz * .07)}" stroke-linecap="round"/>
+      <path d="M${x} ${y - ph} h${bw} a${sz * .12} ${sz * .12} 0 0 1 ${sz * .1} ${sz * .16} l-${sz * .14} ${bh / 2 - sz * .16} ${sz * .14} ${bh / 2 - sz * .16} a${sz * .12} ${sz * .12} 0 0 1 -${sz * .1} ${sz * .16} h-${bw}z" fill="${top ? 'url(#gBC)' : '#fff'}"/></g>
+      ${icon(n, x + bw * .5, y - ph + bh / 2, bh * .74, Math.max(3.5, sz * .07), top ? '#fff' : P.blue, top ? '#fff' : P.teal)}`; };
+  s += flag(955, 360, 'headset', 70) + flag(452, 248, 'clipboard', 58) + flag(700, 150, 'people', 48) + flag(990, 92, 'shield', 46, true);
   svg(s);
 } };
 
@@ -333,15 +332,14 @@ S.s49 = { title: 'Where to Find Healthcare Virtual Assistant Jobs', style: 'Pinb
   const card = (x, y, r, n, pin, sc = 1) => `<g transform="translate(${x} ${y}) rotate(${r}) scale(${sc})"><rect x="-62" y="-50" width="124" height="104" rx="16" fill="#fff" filter="url(#soft)"/>${icon(n, -24, -6, 50, 6)}
     <rect x="8" y="-20" width="38" height="8" rx="4" fill="${P.deep}" opacity=".85"/><rect x="8" y="-4" width="30" height="8" rx="4" fill="${P.line}"/><rect x="-42" y="30" width="84" height="8" rx="4" fill="${P.line}"/>
     <circle cx="0" cy="-52" r="10" fill="${pin}"/><circle cx="-3" cy="-55" r="3.5" fill="#fff" opacity=".7"/></g>`;
-  const cards = [[250, 104, -5, 'headset', P.blue], [400, 96, 4, 'stethoscope', P.teal], [550, 108, -3, 'laptop', P.blue], [700, 98, 6, 'calendar', P.deep],
-    [265, 250, 4, 'tooth', P.teal], [420, 258, -6, 'clipboard', P.blue], [570, 248, 3, 'heart', P.deep], [720, 256, -4, 'rx', P.teal]];
-  cards.forEach(([x, y, r, n, pin], i) => { if (i !== 6) s += card(x, y, r, n, pin); });
+  const cards = [[250, 104, -5, 'globe', P.blue], [400, 96, 4, 'stethoscope', P.teal], [550, 108, -3, 'laptop', P.blue], [700, 98, 6, 'calendar', P.deep],
+    [265, 250, 4, 'tooth', P.teal], [420, 258, -6, 'clipboard', P.blue], [570, 248, 3, 'heart', P.deep], [720, 256, -4, 'headset', P.teal]];
+  cards.forEach(([x, y, r, n, pin], i) => { s += card(x, y, r, n, pin); });
   // magnified card under the lens
   s += `<circle cx="790" cy="215" r="132" fill="#fff" fill-opacity=".35" filter="url(#soft)"/>`;
-  s += `<clipPath id="l49"><circle cx="790" cy="215" r="124"/></clipPath><g clip-path="url(#l49)"><circle cx="790" cy="215" r="124" fill="#f4f8ff"/>${card(790, 222, 2, 'heart', P.deep, 1.55)}</g>`;
+  s += `<clipPath id="l49"><circle cx="790" cy="215" r="124"/></clipPath><g clip-path="url(#l49)"><circle cx="790" cy="215" r="124" fill="#f4f8ff"/>${card(790, 222, -2, 'headset', P.teal, 1.55)}</g>`;
   s += `<circle cx="790" cy="215" r="124" fill="none" stroke="url(#gB)" stroke-width="14"/><path d="M700 140 a120 120 0 0 1 60 -44" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".8"/>`;
   s += `<path d="M880 305 L955 380" stroke="${P.deep}" stroke-width="30" stroke-linecap="round"/><path d="M880 305 L900 325" stroke="${P.blue}" stroke-width="30" stroke-linecap="round"/>`;
-  s += card(570, 248, 3, 'heart', P.deep).replace('<g ', '<g opacity="0" ');
   svg(s);
 } };
 
@@ -360,62 +358,67 @@ S.s50 = { title: 'How Virtual Assistants Get Paid by US Companies', style: 'Coin
     <rect x="790" y="160" width="250" height="40" rx="20" fill="${P.deep}" opacity=".35"/>
     <rect x="950" y="222" width="104" height="62" rx="20" fill="${P.deep}"/><circle cx="984" cy="253" r="12" fill="${P.teal}"/></g>`;
   // arc + coins
-  const p0 = [300, 140], p1 = [600, -60], p2 = [905, 150];
+  const p0 = [300, 140], p1 = [600, -30], p2 = [905, 150];
   const B = t => [0, 1].map(k => (1 - t) * (1 - t) * p0[k] + 2 * (1 - t) * t * p1[k] + t * t * p2[k]);
   s += `<path d="M${p0[0]} ${p0[1]} Q${p1[0]} ${p1[1]} ${p2[0]} ${p2[1]}" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/>`;
   const ts = [.12, .25, .38, .51, .64, .77, .9];
   ts.forEach((t, i) => { const [x, y] = B(t), r = 22 + 14 * Math.sin(t * Math.PI), sq = [1, .55, .2, 1, .7, .35, .9][i];
     s += `<g transform="translate(${x} ${y}) rotate(${(t - .5) * 50})" filter="url(#soft)"><ellipse rx="${r * sq + 4}" ry="${r}" fill="${P.deep}" transform="translate(4 0)"/><ellipse rx="${r * sq + 2}" ry="${r}" fill="#fff"/>
-      ${sq > .5 ? `<ellipse rx="${r * sq * .68}" ry="${r * .68}" fill="none" stroke="${P.blue}" stroke-width="4"/><ellipse rx="${r * sq * .26}" ry="${r * .26}" fill="${P.teal}"/>` : `<ellipse rx="${r * sq * .5 + 1}" ry="${r * .68}" fill="none" stroke="${P.sky}" stroke-width="3"/>`}</g>`; });
+      <ellipse rx="${r * sq * .72}" ry="${r * .72}" fill="none" stroke="${P.sky}" stroke-width="${sq > .5 ? 3.5 : 2.5}"/>${sq > .5 ? `<path d="M${-r * sq * .45} ${-r * .3} a${r * sq * .55} ${r * .55} 0 0 1 ${r * sq * .5} ${-r * .3}" fill="none" stroke="${P.teal}" stroke-width="3.5" stroke-linecap="round"/>` : ''}</g>`; });
   svg(s);
 } };
 
-// s51 Bars from a map: a dot map of the Americas; pay-range bars rise from points across Latin America.
+// s51 Bars from a map: a dot map of Latin America lying flat like a table; pay-range bars rise from five countries.
 S.s51 = { title: 'Virtual Assistant Pay in Latin America, Country-by-Country Ranges', style: 'Bars from a map', draw({ svg, P }) {
-  const k = 3.1, X = lon => 560 + (lon + 92) * k, Y = lat => 70 + (25 - lat) * k;
-  const NA = [[-165, 66], [-160, 71], [-130, 71], [-100, 72], [-80, 70], [-62, 60], [-56, 51], [-66, 45], [-70, 42], [-76, 36], [-81, 31], [-80, 26], [-82, 25], [-85, 30], [-90, 30], [-97, 27], [-97, 22], [-94, 18], [-91, 19], [-88, 21], [-87, 16], [-83, 13], [-83, 9], [-78, 8], [-80, 7], [-85, 10], [-92, 15], [-105, 20], [-110, 24], [-112, 30], [-117, 33], [-124, 40], [-124, 48], [-135, 58], [-150, 60], [-165, 60]];
+  const k = 5.4, sq = .55, X = (lo, la) => 590 + (lo + 74) * k, Y = la => 348 - (la + 56) * k * sq;
+  const NA = [[-125, 49], [-95, 49], [-83, 46], [-70, 47], [-67, 45], [-70, 42], [-76, 36], [-81, 31], [-80, 26], [-82, 25], [-85, 30], [-90, 30], [-97, 27], [-97, 22], [-94, 18], [-91, 19], [-88, 21], [-87, 16], [-83, 13], [-83, 9], [-78, 8], [-80, 7], [-85, 10], [-92, 15], [-105, 20], [-110, 24], [-112, 30], [-117, 33], [-124, 40]];
   const SA = [[-78, 9], [-72, 12], [-62, 11], [-52, 5], [-35, -5], [-38, -13], [-41, -22], [-48, -27], [-53, -34], [-58, -38], [-63, -41], [-65, -46], [-68, -52], [-70, -55], [-74, -50], [-73, -40], [-71, -30], [-70, -18], [-76, -14], [-81, -5], [-80, 0], [-78, 9]];
-  const polys = [NA, SA].map(p => p.map(([lo, la]) => [X(lo), Y(la)]));
-  let s = '';
-  const g = 11;
-  for (let y = 0; y < 460; y += g) for (let x = 115; x < 1085; x += g) {
-    const yy = y + (Math.floor(x / g) % 2) * 0, inside = polys.some(p => inPoly(x, yy, p));
-    if (inside) { const latin = yy > Y(30); s += `<circle cx="${x}" cy="${yy}" r="${latin ? 3.6 : 3}" fill="#fff" opacity="${latin ? .95 : .45}"/>`; } }
-  // range bars
-  const pts = [[-102, 22, 70, 120], [-74, 5, 60, 150], [-76, -11, 40, 95], [-50, -12, 80, 175], [-64, -33, 50, 130]];
-  pts.forEach(([lo, la, lowOff, hiOff], i) => { const x = X(lo), y = Y(la);
-    s += `<path d="M${x} ${y} V${y - lowOff}" stroke="#fff" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>`;
-    s += `<rect x="${x - 13}" y="${y - hiOff}" width="26" height="${hiOff - lowOff}" rx="13" fill="url(#gBC)" stroke="#fff" stroke-width="2.5" filter="url(#soft)"/>`;
-    s += `<rect x="${x - 19}" y="${y - hiOff - 3}" width="38" height="6" rx="3" fill="#fff"/><rect x="${x - 19}" y="${y - lowOff - 3}" width="38" height="6" rx="3" fill="#fff"/>`;
-    s += `<circle cx="${x}" cy="${y}" r="9" fill="${P.teal}" stroke="#fff" stroke-width="3"/>`; });
+  let s = `<ellipse cx="610" cy="262" rx="380" ry="96" fill="url(#gGlass)" opacity=".5" filter="url(#soft)"/><ellipse cx="610" cy="262" rx="380" ry="96" fill="none" stroke="#fff" stroke-width="1.5" opacity=".8"/>`;
+  [NA, SA].forEach((p, i) => s += `<path d="M${p.map(([lo, la]) => `${X(lo, la)} ${Y(la)}`).join(' L')}Z" fill="#fff" opacity="${i ? .38 : .16}" stroke="#fff" stroke-opacity="${i ? .9 : .4}" stroke-width="2" stroke-linejoin="round"/>`);
+  for (let la = 49; la >= -56; la -= 2.4) for (let lo = -125 + (Math.round(la / 2.4) % 2) * .8; lo <= -33; lo += 1.6) {
+    if (![NA, SA].some(p => inPoly(lo, la, p))) continue;
+    const latin = la < 31, x = X(lo, la), y = Y(la);
+    s += `<ellipse cx="${x}" cy="${y}" rx="3.2" ry="2.3" fill="#fff" opacity="${latin ? .95 : .35}"/>`; }
+  // range bars (Mexico, Colombia, Peru, Brazil, Argentina), drawn back to front
+  const pts = [[-102, 23, 30, 100], [-74, 5, 40, 130], [-47, -10, 50, 165], [-65, -35, 36, 116]].sort((a, b) => b[1] - a[1]);
+  pts.forEach(([lo, la, lowOff, hiOff]) => { const x = X(lo, la), y = Y(la);
+    s += `<ellipse cx="${x}" cy="${y}" rx="14" ry="6" fill="${P.deep}" opacity=".35"/><path d="M${x} ${y} V${y - lowOff}" stroke="#fff" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>`;
+    s += `<rect x="${x - 12}" y="${y - hiOff}" width="24" height="${hiOff - lowOff}" rx="12" fill="url(#gBC)" stroke="#fff" stroke-width="2.5" filter="url(#soft)"/>`;
+    s += `<rect x="${x - 19}" y="${y - hiOff - 3}" width="38" height="7" rx="3.5" fill="#fff"/><rect x="${x - 19}" y="${y - lowOff - 3}" width="38" height="7" rx="3.5" fill="#fff"/>`;
+    s += `<circle cx="${x}" cy="${y}" r="7" fill="${P.teal}" stroke="#fff" stroke-width="3"/>`; });
   svg(s);
 } };
 
-// s52 Islands: a dot-island archipelago on a glass sea; a coin stack on one island, a laptop on another.
+// s52 Islands: the Philippine archipelago in dots on a glass sea; a coin stack on one island, a laptop on another.
 S.s52 = { title: 'Virtual Assistant Salary in the Philippines', style: 'Islands', draw({ svg, P }) {
-  let s = `<ellipse cx="600" cy="200" rx="420" ry="150" fill="url(#gGlass)" opacity=".45" filter="url(#soft)"/><ellipse cx="600" cy="200" rx="420" ry="150" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/>`;
-  [[340, 110], [270, 80]].forEach(([rx, ry]) => s += `<ellipse cx="600" cy="200" rx="${rx}" ry="${ry}" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 10" opacity=".6"/>`);
-  // islands as dot blobs (stylised: north, centre cluster, south)
+  const X = lo => 600 + (lo - 122) * 40, Y = la => 22 + (19.4 - la) * 22;
+  let s = `<ellipse cx="600" cy="190" rx="400" ry="162" fill="url(#gGlass)" opacity=".42" filter="url(#soft)"/><ellipse cx="600" cy="190" rx="400" ry="162" fill="none" stroke="#fff" stroke-width="2" opacity=".85"/>`;
+  [[330, 128], [255, 96]].forEach(([rx, ry]) => s += `<ellipse cx="600" cy="190" rx="${rx}" ry="${ry}" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 10" opacity=".5"/>`);
   const isl = [
-    [[450, 40], [500, 46], [520, 90], [505, 140], [540, 175], [520, 196], [480, 170], [455, 130], [440, 90]],
-    [[560, 190], [610, 182], [640, 205], [600, 222], [565, 214]],
-    [[660, 160], [700, 156], [712, 178], [680, 190]],
-    [[620, 240], [650, 236], [660, 258], [630, 262]],
-    [[690, 228], [770, 222], [810, 252], [800, 310], [750, 330], [700, 300], [680, 262]],
-    [[360, 210], [380, 205], [440, 240], [470, 270], [450, 276], [400, 245]]];
-  const g = 10;
-  isl.forEach(poly => { for (let y = 20; y < 350; y += g) for (let x = 330; x < 830; x += g) if (inPoly(x, y, poly)) s += `<circle cx="${x}" cy="${y}" r="3.6" fill="#fff"/>`;
-    const cx = poly.reduce((a, p) => a + p[0], 0) / poly.length, cy = poly.reduce((a, p) => a + p[1], 0) / poly.length; });
-  // ripples
-  [[500, 120, 70, 90], [745, 275, 90, 70], [600, 205, 60, 30]].forEach(([x, y, rx, ry]) => s += `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="none" stroke="#fff" stroke-width="1.5" opacity=".35"/>`);
+    [[120.6, 18.5], [121.2, 18.6], [122.2, 18.5], [122.3, 17.2], [121.6, 16], [121.6, 15.2], [122, 14.2], [123, 13.9], [124, 13], [124.1, 12.6], [123.3, 13], [122.6, 13.4], [121.8, 13.9], [121, 13.7], [120.6, 14.4], [120.9, 14.7], [120.3, 15.2], [119.8, 16.3], [120.4, 16.4]],
+    [[120.4, 13.5], [121.5, 13.2], [121.2, 12.2], [120.6, 12.5]],
+    [[119.5, 11.3], [119.9, 10.6], [118.8, 9.3], [117.3, 8.4], [117.6, 8.9], [118.7, 10.2]],
+    [[121.9, 11.9], [123.1, 11.2], [122.6, 10.5], [121.9, 10.6]],
+    [[122.9, 10.9], [123.5, 10.6], [123.2, 9.1], [122.5, 9.5], [122.9, 10.4]],
+    [[123.9, 11.2], [124.1, 10.8], [123.4, 9.6], [123.6, 10.4]],
+    [[124.3, 12.6], [125.3, 12.5], [125.7, 11.2], [124.9, 11.1], [124.3, 11.5]],
+    [[124.3, 11.5], [125.0, 11.1], [125.2, 10.1], [124.7, 10.0], [124.3, 11.0]],
+    [[123.8, 10.1], [124.5, 10.0], [124.3, 9.6], [123.8, 9.7]],
+    [[122.0, 7.0], [123, 8.1], [123.8, 8.6], [124.6, 8.5], [125.2, 9.8], [125.6, 9.7], [126.2, 9.2], [126.6, 7.3], [126.2, 6.3], [125.4, 5.8], [125.2, 6.8], [124.2, 6.2], [124.0, 7.4], [123.6, 7.7], [122.3, 6.9]]
+  ].map(p => p.map(([lo, la]) => [X(lo), Y(la)]));
+  const g = 9;
+  isl.forEach(poly => { let n = 0;
+    for (let y = 10; y < 360; y += g) for (let x = 330; x < 870; x += g) { const xx = x + ((y / g) % 2) * g / 2; if (inPoly(xx, y, poly)) { s += `<circle cx="${xx}" cy="${y}" r="3.7" fill="#fff"/>`; n++; } }
+    if (!n) { const cx = poly.reduce((a, p) => a + p[0], 0) / poly.length, cy = poly.reduce((a, p) => a + p[1], 0) / poly.length; s += `<circle cx="${cx}" cy="${cy}" r="3.4" fill="#fff"/>`; } });
   // coin stack on the southern island
-  let cs = ''; for (let i = 0; i < 6; i++) { const y = 270 - i * 13; cs += `<ellipse cx="750" cy="${y + 7}" rx="34" ry="11" fill="${P.deep}"/><rect x="716" y="${y - 4}" width="68" height="11" fill="${P.blue}"/><ellipse cx="750" cy="${y - 4}" rx="34" ry="11" fill="#fff"/>`; }
-  s += `<g filter="url(#soft)">${cs}<ellipse cx="750" cy="200" rx="20" ry="6" fill="none" stroke="${P.sky}" stroke-width="3"/></g>`;
+  const coin = (x, y) => `<ellipse cx="${x}" cy="${y + 8}" rx="22" ry="7" fill="${P.blue}"/><rect x="${x - 22}" y="${y}" width="44" height="8" fill="${P.blue}"/><ellipse cx="${x}" cy="${y}" rx="22" ry="7" fill="#fff"/><ellipse cx="${x}" cy="${y}" rx="14" ry="4.3" fill="none" stroke="${P.sky}" stroke-width="2.5"/>`;
+  let cs = coin(650, 160); [0, 1, 2, 3, 4].forEach(i => cs += coin(612 + [0, 3, -2, 2, 0][i], 160 - i * 11));
+  s += `<g filter="url(#soft)">${cs}</g>`;
   // laptop on the northern island (iso)
-  s += `<g transform="translate(470 100)" filter="url(#soft)"><path d="M-46 22 L0 44 L60 14 L14 -8Z" fill="#fff"/><path d="M-46 22 L0 44 L0 50 L-46 28Z" fill="${P.sky}"/><path d="M0 44 L60 14 L60 20 L0 50Z" fill="${P.line}"/>
-    <path d="M14 -8 L60 14 L60 -54 L14 -76Z" fill="url(#gB)"/><path d="M20 -10 L54 6 L54 -50 L20 -66Z" fill="#fff" opacity=".18"/><path d="M28 -40 l8 8 14 -18" fill="none" stroke="${P.teal}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>`;
-  // palm on the small island
-  s += `<g transform="translate(690 172)"><path d="M0 0 C 2 -18, 4 -30, 10 -44" fill="none" stroke="${P.deep}" stroke-width="5" stroke-linecap="round"/>
+  s += `<g transform="translate(712 292) scale(.85)" filter="url(#soft)"><path d="M-46 22 L0 44 L60 14 L14 -8Z" fill="#fff"/><path d="M-46 22 L0 44 L0 50 L-46 28Z" fill="${P.sky}"/><path d="M0 44 L60 14 L60 20 L0 50Z" fill="${P.line}"/>
+    <path d="M14 -8 L60 14 L60 -50 L14 -72Z" fill="url(#gB)"/><path d="M20 -10 L54 6 L54 -46 L20 -62Z" fill="#fff" opacity=".18"/><path d="M28 -36 l8 8 14 -18" fill="none" stroke="${P.teal}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  // palm on the long western island
+  s += `<g transform="translate(442 248)"><path d="M0 0 C 2 -18, 4 -30, 10 -44" fill="none" stroke="${P.deep}" stroke-width="5" stroke-linecap="round"/>
     <path d="M10 -44 c-14 -8 -28 -4 -34 6 c12 -4 22 -4 34 -6z M10 -44 c14 -10 30 -6 36 4 c-12 -4 -24 -2 -36 -4z M10 -44 c-4 -14 4 -24 16 -26 c-6 8 -10 16 -16 26z M10 -44 c-12 2 -20 12 -20 22 c6 -10 12 -16 20 -22z" fill="${P.teal}"/></g>`;
   svg(s);
 } };
@@ -424,7 +427,7 @@ S.s52 = { title: 'Virtual Assistant Salary in the Philippines', style: 'Islands'
 S.s53 = { title: 'How Virtual Assistants Keep Telehealth Practices Running', style: 'Photo in screen', draw({ svg, photo, glass, P }) {
   svg(`<rect x="370" y="22" width="460" height="290" rx="22" fill="${P.ink}" filter="url(#soft)"/>
     <path d="M330 312 h540 l-24 30 a10 10 0 0 1 -8 4 h-476 a10 10 0 0 1 -8 -4z" fill="#fff"/><rect x="545" y="312" width="110" height="10" rx="5" fill="${P.line}"/>`);
-  photo('virtual-medical-receptionist-skills', [75, 22], 386, 38, 428, 258, 214, 110, 2.6, 12);
+  photo('virtual-medical-receptionist-skills', [75, 22], 386, 38, 428, 258, 230, 112, 3.0, 12);
   svg(`<rect x="386" y="38" width="428" height="258" rx="12" fill="none" stroke="#fff" stroke-opacity=".15"/>
     <g transform="translate(600 270)"><rect x="-80" y="-18" width="160" height="36" rx="18" fill="${P.ink}" opacity=".55"/><circle cx="-46" cy="0" r="11" fill="#fff"/><circle cx="0" cy="0" r="11" fill="#fff"/><circle cx="46" cy="0" r="11" fill="${CORAL}"/></g>
     <g transform="translate(754 70)"><rect x="-38" y="-16" width="76" height="32" rx="16" fill="${P.ink}" opacity=".5"/><circle cx="-18" cy="0" r="6" fill="${P.teal}"/><rect x="-6" y="-4" width="30" height="8" rx="4" fill="#fff" opacity=".85"/></g>`);

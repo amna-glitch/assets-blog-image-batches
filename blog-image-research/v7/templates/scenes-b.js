@@ -243,21 +243,21 @@ S.s26 = { title: 'US-Based vs. Offshore Virtual Medical Biller: Cost, Quality, a
 S.s27 = { title: 'How a Physician Answering Service Works?', style: 'Night clock', draw({ svg, glass, ico, P }) {
   const cx = 520, cy = 186, r = 156;
   const nums = [3, 6, 9, 12].map(n => { const a = (n * 30 - 90) * Math.PI / 180;
-    return `<text x="${cx + (r - 36) * Math.cos(a) + (n === 3 ? 4 : n === 9 ? -4 : 0)}" y="${cy + (r - 36) * Math.sin(a) + 10}" text-anchor="middle" font-family="Inter, Arial" font-weight="800" font-size="30" fill="${n === 9 ? '#fff' : P.blue}">${n}</text>`; }).join('');
+    return `<text x="${cx + (r - 36) * Math.cos(a) + (n === 3 ? 4 : n === 9 ? -4 : 0)}" y="${cy + (r - 36) * Math.sin(a) + 10}" text-anchor="middle" font-family="Inter, Arial" font-weight="800" font-size="30" fill="${n === 6 ? P.blue : '#fff'}">${n}</text>`; }).join('');
   const hand = (deg, len, w, col) => { const a = (deg - 90) * Math.PI / 180; return `<line x1="${cx}" y1="${cy}" x2="${cx + len * Math.cos(a)}" y2="${cy + len * Math.sin(a)}" stroke="${col}" stroke-width="${w}" stroke-linecap="round"/>`; };
   const star = (x, y, k) => `<path d="M${x} ${y - k * 2}Q${x} ${y} ${x + k * 2} ${y}Q${x} ${y} ${x} ${y + k * 2}Q${x} ${y} ${x - k * 2} ${y}Q${x} ${y} ${x} ${y - k * 2}Z" fill="#fff"/>`;
   svg(`<defs><linearGradient id="nt27" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1344fd"/><stop offset="1" stop-color="#162da1"/></linearGradient></defs>
     <circle cx="${cx}" cy="${cy}" r="${r + 16}" fill="#fff" fill-opacity=".35" stroke="#fff" stroke-width="2"/>
     <circle cx="${cx}" cy="${cy}" r="${r}" fill="#fff" filter="url(#soft)"/>
-    <path d="M${cx} ${cy - r + 8} A ${r - 8} ${r - 8} 0 0 0 ${cx} ${cy + r - 8} Z" fill="url(#nt27)"/>
-    <path d="M${cx - 66} ${cy - 92} a34 34 0 1 0 36 46 a27 27 0 1 1 -36 -46Z" fill="#fff"/>
-    ${star(cx - 96, cy - 30, 4)}${star(cx - 70, cy + 70, 6)}${star(cx - 30, cy + 110, 4)}${star(cx - 106, cy + 52, 3)}
-    ${Array.from({ length: 60 }, (_, i) => { const a = i * 6 * Math.PI / 180, big = i % 5 === 0; if (big) return ''; const night = i > 15 && i < 45;
+    <path d="M${cx} ${cy} L ${cx + (r - 8) * Math.cos(150 * Math.PI / 180)} ${cy + (r - 8) * Math.sin(150 * Math.PI / 180)} A ${r - 8} ${r - 8} 0 1 1 ${cx + (r - 8) * Math.cos(30 * Math.PI / 180)} ${cy + (r - 8) * Math.sin(30 * Math.PI / 180)} Z" fill="url(#nt27)"/>
+    <path d="M${cx - 60} ${cy - 96} a34 34 0 1 0 36 46 a27 27 0 1 1 -36 -46Z" fill="#fff"/>
+    ${star(cx + 42, cy - 96, 5)}${star(cx + 96, cy - 50, 4)}${star(cx - 100, cy + 28, 4)}${star(cx - 18, cy - 50, 3)}
+    ${Array.from({ length: 60 }, (_, i) => { const a = i * 6 * Math.PI / 180, big = i % 5 === 0; if (big) return ''; const night = i <= 4 || i >= 26;
       return `<circle cx="${cx + (r - 14) * Math.cos(a)}" cy="${cy + (r - 14) * Math.sin(a)}" r="2.4" fill="${night ? '#fff' : P.sky}" opacity="${night ? .55 : 1}"/>`; }).join('')}
-    ${Array.from({ length: 12 }, (_, i) => { if (i % 3 === 0) return ''; const a = i * 30 * Math.PI / 180, night = i > 3 && i < 9;
+    ${Array.from({ length: 12 }, (_, i) => { if (i % 3 === 0) return ''; const a = i * 30 * Math.PI / 180, night = i <= 1 || i >= 5;
       return `<line x1="${cx + (r - 22) * Math.cos(a)}" y1="${cy + (r - 22) * Math.sin(a)}" x2="${cx + (r - 36) * Math.cos(a)}" y2="${cy + (r - 36) * Math.sin(a)}" stroke="${night ? '#fff' : P.sky}" stroke-width="5" stroke-linecap="round" opacity="${night ? .7 : 1}"/>`; }).join('')}
     ${nums}
-    ${hand(305, 82, 12, P.ink)}${hand(60, 118, 7, P.teal)}
+    ${hand(60, 80, 12, '#fff')}${hand(0, 98, 7, P.teal)}
     <circle cx="${cx}" cy="${cy}" r="13" fill="${P.teal}" stroke="#fff" stroke-width="4"/>
     ${star(880, 60, 6)}${star(960, 120, 4)}${star(300, 60, 5)}`);
   glass(780, 116, 150, 150, 42, {}, ico('phone', 84, 9));
@@ -276,11 +276,11 @@ S.s28 = { title: 'How to Outsource Medical Scheduling', style: 'Giant calendar',
   for (let i = 0; i < 28; i++) { const x = gx + (i % 7) * cw, y = gy + Math.floor(i / 7) * ch, d = i + 1;
     const cell = add('abs', { left: x, top: y, width: cw - 8, height: ch - 8, borderRadius: 12, background: '#f3f6ff' }, `<div style="position:absolute;left:8px;top:5px;font:600 12px Inter,Arial;color:${P.mute}">${d}</div>`, page);
     if (booked[d]) add('abs', { left: 8, top: 26, width: cw - 24, height: 16, borderRadius: 8, background: booked[d] }, '', cell);
-    if (d === 10) { cell.style.background = 'rgba(45,208,232,.12)'; cell.style.outline = '2.5px dashed ' + P.teal; cell.style.outlineOffset = '-3px'; target = cell; } }
+    if (d === 14) { cell.style.background = 'rgba(45,208,232,.12)'; cell.style.outline = '2.5px dashed ' + P.teal; cell.style.outlineOffset = '-3px'; target = cell; } }
   const r = target.getBoundingClientRect(), cr = c.getBoundingClientRect();
   const tx = r.left - cr.left + r.width / 2, ty = r.top - cr.top + r.height / 2;
-  const fx = tx + 150, fy = 74;
-  svg(`<path d="M${fx - 20} ${fy + 30} C ${fx - 40} ${fy + 90}, ${tx + 40} ${ty - 70}, ${tx + 8} ${ty - 22}" stroke="#fff" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round" fill="none"/>
+  const fx = tx + 150, fy = ty - 96;
+  svg(`<path d="M${fx - 40} ${fy + 30} C ${fx - 60} ${fy + 70}, ${tx + 50} ${ty - 40}, ${tx + 22} ${ty - 14}" stroke="#fff" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round" fill="none"/>
     <g filter="url(#soft)" transform="rotate(-8 ${fx} ${fy})"><rect x="${fx - 70}" y="${fy - 24}" width="140" height="48" rx="24" fill="url(#gGlass)" stroke="#fff" stroke-width="2"/>
     <rect x="${fx - 54}" y="${fy - 8}" width="108" height="16" rx="8" fill="${P.teal}"/></g>
     <g filter="url(#soft)" transform="translate(${fx + 34} ${fy + 8})"><path d="M0 0 L0 44 L12 33 L21 52 L30 48 L21 30 L37 29 Z" fill="#fff" stroke="${P.blue}" stroke-width="4" stroke-linejoin="round"/></g>`);
@@ -318,30 +318,29 @@ S.s30 = { title: 'How to Hire a Virtual Care Coordinator', style: 'Puzzle', draw
     <g filter="url(#soft)"><path d="${A}" fill="#fff"/><path d="${Cp}" fill="url(#gGlass)" stroke="#fff" stroke-width="2"/><path d="${D}" fill="#fff"/></g>
     <path d="${Cp}" fill="none" stroke="#fff" stroke-width="2"/>
     ${icon('heart', ox + Sz / 2, oy + Sz / 2)}${icon('person', ox + Sz / 2, oy + Sz * 1.5)}${icon('phone', ox + Sz * 1.5, oy + Sz * 1.5)}
-    <g transform="translate(138 -34) rotate(12 ${ox + Sz * 1.5} ${oy + Sz / 2})" filter="url(#soft)">
+    <g transform="translate(176 14) rotate(10 ${ox + Sz * 1.5} ${oy + Sz / 2})" filter="url(#soft)">
       <path d="${B}" fill="url(#gB)"/>${I('calendar', ox + Sz * 1.5 - 40, oy + Sz / 2 - 40, 80, 9, '#fff', P.aqua)}</g>
-    <path d="M 860 130 C 840 170, 800 190, 770 190" stroke="#fff" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round" fill="none"/>
-    <path d="M776 180 L 766 190 L 778 200" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`);
+    <path d="M 800 34 C 770 14, 720 20, 690 52" stroke="#fff" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round" fill="none"/>
+    <path d="M688 36 L 688 54 L 705 56" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`);
 } };
 
 // ---------- s31 Folder fan ----------
 S.s31 = { title: 'Virtual Medical Records Specialist Guide', style: 'Folder fan', draw({ svg, P }) {
-  const px = 560, py = 560, w = 236, h = 168, dist = 330;
-  const tabs = [P.deep, P.mid, P.teal, P.cyan, P.blue];
-  const folder = (ang, tab, i, lift = 0, doc = false) => {
-    const x = px - w / 2, y = py - dist - h / 2 - lift, tx = x + 18 + (i % 3) * 52;
+  const px = 600, py = 610, w = 220, h = 160, dist = 382;
+  const folder = (ang, tab, tabPos, lift = 0, hero = false) => {
+    const x = px - w / 2, y = py - dist - h / 2 - lift, tx = x + 16 + tabPos * 70;
     return `<g transform="rotate(${ang} ${px} ${py})" filter="url(#soft)">
-      <path d="M${x} ${y + 10} a10 10 0 0 1 10 -10 H ${tx} l 8 -18 h 58 l 8 18 H ${x + w - 10} a10 10 0 0 1 10 10 V ${y + h} H ${x} Z" fill="${tab}"/>
-      <rect x="${x + 14}" y="${y + (doc ? -46 : 8)}" width="${w - 28}" height="${h}" rx="8" fill="#fff"/>
-      ${doc ? `<path d="M${x + 36} ${y - 18}h110M${x + 36} ${y + 2}h150M${x + 36} ${y + 22}h80" stroke="${P.sky}" stroke-width="9" stroke-linecap="round"/>` : ''}
-      <path d="M${x} ${y + 34} a10 10 0 0 1 10 -10 H ${x + w - 10} a10 10 0 0 1 10 10 V ${y + h - 10} a10 10 0 0 1 -10 10 H ${x + 10} a10 10 0 0 1 -10 -10 Z" fill="${doc ? 'url(#gB)' : '#eaf1ff'}" ${doc ? '' : 'fill-opacity=".92"'}/>
-      ${doc ? '' : `<rect x="${x + 20}" y="${y + 130}" width="60" height="10" rx="5" fill="${tab}" opacity=".5"/>`}</g>`; };
-  const lx = 770, ly = 150;
-  svg(`${folder(-34, tabs[0], 0)}${folder(34, tabs[4], 2)}${folder(-17, tabs[1], 1)}${folder(17, tabs[3], 1)}${folder(0, tabs[2], 0, 66, true)}
-    <g filter="url(#soft)"><circle cx="${lx}" cy="${ly}" r="72" fill="#fff" fill-opacity=".45" stroke="#fff" stroke-width="10"/>
-    <path d="M${lx + 52} ${ly + 52} L ${lx + 108} ${ly + 108}" stroke="#fff" stroke-width="22" stroke-linecap="round"/>
-    <path d="M${lx + 56} ${ly + 56} L ${lx + 104} ${ly + 104}" stroke="${P.blue}" stroke-width="12" stroke-linecap="round"/>
-    <path d="M${lx - 38} ${ly - 30} a 48 48 0 0 1 36 -20" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/></g>`);
+      <path d="M${x} ${y + 12} a12 12 0 0 1 12 -12 H ${tx} a8 8 0 0 1 7 -4 l 6 -14 h 56 l 6 14 a8 8 0 0 1 7 4 H ${x + w - 12} a12 12 0 0 1 12 12 V ${y + h} H ${x} Z" fill="${tab}"/>
+      <rect x="${x + 14}" y="${y + (hero ? -60 : 8)}" width="${w - 28}" height="${h}" rx="10" fill="#fff"/>
+      ${hero ? `<path d="M${x + 38} ${y - 30}h96M${x + 38} ${y - 8}h140M${x + 38} ${y + 14}h70" stroke="${P.sky}" stroke-width="9" stroke-linecap="round"/>` : `<path d="M${x + 36} ${y + 26}h90" stroke="${P.line}" stroke-width="7" stroke-linecap="round"/>`}
+      <rect x="${x}" y="${y + 36}" width="${w}" height="${h - 36}" rx="12" fill="${hero ? 'url(#gB)' : '#f5f8ff'}"/>
+      <rect x="${x + 22}" y="${y + h - 34}" width="${hero ? 70 : 54}" height="10" rx="5" fill="${hero ? '#fff' : tab}" opacity="${hero ? .8 : .45}"/></g>`; };
+  const lx = 690, ly = 74;
+  svg(`${folder(-38, P.deep, 0)}${folder(38, P.cyan, 1)}${folder(-19, P.mid, 1)}${folder(19, P.teal, 0)}${folder(0, P.blue, 0, 80, true)}
+    <g filter="url(#soft)"><circle cx="${lx}" cy="${ly}" r="56" fill="#fff" fill-opacity=".35" stroke="#fff" stroke-width="10"/>
+    <path d="M${lx + 42} ${ly + 42} L ${lx + 92} ${ly + 92}" stroke="#fff" stroke-width="22" stroke-linecap="round"/>
+    <path d="M${lx + 46} ${ly + 46} L ${lx + 88} ${ly + 88}" stroke="${P.blue}" stroke-width="12" stroke-linecap="round"/>
+    <path d="M${lx - 30} ${ly - 22} a 38 38 0 0 1 28 -16" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/></g>`);
 } };
 
 // ---------- s32 Paper vs screen ----------
@@ -375,7 +374,7 @@ S.s33 = { title: 'CPT Codes Explained', style: 'Code mosaic', draw({ svg, P }) {
   for (let r = 0; r < 7; r++) for (let i = -1; i < 9; i++) {
     const x = -30 + i * (w + gx) + (r % 2) * (w + gx) / 2, y = 4 + r * (h + gy), cx = x + w / 2, cy = y + h / 2;
     const d = Math.hypot((cx - 600) / 1.6, cy - 190), fade = Math.max(0.15, Math.min(1, 1.15 - d / 520));
-    if (Math.abs(cx - 600) < 150 && Math.abs(cy - 190) < 60) { s += `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2}" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="4 8" opacity=".9"/>`; continue; }
+    if (Math.abs(cx - 617) < 60 && Math.abs(cy - 241) < 20) { s += `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2}" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="4 8" opacity=".9"/>`; continue; }
     const filled = rnd() < .18, code = codes[k++ % codes.length];
     s += `<g opacity="${fade.toFixed(2)}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2}" fill="${filled ? P.blue : '#fff'}" fill-opacity="${filled ? .85 : .55}" stroke="#fff" stroke-width="1.5"/>
       <text x="${cx}" y="${cy + 8}" text-anchor="middle" font-family="Inter, Arial" font-weight="600" font-size="22" letter-spacing="2" fill="${filled ? '#fff' : P.blue}" fill-opacity="${filled ? 1 : .7}">${code}</text></g>`; }
@@ -406,33 +405,28 @@ S.s34 = { title: 'ICD-10 Codes Explained', style: 'Tree', draw({ svg, P }) {
 
 // ---------- s35 Snap-on blocks ----------
 S.s35 = { title: 'Medical Billing Modifiers Explained', style: 'Snap-on blocks', draw({ svg, P }) {
-  const u = 50, pr = isoP(560, 150, u);
-  const stud = (x, y, z, col, dark) => { const [a, b] = pr(x, y, z), [c2, d] = pr(x, y, z + .28);
-    return `<path d="M${a - 17} ${b} V ${d} A 17 9.5 0 0 0 ${c2 + 17} ${d} V ${b} A 17 9.5 0 0 1 ${a - 17} ${b} Z" fill="${dark}"/><ellipse cx="${c2}" cy="${d}" rx="17" ry="9.5" fill="${col}"/>`; };
-  // face mapping for an icon on the left (y+d) face: u along x, v down along -z
-  const onLeft = (x, y, z, sz, inner) => { const [ox, oy] = pr(x, y, z); const ex = pr(x + 1, y, z), ez = pr(x, y, z - 1);
-    return `<g transform="matrix(${(ex[0] - ox) / 120 * sz} ${(ex[1] - oy) / 120 * sz} ${(ez[0] - ox) / 120 * sz} ${(ez[1] - oy) / 120 * sz} ${ox} ${oy})">${inner}</g>`; };
-  const BW = 4, BD = 2, BH = 1.3;
+  const u = 76, pr = isoP(534, 84, u), BW = 4, BD = 2, BH = 1, TH = .7, HZ = BH + 1.0;
+  const stud = (x, y, z, col, dark) => { const [a, b] = pr(x, y, z), [, d] = pr(x, y, z + .22), rx = .26 * 1.22 * u, ry = .26 * .707 * u;
+    return `<path d="M${a - rx} ${b} V ${d} A ${rx} ${ry} 0 0 1 ${a + rx} ${d} V ${b} A ${rx} ${ry} 0 0 1 ${a - rx} ${b} Z" fill="${dark}"/><ellipse cx="${a}" cy="${d}" rx="${rx}" ry="${ry}" fill="${col}"/>`; };
+  const onFace = (o, ex, ey, inner) => `<g transform="matrix(${(ex[0] - o[0]) / 120} ${(ex[1] - o[1]) / 120} ${(ey[0] - o[0]) / 120} ${(ey[1] - o[1]) / 120} ${o[0]} ${o[1]})">${inner}</g>`;
   let s = isoBox(pr, 0, 0, 0, BW, BD, BH, '#ffffff', '#e4ecff', '#c6d5fb');
-  // icon on base front-left face
-  s += onLeft(0.35, BD, BH - .15, 1, `<g fill="none" stroke="${P.blue}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">${window.HT_ICONS.document.replace(/class="ac"/g, `stroke="${P.teal}"`)}</g>`);
-  s += onLeft(1.55, BD, BH - .35, 2.2, `<rect x="0" y="0" width="120" height="14" rx="7" fill="${P.line}"/><rect x="0" y="28" width="80" height="14" rx="7" fill="${P.line}"/>`);
-  // studs on base where no block
-  const tags = [[0, 0, P.blue, '#0f2fd0', '#1f3fe6'], [1, 1, P.teal, '#1aa6bd', '#22bdd6'], [2, 0, P.cyan, '#04a6cc', '#03bce6']];
-  const occupied = new Set(tags.map(t => t[0] + ',' + t[1]).concat(['3,1']));
-  for (let x = 0; x < BW; x++) for (let y = 0; y < BD; y++) if (!occupied.has(x + ',' + y)) s += stud(x + .5, y + .5, BH, '#fff', '#c6d5fb');
-  const sym = [`<circle cx="60" cy="60" r="22" fill="#fff"/>`, `<path d="M60 34 L 86 80 H 34 Z" fill="#fff"/>`, `<path d="M60 34 V86 M34 60 H86" stroke="#fff" stroke-width="16" stroke-linecap="round"/>`, `<circle cx="60" cy="60" r="20" fill="none" stroke="#fff" stroke-width="11"/>`];
-  const onTop = (x, y, z, inner) => { const [ox, oy] = pr(x, y, z), ex = pr(x + 1, y, z), ey = pr(x, y + 1, z);
-    return `<g transform="matrix(${(ex[0] - ox) / 120} ${(ex[1] - oy) / 120} ${(ey[0] - ox) / 120} ${(ey[1] - oy) / 120} ${ox} ${oy})">${inner}</g>`; };
-  // draw blocks back to front
-  const blocks = tags.map(([x, y, top, l, r], i) => [x, y, BH, top, l, r, sym[i]]);
-  blocks.push([3, 1, BH + 1.9, P.mid, '#2a44e6', '#3550f2', sym[3]]); // hovering block
-  blocks.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1]));
-  for (const [x, y, z, top, l, r, sy] of blocks) {
-    if (z > BH) { const [a, b] = pr(x + .5, y + .5, BH + .3), [, d] = pr(x + .5, y + .5, z - .1);
-      s += stud(x + .5, y + .5, BH, '#fff', '#c6d5fb') + `<path d="M${a} ${d + 10} V ${b - 4}" stroke="#fff" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"/><path d="M${a - 10} ${b - 16} L ${a} ${b - 4} L ${a + 10} ${b - 16}" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`; }
-    s += isoBox(pr, x + .04, y + .04, z, .92, .92, .8, top, l, r) + onTop(x + .04, y + .04, z + .8, sy);
-  }
+  // procedure: document icon + line placeholders on the front-left face
+  s += onFace(pr(.3, BD, BH - .12), pr(1.06, BD, BH - .12), pr(.3, BD, BH - .88),
+    `<g fill="none" stroke="${P.blue}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">${window.HT_ICONS.document.replace(/class="ac"/g, `stroke="${P.teal}"`)}</g>`);
+  s += onFace(pr(1.4, BD, BH - .32), pr(3.4, BD, BH - .32), pr(1.4, BD, BH - 1.32), `<rect x="0" y="0" width="120" height="9" rx="4.5" fill="${P.line}"/><rect x="0" y="20" width="76" height="9" rx="4.5" fill="${P.line}"/>`);
+  const sym = { dot: `<circle cx="60" cy="60" r="20" fill="#fff"/>`, tri: `<path d="M60 36 L 84 78 H 36 Z" fill="#fff"/>`, plus: `<path d="M60 36 V84 M36 60 H84" stroke="#fff" stroke-width="15" stroke-linecap="round"/>`, ring: `<circle cx="60" cy="60" r="19" fill="none" stroke="#fff" stroke-width="10"/>` };
+  const tags = { '1,0': [P.blue, '#1131d6', '#1a3cf0', sym.dot], '0,1': [P.cyan, '#04a3c9', '#03b9e3', sym.tri], '2,1': [P.teal, '#1aa3ba', '#22bbd4', sym.plus] };
+  const items = [];
+  for (let x = 0; x < BW; x++) for (let y = 0; y < BD; y++) {
+    const t = tags[x + ',' + y];
+    items.push([x + y, t ? isoBox(pr, x + .04, y + .04, BH, .92, .92, TH, t[0], t[1], t[2]) + onFace(pr(x + .04, y + .04, BH + TH), pr(x + .96, y + .04, BH + TH), pr(x + .04, y + .96, BH + TH), t[3])
+      : stud(x + .5, y + .5, BH, '#fff', '#c6d5fb')]); }
+  items.sort((a, b) => a[0] - b[0]);
+  s += items.map(i => i[1]).join('');
+  // hovering modifier block over (3,1) with snap guide
+  const [ax, ay] = pr(3.5, 1.5, BH + .32), [, hy] = pr(3.5, 1.5, HZ - .08);
+  s += `<path d="M${ax} ${hy + 8} V ${ay - 8}" stroke="#fff" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"/><path d="M${ax - 11} ${ay - 22} L ${ax} ${ay - 9} L ${ax + 11} ${ay - 22}" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+  s += isoBox(pr, 3.04, 1.04, HZ, .92, .92, TH, P.mid, '#2741e3', '#3550f2') + onFace(pr(3.04, 1.04, HZ + TH), pr(3.96, 1.04, HZ + TH), pr(3.04, 1.96, HZ + TH), sym.ring);
   svg(`<g filter="url(#soft)">${s}</g>`);
 } };
 

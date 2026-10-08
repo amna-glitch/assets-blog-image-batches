@@ -364,7 +364,7 @@ S.s68 = { title: 'How to Hire a VA for Skilled Nursing Facilities', style: 'Buil
 
 // s69 Avatar grid: six round avatars, each wearing the accessory of a different VA role.
 S.s69 = { title: 'Types of Virtual Medical Assistants Explained for Practice Owners', style: 'Avatar grid', draw({ svg, P }) {
-  const roles = ['headset', 'stethoscope', 'coin', 'calendar', 'document', 'tooth'];
+  const roles = ['headset', 'stethoscope', 'clipboard', 'calendar', 'document', 'tooth'];
   const fills = ['url(#gB)', 'url(#gBC)', P.deep, 'url(#gBC)', P.mid, 'url(#gB)'];
   let out = '';
   roles.forEach((n, i) => {
@@ -373,50 +373,57 @@ S.s69 = { title: 'Types of Virtual Medical Assistants Explained for Practice Own
       <g filter="url(#soft)"><circle cx="${cx}" cy="${cy}" r="${r + 7}" fill="#fff"/></g>
       <circle cx="${cx}" cy="${cy}" r="${r}" fill="${fills[i]}"/>
       <g clip-path="url(#${id})" fill="#fff"><circle cx="${cx}" cy="${cy - 14}" r="23"/><path d="M${cx - 46} ${cy + 72} C ${cx - 46} ${cy + 30}, ${cx - 26} ${cy + 16}, ${cx} ${cy + 16} C ${cx + 26} ${cy + 16}, ${cx + 46} ${cy + 30}, ${cx + 46} ${cy + 72}Z"/></g>
-      <g filter="url(#soft)"><circle cx="${cx + 52}" cy="${cy + 46}" r="30" fill="#fff"/></g>${IC(n, cx + 52, cy + 46, 40, 10, P.blue, P.teal)}`;
+      <g filter="url(#soft)"><circle cx="${cx + 52}" cy="${cy + 46}" r="34" fill="#fff"/></g>${IC(n, cx + 52, cy + 46, 48, 10, P.blue, P.teal)}`;
   });
   svg(`<rect x="250" y="12" width="700" height="350" rx="44" fill="url(#gGhost)" opacity=".55"/>${out}`);
 } };
 
 // s70 Slab stack: an exploded isometric stack of four glass layers, each with a generic app glyph.
 S.s70 = { title: 'What Software Do Virtual Medical Assistants Use? The Full Stack', style: 'Slab stack', draw({ svg, P }) {
-  const cx = 600, W = 230, H = 92, T = 14, gap = 76, n = 4, y0 = 60;
+  const cx = 600, W = 180, H = 80, T = 14, gap = 76, n = 4, y0 = 96;
   const M = cy => `matrix(${W / 100} ${-H / 100} ${W / 100} ${H / 100} ${cx - W} ${cy})`; // maps a 100x100 square onto the slab top
   const glyph = [
-    // chat bubbles
-    `<rect x="16" y="18" width="46" height="30" rx="10" fill="${P.blue}"/><rect x="38" y="54" width="46" height="28" rx="10" fill="${P.teal}"/>`,
-    // calendar grid
-    `<rect x="18" y="18" width="64" height="64" rx="8" fill="none" stroke="${P.blue}" stroke-width="6"/>${[0, 1, 2].map(r => [0, 1, 2].map(k => `<rect x="${26 + k * 18}" y="${30 + r * 16}" width="12" height="10" rx="3" fill="${r === 1 && k === 1 ? P.teal : P.sky}"/>`).join('')).join('')}`,
-    // bar chart
-    `${[30, 55, 42, 72].map((h, i) => `<rect x="${20 + i * 17}" y="18" width="11" height="${h}" rx="4" fill="${i === 3 ? P.teal : P.blue}"/>`).join('')}`,
-    // records + lock
-    `<rect x="18" y="18" width="40" height="64" rx="6" fill="${P.blue}"/><rect x="62" y="28" width="22" height="18" rx="4" fill="${P.teal}"/><rect x="66" y="50" width="14" height="30" rx="4" fill="${P.teal}" opacity=".6"/>`,
+    // messages
+    `<rect x="24" y="26" width="34" height="22" rx="7" fill="${P.blue}"/><rect x="42" y="54" width="34" height="22" rx="7" fill="${P.teal}"/>`,
+    // calendar
+    `<rect x="28" y="28" width="44" height="44" rx="7" fill="none" stroke="${P.blue}" stroke-width="5"/>${[0, 1, 2].map(r => [0, 1, 2].map(k => `<rect x="${35 + k * 11}" y="${36 + r * 11}" width="7" height="7" rx="2" fill="${r === 1 && k === 2 ? P.teal : P.sky}"/>`).join('')).join('')}`,
+    // donut chart
+    `<circle cx="50" cy="50" r="18" fill="none" stroke="${P.sky}" stroke-width="9"/><path d="M50 32 A18 18 0 1 1 32 50" fill="none" stroke="${P.blue}" stroke-width="9"/>`,
+    // records folder
+    `<path d="M26 34 H44 L50 40 H74 V70 H26Z" fill="${P.blue}"/><rect x="30" y="46" width="44" height="24" rx="3" fill="${P.mid}"/><rect x="40" y="54" width="20" height="5" rx="2.5" fill="${P.teal}"/>`,
   ];
   let out = '';
   for (let i = n - 1; i >= 0; i--) {
-    const cy = y0 + i * gap, a = i === 0 ? .95 : .78;
+    const cy = y0 + i * gap;
     out += `<g filter="url(#soft)">
-      <path d="M${cx - W} ${cy} L${cx} ${cy + H} V${cy + H + T} L${cx - W} ${cy + T}Z" fill="${i === 0 ? P.mid : P.sky}" opacity="${i === 0 ? 1 : .9}"/>
-      <path d="M${cx + W} ${cy} L${cx} ${cy + H} V${cy + H + T} L${cx + W} ${cy + T}Z" fill="${i === 0 ? P.deep : P.mid}" opacity="${i === 0 ? 1 : .55}"/>
-      <path d="M${cx} ${cy - H} L${cx + W} ${cy} L${cx} ${cy + H} L${cx - W} ${cy}Z" fill="#fff" fill-opacity="${a}" stroke="#fff" stroke-width="2"/></g>
+      <path d="M${cx - W} ${cy} L${cx} ${cy + H} V${cy + H + T} L${cx - W} ${cy + T}Z" fill="${i === 0 ? P.mid : '#c9dcff'}"/>
+      <path d="M${cx + W} ${cy} L${cx} ${cy + H} V${cy + H + T} L${cx + W} ${cy + T}Z" fill="${i === 0 ? P.deep : '#9fb6ff'}"/>
+      <path d="M${cx} ${cy - H} L${cx + W} ${cy} L${cx} ${cy + H} L${cx - W} ${cy}Z" fill="#fff" fill-opacity="${i === 0 ? 1 : .72}" stroke="#fff" stroke-width="2"/></g>
       <g transform="${M(cy)}">${glyph[i]}</g>`;
   }
-  // vertical guide lines through the stack
-  const guide = [-W, W].map(dx => `<path d="M${cx + dx} ${y0 + 10} V${y0 + (n - 1) * gap}" stroke="#fff" stroke-width="2" stroke-dasharray="3 8" opacity=".8"/>`).join('');
-  svg(guide + out);
+  const guide = [-W, W].map(dx => `<path d="M${cx + dx} ${y0 + 16} V${y0 + (n - 1) * gap}" stroke="#fff" stroke-width="2" stroke-dasharray="3 8" opacity=".8"/>`).join('');
+  const icons = ['headset', 'calendar', 'document', 'lock'];
+  const tags = icons.map((nm, i) => { const cy = y0 + i * gap + 10, left = i % 2 === 1, x = left ? cx - W - 120 : cx + W + 120;
+    return `<path d="M${left ? cx - W + 40 : cx + W - 40} ${cy} H${left ? x + 40 : x - 40}" stroke="#fff" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+      <g filter="url(#soft)"><circle cx="${x}" cy="${cy}" r="38" fill="#fff"/></g>${IC(nm, x, cy, 50, 9, P.blue, P.teal)}`; }).join('');
+  svg(guide + out + tags);
 } };
 
 // s71 Sieve/filter: many company chips pour onto a mesh; only two vetted ones drop through.
 S.s71 = { title: 'How to Vet Virtual Assistant Staffing Companies and the Questions to Ask', style: 'Sieve/filter', draw({ svg, P }) {
   const cx = 600, sy = 196;
   const bld = (x, y, s, op, fill = '#fff', stroke = P.blue) => `<g transform="translate(${x},${y})" opacity="${op}">
-      <rect x="${-s / 2}" y="${-s / 2}" width="${s}" height="${s}" rx="${s * .26}" fill="${fill}" filter="url(#soft)"/>
-      ${IC('clinic', 0, 0, s * .62, 9, stroke, P.teal)}</g>`;
+      <rect x="${-s / 2}" y="${-s / 2}" width="${s}" height="${s}" rx="${s * .26}" fill="${fill}" filter="url(#d71s)"/>
+      <g transform="scale(${s / 100})" fill="none" stroke="${stroke}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-22 30 V-24 a4 4 0 0 1 4 -4 H18 a4 4 0 0 1 4 4 V30 M-32 30 H32"/>
+        <path d="M-10 -14 h0 M10 -14 h0 M-10 0 h0 M10 0 h0" stroke-width="8"/><path d="M-6 30 V16 H6 V30" style="stroke:${P.teal}"/></g></g>`;
   const above = [[420, 70, 60, .8], [520, 40, 52, .7], [612, 96, 62, .9], [720, 52, 56, .75], [790, 112, 48, .65], [470, 140, 50, .75], [350, 120, 42, .5], [860, 60, 40, .5], [680, 140, 46, .8]];
   let mesh = '';
   for (let i = -6; i <= 6; i++) mesh += `<path d="M${cx + i * 40} ${sy - 50} V${sy + 50}" stroke="#fff" stroke-width="2" opacity=".6"/>`;
   for (let j = -2; j <= 2; j++) mesh += `<path d="M${cx - 300} ${sy + j * 16} H${cx + 300}" stroke="#fff" stroke-width="2" opacity=".6"/>`;
-  svg(`<defs><clipPath id="d71c"><ellipse cx="${cx}" cy="${sy}" rx="270" ry="44"/></clipPath></defs>
+  svg(`<defs><filter id="d71s" x="-80%" y="-80%" width="260%" height="300%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#1344fd" flood-opacity=".2"/></filter><clipPath id="d71c"><ellipse cx="${cx}" cy="${sy}" rx="270" ry="44"/></clipPath></defs>
+    <path d="M${cx + 280} ${sy - 4} L${cx + 440} ${sy - 30}" stroke="#fff" stroke-width="22" stroke-linecap="round" filter="url(#soft)"/>
+    <path d="M${cx + 300} ${sy - 7} L${cx + 430} ${sy - 28}" stroke="${P.sky}" stroke-width="6" stroke-linecap="round"/>
     <ellipse cx="${cx}" cy="${sy + 8}" rx="292" ry="58" fill="${P.deep}" opacity=".18"/>
     <ellipse cx="${cx}" cy="${sy}" rx="290" ry="58" fill="url(#gGlass)" stroke="#fff" stroke-width="3"/>
     <ellipse cx="${cx}" cy="${sy}" rx="270" ry="44" fill="${P.sky}" opacity=".5"/>
@@ -441,9 +448,9 @@ S.s72 = { title: 'Top Reasons Claims Get Denied', style: 'Stamped stack', draw({
       <rect x="${-pw / 2 + 24}" y="${ph / 2 - 46}" width="80" height="20" rx="10" fill="${P.line}"/>
       ${stamp ? `<g transform="translate(26,14) rotate(-12)" opacity=".92"><circle r="72" fill="none" stroke="#ff8a8a" stroke-width="9"/><circle r="58" fill="none" stroke="#ff8a8a" stroke-width="3"/>
         <path d="M-30 -30 L30 30 M30 -30 L-30 30" stroke="#ff8a8a" stroke-width="16" stroke-linecap="round"/></g>` : ''}</g>`;
-  svg(`${paper(470, 210, -16)}${paper(520, 200, -7)}${paper(580, 196, 3, true)}
-    <g opacity=".55"><path d="M760 360 L790 240" stroke="#fff" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/></g>
-    ${paper(840, 150, 14, true, 'opacity="1"')}
-    <path d="M700 310 C 720 330, 760 340, 790 330" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/>`);
+  svg(`${paper(400, 214, -16)}${paper(450, 204, -7)}${paper(510, 198, 3, true)}
+    <ellipse cx="800" cy="356" rx="120" ry="14" fill="${P.deep}" opacity=".12"/>
+    <path d="M752 330 V364 M800 338 V376 M848 330 V364" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+    <g transform="translate(800,176) scale(.98) translate(-800,-176)">${paper(800, 176, 12, true)}</g>`);
 } };
 })();
