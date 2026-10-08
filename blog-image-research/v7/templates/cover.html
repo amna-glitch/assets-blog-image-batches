@@ -8,6 +8,7 @@
      Varies per cover: the composition and the objects (72 scenes in scenes-*.js).
      ?spec={"id":"s01"}. Key content sits inside the listing band: x 115-1085, y 0-353. -->
 <html><head><meta charset="utf-8"><script src="../../v3/templates/icons.js"></script>
+<script>/* v7: coin without a currency sign (no prices or currency on covers) */ HT_ICONS.coin = `<ellipse cx="60" cy="38" rx="36" ry="13"/><path d="M24 38v16c0 7 16 13 36 13s36-6 36-13V38"/><path class="ac" d="M24 66v16c0 7 16 13 36 13s36-6 36-13V66"/>`;</script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1200px; height: 630px; overflow: hidden; background: #fff; }
@@ -79,6 +80,6 @@
   htBackground(SCENES[s.id] && SCENES[s.id].bg || {});
   const ctx = { c, P, add, svg, ico, glass, solid, tile, capsules, ghost, stripes, photo, htIcon };
   (SCENES[s.id] || { draw: () => {} }).draw(ctx);
-  // Logo, bottom-left, same on every cover (hidden by the listing panel, visible on social shares).
-  const lg = document.createElement('img'); lg.src = '../../v3/assets/ht-logo.svg'; Object.assign(lg.style, { position: 'absolute', left: '48px', top: '566px', height: '36px', opacity: '.95' }); c.appendChild(lg);
+  // Logo, bottom-right, same on every cover (fully covered by the listing panel, visible on social shares).
+  const lg = document.createElement('img'); lg.src = '../../v3/assets/ht-logo.svg'; Object.assign(lg.style, { position: 'absolute', right: '48px', top: '566px', height: '36px', opacity: '.95' }); c.appendChild(lg);
 </script></body></html>

@@ -4,9 +4,13 @@ const S = window.SCENES;
 
 // s01 Glass pair: two frosted tiles joined by a liquid bridge (the VA plugged into the EHR).
 S.s01 = { title: 'Virtual Medical Assistant in Epic', style: 'Glass pair', draw({ svg, glass, ico, P }) {
-  svg(`<path d="M520 150 C 560 120, 640 120, 680 150 L680 230 C 640 260, 560 260, 520 230Z" fill="url(#gGlass)" stroke="#fff" stroke-width="1.5" opacity=".9"/>`);
-  glass(330, 60, 250, 250, 76, {}, ico('headset', 130, 8));
-  glass(620, 60, 250, 250, 76, {}, ico('laptop', 130, 8));
+  // Two big frosted tiles fused by a liquid glass bridge, with data dots flowing across it (the VA working inside the EHR).
+  svg(`<path d="M520 120 C 565 150, 635 150, 680 120 L680 270 C 635 240, 565 240, 520 270Z" fill="url(#gGlass)" stroke="#fff" stroke-width="2"/>
+    ${[0, 1, 2, 3, 4].map(i => `<circle cx="${548 + i * 26}" cy="195" r="${i === 2 ? 9 : 6}" fill="${i % 2 ? P.teal : P.blue}" opacity="${.5 + i * .1}"/>`).join('')}`);
+  glass(250, 40, 290, 290, 86, {}, ico('headset', 150, 8));
+  glass(660, 40, 290, 290, 86, {}, `<svg width="170" height="150" viewBox="0 0 170 150"><rect x="8" y="8" width="154" height="104" rx="14" fill="#fff" stroke="${P.blue}" stroke-width="8"/>
+    <rect x="24" y="26" width="34" height="70" rx="6" fill="${P.blue}" opacity=".9"/><rect x="70" y="28" width="76" height="10" rx="5" fill="${P.ink}" opacity=".8"/>
+    <rect x="70" y="50" width="60" height="10" rx="5" fill="#cfd8f5"/><rect x="70" y="72" width="70" height="10" rx="5" fill="${P.teal}"/><path d="M60 136 H110 M85 112 V136" stroke="${P.blue}" stroke-width="8" stroke-linecap="round"/></svg>`);
 } };
 
 // s02 Capsule equaliser: see-through capsules as call volume behind one glass headset tile.
