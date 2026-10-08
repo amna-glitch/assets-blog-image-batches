@@ -2,8 +2,9 @@
 // Photos here are STAND-INS from the current covers; swap the file names when the new, diverse people are generated.
 (() => {
 const S = window.SCENES;
+window.PHOTO_AR = { 'p01-dental': 1536 / 1024 };  // new 3:2 photos
 const F = {
-  dental: ['what-skills-does-a-virtual-dental-assistant-need', [65, 22]],
+  dental: ['p01-dental', [46, 29]],
   vet: ['7-best-virtual-medical-assistant-companies-for-specialty-veterinary-hospitals', [58, 20]],
   internal: ['how-to-hire-an-internal-medicine-virtual-medical-assistant', [43, 25]],
   afterhours: ['9-best-after-hours-medical-answering-service-companies', [30, 22]],
@@ -19,7 +20,7 @@ const shadow = '0 26px 60px rgba(19,68,253,.28), 0 2px 8px rgba(19,68,253,.12)';
 // p01 Arch window: the person framed in a tall arch, specialty tiles stepping down beside it.
 S.p01 = { title: 'What Skills Does a Virtual Dental Assistant Need?', style: 'Arch window', draw({ photo, tile, svg }) {
   svg(`<path d="M600 430 V170 A170 170 0 0 1 940 170 V430Z" fill="url(#gGhost)" transform="translate(30,-20)"/>`);
-  photo(F.dental[0], F.dental[1], 610, 24, 320, 400, 160, 120, 2.2, '160px 160px 28px 28px', { boxShadow: shadow, border: '6px solid rgba(255,255,255,.9)' });
+  photo(F.dental[0], F.dental[1], 610, 24, 320, 400, 165, 150, 1.25, '160px 160px 28px 28px', { boxShadow: shadow, border: '6px solid rgba(255,255,255,.9)' });
   tile('tooth', 470, 90, 120); tile('calendar', 380, 220, 104); tile('phone', 510, 300, 88);
 } };
 

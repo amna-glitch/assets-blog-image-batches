@@ -62,7 +62,8 @@
   // photo(src, focal[x%,y%], x, y, w, h, tx, ty, zoom, radius): crop of an existing HT photo (v3/photos), focal point placed at (tx, ty) in the panel.
   function photo(src, focal, x, y, w, h, tx, ty, zoom = 1, radius = 0, st = {}) {
     const p = add('panel', { left: x, top: y, width: w, height: h, borderRadius: radius, ...st });
-    const k = Math.max(w / 1200, h / 630) * zoom, iw = 1200 * k, ih = 630 * k;
+    const ar = (window.PHOTO_AR || {})[src] || 1200 / 630, W0 = 1200, H0 = 1200 / ar;   // photos can be any aspect ratio
+    const k = Math.max(w / W0, h / H0) * zoom, iw = W0 * k, ih = H0 * k;
     let l = tx - focal[0] / 100 * iw, t = ty - focal[1] / 100 * ih; l = Math.min(0, Math.max(w - iw, l)); t = Math.min(0, Math.max(h - ih, t));
     p.innerHTML = `<img src="../photos/${src}.webp" style="width:${iw}px;height:${ih}px;left:${l}px;top:${t}px">`; return p;
   }
