@@ -9,12 +9,26 @@ window.PHOTO_AR = Object.assign(window.PHOTO_AR || {}, Object.fromEntries(Object
 const shadow = '0 26px 60px rgba(19,68,253,.28), 0 2px 8px rgba(19,68,253,.12)';
 
 // n01 Shield badge: the person in a circle, a large shield with scales of justice overlapping it.
-S.n01 = { title: 'Is It Legal to Hire an Overseas Healthcare VA?', style: 'Shield badge', draw({ photo, svg, tile }) {
+S.n01 = { title: 'Is It Legal to Hire an Overseas Healthcare VA?', style: 'Contract and passport', draw({ photo, svg }) {
+  // Custom drawings instead of stock icons: a signed hiring contract with a gavel resting on it (legal), and a passport with an entry stamp (overseas).
   photo(...N.legal, 300, 30, 320, 320, 160, 125, 2.6, '50%', { boxShadow: shadow, border: '8px solid #fff' });
-  svg(`<g transform="translate(600,70)" filter="url(#soft)"><path d="M120 0 L230 40 V140 C230 220 175 270 120 290 C65 270 10 220 10 140 V40Z" fill="#fff"/>
-    <path d="M120 60 V220 M80 220 H160 M60 100 H180" stroke="#2345ff" stroke-width="10" stroke-linecap="round"/>
-    <path d="M60 100 L35 160 H85Z M180 100 L155 160 H205Z" fill="none" stroke="#2dd0e8" stroke-width="8" stroke-linejoin="round"/></g>`);
-  tile('globe', 930, 140, 104);
+  svg(`<g transform="translate(640,48) rotate(5)" filter="url(#soft)">
+      <rect width="230" height="290" rx="14" fill="#fff"/>
+      <rect x="24" y="28" width="120" height="12" rx="6" fill="#0b1440" opacity=".85"/>
+      ${[0, 1, 2, 3, 4].map(i => `<rect x="24" y="${62 + i * 22}" width="${[182, 160, 176, 140, 170][i]}" height="8" rx="4" fill="#c9d2f5"/>`).join('')}
+      <path d="M28 236 C 44 214, 54 250, 70 230 S 96 220, 104 238 C 112 252, 126 222, 140 234" stroke="#2345ff" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <rect x="24" y="250" width="120" height="3" rx="1.5" fill="#c9d2f5"/>
+      <g transform="translate(182,236)"><circle r="26" fill="#2dd0e8"/><circle r="19" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="3 4"/>
+        <path d="M-9 0 L-2 7 L11 -8" stroke="#0b1440" stroke-width="4" fill="none" stroke-linecap="round"/></g></g>
+    <g transform="translate(700,250) rotate(-28)" filter="url(#soft)">
+      <rect x="0" y="-9" width="150" height="18" rx="9" fill="#8a5a2b"/><rect x="-6" y="-11" width="18" height="22" rx="5" fill="#6b4320"/>
+      <rect x="140" y="-30" width="46" height="60" rx="10" fill="#162da1"/><rect x="134" y="-34" width="12" height="68" rx="5" fill="#2345ff"/><rect x="180" y="-34" width="12" height="68" rx="5" fill="#2345ff"/></g>
+    <g transform="translate(905,90) rotate(-8)" filter="url(#soft)">
+      <rect width="150" height="200" rx="14" fill="#162da1"/><rect x="8" y="8" width="134" height="184" rx="10" fill="none" stroke="#2dd0e8" stroke-width="2" opacity=".6"/>
+      <g transform="translate(75,82)" fill="none" stroke="#2dd0e8" stroke-width="3"><circle r="34"/><ellipse rx="14" ry="34"/><path d="M-34 0 H34 M-29 -17 H29 M-29 17 H29"/></g>
+      <rect x="40" y="140" width="70" height="8" rx="4" fill="#2dd0e8" opacity=".8"/><rect x="52" y="158" width="46" height="6" rx="3" fill="#2dd0e8" opacity=".5"/></g>
+    <g transform="translate(1000,262) rotate(14)"><rect x="-44" y="-26" width="88" height="52" rx="10" fill="rgba(255,255,255,.9)" stroke="#2345ff" stroke-width="4"/>
+      <path d="M-26 0 L-8 16 L28 -14" stroke="#2345ff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>`);
 } };
 
 // n02 Laptop screen: a laptop whose screen is the video call, small doctor self-view in the corner.
