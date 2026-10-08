@@ -1,0 +1,45 @@
+<title>Title-Led Covers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: short intro, the gradient comparison, 10 covers in a 2-up grid, then the listing replica. */
+:root { --bg:#f5f6fb; --surface:#fff; --ink:#0f1640; --muted:#5a6286; --line:#dde1f0; --accent:#2345ff;
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; color-scheme:dark } }
+:root[data-theme="dark"] { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; color-scheme:dark }
+body { background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); }
+.wrap { max-width:1180px; margin:0 auto; padding-inline:20px; padding-block:40px 80px; }
+h1,h2 { font-family:var(--display); text-wrap:balance; letter-spacing:-.015em; line-height:1.1; margin:0; }
+h1 { font-size:clamp(2rem,5vw,3rem); max-width:22ch; } h2 { font-size:1.6rem; margin-top:52px; }
+.eyebrow { font:500 .76rem var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.lede { max-width:66ch; color:var(--muted); font-size:1.06rem; margin-top:14px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(440px,1fr)); gap:24px; margin-top:20px; }
+figure { margin:0; min-width:0; } figure img { width:100%; border-radius:12px; display:block; border:1px solid var(--line); }
+figcaption { margin-top:10px; display:grid; gap:2px; } figcaption b { font-family:var(--display); font-size:1rem; } figcaption span { color:var(--muted); font-size:.9rem; }
+.pair { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:16px; }
+.pair figcaption { font:500 .78rem var(--mono); color:var(--muted); margin:0 0 8px; }
+.listing { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; margin-top:16px; align-items:start; }
+.listing img { width:100%; border:1px solid var(--line); border-radius:10px; background:#fff; }
+ul { padding-left:1.2em; } li { margin:6px 0; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } .pair, .listing { grid-template-columns:1fr; } }
+</style>
+<div class="wrap">
+<div class="eyebrow">Cover designs · round 6</div>
+<h1>10 covers that show what each article is about</h1>
+<p class="lede">These use the gradient from your current article images, add a short headline the way Aircall, Grammarly and Lattice do, and build a visual from the article's own subject. No question marks, no checkmark stamp, no prices.</p>
+<h2>Your gradient, kept</h2>
+<div class="pair"><figure><figcaption>Current cover</figcaption><img src="a/current.jpg" alt="Current Honest Taskers cover"></figure>
+<figure><figcaption>Gradient rebuilt, without the checkmark</figcaption><img src="a/01-scribe.jpg" alt="New cover using the same gradient"></figure></div>
+<p class="lede">Sampled from your current images: light sky blue on the left sweeping into electric blue (#1344fd to #2e64fd), a cyan wave (#02d0fd) rising at the bottom right, soft haze and thin light streaks.</p>
+<h2>The 10 designs</h2>
+<div class="grid"><figure><img src="a/01-scribe.jpg" alt="How a Scribe Works in Epic?"><figcaption><b>How a Scribe Works in Epic?</b><span>Voice waveform turning into a signed visit note, tagged Epic</span></figcaption></figure><figure><img src="a/02-triage.jpg" alt="How Much Does a Telephone Triage Virtual Assistant Cost?"><figcaption><b>How Much Does a Telephone Triage Virtual Assistant Cost?</b><span>An incoming call sorted into Urgent, Same day and Routine</span></figcaption></figure><figure><img src="a/03-hipaa.jpg" alt="Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs"><figcaption><b>Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs</b><span>A patient chart with PHI masked behind a shield, plus BAA, training and access-log chips</span></figcaption></figure><figure><img src="a/04-bilingual.jpg" alt="Bilingual Virtual Dental Receptionist vs. In-House Staff: Cost, Pros, and Which to Choose"><figcaption><b>Bilingual Virtual Dental Receptionist vs. In-House Staff: Cost, Pros, and Which to Choose</b><span>In-house desk in grey beside a bilingual VA chat in your gradient</span></figcaption></figure><figure><img src="a/05-best.jpg" alt="10 Best Medical Billing Virtual Assistant Companies (2026)"><figcaption><b>10 Best Medical Billing Virtual Assistant Companies (2026)</b><span>The count, large, beside ranked company cards</span></figcaption></figure><figure><img src="a/06-turnover.jpg" alt="Medical Office Staff Turnover, What It Costs and How to Cut It"><figcaption><b>Medical Office Staff Turnover, What It Costs and How to Cut It</b><span>Empty chairs tagged &quot;Open role&quot; and a climbing cost line</span></figcaption></figure><figure><img src="a/07-vet.jpg" alt="Virtual Veterinary Technician: The Complete Guide"><figcaption><b>Virtual Veterinary Technician: The Complete Guide</b><span>A guide booklet plus a pet patient card with a vaccine reminder</span></figcaption></figure><figure><img src="a/08-referral.jpg" alt="A Day in the Life of a Virtual Referral Coordinator"><figcaption><b>A Day in the Life of a Virtual Referral Coordinator</b><span>The VA beside a timeline of the day&#x27;s referrals</span></figcaption></figure><figure><img src="a/09-chiro.jpg" alt="Tasks to Delegate in a Chiropractic Practice"><figcaption><b>Tasks to Delegate in a Chiropractic Practice</b><span>Tasks moving from the front desk to the VA</span></figcaption></figure><figure><img src="a/10-pay.jpg" alt="How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region"><figcaption><b>How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region</b><span>A dot map with pay-range bars by region (no figures)</span></figcaption></figure></div>
+<h2>On your articles page</h2>
+<div class="listing"><img src="a/listing.jpg" alt="The 10 covers in a replica of the honesttaskers.com listing card">
+<div><p>Your card shows only the top 56% of each image and trims about 115px from each side, so every headline and visual sits inside that area.</p>
+<h3>Rules used</h3><ul>
+<li>Headline of 3 to 6 words that names the topic, never the full title.</li>
+<li>The visual shows the article's subject: the call, the chart, the note, the map.</li>
+<li>One gradient for every cover; the layout and visual change per article.</li>
+<li>No "?" symbols, no checkmark stamp, no prices.</li>
+</ul></div></div>
+</div>

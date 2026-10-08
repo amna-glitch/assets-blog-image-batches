@@ -1,0 +1,256 @@
+[
+ {
+  "out": "11-noshows",
+  "title": "How to Reduce Patient No-Shows, What Actually Works",
+  "cat": "Practice operations",
+  "spec": {
+   "kicker": "Scheduling",
+   "headline": "Cut patient no-shows",
+   "icon": "calendar",
+   "visual": "week",
+   "data": {
+    "title": "This week",
+    "grid": [
+     "cbcbe",
+     "bnccb",
+     "ccebn",
+     "bccbc"
+    ]
+   }
+  }
+ },
+ {
+  "out": "12-afterhours",
+  "title": "How a After-Hours Medical Answering Service Works?",
+  "cat": "How it works",
+  "spec": {
+   "kicker": "How it works",
+   "headline": "After-hours answering, step by step",
+   "icon": "headset",
+   "visual": "flow",
+   "data": {
+    "title": "After 6 PM",
+    "rows": [
+     "Patient calls the office",
+     "Agent answers in your name",
+     "Urgent calls paged to on-call",
+     "Message in your inbox by 8 AM"
+    ]
+   }
+  }
+ },
+ {
+  "out": "13-interview",
+  "title": "Virtual Nurse Assistant Interview Questions",
+  "cat": "Hiring",
+  "spec": {
+   "kicker": "Hiring",
+   "headline": "Interview a virtual nurse assistant",
+   "icon": "people",
+   "visual": "interview",
+   "data": {
+    "title": "Candidate scorecard",
+    "sub": "Virtual nurse assistant",
+    "rows": [
+     [
+      "Triage judgment",
+      4
+     ],
+     [
+      "EHR experience",
+      5
+     ],
+     [
+      "Patient communication",
+      4
+     ],
+     [
+      "HIPAA knowledge",
+      3
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "14-jobdesc",
+  "title": "Virtual Dental Receptionist Job Description",
+  "cat": "Job description",
+  "spec": {
+   "kicker": "Job description",
+   "headline": "Virtual dental receptionist job description",
+   "icon": "tooth",
+   "visual": "jobpost",
+   "data": {
+    "title": "Virtual Dental Receptionist",
+    "sub": "Remote · Full time",
+    "chips": [
+     "Scheduling",
+     "Insurance checks",
+     "Dentrix",
+     "Recall calls",
+     "Bilingual a plus"
+    ]
+   }
+  }
+ },
+ {
+  "out": "15-onboarding",
+  "title": "Onboarding a Virtual Medical Assistant, The First 30 Days Week by Week",
+  "cat": "Onboarding",
+  "spec": {
+   "kicker": "Onboarding",
+   "headline": "Your VA's first 30 days",
+   "icon": "laptop",
+   "visual": "weeks",
+   "data": {
+    "title": "Onboarding plan",
+    "sub": "Virtual medical assistant",
+    "at": 0.62,
+    "rows": [
+     "Access and HIPAA",
+     "Shadow calls",
+     "Own the phones",
+     "Full workload"
+    ]
+   }
+  }
+ },
+ {
+  "out": "16-checklist",
+  "title": "Remote Staff HIPAA Compliance Checklist for Medical Practices",
+  "cat": "Compliance",
+  "spec": {
+   "kicker": "Checklist",
+   "headline": "HIPAA checklist for remote staff",
+   "icon": "lock",
+   "visual": "checks",
+   "data": {
+    "title": "Remote staff HIPAA",
+    "rows": [
+     [
+      "BAA signed",
+      true
+     ],
+     [
+      "Encrypted laptop",
+      true
+     ],
+     [
+      "MFA on the EHR",
+      true
+     ],
+     [
+      "Access log review",
+      false
+     ],
+     [
+      "Annual training",
+      false
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "17-coding",
+  "title": "Upcoding and Downcoding",
+  "cat": "Billing & coding",
+  "spec": {
+   "kicker": "Billing & coding",
+   "headline": "Upcoding and downcoding, explained",
+   "icon": "magnifier",
+   "visual": "codes",
+   "data": {
+    "title": "Documented vs. billed",
+    "rows": [
+     [
+      "Visit A",
+      "99213",
+      "99214",
+      "up"
+     ],
+     [
+      "Visit B",
+      "99214",
+      "99213",
+      "down"
+     ]
+    ],
+    "note": "Match the code to the note"
+   }
+  }
+ },
+ {
+  "out": "18-cert",
+  "title": "Virtual Prior Authorization Specialist Training and Certification",
+  "cat": "Training",
+  "spec": {
+   "kicker": "Training",
+   "headline": "Prior auth specialist training",
+   "icon": "clipboard",
+   "visual": "cert",
+   "data": {
+    "title": "Prior authorization specialist",
+    "chips": [
+     "Payer rules",
+     "CPT & ICD-10"
+    ]
+   }
+  }
+ },
+ {
+  "out": "19-rcm",
+  "title": "What Is Revenue Cycle Management (RCM)?",
+  "cat": "Explainer",
+  "spec": {
+   "kicker": "Explainer",
+   "headline": "Revenue cycle management, explained",
+   "icon": "coin",
+   "visual": "loop",
+   "data": {
+    "title": "The revenue cycle",
+    "center": "RCM",
+    "rows": [
+     "Scheduling",
+     "Eligibility",
+     "Coding",
+     "Claims",
+     "Payments",
+     "Denials"
+    ]
+   }
+  }
+ },
+ {
+  "out": "20-medspa",
+  "title": "What Does a Med Spa VMA Do?",
+  "cat": "Role explainer",
+  "spec": {
+   "kicker": "Role explainer",
+   "headline": "What a med spa VMA does",
+   "icon": "heart",
+   "visual": "inbox",
+   "data": {
+    "title": "Inbox",
+    "rows": [
+     [
+      "Maya R.",
+      "Can I book a Botox consult Friday",
+      "Booked"
+     ],
+     [
+      "Jordan P.",
+      "Do you offer HydraFacial packages",
+      "Answered"
+     ],
+     [
+      "Elena S.",
+      "Need to move my laser session",
+      "Moved"
+     ]
+    ]
+   }
+  }
+ }
+]

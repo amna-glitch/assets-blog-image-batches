@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- Direction B: Two Fields. Comparison posts. Left field = the incumbent option (light tint),
+     right field = the virtual option (primary blue). One object per field.
+     Spec: {"left":"clinic","right":"headset","seam":true,"layout":"band"|"center"} -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><script src="icons.js"></script>
+<style>
+  .l { position: absolute; left: 0; top: 0; width: 600px; height: 630px; background: var(--tint-1); }
+  .r { position: absolute; left: 600px; top: 0; width: 600px; height: 630px; background: var(--blue); }
+  .oL { left: 420px; top: 315px; width: 210px; height: 210px; margin: -105px 0 0 -105px; }
+  .oR { left: 780px; top: 315px; width: 210px; height: 210px; margin: -105px 0 0 -105px; }
+  .seam { position: absolute; left: 600px; top: 315px; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%;
+          background: var(--teal); box-shadow: 0 0 0 8px var(--tint-1); }
+</style></head>
+<body><div class="canvas" id="c"><div class="l"></div><div class="r"></div>
+<div class="center oL" id="oL"></div><div class="center oR" id="oR"></div><div class="seam" id="seam"></div><div class="sig"></div></div>
+<script>
+  const s = htSpec({ left: 'clinic', right: 'headset', seam: true, layout: 'band' });
+  const L = s.layout === 'center' ? { cy: 315, d: 210 } : { cy: 180, d: 180 };
+  for (const id of ['oL', 'oR']) Object.assign(document.getElementById(id).style,
+    { width: L.d + 'px', height: L.d + 'px', top: L.cy + 'px', margin: `${-L.d / 2}px 0 0 ${-L.d / 2}px` });
+  document.getElementById('seam').style.top = L.cy + 'px';
+  // Accent teal only on the virtual (right) side, so the eye lands there.
+  document.getElementById('oL').innerHTML = htIcon(s.left, L.d, 6, '#162da1', '#162da1');
+  document.getElementById('oR').innerHTML = htIcon(s.right, L.d, 6, '#ffffff', '#2dd0e8');
+  if (!s.seam) document.getElementById('seam').remove();
+  htGuides(document.getElementById('c'));
+</script></body></html>

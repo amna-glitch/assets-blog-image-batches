@@ -1,0 +1,278 @@
+[
+ {
+  "out": "1a-scene",
+  "title": "What Does a Dermatology VMA Do?",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "scene",
+   "root": "../",
+   "photo": "photos/what-does-a-dermatology-vma-do.webp",
+   "focal": [
+    72,
+    25
+   ]
+  }
+ },
+ {
+  "out": "1b-scene",
+  "title": "Virtual Veterinary Technician: The Complete Guide",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "scene",
+   "root": "../",
+   "photo": "photos/virtual-veterinary-technician-the-complete-guide.webp",
+   "focal": [
+    52,
+    25
+   ]
+  }
+ },
+ {
+  "out": "2a-card",
+  "title": "Tasks to Delegate in a Chiropractic Practice",
+  "cat": "Tasks",
+  "spec": {
+   "style": "card",
+   "root": "../",
+   "field": "tint",
+   "date": [
+    "MON",
+    "09"
+   ],
+   "card": {
+    "icon": "clipboard",
+    "title": "Today's front desk",
+    "sub": "Handled by your VA",
+    "rows": [
+     [
+      "IV",
+      "#2345ff",
+      "Insurance verified",
+      "Aetna PPO \u00b7 8:10 AM",
+      "Done",
+      "teal"
+     ],
+     [
+      "AR",
+      "#3e59ff",
+      "Adjustment reminders",
+      "12 patients \u00b7 9:00 AM",
+      "Sent",
+      "blue"
+     ],
+     [
+      "IF",
+      "#162da1",
+      "Intake forms",
+      "3 new patients",
+      "Pending",
+      "gray"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "2b-card",
+  "title": "Benefits for Behavioral Health Practices",
+  "cat": "Benefits",
+  "spec": {
+   "style": "card",
+   "root": "../",
+   "field": "aqua",
+   "date": [
+    "THU",
+    "23"
+   ],
+   "card": {
+    "icon": "phone",
+    "title": "Intake queue",
+    "sub": "Behavioral health practice",
+    "rows": [
+     [
+      "CB",
+      "#2345ff",
+      "Callback returned",
+      "New client \u00b7 10:24 AM",
+      "Done",
+      "teal"
+     ],
+     [
+      "BC",
+      "#3e59ff",
+      "Benefits checked",
+      "Telehealth visit",
+      "Verified",
+      "blue"
+     ],
+     [
+      "RS",
+      "#162da1",
+      "Reschedule request",
+      "Thu to Fri",
+      "Pending",
+      "gray"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "3a-arch",
+  "title": "How to Hire a Virtual Case Manager",
+  "cat": "Hiring",
+  "spec": {
+   "style": "arch",
+   "root": "../",
+   "icon": "person",
+   "photo": "photos/how-to-hire-a-virtual-case-manager.webp",
+   "focal": [
+    68,
+    22
+   ]
+  }
+ },
+ {
+  "out": "3b-arch",
+  "title": "Virtual Medical Office Manager Interview Questions",
+  "cat": "Hiring",
+  "spec": {
+   "style": "arch",
+   "root": "../",
+   "icon": "clipboard",
+   "field": "deep",
+   "photo": "photos/virtual-medical-office-manager-interview-questions.webp",
+   "focal": [
+    55,
+    25
+   ]
+  }
+ },
+ {
+  "out": "3c-archvs",
+  "title": "Radiology Virtual Medical Assistant vs. In-House Staff",
+  "cat": "Comparison",
+  "spec": {
+   "style": "archvs",
+   "root": "../",
+   "photo": "photos/radiology-virtual-medical-assistant-vs-in-house-staff-cost-pros-and-which-to-choose.webp",
+   "focal": [
+    62,
+    25
+   ],
+   "photo2": "photos/medical-office-staff-turnover-what-it-costs-and-how-to-cut-it.webp",
+   "focal2": [
+    28,
+    25
+   ]
+  }
+ },
+ {
+  "out": "3d-archvs",
+  "title": "Bilingual Virtual Dental Receptionist vs. In-House Staff",
+  "cat": "Comparison",
+  "spec": {
+   "style": "archvs",
+   "root": "../",
+   "photo": "photos/bilingual-virtual-dental-receptionist-vs-in-house-staff-cost-pros-and-which-to-choose.webp",
+   "focal": [
+    55,
+    25
+   ],
+   "photo2": "photos/how-much-does-a-telephone-triage-virtual-assistant-cost.webp",
+   "focal2": [
+    30,
+    22
+   ]
+  }
+ },
+ {
+  "out": "4a-ink",
+  "title": "Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs",
+  "cat": "Compliance",
+  "spec": {
+   "style": "ink",
+   "root": "../",
+   "field": "teal",
+   "icons": [
+    "shield",
+    "lock",
+    "document"
+   ]
+  }
+ },
+ {
+  "out": "4b-ink",
+  "title": "Medical Office Staff Turnover, What It Costs and How to Cut It",
+  "cat": "Cost",
+  "spec": {
+   "style": "ink",
+   "root": "../",
+   "field": "tint",
+   "icons": [
+    "clipboard",
+    "calendar",
+    "person"
+   ]
+  }
+ },
+ {
+  "out": "5a-tool",
+  "title": "How a Scribe Works in Epic?",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "tool",
+   "root": "../",
+   "tool": "Epic",
+   "toolSub": "EHR"
+  }
+ },
+ {
+  "out": "5b-tool",
+  "title": "How Does a Biller Work in Dentrix?",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "tool",
+   "root": "../",
+   "field": "aqua",
+   "tool": "Dentrix",
+   "toolSub": "Dental PMS"
+  }
+ },
+ {
+  "out": "6a-numeral",
+  "title": "10 Best Medical Billing Virtual Assistant Companies (2026)",
+  "cat": "Best-of",
+  "spec": {
+   "style": "numeral",
+   "root": "../",
+   "field": "tint",
+   "num": "10",
+   "eyebrow": "Companies \u00b7 2026",
+   "label": "Medical billing VAs, compared",
+   "photo": "photos/10-best-medical-billing-virtual-assistant-companies-2026.webp",
+   "focal": [
+    43,
+    22
+   ]
+  }
+ },
+ {
+  "out": "6b-numeral",
+  "title": "7 Best Pharmacy Virtual Assistant Companies (2026)",
+  "cat": "Best-of",
+  "spec": {
+   "style": "numeral",
+   "root": "../",
+   "field": "deep",
+   "num": "7",
+   "eyebrow": "Companies \u00b7 2026",
+   "label": "Pharmacy VAs, compared",
+   "photo": "photos/how-much-do-virtual-medical-assistants-earn-sourced-pay-ranges-by-region.webp",
+   "focal": [
+    75,
+    25
+   ]
+  }
+ }
+]

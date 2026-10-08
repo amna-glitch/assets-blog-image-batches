@@ -1,0 +1,39 @@
+[
+  {
+    "src": "https://ahrefs.com/assets/esbuild/certificate-medal-vertical-STC7ANTW.svg",
+    "href": "https://ahrefs.com/academy/how-to-use-ahrefs/exam",
+    "alt": "",
+    "title": "Take Exam",
+    "renderedW": 296,
+    "renderedH": 147,
+    "cardRatio": 2.014,
+    "y": 6037,
+    "file": "covers/01.svg"
+  },
+  {
+    "src": "https://i.ytimg.com/vi/Cnj7oQwVDXo/mqdefault.jpg",
+    "href": "https://www.youtube.com/watch?v=Cnj7oQwVDXo",
+    "alt": "",
+    "title": "He Built A $10M+ SEO Empire. It Nearly Broke Him.",
+    "renderedW": 343,
+    "renderedH": 185,
+    "cardRatio": 1.851,
+    "y": 6765,
+    "file": "covers/02.jpg",
+    "nativeW": 320,
+    "nativeH": 180
+  },
+  {
+    "src": "https://i.ytimg.com/vi/EJj4CpzawPI/mqdefault.jpg",
+    "href": "https://www.youtube.com/watch?v=EJj4CpzawPI",
+    "alt": "",
+    "title": "Learn 80% of SEO in 14 Minutes",
+    "renderedW": 343,
+    "renderedH": 185,
+    "cardRatio": 1.851,
+    "y": 6765,
+    "file": "covers/03.jpg",
+    "nativeW": 320,
+    "nativeH": 180
+  }
+]

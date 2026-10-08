@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- Mock blog index used to judge a set of images as a series. ?set=after|before&w=1440|390 -->
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; background: #ffffff; font-family: "Sequel Sans", "Inter", Arial, sans-serif; color: #0b1440; }
+  .wrap { padding: 56px 72px 72px; }
+  h1 { font-size: 40px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .sub { color: #5a6488; font-size: 16px; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px; }
+  .card img { width: 100%; aspect-ratio: 1200 / 630; object-fit: cover; display: block; border-radius: 12px; }
+  .cat { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #2345ff; margin: 16px 0 6px; }
+  .t { font-size: 18px; font-weight: 600; line-height: 1.3; }
+  body.m .wrap { padding: 24px 16px; } body.m h1 { font-size: 28px; } body.m .grid { grid-template-columns: 1fr; gap: 32px; }
+</style></head>
+<body><div class="wrap"><h1>Articles</h1><div class="sub" id="sub"></div><div class="grid" id="g"></div></div>
+<script>
+  const q = new URLSearchParams(location.search), set = q.get('set') || 'after', w = +(q.get('w') || 1440);
+  if (w < 600) document.body.classList.add('m');
+  document.getElementById('sub').textContent = set === 'after' ? 'Mock-up: proposed series (5 directions, real titles)' : 'Mock-up: current featured images (same titles)';
+</script>
+<script src="contact-sheet-data.js"></script>
+<script>
+  const items = window.CS[set].slice(0, w < 600 ? 5 : 12);
+  document.getElementById('g').innerHTML = items.map(i => `<div class="card"><img src="${i.img}"><div class="cat">${i.cat}</div><div class="t">${i.title}</div></div>`).join('');
+</script></body></html>

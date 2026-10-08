@@ -1,0 +1,153 @@
+<!doctype html>
+<!-- Honest Taskers covers v5: your current blue-to-cyan gradient, a short headline, and a visual that shows the article's subject.
+     ?spec=<json> with "design": one of the keys in D below. Key content stays in the listing band (y < 353). -->
+<html><head><meta charset="utf-8"><script src="../../v3/templates/icons.js"></script>
+<style>
+  :root { --blue:#2345ff; --deep:#162da1; --teal:#2dd0e8; --ink:#0b1440; --font:"Sequel Sans","Inter Display","Inter","Helvetica Neue",Arial,sans-serif; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: #fff; }
+  .c { position: relative; width: 1200px; height: 630px; overflow: hidden; font-family: var(--font); }
+  .abs { position: absolute; }
+  .card { position: absolute; background: rgba(255,255,255,.96); border-radius: 22px; box-shadow: 0 22px 50px rgba(10,30,140,.22), 0 2px 6px rgba(10,30,140,.08); }
+  .glass { position: absolute; background: rgba(255,255,255,.22); border: 1.5px solid rgba(255,255,255,.55); border-radius: 22px; backdrop-filter: blur(6px); }
+  .h { position: absolute; font-weight: 700; letter-spacing: -.025em; line-height: 1.02; }
+  .k { font-weight: 600; font-size: 18px; letter-spacing: .12em; text-transform: uppercase; }
+  .row { display: flex; align-items: center; gap: 14px; }
+  .pill { padding: 6px 14px; border-radius: 999px; font-size: 18px; font-weight: 600; white-space: nowrap; }
+  .panel { position: absolute; overflow: hidden; }
+  .panel img { position: absolute; display: block; }
+</style></head>
+<body><div class="c" id="c"></div>
+<script>
+  const s = htSpec({ design: 'scribe' });
+  const c = document.getElementById('c');
+  const B = '#2345ff', E = '#1344fd', CY = '#02d0fd', SKY = '#a9d2f7', T = '#2dd0e8', INK = '#0b1440', D0 = '#162da1';
+  const add = (cls, st, html = '') => { const e = document.createElement('div'); e.className = cls; Object.assign(e.style, st); e.innerHTML = html; c.appendChild(e); return e; };
+  const P = v => typeof v === 'number' ? v + 'px' : v;
+  const at = (x, y, w, h, extra = {}) => Object.fromEntries(Object.entries({ left: x, top: y, width: w, height: h, ...extra }).filter(([, v]) => v !== undefined).map(([k, v]) => [k, P(v)]));
+  const ico = (n, size, stroke = 8, col = B, acc = T) => htIcon(n, size, stroke, col, acc);
+  const svg = inner => add('abs', { left: 0, top: 0 }, `<svg width="1200" height="630">${inner}</svg>`);
+  function photo(src, focal, x, y, w, h, tx, ty, zoom = 1, radius = '0') {
+    const p = add('panel', at(x, y, w, h, { borderRadius: radius }));
+    const k = Math.max(w / 1200, h / 630) * zoom, iw = 1200 * k, ih = 630 * k;
+    let l = tx - focal[0] / 100 * iw, t = ty - focal[1] / 100 * ih;
+    l = Math.min(0, Math.max(w - iw, l)); t = Math.min(0, Math.max(h - ih, t));
+    const img = document.createElement('img'); img.src = '../../v3/' + src;
+    Object.assign(img.style, { width: iw + 'px', height: ih + 'px', left: l + 'px', top: t + 'px' });
+    p.appendChild(img); return p;
+  }
+
+  // The Honest Taskers gradient, rebuilt from the current covers: light sky on the left sweeping into electric blue,
+  // a cyan wave rising at the bottom right, soft haze and thin light streaks. No checkmark.
+  function htGradient(mode = 'right') {
+    const flip = mode === 'left'; const before = c.children.length;
+    setTimeout(() => {}, 0);
+    add('abs', at(0, 0, 1200, 630, { background: `linear-gradient(${flip ? 245 : 115}deg, #f2f8ff 0%, ${SKY} 30%, #5b9efd 55%, ${E} 82%, #0d3fd8 100%)` }));
+    add('abs', at(0, 0, 1200, 630, { background: `radial-gradient(60% 70% at ${flip ? 8 : 92}% 108%, ${CY} 0%, rgba(2,208,253,.55) 35%, transparent 70%)` }));
+    add('abs', at(0, 0, 1200, 630, { background: `radial-gradient(45% 55% at ${flip ? 85 : 15}% 10%, rgba(255,255,255,.85), transparent 70%)` }));
+    const sx = flip ? 'scale(-1,1) translate(-1200,0)' : '';
+    svg(`<g transform="${sx}"><path d="M560 630 C 760 520, 900 470, 1200 330 L1200 630Z" fill="${CY}" opacity=".55"/>
+      <path d="M700 630 C 860 560, 980 520, 1200 440 L1200 630Z" fill="#7fe9ff" opacity=".45"/>
+      ${[120, 175, 250, 300].map((y, i) => `<rect x="${640 + i * 40}" y="${y}" width="${420 - i * 60}" height="3" rx="1.5" fill="#fff" opacity="${.35 - i * .06}"/>`).join('')}</g>`);
+    [...c.children].slice(before).forEach(k => { k.dataset.bg = '1'; });
+  }
+  const head = (x, y, w, txt, kicker, col = INK, size = 56) => add('h', at(x, y, w, undefined, { color: col, fontSize: size }),
+    `${kicker ? `<div class="k" style="color:${col === INK ? B : T};margin-bottom:12px">${kicker}</div>` : ''}${txt}`);
+
+  const D = {};
+  // 1 How a Scribe Works in Epic: the visit's voice turns into a signed Epic note.
+  D.scribe = () => { htGradient();
+    head(80, 60, 430, 'Scribe in Epic,<br>start to finish', 'Software &amp; EHR');
+    svg(Array.from({ length: 26 }, (_, i) => { const h = 18 + 70 * Math.abs(Math.sin(i * .62)); return `<rect x="${540 + i * 9}" y="${170 - h / 2}" width="5" height="${h}" rx="2.5" fill="#fff" opacity=".95"/>`; }).join('') +
+      `<path d="M790 170 L830 170" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M820 160 L832 170 L820 180" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`);
+    add('card', at(850, 50, 290, undefined, { padding: '20px 22px' }), `<div class="row" style="justify-content:space-between"><b style="font:700 22px var(--font);color:${INK}">Visit note</b><span class="pill" style="background:#eef1ff;color:${B}">Epic</span></div>
+      ${['Chief complaint', 'History', 'Plan'].map((t, i) => `<div style="margin-top:12px;font:600 15px var(--font);color:#6b7396;text-transform:uppercase;letter-spacing:.06em">${t}</div><div style="margin-top:6px;height:10px;width:${[220, 190, 150][i]}px;border-radius:5px;background:#e3e7f6"></div>`).join('')}
+      <div class="pill" style="margin-top:16px;display:inline-block;background:rgba(45,208,232,.18);color:#0a8496">Ready to sign</div>`);
+  };
+  // 2 Telephone Triage VA Cost: an incoming call sorted by urgency, with a cost-guide tag (no price).
+  D.triage = () => { htGradient();
+    head(80, 60, 430, 'What a triage VA costs', 'Cost guide');
+    add('card', at(600, 40, 300, undefined, { padding: '20px 22px' }), `<div class="row"><div style="width:52px;height:52px;border-radius:50%;background:${B};display:flex;align-items:center;justify-content:center">${ico('phone', 32, 9, '#fff', T)}</div>
+      <div><b style="font:700 22px var(--font);color:${INK}">Incoming call</b><div style="font:500 16px var(--font);color:#6b7396">Triage line</div></div></div>
+      ${[['Urgent', '#162da1', '#fff'], ['Same day', B, '#fff'], ['Routine', '#eef1ff', B]].map(([t, b, f], i) => `<div class="row" style="margin-top:12px;justify-content:space-between;font:600 19px var(--font);color:${INK}"><span>${['Chest pain', 'Fever, 3 days', 'Refill request'][i]}</span><span class="pill" style="background:${b};color:${f};font-size:15px">${t}</span></div>`).join('')}`);
+    add('card', at(930, 70, 200, 120, { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '8px' }),
+      `${ico('coin', 50, 8)}<b style="font:700 20px var(--font);color:${INK}">Hourly vs. salary</b>`);
+  };
+  // 3 HIPAA: a patient chart with PHI masked behind a shield, plus the safeguards as chips.
+  D.hipaa = () => { htGradient('left');
+    head(660, 60, 460, 'HIPAA-safe virtual assistants', 'Compliance', INK);
+    add('card', at(110, 40, 330, 270, { padding: '22px' }), `<b style="font:700 22px var(--font);color:${INK}">Patient chart</b>
+      ${[['Name', 220], ['DOB', 120], ['Diagnosis', 200], ['Insurance ID', 170]].map(([l, w]) => `<div class="row" style="margin-top:14px;font:600 16px var(--font);color:#6b7396"><span style="width:110px">${l}</span><span style="height:16px;width:${w - 60}px;border-radius:4px;background:${INK};opacity:.85"></span></div>`).join('')}`);
+    add('abs', at(380, 120, 150, 170), ico('shield', 150, 6, '#fff', T));
+    ['BAA signed', 'HIPAA training', 'Access logs'].forEach((t, i) => add('pill', at(660 + i * 160, 220, undefined, undefined, { position: 'absolute', background: '#fff', color: B, boxShadow: '0 8px 18px rgba(10,30,140,.15)' }), t));
+  };
+  // 4 Bilingual Dental Receptionist vs In-House: one desk in grey, one bilingual VA desk in your gradient.
+  D.bilingual = () => {
+    htGradient();
+    add('abs', at(0, 0, 600, 630, { background: '#eef0f5' })).dataset.bg = '1';
+    head(60, 40, 480, 'In-house front desk', 'Option A', '#4a5175', 40);
+    add('card', at(60, 170, 420, undefined, { padding: '18px 20px', boxShadow: '0 10px 24px rgba(0,0,0,.08)' }), `<div class="row" style="font:600 20px var(--font);color:#4a5175">${ico('clinic', 34, 8, '#7a819f', '#7a819f')} One language · office hours</div>`);
+    head(660, 40, 480, 'Bilingual virtual receptionist', 'Option B', INK, 40);
+    [['Hola, ¿en qué le puedo ayudar?', 170, '#fff', INK], ['Hi! Booking for Tuesday works.', 240, B, '#fff']].forEach(([t, y, b, f]) =>
+      add('abs', at(660, y, undefined, undefined, { padding: '14px 20px', borderRadius: '22px 22px 22px 6px', background: b, color: f, font: '500 21px var(--font)', boxShadow: '0 10px 24px rgba(10,30,140,.16)' }), t));
+    add('abs', at(572, 150, 56, 56, { borderRadius: '50%', background: T, border: '6px solid #fff', display: 'flex', alignItems: 'center', justifyContent: 'center', font: '700 18px var(--font)', color: INK }), 'vs');
+  };
+  // 5 10 Best Medical Billing VA Companies: ranked company cards on the gradient, the count large.
+  D.best = () => { htGradient();
+    add('h', at(80, 30, 260, undefined, { fontSize: 200, color: INK, letterSpacing: '-.06em' }), '10');
+    head(84, 236, 420, 'best medical billing VA companies', '', INK, 36);
+    [0, 1, 2].forEach(i => add('card', at(560 + i * 34, 40 + i * 92, 420, 78, { display: 'flex', alignItems: 'center', gap: '16px', padding: '0 20px' }),
+      `<b style="font:700 30px var(--font);color:${B};width:44px">#${i + 1}</b><div style="flex:1"><div style="height:12px;width:${[210, 180, 160][i]}px;border-radius:6px;background:${INK};opacity:.85"></div><div style="margin-top:9px;height:10px;width:${[150, 130, 170][i]}px;border-radius:5px;background:#dfe4f4"></div></div>${ico(['document', 'coin', 'shield'][i], 34, 9)}`));
+  };
+  // 6 Staff Turnover: empty chairs with "open role" tags and a cost line climbing.
+  D.turnover = () => { htGradient();
+    head(80, 60, 430, 'The real cost of staff turnover', 'Practice operations');
+    const chair = x => `<g transform="translate(${x},90)"><rect x="0" y="0" width="70" height="80" rx="16" fill="#fff" opacity=".95"/><rect x="-6" y="80" width="82" height="22" rx="8" fill="#fff"/><path d="M35 102 V140 M10 150 H60" stroke="#fff" stroke-width="7" stroke-linecap="round"/></g>`;
+    svg(chair(600) + chair(740) + chair(880) + `<path d="M580 320 L700 300 L820 260 L960 200 L1080 120" stroke="#fff" stroke-width="6" fill="none" stroke-linejoin="round"/><circle cx="1080" cy="120" r="12" fill="${T}" stroke="#fff" stroke-width="5"/>`);
+    ['Open role', 'Open role', 'Training'].forEach((t, i) => add('pill', at(596 + i * 140, 50, undefined, undefined, { position: 'absolute', background: i === 2 ? T : '#fff', color: i === 2 ? INK : B, fontSize: '16px' }), t));
+  };
+  // 7 Virtual Veterinary Technician guide: a guide booklet plus a pet patient card.
+  D.vet = () => { htGradient('left');
+    head(680, 60, 440, 'The virtual vet tech guide', 'Complete guide');
+    add('abs', at(120, 30, 250, 310, { borderRadius: 10, background: D0, transform: 'rotate(-4deg)', boxShadow: '0 24px 44px rgba(10,30,140,.35)', padding: '26px 22px', color: '#fff' }),
+      `<div class="k" style="color:${T}">Guide</div><div style="font:700 32px/1.05 var(--font);margin-top:12px">Virtual veterinary technician</div><div style="position:absolute;right:20px;bottom:20px">${ico('paw', 80, 7, '#fff', T)}</div>`);
+    add('card', at(330, 120, 280, undefined, { padding: '18px 20px' }), `<div class="row">${ico('paw', 40, 9)}<div><b style="font:700 21px var(--font);color:${INK}">Bella · Labrador</b><div style="font:500 16px var(--font);color:#6b7396">Patient profile</div></div></div>
+      <div class="row" style="margin-top:12px;justify-content:space-between;font:600 18px var(--font);color:${INK}"><span>Rabies booster</span><span class="pill" style="background:rgba(45,208,232,.18);color:#0a8496;font-size:15px">Reminder sent</span></div>`);
+  };
+  // 8 A Day in the Life of a Referral Coordinator: the VA plus a timeline of the day's hand-offs.
+  D.referral = () => { htGradient();
+    photo(s.photo, s.focal, 60, 30, 300, 300, 150, 110, 1.9, '28px');
+    head(400, 30, 400, 'A day as a referral coordinator', '', INK, 36);
+    [['8:30', 'Referral sent to cardiology'], ['11:00', 'Prior auth approved'], ['2:15', 'Patient booked, Tue 9 AM']].forEach(([t, d], i) =>
+      add('card', at(400 + i * 40, 140 + i * 68, 380, 56, { display: 'flex', alignItems: 'center', gap: '14px', padding: '0 18px', borderRadius: 16 }),
+        `<b style="font:700 18px var(--font);color:${B};width:52px">${t}</b><span style="font:600 19px var(--font);color:${INK}">${d}</span>`));
+  };
+  // 9 Tasks to Delegate in a Chiropractic Practice: tasks moving from the front desk to the VA.
+  D.chiro = () => { htGradient();
+    head(80, 60, 420, 'Chiro tasks to hand off', 'Delegation');
+    add('card', at(560, 40, 240, 270, { padding: '18px' }), `<div class="row">${ico('clinic', 32, 9, '#7a819f', '#7a819f')}<b style="font:700 19px var(--font);color:#4a5175">Front desk</b></div>
+      ${['Phones', 'Check-in', 'Payments'].map(t => `<div style="margin-top:12px;padding:10px 12px;border-radius:10px;background:#f2f4fa;font:600 17px var(--font);color:#4a5175">${t}</div>`).join('')}`);
+    svg(`<path d="M810 170 C 850 150, 870 150, 900 170" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M888 158 L902 171 L886 182" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>`);
+    add('card', at(910, 40, 240, 270, { padding: '18px' }), `<div class="row">${ico('spine', 32, 9)}<b style="font:700 19px var(--font);color:${INK}">Your VA</b></div>
+      ${['Insurance checks', 'Recall calls', 'Visit reminders'].map(t => `<div style="margin-top:12px;padding:10px 12px;border-radius:10px;background:rgba(45,208,232,.16);font:600 17px var(--font);color:${INK}">${t}</div>`).join('')}`);
+  };
+  // 10 VMA Pay by Region: a dot map with region range bars (no figures).
+  D.pay = () => { htGradient('left');
+    head(720, 60, 420, 'VMA pay, region by region', 'Pay guide');
+    let g = ''; for (let y = 30; y < 330; y += 14) for (let x = 60; x < 640; x += 14) {
+      const nx = (x - 350) / 290, ny = (y - 180) / 150, land = Math.sin(nx * 5.2) * Math.cos(ny * 4.1) + Math.sin(nx * 2 + ny * 3) * .6 > -.25 && nx * nx + ny * ny * 1.4 < 1.05;
+      if (land) g += `<circle cx="${x}" cy="${y}" r="3.2" fill="#fff" opacity=".85"/>`; }
+    [[170, 130], [330, 210], [500, 150]].forEach(([x, y]) => g += `<circle cx="${x}" cy="${y}" r="13" fill="${T}" stroke="#fff" stroke-width="4"/>`);
+    svg(g);
+    add('card', at(720, 214, 400, undefined, { padding: '14px 20px' }), [['North America', .3, .8], ['Latin America', .15, .5], ['Philippines', .1, .4]].map(([r, a, b], i) =>
+      `<div style="display:flex;align-items:center;gap:12px;margin:8px 0;font:600 17px var(--font);color:${INK}"><span style="width:140px">${r}</span><span style="flex:1;height:12px;border-radius:6px;background:#eef1ff;position:relative"><i style="position:absolute;left:${a * 100}%;width:${(b - a) * 100}%;top:0;bottom:0;border-radius:6px;background:${[D0, B, T][i]}"></i></span></div>`).join(''));
+  };
+
+  // Build the design, then fit everything except the gradient into the area the listing card shows
+  // (x 120-1080), scaled to 80% so headlines never get cropped at the card's edges.
+  const firstContent = { n: 0 }; const _ht = htGradient;
+  (D[s.design] || D.scribe)();
+  const kids = [...c.children]; const wrap = document.createElement('div');
+  Object.assign(wrap.style, { position: 'absolute', left: '120px', top: '22px', width: '1200px', height: '630px', transform: 'scale(.8)', transformOrigin: '0 0' });
+  kids.filter(k => !k.dataset.bg).forEach(k => wrap.appendChild(k)); c.appendChild(wrap);
+</script></body></html>

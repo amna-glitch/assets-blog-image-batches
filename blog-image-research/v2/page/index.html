@@ -1,0 +1,159 @@
+<title>Honest Taskers Cover System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a long research document; wide image grids, narrow reading column for prose. */
+:root { --bg:#f5f6fb; --surface:#ffffff; --ink:#0f1640; --muted:#5a6286; --line:#dde1f0; --accent:#2345ff; --teal:#0aa7bf; --bad:#c2410c;
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; --teal:#2dd0e8; --bad:#fb923c; color-scheme:dark } }
+:root[data-theme="dark"] { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; --teal:#2dd0e8; --bad:#fb923c; color-scheme:dark }
+body { background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); }
+.wrap { max-width:1180px; margin:0 auto; padding-inline:20px; padding-block:40px 80px; }
+h1,h2,h3 { font-family:var(--display); text-wrap:balance; letter-spacing:-.015em; line-height:1.1; margin:0; }
+h1 { font-size:clamp(2.1rem,5vw,3.4rem); font-weight:700; max-width:18ch; }
+h2 { font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; margin-top:72px; }
+h3 { font-size:1.12rem; font-weight:600; }
+.lede { max-width:62ch; color:var(--muted); font-size:1.1rem; margin-top:16px; }
+.prose { max-width:66ch; } .prose p { margin:12px 0 0; }
+.eyebrow { font:500 .78rem/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--accent); }
+.sec-head { display:grid; gap:10px; }
+.stats { display:flex; flex-wrap:wrap; gap:28px; margin-top:28px; font-family:var(--mono); font-size:.85rem; color:var(--muted); }
+.stats b { display:block; font:700 1.6rem/1.1 var(--display); color:var(--ink); }
+.grid-sites { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:20px; margin-top:24px; }
+.site { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px; display:grid; gap:10px; min-width:0; }
+.thumbs { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+.thumbs.n1 { grid-template-columns:1fr; }
+.thumbs img { width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:6px; display:block; background:var(--line); }
+.meta { display:flex; justify-content:space-between; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.grp { font:500 .72rem var(--mono); color:var(--muted); }
+.site p { margin:0; font-size:.92rem; color:var(--muted); }
+.tags { display:flex; flex-wrap:wrap; gap:6px; }
+.tag { font:500 .7rem var(--mono); padding:3px 8px; border-radius:999px; background:color-mix(in srgb,var(--accent) 12%,transparent); color:var(--accent); }
+.tag.bad { background:color-mix(in srgb,var(--bad) 12%,transparent); color:var(--bad); }
+.patterns { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:24px; }
+.pat { border-top:3px solid var(--accent); padding-top:12px; } .pat.bad { border-color:var(--bad); }
+.pat p { margin:6px 0 0; font-size:.93rem; color:var(--muted); }
+.pat .who { font:500 .72rem var(--mono); color:var(--ink); margin-top:8px; }
+.tbl { overflow-x:auto; margin-top:24px; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+table { border-collapse:collapse; width:100%; min-width:720px; font-size:.92rem; }
+th,td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font:500 .72rem var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+tr:last-child td { border-bottom:0; } td b { font-family:var(--display); }
+.num { font-variant-numeric:tabular-nums; }
+.newgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px; margin-top:24px; }
+.new { margin:0; min-width:0; } .new img { width:100%; border-radius:10px; display:block; }
+.new figcaption { font-size:.82rem; color:var(--muted); margin-top:8px; line-height:1.4; } .new figcaption b { color:var(--ink); }
+.ba { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:24px; }
+.ba figure { margin:0; min-width:0; } .ba img { width:100%; border:1px solid var(--line); border-radius:10px; display:block; background:#fff; }
+.ba figcaption { font:500 .78rem var(--mono); color:var(--muted); margin-bottom:8px; }
+.cur { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:16px; } .cur img { width:100%; border-radius:6px; display:block; }
+.note { margin-top:20px; padding:16px 18px; border-left:3px solid var(--teal); background:var(--surface); border-radius:0 10px 10px 0; max-width:75ch; font-size:.95rem; }
+ol.rules { max-width:70ch; padding-left:1.2em; } ol.rules li { margin:8px 0; }
+@media (max-width:640px) { .ba { grid-template-columns:1fr; } .cur { grid-template-columns:1fr 1fr; } .grid-sites { grid-template-columns:1fr; } }
+</style>
+<div class="wrap">
+<header>
+<div class="eyebrow">Blog cover research · October 2026</div>
+<h1>How 20 blogs vary their covers, and a system for Honest Taskers</h1>
+<p class="lede">You like your current look; the problem is that 1,900+ articles share one composition. I studied the cover images of 20 blogs (design leaders plus the healthcare and practice-software brands your readers know) to see how they keep a big archive varied without losing the brand. Then I turned what works into six layouts for your blog.</p>
+<div class="stats"><div><b class="num">20</b>blogs studied</div><div><b class="num">200+</b>cover images captured</div><div><b class="num">6</b>techniques that create variety</div><div><b class="num">6</b>layouts for your articles</div></div>
+</header>
+
+<section>
+<div class="sec-head"><h2>Your covers today</h2></div>
+<div class="prose"><p>The latest covers on honesttaskers.com/articles. Each is well made on its own; side by side they read as one image repeated: a smiling person in a headset, floating UI cards, a blue glow and a corner checkmark.</p></div>
+<div class="cur"><img src="a/honesttaskers-1.jpg" alt="Current honesttaskers.com cover"><img src="a/honesttaskers-2.jpg" alt="Current honesttaskers.com cover"><img src="a/honesttaskers-3.jpg" alt="Current honesttaskers.com cover"><img src="a/honesttaskers-4.jpg" alt="Current honesttaskers.com cover"></div>
+</section>
+
+<section>
+<div class="sec-head"><h2>The 20 blogs</h2></div>
+<div class="prose"><p>Captured on 6 October 2026 with a headless browser (Rippling from your screenshots, since it rate-limited the crawler). Four covers per site; the tags name the technique each one uses to keep its archive varied.</p></div>
+<div class="grid-sites"><article class="site"><div class="thumbs n4"><img src="a/rippling-1.jpg" alt="Rippling cover" loading="lazy"><img src="a/rippling-2.jpg" alt="Rippling cover" loading="lazy"><img src="a/rippling-3.jpg" alt="Rippling cover" loading="lazy"><img src="a/rippling-4.jpg" alt="Rippling cover" loading="lazy"></div>
+<div class="meta"><h3>Rippling</h3><span class="grp">Design benchmark · 16:10 card</span></div><p>One plum hue on every image. One soft-3D object, centred. Real employee photos only on people stories (from your screenshots).</p><div class="tags"><span class="tag">Mode by post type</span><span class="tag">One hue</span></div></article><article class="site"><div class="thumbs n4"><img src="a/calendly-1.jpg" alt="Calendly cover" loading="lazy"><img src="a/calendly-2.jpg" alt="Calendly cover" loading="lazy"><img src="a/calendly-3.jpg" alt="Calendly cover" loading="lazy"><img src="a/calendly-4.jpg" alt="Calendly cover" loading="lazy"></div>
+<div class="meta"><h3>Calendly</h3><span class="grp">Design benchmark · 1920×1080</span></div><p>Soft gradient or pastel-pill backdrop every time. Real product UI cards with real content, often next to one candid photo. Partner logos bridged for integrations.</p><div class="tags"><span class="tag">Real UI card</span><span class="tag">Candid photo</span></div></article><article class="site"><div class="thumbs n4"><img src="a/stripe-1.jpg" alt="Stripe cover" loading="lazy"><img src="a/stripe-2.jpg" alt="Stripe cover" loading="lazy"><img src="a/stripe-3.jpg" alt="Stripe cover" loading="lazy"><img src="a/stripe-4.jpg" alt="Stripe cover" loading="lazy"></div>
+<div class="meta"><h3>Stripe</h3><span class="grp">Design benchmark · 1080×1080</span></div><p>Mode by category: product posts get line art or the app; industry posts get one big statistic (160%, 4.3x) on a purple field.</p><div class="tags"><span class="tag">Big number</span><span class="tag">Mode by post type</span></div></article><article class="site"><div class="thumbs n4"><img src="a/linear-1.jpg" alt="Linear cover" loading="lazy"><img src="a/linear-2.jpg" alt="Linear cover" loading="lazy"><img src="a/linear-3.jpg" alt="Linear cover" loading="lazy"><img src="a/linear-4.jpg" alt="Linear cover" loading="lazy"></div>
+<div class="meta"><h3>Linear</h3><span class="grp">Design benchmark · 896×504</span></div><p>Near-black field with thin white line drawings. Restraint is the identity. Event posts switch to real photos.</p><div class="tags"><span class="tag">One treatment</span></div></article><article class="site"><div class="thumbs n4"><img src="a/notion-1.jpg" alt="Notion cover" loading="lazy"><img src="a/notion-2.jpg" alt="Notion cover" loading="lazy"><img src="a/notion-3.jpg" alt="Notion cover" loading="lazy"><img src="a/notion-4.jpg" alt="Notion cover" loading="lazy"></div>
+<div class="meta"><h3>Notion</h3><span class="grp">Design benchmark · 1200×630</span></div><p>One illustrator, black ink plus one blue. Same 1200×630 size as yours.</p><div class="tags"><span class="tag">One treatment</span></div></article><article class="site"><div class="thumbs n4"><img src="a/intercom-1.jpg" alt="Intercom cover" loading="lazy"><img src="a/intercom-2.jpg" alt="Intercom cover" loading="lazy"><img src="a/intercom-3.jpg" alt="Intercom cover" loading="lazy"><img src="a/intercom-4.jpg" alt="Intercom cover" loading="lazy"></div>
+<div class="meta"><h3>Intercom</h3><span class="grp">Design benchmark · mixed</span></div><p>Headlines on images, painterly art, logo lockups. The least consistent of the design brands.</p><div class="tags"><span class="tag bad">Avoid: title on image</span></div></article><article class="site"><div class="thumbs n4"><img src="a/deel-1.jpg" alt="Deel cover" loading="lazy"><img src="a/deel-2.jpg" alt="Deel cover" loading="lazy"><img src="a/deel-3.jpg" alt="Deel cover" loading="lazy"><img src="a/deel-4.jpg" alt="Deel cover" loading="lazy"></div>
+<div class="meta"><h3>Deel</h3><span class="grp">Design benchmark · 1.44:1 card</span></div><p>Customer stories use real candid photography: hands, teams on location, city views. No overlays.</p><div class="tags"><span class="tag">Real photography</span></div></article><article class="site"><div class="thumbs n4"><img src="a/ramp-1.jpg" alt="Ramp cover" loading="lazy"><img src="a/ramp-2.jpg" alt="Ramp cover" loading="lazy"><img src="a/ramp-3.jpg" alt="Ramp cover" loading="lazy"><img src="a/ramp-4.jpg" alt="Ramp cover" loading="lazy"></div>
+<div class="meta"><h3>Ramp</h3><span class="grp">Design benchmark · 2:1</span></div><p>Launches get giant type and the chartreuse accent; partnerships get logo lockups.</p><div class="tags"><span class="tag">Big number</span><span class="tag">Mode by post type</span></div></article><article class="site"><div class="thumbs n4"><img src="a/mercury-1.jpg" alt="Mercury cover" loading="lazy"><img src="a/mercury-2.jpg" alt="Mercury cover" loading="lazy"><img src="a/mercury-3.jpg" alt="Mercury cover" loading="lazy"><img src="a/mercury-4.jpg" alt="Mercury cover" loading="lazy"></div>
+<div class="meta"><h3>Mercury</h3><span class="grp">Design benchmark · 16:9</span></div><p>Each category has its own muted duotone palette with one sculpted object. Variety comes from category colour.</p><div class="tags"><span class="tag">Palette by category</span><span class="tag">One treatment</span></div></article><article class="site"><div class="thumbs n1"><img src="a/attio-1.jpg" alt="Attio cover" loading="lazy"></div>
+<div class="meta"><h3>Attio</h3><span class="grp">Design benchmark · 16:9</span></div><p>Only the featured post gets a cover. The rest of the list is text.</p><div class="tags"><span class="tag">Covers are optional</span></div></article><article class="site"><div class="thumbs n4"><img src="a/loom-1.jpg" alt="Loom cover" loading="lazy"><img src="a/loom-2.jpg" alt="Loom cover" loading="lazy"><img src="a/loom-3.jpg" alt="Loom cover" loading="lazy"><img src="a/loom-4.jpg" alt="Loom cover" loading="lazy"></div>
+<div class="meta"><h3>Loom</h3><span class="grp">Design benchmark · 16:9</span></div><p>Black-and-white cut-out people on bold brand shapes, plus one UI snippet. Pattern tiles as a fallback.</p><div class="tags"><span class="tag">Photo + graphic treatment</span><span class="tag">Real UI card</span></div></article><article class="site"><div class="thumbs n4"><img src="a/zocdoc-1.jpg" alt="Zocdoc cover" loading="lazy"><img src="a/zocdoc-2.jpg" alt="Zocdoc cover" loading="lazy"><img src="a/zocdoc-3.jpg" alt="Zocdoc cover" loading="lazy"><img src="a/zocdoc-4.jpg" alt="Zocdoc cover" loading="lazy"></div>
+<div class="meta"><h3>Zocdoc</h3><span class="grp">Healthcare · 1.89:1</span></div><p>Yellow and peach brand fields, line illustrations of clinicians, report covers, event cards with speaker headshots.</p><div class="tags"><span class="tag">Palette by category</span></div></article><article class="site"><div class="thumbs n4"><img src="a/oscar-1.jpg" alt="Oscar Health cover" loading="lazy"><img src="a/oscar-2.jpg" alt="Oscar Health cover" loading="lazy"><img src="a/oscar-3.jpg" alt="Oscar Health cover" loading="lazy"><img src="a/oscar-4.jpg" alt="Oscar Health cover" loading="lazy"></div>
+<div class="meta"><h3>Oscar Health</h3><span class="grp">Healthcare · 1.5:1 card</span></div><p>Warm painted illustrations of people on pastel fields, plus phone UI.</p><div class="tags"><span class="tag">One treatment</span></div></article><article class="site"><div class="thumbs n4"><img src="a/weave-1.jpg" alt="Weave cover" loading="lazy"><img src="a/weave-2.jpg" alt="Weave cover" loading="lazy"><img src="a/weave-3.jpg" alt="Weave cover" loading="lazy"><img src="a/weave-4.jpg" alt="Weave cover" loading="lazy"></div>
+<div class="meta"><h3>Weave</h3><span class="grp">Healthcare · 1.5:1 card</span></div><p>Real photos of front desks, clinicians and patients. Webinar cards with headshots.</p><div class="tags"><span class="tag">Real photography</span><span class="tag">Varied scenes</span></div></article><article class="site"><div class="thumbs n4"><img src="a/nexhealth-1.jpg" alt="NexHealth cover" loading="lazy"><img src="a/nexhealth-2.jpg" alt="NexHealth cover" loading="lazy"><img src="a/nexhealth-3.jpg" alt="NexHealth cover" loading="lazy"><img src="a/nexhealth-4.jpg" alt="NexHealth cover" loading="lazy"></div>
+<div class="meta"><h3>NexHealth</h3><span class="grp">Healthcare · 1200×630</span></div><p>Dental office photos, real clinician portraits, podcast cards with B&amp;W portraits on black. Titles often on the image.</p><div class="tags"><span class="tag">Photo + graphic treatment</span><span class="tag bad">Avoid: title on image</span></div></article><article class="site"><div class="thumbs n4"><img src="a/athenahealth-1.jpg" alt="athenahealth cover" loading="lazy"><img src="a/athenahealth-2.jpg" alt="athenahealth cover" loading="lazy"><img src="a/athenahealth-3.jpg" alt="athenahealth cover" loading="lazy"><img src="a/athenahealth-4.jpg" alt="athenahealth cover" loading="lazy"></div>
+<div class="meta"><h3>athenahealth</h3><span class="grp">Healthcare · 16:9</span></div><p>Documentary photos: clinicians with tablets, patients, natural light, every scene different. Its one AI &quot;hologram&quot; image is the weakest card on the page.</p><div class="tags"><span class="tag">Real photography</span><span class="tag">Varied scenes</span></div></article><article class="site"><div class="thumbs n4"><img src="a/simplepractice-1.jpg" alt="SimplePractice cover" loading="lazy"><img src="a/simplepractice-2.jpg" alt="SimplePractice cover" loading="lazy"><img src="a/simplepractice-3.jpg" alt="SimplePractice cover" loading="lazy"><img src="a/simplepractice-4.jpg" alt="SimplePractice cover" loading="lazy"></div>
+<div class="meta"><h3>SimplePractice</h3><span class="grp">Healthcare · 16:9</span></div><p>Warm editorial photos (hands, clients, outdoors) mixed with flat icons on yellow and mint.</p><div class="tags"><span class="tag">Real photography</span><span class="tag">Varied scenes</span></div></article><article class="site"><div class="thumbs n4"><img src="a/spruce-1.jpg" alt="Spruce Health cover" loading="lazy"><img src="a/spruce-2.jpg" alt="Spruce Health cover" loading="lazy"><img src="a/spruce-3.jpg" alt="Spruce Health cover" loading="lazy"><img src="a/spruce-4.jpg" alt="Spruce Health cover" loading="lazy"></div>
+<div class="meta"><h3>Spruce Health</h3><span class="grp">Healthcare · mixed</span></div><p>Charts, webinar cards, circle headshots on flat colour fields. Inconsistent.</p><div class="tags"><span class="tag">Photo + graphic treatment</span></div></article><article class="site"><div class="thumbs n4"><img src="a/hint-1.jpg" alt="Hint Health cover" loading="lazy"><img src="a/hint-2.jpg" alt="Hint Health cover" loading="lazy"><img src="a/hint-3.jpg" alt="Hint Health cover" loading="lazy"><img src="a/hint-4.jpg" alt="Hint Health cover" loading="lazy"></div>
+<div class="meta"><h3>Hint Health</h3><span class="grp">Healthcare · mixed</span></div><p>Real clinician and patient photos and product screenshots. One &quot;icons floating over a keyboard&quot; image, the same genre as yours, looks cheapest.</p><div class="tags"><span class="tag">Real photography</span><span class="tag bad">Avoid: floating icons</span></div></article><article class="site"><div class="thumbs n4"><img src="a/jane-1.jpg" alt="Jane cover" loading="lazy"><img src="a/jane-2.jpg" alt="Jane cover" loading="lazy"><img src="a/jane-3.jpg" alt="Jane cover" loading="lazy"><img src="a/jane-4.jpg" alt="Jane cover" loading="lazy"></div>
+<div class="meta"><h3>Jane</h3><span class="grp">Healthcare · mixed</span></div><p>Product UI screenshots, and a laptop photo beside a label panel.</p><div class="tags"><span class="tag">Real UI card</span></div></article></div>
+</section>
+
+<section>
+<div class="sec-head"><h2>What creates variety at scale</h2></div>
+<div class="patterns">
+<div class="pat"><h3>Mode by post type</h3><p>Different kinds of posts get different kinds of covers: a statistic for data posts, a product shot for launches, a person for stories.</p><div class="who">Stripe · Rippling · Calendly · Ramp</div></div>
+<div class="pat"><h3>Palette by category</h3><p>Each category owns a colour from the same family, so the grid alternates without breaking the brand.</p><div class="who">Mercury · Stripe · Zocdoc</div></div>
+<div class="pat"><h3>Real, varied photography</h3><p>Documentary-style photos where the scene changes every time: front desk, patient visit, hands on a keyboard, a pet on an exam table.</p><div class="who">athenahealth · Weave · SimplePractice · Deel · Hint</div></div>
+<div class="pat"><h3>One treatment on every photo</h3><p>A fixed graphic treatment (duotone, black and white, a brand shape) makes very different photos read as one series.</p><div class="who">Loom · Rippling · NexHealth · Mercury</div></div>
+<div class="pat"><h3>One real UI card</h3><p>A single, legible interface card with specific content, never a cluster of placeholder bars.</p><div class="who">Calendly · Loom · Jane · Hint</div></div>
+<div class="pat"><h3>One big number</h3><p>Data and list posts lead with the figure itself, set large.</p><div class="who">Stripe · Rippling · Ramp</div></div>
+<div class="pat bad"><h3>What to avoid</h3><p>Icons floating over a desk scene (the one cheap-looking card on Hint's and athenahealth's pages, and the genre of your current covers), and article titles baked into the image.</p><div class="who">Hint · athenahealth · Intercom · NexHealth</div></div>
+</div>
+</section>
+
+<section>
+<div class="sec-head"><h2>From research to your layouts</h2></div>
+<div class="prose"><p>Each layout borrows a principle, not artwork, and is assigned by article category, so the type of post decides the cover. Post counts come from the 1,903 titles in your image manifests.</p></div>
+<div class="tbl"><table>
+<thead><tr><th>Layout</th><th>What it is</th><th>Borrowed principle</th><th>Your categories</th><th class="num">Posts</th></tr></thead>
+<tbody>
+<tr><td><b>Frame</b></td><td>Photo on the left, one legible UI card on a brand panel</td><td>Calendly, Loom, Jane: one real UI card</td><td>Role explainers, how-to, software &amp; EHR, hiring</td><td class="num">~840</td></tr>
+<tr><td><b>Numeral</b></td><td>Large count and a short label beside a photo</td><td>Stripe statistics, Rippling "27"</td><td>"N Best … Companies", interview questions</td><td class="num">~450</td></tr>
+<tr><td><b>Split</b></td><td>In-house photo (muted) next to virtual photo (full colour), teal seam</td><td>Calendly bridges, made photographic</td><td>"… vs. In-House Staff"</td><td class="num">251</td></tr>
+<tr><td><b>Stat</b></td><td>Photo and one figure you have confirmed</td><td>Stripe industry posts</td><td>Cost, pricing, pay</td><td class="num">211</td></tr>
+<tr><td><b>Duotone</b></td><td>Full-bleed photo in brand blues with one white badge</td><td>Rippling people posts, Mercury palettes, Loom</td><td>Compliance, tasks &amp; benefits</td><td class="num">~170</td></tr>
+<tr><td><b>Scene</b></td><td>A practice detail with no VA in it (pet, treatment room, front desk) and one brand corner block</td><td>athenahealth, Weave, SimplePractice</td><td>Specialty posts (dental, vet, MedSpa…), mixed in to break up faces</td><td class="num">any</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<div class="sec-head"><h2>The new covers, on 12 of your real titles</h2></div>
+<div class="prose"><p>Rendered from one HTML template. The photos are crops of your existing images, used as stand-ins; the layouts, colours and cards are the new part.</p></div>
+<div class="newgrid"><figure class="new"><img src="a/new-01-dermatology-vma.jpg" alt="What Does a Dermatology VMA Do?"><figcaption><b>Frame</b> · Role explainer<br>What Does a Dermatology VMA Do?</figcaption></figure><figure class="new"><img src="a/new-02-triage-cost.jpg" alt="How Much Does a Telephone Triage Virtual Assistant Cost?"><figcaption><b>Stat</b> · Cost<br>How Much Does a Telephone Triage Virtual Assistant Cost?</figcaption></figure><figure class="new"><img src="a/new-03-best-billing.jpg" alt="10 Best Medical Billing Virtual Assistant Companies (2026)"><figcaption><b>Numeral</b> · Best-of<br>10 Best Medical Billing Virtual Assistant Companies (2026)</figcaption></figure><figure class="new"><img src="a/new-04-radiology-vs.jpg" alt="Radiology Virtual Medical Assistant vs. In-House Staff"><figcaption><b>Split</b> · Comparison<br>Radiology Virtual Medical Assistant vs. In-House Staff</figcaption></figure><figure class="new"><img src="a/new-05-scribe-epic.jpg" alt="How a Scribe Works in Epic?"><figcaption><b>Frame</b> · Software &amp; EHR<br>How a Scribe Works in Epic?</figcaption></figure><figure class="new"><img src="a/new-06-hipaa.jpg" alt="Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs"><figcaption><b>Duotone</b> · Compliance<br>Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs</figcaption></figure><figure class="new"><img src="a/new-07-earn-region.jpg" alt="How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region"><figcaption><b>Frame</b> · Cost<br>How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region</figcaption></figure><figure class="new"><img src="a/new-08-office-mgr-questions.jpg" alt="Virtual Medical Office Manager Interview Questions"><figcaption><b>Numeral</b> · Hiring<br>Virtual Medical Office Manager Interview Questions</figcaption></figure><figure class="new"><img src="a/new-09-hire-case-manager.jpg" alt="How to Hire a Virtual Case Manager"><figcaption><b>Frame</b> · Hiring<br>How to Hire a Virtual Case Manager</figcaption></figure><figure class="new"><img src="a/new-10-vet-tech.jpg" alt="Virtual Veterinary Technician: The Complete Guide"><figcaption><b>Frame</b> · Role explainer<br>Virtual Veterinary Technician: The Complete Guide</figcaption></figure><figure class="new"><img src="a/new-11-bilingual-dental-vs.jpg" alt="Bilingual Virtual Dental Receptionist vs. In-House Staff"><figcaption><b>Split</b> · Comparison<br>Bilingual Virtual Dental Receptionist vs. In-House Staff</figcaption></figure><figure class="new"><img src="a/new-12-turnover.jpg" alt="Medical Office Staff Turnover, What It Costs and How to Cut It"><figcaption><b>Duotone</b> · Cost<br>Medical Office Staff Turnover, What It Costs and How to Cut It</figcaption></figure></div>
+<div class="note">Your current library can't show the full system yet. Every photo is a headset VA, and the old floating cards still peek in at some edges and show through the duotone. The Scene layout needs subjects your library doesn't have (a dog on an exam table, an empty operatory, a front-desk check-in). New photography fixes both; the photo brief is at the end.</div>
+</section>
+
+<section>
+<div class="sec-head"><h2>In your real listing card</h2></div>
+<div class="prose"><p>Your card shows only the top 56% of each image (the title panel covers the rest), so every layout keeps faces, numbers and cards in that band. Same 12 articles, before and after, in a replica of the card.</p></div>
+<div class="ba"><figure><figcaption>Before · current covers</figcaption><img src="a/listing-before-1000.jpg" alt="Current covers in the listing replica"></figure>
+<figure><figcaption>After · new layouts</figcaption><img src="a/listing-after-1000.jpg" alt="New covers in the listing replica"></figure></div>
+</section>
+
+<section>
+<div class="sec-head"><h2>Rules that keep it varied</h2></div>
+<ol class="rules">
+<li>The category picks the layout; never choose by taste per post.</li>
+<li>Rotate the field colour (deep blue, primary blue, pale tint) so neighbouring cards differ.</li>
+<li>Never two headset portraits in a row. Every third cover is a Scene or a Split.</li>
+<li>One UI card at most, with specific, readable content. No placeholder bars.</li>
+<li>No corner checkmark, no glow streaks, no floating icon clusters, no title on the image.</li>
+<li>Faces, numbers and cards stay in the top 56% (x 115–1085, y 0–353 of a 1200×630 canvas).</li>
+<li>Numbers on covers must be confirmed by the Honest Taskers team before use. No prices until then.</li>
+</ol>
+</section>
+
+<section>
+<div class="sec-head"><h2>Photo brief for new images</h2></div>
+<div class="prose"><p>Keep the people and the healthcare setting you like; change what the photos show and how they are shot.</p></div>
+<ol class="rules">
+<li><b>Subjects rotate:</b> the VA at work (over the shoulder, hands on keyboard, on a call without smiling at the camera), the practice (front desk check-in, clinician with patient, empty operatory or exam room), and details (insurance card, appointment book, a pet on the exam table, a dental model).</li>
+<li><b>Style:</b> documentary, natural window light, shallow depth of field, real-looking skin and clothes, a cool palette with blue present but not glowing.</li>
+<li><b>Never in the photo:</b> floating UI, icons, checkmarks, light streaks, text, logos. The layout adds the brand.</li>
+<li><b>Composition:</b> subject in the upper half, at 1200×630, with clean space on one side for the card or number.</li>
+</ol>
+</section>
+</div>

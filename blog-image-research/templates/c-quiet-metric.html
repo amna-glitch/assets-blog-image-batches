@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- Direction C: Quiet Metric. Cost, pay, savings, ROI. An unlabeled bar or range chart: shape, not numbers.
+     Spec: {"bars":[[0,.9],[0,.7],[0,.55],[0,.3]],"hi":3,"field":"light"|"deep","layout":"band"|"center"}
+     Each bar is [from,to] as a fraction of chart height, so floating bars give pay-range charts. -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><script src="icons.js"></script>
+<style>
+  .chart { position: absolute; left: 330px; width: 540px; top: 150px; height: 330px; }
+  .base { position: absolute; left: 330px; width: 540px; top: 480px; height: 4px; border-radius: 2px; }
+  .bar { position: absolute; border-radius: 14px; }
+  .mark { position: absolute; width: 24px; height: 24px; border-radius: 50%; background: var(--teal); }
+  .unit { position: absolute; right: var(--margin); top: var(--margin); width: 72px; height: 72px; }
+</style></head>
+<body><div class="canvas" id="c"><div class="chart" id="chart"></div><div class="base" id="base"></div><div class="unit" id="unit"></div><div class="sig"></div></div>
+<script>
+  const s = htSpec({ bars: [[0,.92],[0,.74],[0,.58],[0,.32]], hi: 3, icon: null, field: 'light', layout: 'band' });
+  const L = s.layout === 'center' ? { top: 150, h: 330 } : { top: 92, h: 253 };
+  Object.assign(document.getElementById('chart').style, { top: L.top + 'px', height: L.h + 'px' });
+  document.getElementById('base').style.top = L.top + L.h + 'px';
+  const dark = s.field === 'deep';
+  const c = document.getElementById('c');
+  c.style.background = dark ? '#162da1' : '#eef1ff';
+  const muted = dark ? '#2345ff' : '#c9d1ff', hi = dark ? '#ffffff' : '#2345ff';
+  document.getElementById('base').style.background = dark ? 'rgba(255,255,255,.2)' : '#c9d1ff';
+  const chart = document.getElementById('chart');
+  const n = s.bars.length, floating = s.bars.some(([a]) => a > 0), gap = floating ? 84 : 36, W = 540, H = L.h, bw = (W - gap * (n - 1)) / n;
+  s.bars.forEach(([a, b], i) => {
+    const el = document.createElement('div'); el.className = 'bar';
+    Object.assign(el.style, { left: i * (bw + gap) + 'px', width: bw + 'px', bottom: a * H + 'px', height: (b - a) * H + 'px',
+      background: i === s.hi ? hi : muted, borderRadius: a > 0 ? Math.min(bw, (b - a) * H) / 2 + 'px' : '14px' });
+    chart.appendChild(el);
+    if (i === s.hi) { const m = document.createElement('div'); m.className = 'mark';
+      Object.assign(m.style, { left: i * (bw + gap) + bw / 2 - 12 + 'px', bottom: b * H + 20 + 'px' }); chart.appendChild(m); }
+  });
+  if (s.icon) document.getElementById('unit').innerHTML = htIcon(s.icon, 72, 7, dark ? '#ffffff' : '#162da1', dark ? '#ffffff' : '#162da1');
+  if (s.layout !== 'center') htFloor(c, !dark);
+  htGuides(c);
+</script></body></html>

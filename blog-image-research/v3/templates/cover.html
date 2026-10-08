@@ -1,0 +1,220 @@
+<!doctype html>
+<!-- Honest Taskers cover styles (v3). One template, six styles, each tied to a group of article types.
+     ?spec=<json>  style: scene | card | arch | archvs | ink | tool | numeral
+     All key content sits inside the band the honesttaskers.com listing card shows (x 115-1085, y 0-353). -->
+<html><head><meta charset="utf-8"><script src="icons.js"></script>
+<style>
+  :root { --blue:#2345ff; --deep:#162da1; --mid:#3e59ff; --teal:#2dd0e8; --tint:#eef1ff; --aqua:#e2f8fb; --ink:#0b1440;
+          --font:"Sequel Sans","Inter Display","Inter","Helvetica Neue",Arial,sans-serif; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: #fff; }
+  .c { position: relative; width: 1200px; height: 630px; overflow: hidden; font-family: var(--font); }
+  .abs { position: absolute; }
+  .panel { position: absolute; overflow: hidden; }
+  .panel img { position: absolute; display: block; }
+  .card { position: absolute; background: #fff; border-radius: 26px; box-shadow: 0 22px 50px rgba(15, 30, 110, .16), 0 2px 6px rgba(15, 30, 110, .06); }
+  .chip { position: absolute; background: #fff; border-radius: 22px; box-shadow: 0 14px 32px rgba(15, 30, 110, .14); display: flex; align-items: center; justify-content: center; flex-direction: column; }
+  .row { display: flex; align-items: center; gap: 14px; }
+  .av { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 19px; color: #fff; flex: none; }
+  .pill { margin-left: auto; padding: 7px 16px; border-radius: 999px; font-size: 20px; font-weight: 600; white-space: nowrap; }
+  .t1 { font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
+  .t2 { font-size: 18px; color: #5b6488; }
+  .nm { font-size: 23px; font-weight: 600; color: var(--ink); } .tm { font-size: 18px; color: #6b7396; }
+  .big { position: absolute; font-weight: 700; letter-spacing: -.045em; line-height: .9; }
+  .lbl { position: absolute; }
+  .lbl .e { font-size: 21px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+  .lbl .t { font-size: 34px; font-weight: 600; line-height: 1.12; letter-spacing: -.01em; margin-top: 8px; }
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="gray" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncR type="linear" slope="1.12" intercept="-.04"/><feFuncG type="linear" slope="1.12" intercept="-.04"/><feFuncB type="linear" slope="1.12" intercept="-.02"/></feComponentTransfer></filter>
+  <filter id="mute" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0.1"/></filter>
+</svg>
+<div class="c" id="c"></div>
+<script>
+  const s = htSpec({ style: 'card' });
+  const c = document.getElementById('c');
+  const add = (cls, css, html = '') => { const e = document.createElement('div'); e.className = cls; Object.assign(e.style, css); e.innerHTML = html; c.appendChild(e); return e; };
+  const px = v => typeof v === 'number' ? v + 'px' : v;
+  const css = o => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, px(v)]));
+  // Photo placed so its focal point lands at (tx, ty) inside the panel, always covering it.
+  function photo(src, focal, x, y, w, h, tx, ty, zoom = 1, filter = '', radius = '0') {
+    const p = add('panel', css({ left: x, top: y, width: w, height: h, borderRadius: radius }));
+    const k = Math.max(w / 1200, h / 630) * zoom, iw = 1200 * k, ih = 630 * k;
+    let l = tx - focal[0] / 100 * iw, t = ty - focal[1] / 100 * ih;
+    l = Math.min(0, Math.max(w - iw, l)); t = Math.min(0, Math.max(h - ih, t));
+    const img = document.createElement('img'); img.src = s.root + src;
+    Object.assign(img.style, { width: iw + 'px', height: ih + 'px', left: l + 'px', top: t + 'px', filter: filter ? `url(#${filter})` : 'none' });
+    p.appendChild(img); return p;
+  }
+  const dateTile = (x, y, d = s.date || ['TUE', '14']) => add('chip', css({ left: x, top: y, width: 118, height: 128 }),
+    `<div style="font:700 18px var(--font);letter-spacing:.08em;color:var(--blue)">${d[0]}</div><div style="font:700 58px/1 var(--font);color:var(--ink);margin-top:4px">${d[1]}</div>`);
+  const clockTile = (x, y) => add('chip', css({ left: x, top: y, width: 108, height: 108 }),
+    `<svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#0b1440" stroke-width="4" stroke-linecap="round"><circle cx="32" cy="32" r="27"/><path d="M32 16v16l11 7" stroke="#2345ff"/></svg>`);
+  const chartTile = (x, y) => add('chip', css({ left: x, top: y, width: 136, height: 104 }),
+    `<svg width="92" height="60" viewBox="0 0 92 60"><rect x="4" y="34" width="16" height="26" rx="4" fill="#c9d1ff"/><rect x="28" y="22" width="16" height="38" rx="4" fill="#c9d1ff"/><rect x="52" y="28" width="16" height="32" rx="4" fill="#c9d1ff"/><rect x="76" y="6" width="16" height="54" rx="4" fill="#2345ff"/></svg>`);
+  const arc = (d) => add('abs', { left: 0, top: 0 }, `<svg width="1200" height="630"><path d="${d}" fill="none" stroke="#2345ff" stroke-opacity=".45" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/></svg>`);
+
+  /* 1. SCENE: your current illustration-photo style, kept for role explainers. Zoomed slightly to drop the frame and corner tick. */
+  if (s.style === 'scene') {
+    photo(s.photo, s.focal, 0, 0, 1200, 630, 600, 200, 1.12);
+  }
+
+  /* 2. CARD: one large, legible product-style card on a soft field with orbiting chips (Calendly UI cards, Buffer "best time" series). */
+  if (s.style === 'card') {
+    c.style.background = s.field === 'aqua' ? '#e2f8fb' : '#eef1ff';
+    arc('M210 300 C 260 40, 940 -10, 1000 210');
+    const k = s.card;
+    const rows = k.rows.map(([ini, color, name, time, status, tone]) => `<div class="row" style="padding:10px 0;border-top:1px solid #eef0f7">
+      <div class="av" style="background:${color}">${ini}</div><div><div class="nm">${name}</div><div class="tm">${time}</div></div>
+      <div class="pill" style="${tone === 'teal' ? 'background:rgba(45,208,232,.16);color:#0a8496' : tone === 'blue' ? 'background:#eef1ff;color:#2345ff' : 'background:#f2f3f7;color:#6b7396'}">${status}</div></div>`).join('');
+    add('card', css({ left: 330, top: 22, width: 540, padding: '22px 28px 8px' }),
+      `<div class="row" style="margin-bottom:8px"><div style="width:56px;height:56px;border-radius:16px;background:#eef1ff;display:flex;align-items:center;justify-content:center">${htIcon(k.icon, 36, 9, '#2345ff', '#2dd0e8')}</div>
+       <div class="t1">${k.title}</div></div>${rows}`);
+    dateTile(176, 60); clockTile(916, 48); chartTile(924, 196);
+  }
+
+  /* 3. ARCH: black-and-white photo inside a brand arch, with flat colour shapes and one icon tile (HubSpot, Loom collage). */
+  if (s.style === 'arch') {
+    c.style.background = s.field === 'deep' ? '#162da1' : '#f3f5ff';
+    add('abs', css({ left: 230, top: 64, width: 170, height: 170, borderRadius: '50%', background: '#2dd0e8' }));
+    add('abs', css({ left: 800, top: -40, width: 260, height: 260, borderRadius: '0 0 0 260px', background: s.field === 'deep' ? '#2345ff' : '#162da1' }));
+    add('abs', css({ left: 420, top: 26, width: 360, height: 640, borderRadius: '180px 180px 0 0', background: '#2345ff' }));
+    photo(s.photo, s.focal, 436, 42, 328, 600, 164, 150, 1.0, 'gray', '164px 164px 0 0');
+    add('chip', css({ left: 724, top: 214, width: 112, height: 112, borderRadius: 28 }), htIcon(s.icon, 64, 9, '#2345ff', '#2dd0e8'));
+  }
+
+  /* 3b. ARCH VS: comparisons, two arches (in-house muted, virtual in colour). */
+  if (s.style === 'archvs') {
+    c.style.background = '#f3f5ff';
+    add('abs', css({ left: 228, top: 26, width: 340, height: 640, borderRadius: '170px 170px 0 0', background: '#c9d1ff' }));
+    photo(s.photo2, s.focal2, 244, 42, 308, 600, 154, 150, 1.0, 'gray', '154px 154px 0 0');
+    add('abs', css({ left: 632, top: 26, width: 340, height: 640, borderRadius: '170px 170px 0 0', background: '#2345ff' }));
+    photo(s.photo, s.focal, 648, 42, 308, 600, 154, 150, 1.0, '', '154px 154px 0 0');
+    add('abs', css({ left: 560, top: 166, width: 80, height: 80, borderRadius: '50%', background: '#2dd0e8', border: '8px solid #f3f5ff',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', font: '700 24px var(--font)', color: '#0b1440' }), 'vs');
+  }
+
+  /* 4. INK: one ink-drawn object scene on a bold flat brand colour (Mailchimp). */
+  if (s.style === 'ink') {
+    const F = { teal: ['#2dd0e8', '#0b1440', '#ffffff'], tint: ['#eef1ff', '#0b1440', '#2dd0e8'], deep: ['#162da1', '#ffffff', '#2345ff'], blue: ['#2345ff', '#ffffff', '#162da1'] }[s.field || 'teal'];
+    c.style.background = F[0];
+    const [main, a, b] = s.icons;
+    // Offset-print look: a fat silhouette in the fill colour, shifted down-right, under the ink line drawing.
+    const obj = (name, x, y, size, stroke) => {
+      const sil = add('abs', css({ left: x + size * .06, top: y + size * .06 }), htIcon(name, size, stroke * 2.6, F[2], F[2]));
+      sil.querySelectorAll('.ac').forEach(e => { e.style.stroke = F[2]; }); // icon <style> rules are global; pin the fill colour inline
+      add('abs', css({ left: x, top: y }), htIcon(name, size, stroke, F[1], F[1]));
+    };
+    obj(a, 250, 70, 170, 6.5);
+    obj(b, 800, 150, 170, 6.5);
+    obj(main, 440, 18, 330, 5.2);
+    add('abs', { left: 0, top: 0 }, `<svg width="1200" height="630" fill="${F[1]}">${[[200,60],[226,92],[1000,90],[1030,60],[980,300],[180,290]].map(([x,y]) => `<circle cx="${x}" cy="${y}" r="6"/>`).join('')}</svg>`);
+  }
+
+  /* 5. TOOL: your mark bridged to the software the article covers (Calendly / Buffer integration tiles). */
+  if (s.style === 'tool') {
+    c.style.background = s.field === 'aqua' ? '#e2f8fb' : '#eef1ff';
+    arc('M240 320 C 300 60, 900 60, 960 320');
+    add('abs', css({ left: 470, top: 136, width: 260, height: 90, background: '#fff', borderRadius: 45 }));
+    add('abs', css({ left: 360, top: 66, width: 230, height: 230, borderRadius: 54, background: '#2345ff', boxShadow: '0 20px 44px rgba(15,30,110,.2)', overflow: 'hidden' }),
+      `<img src="${s.root}assets/ht-logo.svg" style="position:absolute;width:430px;left:44px;top:42px">`);
+    add('abs', css({ left: 610, top: 66, width: 230, height: 230, borderRadius: 54, background: '#fff', boxShadow: '0 20px 44px rgba(15,30,110,.16)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '6px' }),
+      `<div style="font:700 ${s.tool.length > 9 ? 34 : s.tool.length > 6 ? 42 : 52}px/1 var(--font);color:#0b1440;letter-spacing:-.02em">${s.tool}</div><div style="font:600 17px var(--font);color:#6b7396;letter-spacing:.08em;text-transform:uppercase">${s.toolSub || 'EHR'}</div>`);
+    dateTile(176, 150); chartTile(896, 170);
+  }
+
+  /* 6. NUMERAL: number-led cover for ranked lists and question sets (Stripe statistics, Mailchimp report covers). */
+  if (s.style === 'numeral') {
+    const dark = s.field === 'deep'; c.style.background = dark ? '#162da1' : '#eef1ff';
+    photo(s.photo, s.focal, 620, 0, 580, 630, 300, 165, 1.3);
+    add('big', css({ left: 128, top: 56, fontSize: s.num.length > 2 ? 160 : 210, color: dark ? '#fff' : '#2345ff' }), s.num);
+    add('lbl', css({ left: 132, top: s.num.length > 2 ? 206 : 236, width: 440 }),
+      `<div class="e">${s.eyebrow}</div><div class="t" style="color:${dark ? '#fff' : '#162da1'}">${s.label}</div>`);
+  }
+  /* 7. LINES (after Linear): deep navy field, thin white line geometry that draws the article's process. */
+  if (s.style === 'lines') {
+    c.style.background = '#0d1a63';
+    const W = '#ffffff';
+    let g = '';
+    if (s.motif === 'wave') {          // audio waveform turning into a straight "signed" line
+      for (let i = 0; i < 46; i++) { const x = 150 + i * 15, h = i < 30 ? 40 + 190 * Math.abs(Math.sin(i * .55)) * (1 - i / 34) : 3;
+        g += `<line x1="${x}" y1="${180 - h / 2}" x2="${x}" y2="${180 + h / 2}" stroke="${W}" stroke-opacity="${i < 30 ? .85 : .5}" stroke-width="2"/>`; }
+      g += `<line x1="600" y1="180" x2="1030" y2="180" stroke="${W}" stroke-width="2"/><circle cx="1030" cy="180" r="9" fill="#2dd0e8"/>`;
+    } else {                           // concentric rings with tick marks: scheduling / follow-up cadence
+      for (let r = 40; r <= 150; r += 22) g += `<circle cx="600" cy="180" r="${r}" fill="none" stroke="${W}" stroke-opacity="${.25 + r / 300}" stroke-width="1.6" ${r % 44 ? 'stroke-dasharray="3 7"' : ''}/>`;
+      for (let a = 0; a < 60; a++) { const t = a / 60 * Math.PI * 2, r1 = 162, r2 = a % 5 ? 170 : 182;
+        g += `<line x1="${600 + r1 * Math.cos(t)}" y1="${180 + r1 * Math.sin(t)}" x2="${600 + r2 * Math.cos(t)}" y2="${180 + r2 * Math.sin(t)}" stroke="${W}" stroke-width="2"/>`; }
+      g += `<circle cx="${600 + 150 * Math.cos(-0.9)}" cy="${180 + 150 * Math.sin(-0.9)}" r="9" fill="#2dd0e8"/>`;
+    }
+    add('abs', { left: 0, top: 0 }, `<svg width="1200" height="630">${g}</svg>`);
+  }
+
+  /* 8. SKETCH (after Notion): warm white page, black ink icon with one solid blue block and loose hand marks. */
+  if (s.style === 'sketch') {
+    c.style.background = '#f7f6f2';
+    add('abs', css({ left: 520, top: 70, width: 170, height: 150, background: '#2345ff', borderRadius: 6, transform: 'rotate(-4deg)' }));
+    add('abs', css({ left: 445, top: 20 }), htIcon(s.icon, 310, 5.2, '#111111', '#111111'));
+    add('abs', { left: 0, top: 0 }, `<svg width="1200" height="630" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round">
+      <path d="M800 70 l18 -18 M830 96 l24 -2 M806 122 l18 16"/><path d="M372 250 c 10 -10 22 -10 32 0 s 22 10 32 0"/><circle cx="360" cy="90" r="9"/></svg>`);
+  }
+
+  /* 9. SCULPT (after Mercury and Rippling): one soft, lit object on a two-tone brand field. */
+  if (s.style === 'sculpt') {
+    add('abs', css({ left: 0, top: 0, width: 1200, height: 630, background: 'linear-gradient(180deg,#c9d1ff 0%,#eef1ff 56%,#dfe4ff 56%,#eef1ff 100%)' }));
+    add('abs', css({ left: 420, top: 300, width: 360, height: 46, borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(22,45,161,.35), transparent)' }));
+    const g = `<defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#aeb9ff"/><stop offset="1" stop-color="#2345ff"/></linearGradient></defs>`;
+    const body = window.HT_ICONS[s.icon].replace(/class="ac"/g, '');
+    add('abs', css({ left: 455, top: 18 }), `<svg viewBox="0 0 120 120" width="290" height="290" fill="url(#sg)" stroke="#162da1" stroke-width="1.6" stroke-linejoin="round" style="filter:drop-shadow(0 18px 22px rgba(22,45,161,.28))">${g}${body}</svg>`);
+  }
+
+  /* 10. BIG WORD (after Ramp): one giant word, cropped by the frame, with a small label. */
+  if (s.style === 'word') {
+    c.style.background = s.field === 'deep' ? '#162da1' : '#2345ff';
+    add('big', css({ left: 70, top: 40, fontSize: 300, color: 'rgba(255,255,255,.95)', whiteSpace: 'nowrap', letterSpacing: '-.06em' }), s.word);
+    add('abs', css({ left: 118, top: 26, font: '600 24px var(--font)', color: '#2dd0e8', letterSpacing: '.1em', textTransform: 'uppercase' }), s.eyebrow);
+  }
+
+  /* 11. GUIDE BOOK (after Zocdoc and Mailchimp report covers): a printed guide on a teal field. */
+  if (s.style === 'book') {
+    c.style.background = '#2dd0e8';
+    add('abs', css({ left: 470, top: 40, width: 300, height: 390, background: '#0d1a63', borderRadius: 10, transform: 'rotate(6deg)', opacity: .35 }));
+    add('abs', css({ left: 440, top: 26, width: 300, height: 390, background: '#2345ff', borderRadius: 10, transform: 'rotate(-3deg)',
+      boxShadow: '0 26px 50px rgba(13,26,99,.35)', padding: '34px 30px', color: '#fff' }),
+      `<div style="font:600 17px var(--font);letter-spacing:.12em;text-transform:uppercase;color:#2dd0e8">${s.eyebrow}</div>
+       <div style="font:700 44px/1.02 var(--font);letter-spacing:-.02em;margin-top:16px">${s.label}</div>
+       <div style="position:absolute;right:26px;bottom:30px;opacity:.9">${htIcon(s.icon, 110, 6, '#ffffff', '#2dd0e8')}</div>`);
+  }
+
+  /* 12. CIRCLE PORTRAIT (after Spruce Health and NexHealth): round headshot on a flat colour with a role tag. */
+  if (s.style === 'circle') {
+    c.style.background = s.field === 'teal' ? '#2dd0e8' : '#3e59ff';
+    add('abs', css({ left: 420, top: -10, width: 360, height: 360, borderRadius: '50%', background: 'rgba(255,255,255,.22)' }));
+    photo(s.photo, s.focal, 450, 20, 300, 300, 150, 120, 1.9, '', '50%');
+    add('chip', css({ left: 700, top: 236, width: 'auto', height: 'auto', padding: '14px 22px', borderRadius: 999, flexDirection: 'row', gap: '12px' }),
+      `${htIcon(s.icon, 34, 9, '#2345ff', '#2dd0e8')}<div style="font:600 21px var(--font);color:#0b1440;white-space:nowrap">${s.tag}</div>`);
+  }
+
+  /* 13. SCREEN (after Jane and Hint): a clean EHR-style window with one highlighted control. */
+  if (s.style === 'screen') {
+    c.style.background = '#eef1ff';
+    const row = (w, o) => `<div style="height:14px;width:${w}px;border-radius:7px;background:#e3e7f6;opacity:${o}"></div>`;
+    add('card', css({ left: 230, top: 34, width: 740, height: 420, borderRadius: 18, overflow: 'hidden' }),
+      `<div style="height:44px;background:#162da1;display:flex;align-items:center;gap:8px;padding:0 18px">
+         <i style="width:12px;height:12px;border-radius:50%;background:#ffffff55"></i><i style="width:12px;height:12px;border-radius:50%;background:#ffffff55"></i><i style="width:12px;height:12px;border-radius:50%;background:#ffffff55"></i>
+         <div style="margin-left:18px;font:600 17px var(--font);color:#fff">${s.app}</div></div>
+       <div style="display:flex">
+         <div style="width:170px;padding:22px 18px;display:grid;gap:16px;border-right:1px solid #eef0f7">${['Schedule', 'Patients', 'Charts', 'Billing', 'Messages'].map((t, i) => `<div style="font:${i == s.active ? 700 : 500} 18px var(--font);color:${i == s.active ? '#2345ff' : '#6b7396'}">${t}</div>`).join('')}</div>
+         <div style="padding:24px 28px;flex:1;display:grid;gap:16px">
+           <div style="font:700 26px var(--font);color:#0b1440">${s.head}</div>
+           <div style="display:flex;gap:14px">${[0, 1, 2].map(i => `<div style="flex:1;height:70px;border-radius:12px;background:${i == 1 ? '#eef1ff' : '#f6f7fb'}"></div>`).join('')}</div>
+           ${row(420, 1)}${row(360, .8)}${row(390, .6)}
+         </div></div>`);
+    add('abs', css({ left: 700, top: 108, width: 220, height: 64, borderRadius: 999, border: '4px solid #2dd0e8', boxShadow: '0 0 0 10px rgba(45,208,232,.18)' }));
+    add('chip', css({ left: 716, top: 116, width: 188, height: 48, borderRadius: 999, flexDirection: 'row', gap: '8px', background: '#2345ff', boxShadow: 'none' }),
+      `<div style="font:600 18px var(--font);color:#fff">${s.button}</div>`);
+  }
+</script>
+<script src="styles-more.js"></script></body></html>

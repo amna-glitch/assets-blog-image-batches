@@ -1,0 +1,178 @@
+[
+  {
+    "src": "https://headspace-contentful.imgix.net/6vlsLhJI0lsi7RPds5b95I/704bbedca492588ad679b6ee3ef6bc8b/Frame_369746.svg?ixlib=js-3.8.0&w=750",
+    "href": "https://checkout.headspace.com/checkout?voucherCode=B2C14DANNUAL2022",
+    "alt": "",
+    "title": "Try for free",
+    "renderedW": 356,
+    "renderedH": 325,
+    "cardRatio": 1.095,
+    "y": 220,
+    "file": "covers/01.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/34NNTyDC9L3wXZZB2joxI0/ba26899b50da1798052337a7a869b34f/visual-dotcom_category_page_corner_desktop_tablet-about-202000806-kh.svg?ixlib=js-3.8.0&w=1920",
+    "href": "https://www.headspace.com/about-us?origin=navigation",
+    "alt": "",
+    "title": "",
+    "renderedW": 336,
+    "renderedH": 336,
+    "cardRatio": 1,
+    "y": 224,
+    "file": "covers/02.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/4XVvCZER7cueTybKU8uOwy/44959ab097af28bb45b11d0347480ab0/visual-dotcom_category_page_corner_desktop_tablet-about-202000806-kh__1_.svg?ixlib=js-3.8.0&w=1920",
+    "href": "https://www.headspace.com/articles?origin=navigation",
+    "alt": "",
+    "title": "",
+    "renderedW": 336,
+    "renderedH": 336,
+    "cardRatio": 1,
+    "y": 256,
+    "file": "covers/03.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/7APkqfWtIM0UPZl28yrpLy/4b3f49eb1a841370e539789f720533ff/visual-dotcom_category_page_corner_desktop_tablet-sleep-202000806-kh.svg?ixlib=js-3.8.0&w=1920",
+    "href": "https://www.headspace.com/articles/sleep?origin=navigation",
+    "alt": "",
+    "title": "",
+    "renderedW": 336,
+    "renderedH": 336,
+    "cardRatio": 1,
+    "y": 280,
+    "file": "covers/04.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/yRw6pIj6ITQJSqucD3FaU/54dd26109bd6dcf29bc9dec8cec140a2/visual-dotcom_category_page_corner_desktop_tablet-mindfulness-202000806-kh__2__1.svg?ixlib=js-3.8.0&w=1920",
+    "href": "https://www.headspace.com/articles/mindfulness?origin=navigation",
+    "alt": "",
+    "title": "",
+    "renderedW": 336,
+    "renderedH": 336,
+    "cardRatio": 1,
+    "y": 317,
+    "file": "covers/05.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/3OOnfL05LpRs6RlRlYvL4V/a234ca3ae1f8bd4c3f5c2c6c3b39b81b/visual-dotcom_category_page_corner_desktop_tablet-stress-202000806-kh__1_.svg?ixlib=js-3.8.0&w=1920",
+    "href": "https://www.headspace.com/articles/mental-health?origin=navigation",
+    "alt": "",
+    "title": "",
+    "renderedW": 336,
+    "renderedH": 336,
+    "cardRatio": 1,
+    "y": 351,
+    "file": "covers/06.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/2dlZS4rE1gqvGJzJSaXgLM/28d6d2cea299a0d832ce4a273d867523/65158b443dd659d3e33a7738_Layer_2__1__1.svg?ixlib=js-3.8.0&w=3840",
+    "href": "https://organizations.headspace.com/?origin=navigation",
+    "alt": "",
+    "title": "",
+    "renderedW": 336,
+    "renderedH": 184,
+    "cardRatio": 1.829,
+    "y": 352,
+    "file": "covers/07.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/Cufn2ufkxHguGwsoBw3fY/925364724e4a4a32a1e788f02ce2e8b9/Plans-DESKTOP-NAV-925x925.png?ixlib=js-3.8.0&w=3840&auto=format%2Ccompress&fit=max",
+    "href": "https://www.headspace.com/subscriptions?origin=navigation",
+    "alt": "",
+    "title": "",
+    "renderedW": 336,
+    "renderedH": 336,
+    "cardRatio": 1,
+    "y": 362,
+    "file": "covers/08.jpg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/4Q34X63qkSlG3wACoRA4zm/3b66b78925af4c8e5916a0c4395eb2c9/Group.svg?ixlib=js-3.8.0&w=750",
+    "href": "https://www.headspace.com/articles/meditation?origin=navigation",
+    "alt": "",
+    "title": "",
+    "renderedW": 336,
+    "renderedH": 235,
+    "cardRatio": 1.428,
+    "y": 404,
+    "file": "covers/09.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/4tBkWHdc70vmEk8gJMr4UL/669b13608f530562aa8b41b97afc1860/Image.svg?ixlib=js-3.8.0&w=640",
+    "href": "https://www.headspace.com/articles/mental-health?origin=all-articles-cat",
+    "alt": "",
+    "title": "Mental Health",
+    "renderedW": 261,
+    "renderedH": 261,
+    "cardRatio": 1,
+    "y": 880,
+    "file": "covers/10.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/10VWngDnYNKRCWI0xMpgsK/6a38a3617734a28aaaabc979ac1398ec/image_14.svg?ixlib=js-3.8.0&w=640",
+    "href": "https://www.headspace.com/articles/meditation?origin=all-articles-cat",
+    "alt": "",
+    "title": "Meditation",
+    "renderedW": 261,
+    "renderedH": 261,
+    "cardRatio": 1,
+    "y": 880,
+    "file": "covers/11.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/14uNUMKO2LnEzfBYxRKukp/cb59dbe62d0f4831cfc0ccb0a2aa2e46/image_14.svg?ixlib=js-3.8.0&w=640",
+    "href": "https://www.headspace.com/articles/mindfulness?origin=all-articles-cat",
+    "alt": "",
+    "title": "Mindfulness",
+    "renderedW": 261,
+    "renderedH": 261,
+    "cardRatio": 1,
+    "y": 880,
+    "file": "covers/12.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/5M0o7jGX6HIE7wrSkxxoU2/250c9432092ca68d4a1d12ba18e1916b/Sleep_Image_3.svg?ixlib=js-3.8.0&w=640",
+    "href": "https://www.headspace.com/articles/sleep?origin=all-articles-cat",
+    "alt": "",
+    "title": "Sleep",
+    "renderedW": 261,
+    "renderedH": 182,
+    "cardRatio": 1.434,
+    "y": 880,
+    "file": "covers/13.svg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/21LXmyzcFoC2YKYlYLmnXR/618a4013dfe97fc13741a61a96352086/self-care-ideas.jpg?ixlib=js-3.8.0&w=3840&auto=format%2Ccompress&fit=max",
+    "href": "https://www.headspace.com/mindfulness/self-care-ideas",
+    "alt": "",
+    "title": "5 Self-care ideas to make your well-being a priority",
+    "renderedW": 261,
+    "renderedH": 147,
+    "cardRatio": 1.778,
+    "y": 1460,
+    "file": "covers/14.jpg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/3zAvq9I2GMd1BsH3Bm3y2w/503a91b4656a2e496d69bdca009f8b41/HS-Evergreen-Stress-Restless-rc.png?ixlib=js-3.8.0&w=3840&auto=format%2Ccompress&fit=max",
+    "href": "https://www.headspace.com/articles/why-am-i-so-irritable-all-the-time",
+    "alt": "",
+    "title": "Why am I so irritable all the time?",
+    "renderedW": 261,
+    "renderedH": 147,
+    "cardRatio": 1.778,
+    "y": 1460,
+    "file": "covers/15.jpg"
+  },
+  {
+    "src": "https://headspace-contentful.imgix.net/2WyRrduZZ2GBOiXi0k0YyZ/1b143868ff5b7a56a62d19cc09a144d0/avoiding-holiday-burnout.jpg?ixlib=js-3.8.0&w=3840&auto=format%2Ccompress&fit=max",
+    "href": "https://www.headspace.com/articles/avoiding-holiday-burnout",
+    "alt": "",
+    "title": "7 tips for avoiding holiday burnout",
+    "renderedW": 261,
+    "renderedH": 147,
+    "cardRatio": 1.778,
+    "y": 1460,
+    "file": "covers/16.jpg"
+  }
+]

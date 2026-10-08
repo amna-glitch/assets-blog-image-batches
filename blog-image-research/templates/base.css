@@ -1,0 +1,42 @@
+/* Honest Taskers blog-image system: shared tokens.
+   Sequel Sans is the brand face. It is not installed in the render environment, so
+   renders fall back to Inter Display / Inter. Drop Sequel Sans .woff2 files next to
+   this file and uncomment the @font-face block to render with the real face. */
+/*
+@font-face { font-family: "Sequel Sans"; src: url("SequelSans-Medium.woff2") format("woff2"); font-weight: 500; }
+@font-face { font-family: "Sequel Sans"; src: url("SequelSans-Bold.woff2") format("woff2"); font-weight: 700; }
+*/
+:root {
+  --blue: #2345ff;      /* primary */
+  --deep: #162da1;      /* deep blue */
+  --mid: #3e59ff;       /* mid blue */
+  --teal: #2dd0e8;      /* accent: one element per image, never a fill field */
+  --white: #ffffff;
+  /* Derived tints of the primary (the only non-kit colours allowed) */
+  --tint-1: #eef1ff;
+  --tint-2: #c9d1ff;
+
+  --w: 1200px; --h: 630px;
+  --margin: 72px;       /* outer margin; 6 x 12px baseline */
+  --stroke: 6;          /* icon stroke in 120-unit space */
+  --font: "Sequel Sans", "Inter Display", "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: var(--w); height: var(--h); overflow: hidden; background: var(--white); }
+.canvas { position: relative; width: var(--w); height: var(--h); overflow: hidden; font-family: var(--font); }
+/* Series signature: one teal dot, same size and position in every image. */
+.sig { position: absolute; left: var(--margin); bottom: var(--margin); width: 16px; height: 16px;
+       border-radius: 50%; background: var(--teal); }
+.center { position: absolute; display: flex; align-items: center; justify-content: center; }
+/* Band layout: a quiet floor below the listing band, so the full frame (article hero, OG) reads as
+   an object resting on a ledge rather than a top-heavy banner. Hidden by the listing card's text panel. */
+.floor { position: absolute; left: 0; right: 0; top: 353px; bottom: 0; background: rgba(0, 0, 40, .09); }
+.floor.on-light { background: rgba(35, 69, 255, .06); }
+/* Safe-zone guides (add ?guides=1 to any template URL) */
+.guides .g { position: absolute; top: 0; height: 100%; border: 2px dashed rgba(255,0,128,.8); pointer-events: none; }
+.guides .g.r1610 { left: 96px; width: 1008px; }
+.guides .g.r169 { left: 40px; width: 1120px; }
+.guides .g.r43  { left: 180px; width: 840px; }
+.guides .g.r11  { left: 285px; width: 630px; }
+/* honesttaskers.com listing card: the only part of the image left visible (object-fit: cover into ~1.54:1, text panel over the lower 44%) */
+.guides .g.ht   { left: 115px; width: 970px; height: 353px; border: 3px solid rgba(0,230,255,.95); }

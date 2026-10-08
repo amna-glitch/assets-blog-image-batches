@@ -1,0 +1,178 @@
+[
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2024/08/Copy-of-Copy-of-Copy-of-DSC_7511.jpg",
+    "href": "https://www.elationhealth.com/who-we-serve/specialty/family-medicine/",
+    "alt": "",
+    "title": "Family Medicine",
+    "renderedW": 430,
+    "renderedH": 318,
+    "cardRatio": 1.353,
+    "y": 157,
+    "file": "covers/01.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2024/09/national-cancer-institute-BxXgTQEw1M4-unsplash-1024x683.jpg",
+    "href": "https://www.elationhealth.com/who-we-serve/primary-care/new-practice/",
+    "alt": "",
+    "title": "New Practices",
+    "renderedW": 430,
+    "renderedH": 359,
+    "cardRatio": 1.199,
+    "y": 185,
+    "file": "covers/02.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2024/12/KSP_7791-scaled-e1739344336699-768x1150.webp",
+    "href": "https://www.elationhealth.com/practice-success/technology/clinical-first-ai/#ai-power",
+    "alt": "",
+    "title": "Intelligent Tools",
+    "renderedW": 430,
+    "renderedH": 350,
+    "cardRatio": 1.229,
+    "y": 243,
+    "file": "covers/03.webp"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/02/2026-best-in-klas-small-practice-ambulatory-ehr-pm-1-10-physicians-independent.svg",
+    "href": "https://www.elationhealth.com/who-we-serve/specialty/direct-primary-care/#membership",
+    "alt": "",
+    "title": "Membership Management",
+    "renderedW": 389,
+    "renderedH": 277,
+    "cardRatio": 1.405,
+    "y": 255,
+    "file": "covers/04.svg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2024/08/Copy-of-Copy-of-Copy-of-amy_thompson_photography_684A3887-1536x1025.jpg",
+    "href": "https://www.elationhealth.com/solutions/ehr/",
+    "alt": "",
+    "title": "EHR",
+    "renderedW": 430,
+    "renderedH": 376,
+    "cardRatio": 1.144,
+    "y": 270,
+    "file": "covers/05.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2024/09/pexels-thirdman-7659567-1024x683.jpg",
+    "href": "https://www.elationhealth.com/solutions/ehr#clinical-orders",
+    "alt": "",
+    "title": "Clinical Orders",
+    "renderedW": 389,
+    "renderedH": 250,
+    "cardRatio": 1.555,
+    "y": 523,
+    "file": "covers/06.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/10/elevate-elation-end-of-silos-4x-768x402.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/the-end-of-silos-rebuilding-the-healthcare-stack/",
+    "alt": "Rebuilding the Healthcare Stack graphic",
+    "title": "Rebuilding the Healthcare Stack graphic",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 669,
+    "file": "covers/07.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/elation-pcc-patients-first-act_1_fpdxmk-vIgx0g-768x402.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/why-elation-supports-the-patients-first-act/",
+    "alt": "elation-pcc-patients-first-act_1_fpdxmk-vIgx0g",
+    "title": "elation-pcc-patients-first-act_1_fpdxmk-vIgx0g",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 669,
+    "file": "covers/08.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/elation-fullscript-linkedin-4x_3_srvpsf-Ws3CgG-768x402.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/how-fullscript-elation-simplify-supplement-management-and-patient-care/",
+    "alt": "elation-fullscript-linkedin-4x_3_srvpsf-Ws3CgG",
+    "title": "elation-fullscript-linkedin-4x_3_srvpsf-Ws3CgG",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 669,
+    "file": "covers/09.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/App_15_grkoq5-StjlOd-768x402.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/the-state-of-dpc-what-a-new-report-reveals-about-its-growth-and-sustainability/",
+    "alt": "App_15_grkoq5-StjlOd",
+    "title": "App_15_grkoq5-StjlOd",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 1280,
+    "file": "covers/10.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/aHViPTEyOTUwMyZjbWQ9aXRlbWVkaXRvcmltYWdlJmZpbGVuYW1lPWl0ZW1lZGl0b3JpbWFnZV82NDgwYTFmMWRkMDI2LmpwZyZ2ZXJzaW9uPTAwMDAmc2lnPWM0YTdhYWM5NjY2NzFhZjk5NjRkMDk0MzIwNDNlYjM3-I9jXSR-768x512.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/why-telehealth-software-is-important-for-new-practices/",
+    "alt": "aHViPTEyOTUwMyZjbWQ9aXRlbWVkaXRvcmltYWdlJmZpbGVuYW1lPWl0ZW1lZGl0b3JpbWFnZV82NDgwYTFmMWRkMDI2LmpwZyZ2ZXJzaW9uPTAwMDAmc2lnPWM0YTdhYWM5NjY2NzFhZjk5NjRkMDk0MzIwNDNlYjM3-I9jXSR",
+    "title": "aHViPTEyOTUwMyZjbWQ9aXRlbWVkaXRvcmltYWdlJmZpbGVuYW1lPWl0ZW1lZGl0b3JpbWFnZV82NDgwYTFmMWRkMDI2LmpwZyZ2ZXJzaW9uPTAwMDAmc2lnPWM0YTdhYWM5NjY2NzFhZjk5NjRkMDk0MzIwNDNl",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 1280,
+    "file": "covers/11.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/iStock-867186030-1024x681-TQvLgJ-768x511.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/artificial-intelligence-and-primary-care/",
+    "alt": "iStock-867186030-1024x681-TQvLgJ",
+    "title": "iStock-867186030-1024x681-TQvLgJ",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 1280,
+    "file": "covers/12.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/AI_in_Healthcare_and_Medical_rocogj-4eJXVi-768x512.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/mcn-ai/",
+    "alt": "AI_in_Healthcare_and_Medical_rocogj-4eJXVi",
+    "title": "AI_in_Healthcare_and_Medical_rocogj-4eJXVi",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 1862,
+    "file": "covers/13.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/stethoscope-tool-for-cardiologist-doctor-medica-2025-03-05-13-05-30-utc_oyxyqv-5PrLul-768x512.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/state-of-ai-blog/",
+    "alt": "stethoscope-tool-for-cardiologist-doctor-medica-2025-03-05-13-05-30-utc_oyxyqv-5PrLul",
+    "title": "stethoscope-tool-for-cardiologist-doctor-medica-2025-03-05-13-05-30-utc_oyxyqv-5PrLul",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 1862,
+    "file": "covers/14.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/laptop-medical-research-and-doctor-typing-medicin-2025-04-05-18-42-01-utc_sagzzr-4yOme1.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/ai-in-ehr-software-trends-insights/",
+    "alt": "laptop-medical-research-and-doctor-typing-medicin-2025-04-05-18-42-01-utc_sagzzr-4yOme1",
+    "title": "laptop-medical-research-and-doctor-typing-medicin-2025-04-05-18-42-01-utc_sagzzr-4yOme1",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 1862,
+    "file": "covers/15.jpg"
+  },
+  {
+    "src": "https://www.elationhealth.com/wp-content/uploads/2026/09/midsection-of-african-american-male-doctor-sitting-2025-04-04-01-57-09-utc_raovpp-cysIwR.jpg",
+    "href": "https://www.elationhealth.com/resources/blogs/technology-to-scale-your-dpc-the-5-pillars-of-growth/",
+    "alt": "midsection-of-african-american-male-doctor-sitting-2025-04-04-01-57-09-utc_raovpp-cysIwR",
+    "title": "midsection-of-african-american-male-doctor-sitting-2025-04-04-01-57-09-utc_raovpp-cysIwR",
+    "renderedW": 358,
+    "renderedH": 200,
+    "cardRatio": 1.79,
+    "y": 2473,
+    "file": "covers/16.jpg"
+  }
+]

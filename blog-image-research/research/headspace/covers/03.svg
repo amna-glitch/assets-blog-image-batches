@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" viewBox="0 0 925 925">
+  <defs>
+    <style>.cls-1,.cls-4{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#ff7e1d;}.cls-4{stroke:#413d45;stroke-linecap:round;stroke-linejoin:round;stroke-width:14.84px;}.cls-5{clip-path:url(#clip-path-2);}.cls-6{clip-path:url(#clip-path-3);}.cls-7{clip-path:url(#clip-path-4);}.cls-8{fill:#084fff;}</style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="925" height="925"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect class="cls-1" x="-2203.11" width="925" height="925"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect class="cls-1" x="-2969.44" y="197.07" width="1715.91" height="1089.03"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <rect class="cls-1" x="-2901.8" y="1431.83" width="1715.91" height="1089.76"/>
+    </clipPath>
+  </defs>
+  <title>visual-dotcom_category_page_corner_desktop_tablet-about-202000806-kh copy</title>
+  <g class="cls-2">
+    <path class="cls-3" d="M899,893.53c13.62,190-74.6,297.79-127.83,373.2C688.4,1354,583.55,1473,317.12,1479.65c-226,8.89-337.16-90.49-430.26-176.81-121.55-133.58-153.28-212.66-159.37-409.31C-273.09,773-226.65,652.6-145.32,546.75c114-160.91,295.12-214.76,462.44-226,175.56-6.82,315.2,81.73,410.6,177.11C849.71,626.56,887.17,737,899,893.53"/>
+  </g>
+  <path class="cls-4" d="M235.15,412a33.4,33.4,0,0,0,62.92,0"/>
+  <path class="cls-4" d="M329.51,412a33.4,33.4,0,0,0,62.92,0"/>
+  <path class="cls-4" d="M169.27,437a213.86,213.86,0,0,0,289.39,0"/>
+  <g class="cls-5">
+    <g class="cls-6">
+      <g class="cls-7">
+        <path class="cls-8" d="M-1890.34,1240.79c0,523.53,424.4,947.93,947.94,947.93S5.53,1764.32,5.53,1240.79-418.87,292.85-942.4,292.85s-947.94,424.4-947.94,947.94"/>
+      </g>
+    </g>
+  </g>
+</svg>

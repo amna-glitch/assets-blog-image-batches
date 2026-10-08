@@ -1,0 +1,144 @@
+<title>Honest Taskers Cover Styles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a style guide, one band per cover style: text left, examples right, references underneath. */
+:root { --bg:#f5f6fb; --surface:#fff; --ink:#0f1640; --muted:#5a6286; --line:#dde1f0; --accent:#2345ff; --teal:#0aa7bf;
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; --teal:#2dd0e8; color-scheme:dark } }
+:root[data-theme="dark"] { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; --teal:#2dd0e8; color-scheme:dark }
+body { background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); }
+.wrap { max-width:1180px; margin:0 auto; padding-inline:20px; padding-block:40px 80px; }
+h1,h2 { font-family:var(--display); text-wrap:balance; letter-spacing:-.015em; line-height:1.1; margin:0; }
+h1 { font-size:clamp(2rem,5vw,3.2rem); max-width:20ch; }
+h2 { font-size:clamp(1.4rem,2.6vw,1.9rem); }
+h3 { font-family:var(--display); font-size:1.5rem; margin:64px 0 8px; }
+h4 { font:500 .74rem var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:18px 0 6px; }
+.lede { max-width:64ch; color:var(--muted); font-size:1.08rem; margin-top:14px; }
+.eyebrow { font:500 .76rem var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.cur { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:20px; } .cur img { width:100%; border-radius:6px; display:block; }
+.cap { font-size:.86rem; color:var(--muted); margin-top:8px; }
+.toc { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
+.toc a { text-decoration:none; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:6px 14px; font-size:.9rem; }
+.toc a b { color:var(--accent); margin-right:6px; font-family:var(--mono); }
+.style { margin-top:56px; padding-top:28px; border-top:1px solid var(--line); }
+.sh { display:flex; gap:16px; align-items:center; }
+.no { font:700 2.6rem/1 var(--display); color:var(--accent); min-width:1.2em; }
+.tag { margin:4px 0 0; color:var(--muted); }
+.cols { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:28px; margin-top:18px; }
+.txt p { margin:0; } .txt ul { margin:0; padding-left:1.1em; } .txt li { margin:2px 0; }
+.count { font:500 .8rem var(--mono); color:var(--muted); margin-top:6px !important; }
+.why { color:var(--muted); font-size:.95rem; }
+.ex { display:grid; grid-template-columns:1fr 1fr; gap:12px; align-content:start; }
+.ex img { width:100%; border-radius:10px; display:block; }
+.refs { display:flex; gap:8px; align-items:center; margin-top:16px; overflow-x:auto; padding-bottom:4px; }
+.refs span { font:500 .7rem var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--muted); writing-mode:vertical-rl; transform:rotate(180deg); }
+.refs img { height:96px; width:auto; border-radius:6px; flex:none; }
+.tbl { overflow-x:auto; margin-top:16px; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+table { border-collapse:collapse; width:100%; min-width:640px; font-size:.93rem; }
+th,td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font:500 .72rem var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+tr:last-child td { border-bottom:0; }
+.listing { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; margin-top:16px; align-items:start; }
+.listing img { width:100%; border:1px solid var(--line); border-radius:10px; background:#fff; display:block; }
+ol { padding-left:1.2em; max-width:68ch; } ol li { margin:6px 0; }
+@media (max-width:760px) { .cols, .listing { grid-template-columns:1fr; } .cur { grid-template-columns:1fr 1fr; } }
+.more { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px; margin-top:18px; }
+.more figure { margin:0; min-width:0; } .more img { width:100%; border-radius:10px; display:block; }
+.more figcaption { font-size:.84rem; color:var(--muted); margin-top:8px; line-height:1.4; } .more figcaption b { color:var(--ink); }
+</style>
+<div class="wrap">
+<header>
+<div class="eyebrow">Blog cover styles · October 2026</div>
+<h1>Thirteen cover styles for Honest Taskers articles</h1>
+<p class="lede">Your covers look good; the problem is that every article uses the same one. The first six styles each belong to a group of article types, the way Calendly, Buffer, HubSpot, Mailchimp and Figma mix styles on their blogs. Your current look stays as one of the six.</p>
+<div class="cur"><img src="a/current-1.jpg" alt="Current cover"><img src="a/current-2.jpg" alt="Current cover"><img src="a/current-3.jpg" alt="Current cover"><img src="a/current-4.jpg" alt="Current cover"></div>
+<p class="cap">Today: the latest four covers on honesttaskers.com/articles, all one composition.</p>
+<nav class="toc"><a href="#s1"><b>1</b>Practice Scene</a><a href="#s2"><b>2</b>App Card</a><a href="#s3"><b>3</b>Arch Portrait</a><a href="#s4"><b>4</b>Ink on Colour</a><a href="#s5"><b>5</b>Software Bridge</a><a href="#s6"><b>6</b>Number Cover</a><a href="#ref"><b>7–13</b>More styles from the research</a><a href="#more"><b>+</b>10 more designs</a><a href="#mix"><b>→</b>On your blog</a></nav>
+</header>
+<section class="style" id="s1">
+<div class="sh"><span class="no">1</span><div><h2>Practice Scene</h2><p class="tag">Your current style, kept</p></div></div>
+<div class="cols"><div class="txt"><p>A VA at work in a bright clinic, with your blue light and UI cards. You like it, so it stays, but it becomes one style of six instead of the cover for every post.</p>
+<h4>Use it for</h4><ul><li>Day-in-the-life posts</li><li>Role guides (&quot;Virtual Veterinary Technician: The Complete Guide&quot;)</li></ul><p class="count">382 role posts, so split them: guides here, "what does X do" posts on App Card</p>
+<h4>Borrowed from Figma</h4><p class="why">Figma shoots every guest in the same studio set. One look works as a series when it is used for one kind of post, not for everything.</p></div>
+<div class="ex"><img src="a/s-1a-scene.jpg" alt="Example cover"><img src="a/s-1b-scene.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-figma-1.jpg" alt="Reference cover"><img src="a/ref-figma-2.jpg" alt="Reference cover"><img src="a/ref-figma-3.jpg" alt="Reference cover"></div></section><section class="style" id="s2">
+<div class="sh"><span class="no">2</span><div><h2>App Card</h2><p class="tag">One real-looking card, no person</p></div></div>
+<div class="cols"><div class="txt"><p>A pale brand field with one large, readable card (a task list, an intake queue) and small date, clock and chart tiles around it on a dotted path.</p>
+<h4>Use it for</h4><ul><li>Tasks to delegate</li><li>Benefits for a specialty</li><li>How-to and process posts</li></ul><p class="count">~330 posts</p>
+<h4>Borrowed from Calendly · Buffer</h4><p class="why">Calendly shows real product cards with real content; Buffer runs its "best time to post" posts as one repeatable template with orbiting tiles.</p></div>
+<div class="ex"><img src="a/s-2a-card.jpg" alt="Example cover"><img src="a/s-2b-card.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-calendly-1.jpg" alt="Reference cover"><img src="a/ref-calendly-2.jpg" alt="Reference cover"><img src="a/ref-buffer-1.jpg" alt="Reference cover"><img src="a/ref-buffer-3.jpg" alt="Reference cover"></div></section><section class="style" id="s3">
+<div class="sh"><span class="no">3</span><div><h2>Arch Portrait</h2><p class="tag">Black-and-white person in a blue arch</p></div></div>
+<div class="cols"><div class="txt"><p>A black-and-white photo framed by a blue arch, with a teal circle, a deep-blue corner shape and one icon tile. Comparisons use two arches: in-house in grey, virtual in colour.</p>
+<h4>Use it for</h4><ul><li>Hiring and job descriptions</li><li>Interview questions</li><li>&quot;vs. In-House Staff&quot; comparisons (two arches)</li></ul><p class="count">~500 posts</p>
+<h4>Borrowed from HubSpot</h4><p class="why">HubSpot cuts black-and-white people into bold colour shapes; the treatment makes very different photos read as one family.</p></div>
+<div class="ex"><img src="a/s-3a-arch.jpg" alt="Example cover"><img src="a/s-3b-arch.jpg" alt="Example cover"><img src="a/s-3c-archvs.jpg" alt="Example cover"><img src="a/s-3d-archvs.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-hubspot-1.jpg" alt="Reference cover"><img src="a/ref-hubspot-2.jpg" alt="Reference cover"><img src="a/ref-hubspot-3.jpg" alt="Reference cover"></div></section><section class="style" id="s4">
+<div class="sh"><span class="no">4</span><div><h2>Ink on Colour</h2><p class="tag">Drawn objects on one bold colour</p></div></div>
+<div class="cols"><div class="txt"><p>Navy line drawings of two or three objects on one flat brand colour, each with an offset fill like a print. No people, no photos.</p>
+<h4>Use it for</h4><ul><li>HIPAA and compliance</li><li>Policies, contracts and safeguards</li><li>Operational topics without a person to show</li></ul><p class="count">29+ posts</p>
+<h4>Borrowed from Mailchimp</h4><p class="why">Mailchimp draws one object scene in black ink on a single bright colour. It is the calmest style and suits serious topics.</p></div>
+<div class="ex"><img src="a/s-4a-ink.jpg" alt="Example cover"><img src="a/s-4b-ink.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-mailchimp-1.jpg" alt="Reference cover"><img src="a/ref-mailchimp-2.jpg" alt="Reference cover"><img src="a/ref-mailchimp-3.jpg" alt="Reference cover"><img src="a/ref-mailchimp-4.jpg" alt="Reference cover"></div></section><section class="style" id="s5">
+<div class="sh"><span class="no">5</span><div><h2>Software Bridge</h2><p class="tag">Your logo joined to the tool</p></div></div>
+<div class="cols"><div class="txt"><p>Your heart mark on a blue tile, bridged to a white tile naming the software (Epic, Dentrix, DrChrono), with a date and chart tile on a dotted path.</p>
+<h4>Use it for</h4><ul><li>&quot;How a biller works in Dentrix&quot;</li><li>EHR and practice-software posts</li><li>Remote-access and tools posts</li></ul><p class="count">108 posts</p>
+<h4>Borrowed from Calendly · Buffer</h4><p class="why">Calendly joins logo tiles for every integration; Buffer swaps one platform tile into the same layout for each network.</p></div>
+<div class="ex"><img src="a/s-5a-tool.jpg" alt="Example cover"><img src="a/s-5b-tool.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-calendly-3.jpg" alt="Reference cover"><img src="a/ref-calendly-4.jpg" alt="Reference cover"><img src="a/ref-buffer-2.jpg" alt="Reference cover"></div></section><section class="style" id="s6">
+<div class="sh"><span class="no">6</span><div><h2>Number Cover</h2><p class="tag">The count, large, beside a photo</p></div></div>
+<div class="cols"><div class="txt"><p>The list count set very large on a brand field, a two-line label, and a photo on the right.</p>
+<h4>Use it for</h4><ul><li>&quot;N Best … Companies (2026)&quot;</li><li>Cost posts, once a figure is confirmed</li><li>Question sets (&quot;?&quot;)</li></ul><p class="count">~560 posts</p>
+<h4>Borrowed from Stripe · Mailchimp</h4><p class="why">Stripe leads data posts with one big figure; Mailchimp gives its reports a typographic cover.</p></div>
+<div class="ex"><img src="a/s-6a-numeral.jpg" alt="Example cover"><img src="a/s-6b-numeral.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-stripe-1.jpg" alt="Reference cover"><img src="a/ref-stripe-2.jpg" alt="Reference cover"><img src="a/ref-mailchimp-4.jpg" alt="Reference cover"></div></section>
+<section class="style" id="ref"><h2>7 more styles from the other blogs</h2><p class="tag">Honest Taskers versions of the remaining blogs in the research. Each takes the idea, not the artwork: your colours, your icons, your article titles.</p></section><section class="style" id="s7"><div class="sh"><span class="no">7</span><div><h2>Line Drawing</h2><p class="tag">After Linear</p></div></div>
+<div class="cols"><div class="txt"><p>Thin white lines on deep navy that draw the process (a waveform for scribes, rings for call cadence). No people.</p><h4>Use it for</h4><p>Scribe and documentation posts, answering-service and call posts</p></div>
+<div class="ex"><img src="a/x-r07-lines.jpg" alt="Example cover"><img src="a/x-r07b-lines.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-linear-1.jpg" alt="Reference cover"><img src="a/ref-linear-2.jpg" alt="Reference cover"></div></section><section class="style" id="s8"><div class="sh"><span class="no">8</span><div><h2>Ink Sketch</h2><p class="tag">After Notion</p></div></div>
+<div class="cols"><div class="txt"><p>Black ink object on warm white with one solid blue block behind it and a few loose hand marks.</p><h4>Use it for</h4><p>Skills posts, soft-skill and culture topics</p></div>
+<div class="ex"><img src="a/x-r08-sketch.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-notion-1.jpg" alt="Reference cover"><img src="a/ref-notion-2.jpg" alt="Reference cover"></div></section><section class="style" id="s9"><div class="sh"><span class="no">9</span><div><h2>Sculpted Object</h2><p class="tag">After Mercury · Rippling</p></div></div>
+<div class="cols"><div class="txt"><p>One soft, lit object (tooth, shield) resting on a two-tone pale blue field with a shadow.</p><h4>Use it for</h4><p>Specialty role posts (dental, vet, derm), compliance</p></div>
+<div class="ex"><img src="a/x-r09-sculpt.jpg" alt="Example cover"><img src="a/x-r09b-sculpt.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-mercury-1.jpg" alt="Reference cover"><img src="a/ref-mercury-2.jpg" alt="Reference cover"><img src="a/ref-rippling-r1.jpg" alt="Reference cover"><img src="a/ref-rippling-r3.jpg" alt="Reference cover"></div></section><section class="style" id="s10"><div class="sh"><span class="no">10</span><div><h2>Big Word</h2><p class="tag">After Ramp</p></div></div>
+<div class="cols"><div class="txt"><p>One giant word set edge to edge on brand blue with a small teal label. The word names the topic, never the full title.</p><h4>Use it for</h4><p>Cost guides (no price), FAQ posts, announcements</p></div>
+<div class="ex"><img src="a/x-r10-word.jpg" alt="Example cover"><img src="a/x-r10b-word.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-ramp-1.jpg" alt="Reference cover"><img src="a/ref-ramp-2.jpg" alt="Reference cover"></div></section><section class="style" id="s11"><div class="sh"><span class="no">11</span><div><h2>Guide Book</h2><p class="tag">After Zocdoc · Mailchimp</p></div></div>
+<div class="cols"><div class="txt"><p>A printed guide cover on teal with the role name and one icon, like a downloadable report.</p><h4>Use it for</h4><p>Every &quot;… : The Complete Guide&quot; post</p></div>
+<div class="ex"><img src="a/x-r11-book.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-zocdoc-1.jpg" alt="Reference cover"><img src="a/ref-zocdoc-2.jpg" alt="Reference cover"></div></section><section class="style" id="s12"><div class="sh"><span class="no">12</span><div><h2>Circle Portrait</h2><p class="tag">After Spruce Health · NexHealth</p></div></div>
+<div class="cols"><div class="txt"><p>A round headshot on a flat brand colour with a white tag naming the role.</p><h4>Use it for</h4><p>Day-in-the-life posts, role spotlights, future VA or client stories</p></div>
+<div class="ex"><img src="a/x-r12-circle.jpg" alt="Example cover"><img src="a/x-r12b-circle.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-spruce-1.jpg" alt="Reference cover"><img src="a/ref-spruce-2.jpg" alt="Reference cover"></div></section><section class="style" id="s13"><div class="sh"><span class="no">13</span><div><h2>Product Screen</h2><p class="tag">After Jane · Hint</p></div></div>
+<div class="cols"><div class="txt"><p>A clean EHR-style window with one highlighted control, showing where the VA works.</p><h4>Use it for</h4><p>EHR access, software setup and security posts</p></div>
+<div class="ex"><img src="a/x-r13-screen.jpg" alt="Example cover"></div></div>
+<div class="refs"><span>Reference</span><img src="a/ref-jane-1.jpg" alt="Reference cover"><img src="a/ref-jane-2.jpg" alt="Reference cover"></div></section>
+<section class="style" id="more"><h2>10 more designs on real titles</h2>
+<p class="tag">The same six styles applied to ten more of your articles, to show how far each one stretches.</p>
+<div class="more"><figure><img src="a/m-n01-scene.jpg" alt="A Day in the Life of a Virtual Referral Coordinator"><figcaption><b>1 Practice Scene</b><br>A Day in the Life of a Virtual Referral Coordinator</figcaption></figure><figure><img src="a/m-n02-card.jpg" alt="Tasks to Delegate in a Sports Medicine Practice"><figcaption><b>2 App Card</b><br>Tasks to Delegate in a Sports Medicine Practice</figcaption></figure><figure><img src="a/m-n03-card.jpg" alt="Benefits for Concierge Medicine Practices"><figcaption><b>2 App Card</b><br>Benefits for Concierge Medicine Practices</figcaption></figure><figure><img src="a/m-n04-arch.jpg" alt="Virtual Medical Receptionist Skills"><figcaption><b>3 Arch Portrait</b><br>Virtual Medical Receptionist Skills</figcaption></figure><figure><img src="a/m-n05-arch.jpg" alt="Bilingual Virtual Medical Assistant Job Description"><figcaption><b>3 Arch Portrait</b><br>Bilingual Virtual Medical Assistant Job Description</figcaption></figure><figure><img src="a/m-n06-archvs.jpg" alt="Chiropractic Virtual Medical Assistant vs. In-House Staff"><figcaption><b>3 Arch Portrait (vs.)</b><br>Chiropractic Virtual Medical Assistant vs. In-House Staff</figcaption></figure><figure><img src="a/m-n07-ink.jpg" alt="Can Offshore Virtual Assistants Access PHI? What HIPAA Actually Says"><figcaption><b>4 Ink on Colour</b><br>Can Offshore Virtual Assistants Access PHI? What HIPAA Actually Says</figcaption></figure><figure><img src="a/m-n08-tool.jpg" alt="Virtual Medical Assistant in DrChrono"><figcaption><b>5 Software Bridge</b><br>Virtual Medical Assistant in DrChrono</figcaption></figure><figure><img src="a/m-n09-tool.jpg" alt="How a Coder Works in Open Dental?"><figcaption><b>5 Software Bridge</b><br>How a Coder Works in Open Dental?</figcaption></figure><figure><img src="a/m-n10-numeral.jpg" alt="11 Best Virtual Healthcare Assistant Companies (2026)"><figcaption><b>6 Number Cover</b><br>11 Best Virtual Healthcare Assistant Companies (2026)</figcaption></figure></div></section>
+<section class="style" id="mix">
+<h2>Which style for which article</h2>
+<div class="tbl"><table><thead><tr><th>Article type (from your 1,903 titles)</th><th>Posts</th><th>Style</th></tr></thead><tbody>
+<tr><td>Role guides, day in the life</td><td>~190</td><td>1 Practice Scene</td></tr>
+<tr><td>"What does X do", skills, tasks, benefits, how-to</td><td>~330</td><td>2 App Card</td></tr>
+<tr><td>Hiring, job descriptions, interview questions</td><td>245</td><td>3 Arch Portrait</td></tr>
+<tr><td>"… vs. In-House Staff"</td><td>251</td><td>3 Arch Portrait (two arches)</td></tr>
+<tr><td>HIPAA, compliance, policy</td><td>29+</td><td>4 Ink on Colour</td></tr>
+<tr><td>Software and EHR</td><td>108</td><td>5 Software Bridge</td></tr>
+<tr><td>"N Best … Companies", question sets</td><td>~560</td><td>6 Number Cover</td></tr>
+</tbody></table></div>
+<h2 style="margin-top:48px">How it looks on your articles page</h2>
+<div class="listing"><img src="a/listing.jpg" alt="Twelve covers in a replica of the honesttaskers.com listing card">
+<div><p>Twelve real titles in a replica of your listing card, which shows only the top 56% of each image. Every style keeps its faces, cards and numbers in that band.</p>
+<h4>Rules that keep it varied</h4><ol>
+<li>The article type picks the style; never choose by taste per post.</li>
+<li>No two neighbouring cards use the same style.</li>
+<li>Rotate the field colour inside a style (pale blue, pale aqua, deep blue).</li>
+<li>Cards show specific, readable content, never placeholder bars.</li>
+<li>No corner checkmark and no title text on the image. No prices or figures until your team confirms them.</li>
+</ol>
+<h4>Before using these live</h4><p>The photos in styles 1, 3 and 6 are crops of your existing images, so some old floating cards still show at the edges. Fresh photos without built-in UI will look cleaner. Renders use Inter in place of Sequel Sans.</p></div></div>
+</section>
+</div>

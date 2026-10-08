@@ -1,0 +1,130 @@
+<!doctype html>
+<!-- Honest Taskers photographic cover system (v2). One template, six layouts, chosen per article category.
+     Spec (URL ?spec=<json>):
+       layout   frame | duotone | scene | split | stat | numeral   (portrait kept but not recommended)
+       palette  deep | blue | tint
+       photo    path to a 1200x630 source photo;  focal [x%, y%] of the face in that photo
+       photo2   second photo for "split" (+ focal2)
+       icon     specialty icon name from icons.js (frame card chip, duotone badge, portrait chips)
+       icons    [a, b] two chip icons for "portrait"
+       card     {eyebrow, title, sub, status}  one legible UI card (frame)
+       stat     {value, label, eyebrow}        (stat)
+       num, eyebrow, label                     (numeral)
+     All key content sits inside the band honesttaskers.com's listing card shows: x 115-1085, y 0-353. -->
+<html><head><meta charset="utf-8"><script src="icons.js"></script>
+<style>
+  :root { --blue:#2345ff; --deep:#162da1; --mid:#3e59ff; --teal:#2dd0e8; --tint:#eef1ff;
+          --font:"Sequel Sans","Inter Display","Inter","Helvetica Neue",Arial,sans-serif; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: #fff; }
+  .c { position: relative; width: 1200px; height: 630px; overflow: hidden; font-family: var(--font); }
+  .panel { position: absolute; overflow: hidden; }
+  .panel img { position: absolute; display: block; }
+  .card { position: absolute; background: #fff; border-radius: 22px; padding: 26px 28px;
+          box-shadow: 0 18px 40px rgba(10, 20, 80, .18), 0 2px 6px rgba(10, 20, 80, .08); }
+  .row { display: flex; align-items: center; gap: 16px; }
+  .chip { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .eyebrow { font-size: 19px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .title { font-size: 34px; font-weight: 650; letter-spacing: -.01em; line-height: 1.1; color: #0e1a4f; margin-top: 18px; }
+  .sub { font-size: 21px; color: #5b6488; margin-top: 8px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px; border-radius: 999px;
+          background: rgba(45, 208, 232, .16); color: #0b7f92; font-size: 19px; font-weight: 600; }
+  .pill i { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); }
+  .badge { position: absolute; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center;
+           box-shadow: 0 12px 30px rgba(10, 20, 80, .22); }
+  .big { position: absolute; font-weight: 700; letter-spacing: -.045em; line-height: .9; }
+  .lbl { position: absolute; }
+  .lbl .e { font-size: 21px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+  .lbl .t { font-size: 40px; font-weight: 600; line-height: 1.12; letter-spacing: -.01em; margin-top: 12px; }
+  .tick { width: 44px; height: 5px; border-radius: 3px; background: var(--teal); margin-bottom: 18px; }
+  .seam { position: absolute; left: 596px; top: 0; width: 8px; height: 630px; background: #fff; }
+  .seamdot { position: absolute; left: 600px; top: 176px; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%;
+             background: var(--teal); border: 8px solid #fff; }
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <!-- Brand duotone: shadows -> deep blue, highlights -> pale tint -->
+  <filter id="duo" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 1 0"/>
+    <feComponentTransfer><feFuncR type="table" tableValues="0.055 0.93"/><feFuncG type="table" tableValues="0.11 0.945"/><feFuncB type="table" tableValues="0.5 1"/></feComponentTransfer>
+  </filter>
+  <!-- Muted: for the "in-house" half of a comparison -->
+  <filter id="mute" color-interpolation-filters="sRGB">
+    <feColorMatrix type="saturate" values="0.12"/>
+    <feComponentTransfer><feFuncR type="linear" slope=".92" intercept=".04"/><feFuncG type="linear" slope=".92" intercept=".04"/><feFuncB type="linear" slope=".92" intercept=".06"/></feComponentTransfer>
+  </filter>
+</svg>
+<div class="c" id="c"></div>
+<script>
+  const s = htSpec({ layout: 'frame', palette: 'deep', photo: '', focal: [50, 25], icon: 'tooth',
+    card: { eyebrow: 'Insurance check', title: 'Coverage verified', sub: 'Delta Dental PPO · 9:42 AM', status: 'Ready for visit' } });
+  const P = { deep: { bg: '#162da1', ink: '#fff', soft: '#2345ff' }, blue: { bg: '#2345ff', ink: '#fff', soft: '#3e59ff' }, tint: { bg: '#eef1ff', ink: '#162da1', soft: '#dfe5ff' } }[s.palette] || {};
+  const c = document.getElementById('c');
+  c.style.background = P.bg;
+
+  // Place a 1200x630 photo inside a panel so the focal point lands at (tx, ty) in panel coordinates, always covering the panel.
+  function photo(src, focal, x, y, w, h, tx, ty, zoom = 1, filter = '', round = false) {
+    const p = document.createElement('div'); p.className = 'panel';
+    Object.assign(p.style, { left: x + 'px', top: y + 'px', width: w + 'px', height: h + 'px', borderRadius: round ? '50%' : '0' });
+    const k = Math.max(w / 1200, h / 630) * zoom, iw = 1200 * k, ih = 630 * k;
+    let left = tx - focal[0] / 100 * iw, top = ty - focal[1] / 100 * ih;
+    left = Math.min(0, Math.max(w - iw, left)); top = Math.min(0, Math.max(h - ih, top));
+    const img = document.createElement('img'); img.src = src;
+    Object.assign(img.style, { width: iw + 'px', height: ih + 'px', left: left + 'px', top: top + 'px', filter: filter ? `url(#${filter})` : 'none' });
+    p.appendChild(img); c.appendChild(p); return p;
+  }
+  const add = (cls, css, html = '') => { const e = document.createElement('div'); e.className = cls; Object.assign(e.style, css); e.innerHTML = html; c.appendChild(e); return e; };
+
+  if (s.layout === 'frame') {
+    // Photo left, one real-looking UI card right (Calendly / Weave principle: real scene + one legible card).
+    photo(s.photo, s.focal, 0, 0, 640, 630, 330, 165, 1.25);
+    const k = s.card;
+    add('card', { left: '676px', top: '70px', width: '384px' },
+      `<div class="row"><div class="chip" style="background:${s.palette === 'tint' ? '#e3e8ff' : '#eef1ff'}">${htIcon(s.icon, 38, 9, '#2345ff', '#2dd0e8')}</div>
+       <div class="eyebrow" style="color:#3e59ff">${k.eyebrow}</div></div>
+       <div class="title">${k.title}</div><div class="sub">${k.sub}</div>
+       <div class="pill"><i></i>${k.status}</div>`);
+  }
+  if (s.layout === 'duotone') {
+    // Full-bleed brand duotone (Rippling people posts / Mercury palettes) + one white badge with the subject icon.
+    photo(s.photo, s.focal, 0, 0, 1200, 630, s.focal[0] < 50 ? 420 : 760, 175, s.zoom || 1.6, 'duo');
+    const bx = s.focal[0] < 50 ? 880 : 300;
+    add('badge', { left: bx - 80 + 'px', top: '96px', width: '160px', height: '160px' }, htIcon(s.icon, 92, 8, '#2345ff', '#2dd0e8'));
+  }
+  if (s.layout === 'scene') {
+    // A real practice detail instead of a person (Weave / SimplePractice / athenahealth photo mix), branded by one corner block.
+    photo(s.photo, s.focal, 0, 0, 1200, 630, 700, 175, s.zoom || 1.6);
+    add('panel', { left: '0px', top: '0px', width: '330px', height: '230px', background: P.bg, borderBottomRightRadius: '36px' },
+      `<div style="position:absolute;left:150px;top:44px">${htIcon(s.icon, 120, 7, P.ink, '#2dd0e8')}</div>`);
+  }
+  if (s.layout === 'portrait') {
+    // Circle portrait on a flat brand field with two chips (Spruce / NexHealth headshot cards, Loom collage restraint).
+    add('panel', { left: '400px', top: '-20px', width: '400px', height: '400px', borderRadius: '50%', background: P.soft });
+    photo(s.photo, s.focal, 440, 20, 320, 320, 160, 130, 1.9, '', true);
+    const [a, b] = s.icons || ['calendar', 'phone'];
+    add('badge', { left: '322px', top: '70px', width: '110px', height: '110px' }, htIcon(a, 62, 9, '#2345ff', '#2dd0e8'));
+    add('badge', { left: '772px', top: '210px', width: '110px', height: '110px' }, htIcon(b, 62, 9, '#2345ff', '#2dd0e8'));
+  }
+  if (s.layout === 'split') {
+    // Comparison: in-house (muted) | virtual (full colour), teal seam (Calendly bridge idea, made photographic).
+    photo(s.photo2, s.focal2, 0, 0, 596, 630, 330, 170, 1.35, 'mute');
+    photo(s.photo, s.focal, 604, 0, 596, 630, 300, 170, 1.35);
+    add('seam', {}); add('seamdot', {});
+  }
+  if (s.layout === 'stat') {
+    // Cost posts: photo + one big verified figure (Stripe "Industry" stat plates).
+    photo(s.photo, s.focal, 0, 0, 600, 630, 300, 165, 1.3);
+    const st = s.stat;
+    add('lbl', { left: '660px', top: '64px', width: '440px' },
+      `<div class="tick"></div><div class="e">${st.eyebrow}</div>`);
+    add('big', { left: '652px', top: '122px', fontSize: '150px', color: P.ink }, st.value);
+    add('lbl', { left: '660px', top: '268px', width: '400px' }, `<div class="t" style="font-size:26px;color:${P.ink};opacity:.85;margin:0">${st.label}</div>`);
+  }
+  if (s.layout === 'numeral') {
+    // Ranked lists: number + short label left, photo right (Stripe numerals, Rippling "27").
+    photo(s.photo, s.focal, 620, 0, 580, 630, 300, 165, 1.3);
+    add('big', { left: '128px', top: '56px', fontSize: s.num.length > 2 ? '160px' : '210px', color: P.ink }, s.num);
+    add('lbl', { left: '132px', top: s.num.length > 2 ? '206px' : '236px', width: '440px' },
+      `<div class="e">${s.eyebrow}</div><div class="t" style="color:${P.ink};font-size:34px;margin-top:6px">${s.label}</div>`);
+  }
+</script></body></html>

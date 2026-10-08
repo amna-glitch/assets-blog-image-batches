@@ -1,0 +1,219 @@
+[
+ {
+  "out": "n01-scene",
+  "title": "A Day in the Life of a Virtual Referral Coordinator",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "scene",
+   "root": "../",
+   "photo": "photos/a-day-in-the-life-of-a-virtual-referral-coordinator.webp",
+   "focal": [
+    60,
+    20
+   ]
+  }
+ },
+ {
+  "out": "n02-card",
+  "title": "Tasks to Delegate in a Sports Medicine Practice",
+  "cat": "Tasks",
+  "spec": {
+   "style": "card",
+   "root": "../",
+   "field": "aqua",
+   "date": [
+    "WED",
+    "02"
+   ],
+   "card": {
+    "icon": "calendar",
+    "title": "Clinic follow-ups",
+    "rows": [
+     [
+      "PA",
+      "#2345ff",
+      "Prior auth submitted",
+      "MRI, knee",
+      "Done",
+      "teal"
+     ],
+     [
+      "AR",
+      "#3e59ff",
+      "Appointment reminders",
+      "PT follow-ups \u00b7 8:30 AM",
+      "Sent",
+      "blue"
+     ],
+     [
+      "IV",
+      "#162da1",
+      "Insurance verified",
+      "New athlete patient",
+      "Pending",
+      "gray"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "n03-card",
+  "title": "Benefits for Concierge Medicine Practices",
+  "cat": "Benefits",
+  "spec": {
+   "style": "card",
+   "root": "../",
+   "field": "tint",
+   "date": [
+    "FRI",
+    "17"
+   ],
+   "card": {
+    "icon": "heart",
+    "title": "Member desk",
+    "rows": [
+     [
+      "MR",
+      "#2345ff",
+      "Membership renewal",
+      "Annual plan",
+      "Done",
+      "teal"
+     ],
+     [
+      "SV",
+      "#3e59ff",
+      "Same-day visit booked",
+      "2:30 PM today",
+      "Booked",
+      "blue"
+     ],
+     [
+      "RX",
+      "#162da1",
+      "Refill request",
+      "Sent to provider",
+      "Pending",
+      "gray"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "out": "n04-arch",
+  "title": "Virtual Medical Receptionist Skills",
+  "cat": "Hiring",
+  "spec": {
+   "style": "arch",
+   "root": "../",
+   "icon": "phone",
+   "photo": "photos/virtual-medical-receptionist-skills.webp",
+   "focal": [
+    75,
+    22
+   ]
+  }
+ },
+ {
+  "out": "n05-arch",
+  "title": "Bilingual Virtual Medical Assistant Job Description",
+  "cat": "Hiring",
+  "spec": {
+   "style": "arch",
+   "root": "../",
+   "icon": "globe",
+   "field": "deep",
+   "photo": "photos/bilingual-virtual-medical-assistant-job-description.webp",
+   "focal": [
+    31,
+    18
+   ]
+  }
+ },
+ {
+  "out": "n06-archvs",
+  "title": "Chiropractic Virtual Medical Assistant vs. In-House Staff",
+  "cat": "Comparison",
+  "spec": {
+   "style": "archvs",
+   "root": "../",
+   "photo": "photos/chiropractic-virtual-medical-assistant-vs-in-house-staff-cost-pros-and-which-to-choose.webp",
+   "focal": [
+    55,
+    25
+   ],
+   "photo2": "photos/how-much-do-virtual-medical-assistants-earn-sourced-pay-ranges-by-region.webp",
+   "focal2": [
+    75,
+    25
+   ]
+  }
+ },
+ {
+  "out": "n07-ink",
+  "title": "Can Offshore Virtual Assistants Access PHI? What HIPAA Actually Says",
+  "cat": "Compliance",
+  "spec": {
+   "style": "ink",
+   "root": "../",
+   "field": "deep",
+   "icons": [
+    "lock",
+    "globe",
+    "document"
+   ]
+  }
+ },
+ {
+  "out": "n08-tool",
+  "title": "Virtual Medical Assistant in DrChrono",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "tool",
+   "root": "../",
+   "field": "tint",
+   "tool": "DrChrono",
+   "toolSub": "EHR",
+   "date": [
+    "MON",
+    "21"
+   ]
+  }
+ },
+ {
+  "out": "n09-tool",
+  "title": "How a Coder Works in Open Dental?",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "tool",
+   "root": "../",
+   "field": "aqua",
+   "tool": "Open Dental",
+   "toolSub": "Dental PMS",
+   "date": [
+    "THU",
+    "08"
+   ]
+  }
+ },
+ {
+  "out": "n10-numeral",
+  "title": "11 Best Virtual Healthcare Assistant Companies (2026)",
+  "cat": "Best-of",
+  "spec": {
+   "style": "numeral",
+   "root": "../",
+   "field": "tint",
+   "num": "11",
+   "eyebrow": "Companies \u00b7 2026",
+   "label": "Healthcare VAs, compared",
+   "photo": "photos/11-best-virtual-healthcare-assistant-companies-2026.webp",
+   "focal": [
+    46,
+    20
+   ]
+  }
+ }
+]

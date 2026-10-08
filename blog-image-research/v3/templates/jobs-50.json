@@ -1,0 +1,1098 @@
+[
+ {
+  "out": "14-mesh",
+  "title": "Benefits of a Remote Patient Monitoring Assistant",
+  "cat": "Benefits",
+  "spec": {
+   "style": "mesh",
+   "root": "../",
+   "icon": "heart",
+   "head": "Readings reviewed",
+   "sub": "Flagged values sent to the care team the same day"
+  }
+ },
+ {
+  "out": "15-halftone",
+  "title": "Virtual Medical Receptionist Skills",
+  "cat": "Skills",
+  "spec": {
+   "style": "halftone",
+   "root": "../",
+   "icon": "phone",
+   "photo": "photos/virtual-medical-receptionist-skills.webp",
+   "focal": [
+    75,
+    22
+   ]
+  }
+ },
+ {
+  "out": "16-duotone2",
+  "title": "A Day in the Life of a Medical Billing Virtual Assistant",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "duotone2",
+   "root": "../",
+   "photo": "photos/a-day-in-the-life-of-a-medical-billing-virtual-assistant.webp",
+   "focal": [
+    38,
+    24
+   ]
+  }
+ },
+ {
+  "out": "17-block",
+  "title": "A Day in the Life of a Virtual Patient Intake Coordinator",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "block",
+   "root": "../",
+   "icon": "clipboard",
+   "photo": "photos/a-day-in-the-life-of-a-virtual-patient-intake-coordinator.webp",
+   "focal": [
+    25,
+    22
+   ]
+  }
+ },
+ {
+  "out": "18-stickers",
+  "title": "Which Tasks Can You Delegate to a Bilingual Virtual Medical Receptionist?",
+  "cat": "Tasks",
+  "spec": {
+   "style": "stickers",
+   "root": "../",
+   "icons": [
+    "phone",
+    "calendar",
+    "globe",
+    "clipboard",
+    "check"
+   ]
+  }
+ },
+ {
+  "out": "19-sticky",
+  "title": "Tasks to Delegate in a Chiropractic Practice",
+  "cat": "Tasks",
+  "spec": {
+   "style": "sticky",
+   "root": "../",
+   "notes": [
+    "Confirm adjustments",
+    "Verify insurance",
+    "Recall inactive patients",
+    "Post payments",
+    "Send intake forms"
+   ]
+  }
+ },
+ {
+  "out": "20-kanban",
+  "title": "A Day in the Life of a Virtual Denial Management Specialist",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "kanban",
+   "root": "../",
+   "cols": [
+    [
+     "New denials",
+     [
+      "CO-97 bundling",
+      "Missing auth"
+     ]
+    ],
+    [
+     "Appealing",
+     [
+      "Medical necessity"
+     ]
+    ],
+    [
+     "Paid",
+     [
+      "Corrected claim",
+      "Resubmitted"
+     ]
+    ]
+   ]
+  }
+ },
+ {
+  "out": "21-chat",
+  "title": "Medical Answering Service: Common Questions",
+  "cat": "FAQ",
+  "spec": {
+   "style": "chat",
+   "root": "../",
+   "msgs": [
+    [
+     "pt",
+     "Can I move my appointment to Friday?"
+    ],
+    [
+     "va",
+     "Yes, Friday at 10:30 is open. Want it?"
+    ],
+    [
+     "pt",
+     "Perfect, thank you!"
+    ]
+   ]
+  }
+ },
+ {
+  "out": "22-phone",
+  "title": "How Much Does a Telephone Triage Virtual Assistant Cost?",
+  "cat": "Cost",
+  "spec": {
+   "style": "phone",
+   "root": "../",
+   "icon": "person",
+   "caller": "Incoming call",
+   "state": "Triage line"
+  }
+ },
+ {
+  "out": "23-month",
+  "title": "7 Best Companies to Hire a Virtual Veterinary Scheduler",
+  "cat": "Best-of",
+  "spec": {
+   "style": "month",
+   "root": "../",
+   "hot": [
+    2,
+    9,
+    10,
+    16,
+    23
+   ]
+  }
+ },
+ {
+  "out": "24-checklist",
+  "title": "Virtual Medical Office Manager Interview Questions",
+  "cat": "Hiring",
+  "spec": {
+   "style": "checklist",
+   "root": "../",
+   "head": "Interview checklist",
+   "items": [
+    "EHR experience",
+    "Front-desk systems",
+    "HIPAA training",
+    "Team scheduling",
+    "Reporting"
+   ],
+   "done": 3
+  }
+ },
+ {
+  "out": "25-iso",
+  "title": "How Does a Biller Work in Dentrix?",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "iso",
+   "root": "../",
+   "icon": "document",
+   "icon2": "coin"
+  }
+ },
+ {
+  "out": "26-pattern",
+  "title": "A Day in the Life of a Bilingual Virtual Dental Receptionist",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "pattern",
+   "root": "../",
+   "icon": "tooth",
+   "icons": [
+    "tooth",
+    "calendar",
+    "phone",
+    "globe",
+    "check",
+    "clipboard"
+   ]
+  }
+ },
+ {
+  "out": "27-bauhaus",
+  "title": "What Does a Dermatology VMA Do?",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "bauhaus",
+   "root": "../",
+   "icon": "magnifier"
+  }
+ },
+ {
+  "out": "28-quote",
+  "title": "Are Virtual Medical Assistants Worth It? The Numbers Behind the Decision",
+  "cat": "Opinion",
+  "spec": {
+   "style": "quote",
+   "root": "../",
+   "quote": "Our front desk finally gets to look up and greet people.",
+   "who": "Practice manager \u00b7 placeholder quote"
+  }
+ },
+ {
+  "out": "29-linechart",
+  "title": "Medical Office Staff Turnover, What It Costs and How to Cut It",
+  "cat": "Cost",
+  "spec": {
+   "style": "linechart",
+   "root": "../",
+   "tag": "Cost of turnover"
+  }
+ },
+ {
+  "out": "30-donut",
+  "title": "Benefits of a Virtual Assistant for Wellness Centers",
+  "cat": "Benefits",
+  "spec": {
+   "style": "donut",
+   "root": "../",
+   "icon": "heart",
+   "pct": 0.7
+  }
+ },
+ {
+  "out": "31-map",
+  "title": "US-Based vs. Offshore Mental Health Virtual Assistant: Cost",
+  "cat": "Comparison",
+  "spec": {
+   "style": "map",
+   "root": "../",
+   "pins": [
+    [
+     360,
+     150
+    ],
+    [
+     860,
+     230
+    ]
+   ]
+  }
+ },
+ {
+  "out": "32-steps",
+  "title": "How to Hire a Virtual Case Manager",
+  "cat": "Hiring",
+  "spec": {
+   "style": "steps",
+   "root": "../",
+   "steps": [
+    "Define the caseload",
+    "Interview for fit",
+    "Start a trial week"
+   ]
+  }
+ },
+ {
+  "out": "33-slider",
+  "title": "Bilingual Virtual Medical Assistant vs. In-House Staff",
+  "cat": "Comparison",
+  "spec": {
+   "style": "slider",
+   "root": "../",
+   "photo": "photos/a-day-in-the-life-of-a-bilingual-virtual-medical-receptionist.webp",
+   "focal": [
+    62,
+    20
+   ],
+   "photo2": "photos/medical-office-staff-turnover-what-it-costs-and-how-to-cut-it.webp",
+   "focal2": [
+    28,
+    25
+   ]
+  }
+ },
+ {
+  "out": "34-envelope",
+  "title": "What Are the Benefits of a Bilingual Virtual Dental Receptionist?",
+  "cat": "Benefits",
+  "spec": {
+   "style": "envelope",
+   "root": "../",
+   "line1": "Recordatorio de cita",
+   "line2": "Reminder sent in Spanish and English"
+  }
+ },
+ {
+  "out": "35-magazine",
+  "title": "Bilingual Virtual Dental Receptionist: The Complete Guide",
+  "cat": "Guide",
+  "spec": {
+   "style": "magazine",
+   "root": "../",
+   "mast": "THE DESK",
+   "cover": "Bilingual dental receptionists, the complete guide",
+   "photo": "photos/a-day-in-the-life-of-a-bilingual-virtual-medical-receptionist.webp",
+   "focal": [
+    62,
+    20
+   ]
+  }
+ },
+ {
+  "out": "36-polaroid",
+  "title": "A Day in the Life of a Bilingual Virtual Medical Receptionist",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "polaroid",
+   "root": "../",
+   "caption": "9:00 AM, first calls",
+   "photo": "photos/a-day-in-the-life-of-a-bilingual-virtual-medical-receptionist.webp",
+   "focal": [
+    62,
+    20
+   ],
+   "photo2": "photos/a-day-in-the-life-of-a-virtual-patient-intake-coordinator.webp",
+   "focal2": [
+    25,
+    22
+   ]
+  }
+ },
+ {
+  "out": "37-blueprint",
+  "title": "What Tools and Software Does a Virtual Denial Management Specialist Use?",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "blueprint",
+   "root": "../",
+   "icon": "laptop"
+  }
+ },
+ {
+  "out": "38-darkui",
+  "title": "Can a Virtual Assistant Work in Your EHR? How Remote Access Works",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "darkui",
+   "root": "../",
+   "path": "practice-ehr / access",
+   "lines": [
+    [
+     "VPN",
+     "connected"
+    ],
+    [
+     "MFA",
+     "required"
+    ],
+    [
+     "Role",
+     "front desk"
+    ],
+    [
+     "Access",
+     "granted"
+    ]
+   ]
+  }
+ },
+ {
+  "out": "39-papercut",
+  "title": "Benefits for Behavioral Health Practices",
+  "cat": "Benefits",
+  "spec": {
+   "style": "papercut",
+   "root": "../",
+   "icon": "brain"
+  }
+ },
+ {
+  "out": "40-blob",
+  "title": "Benefits of a Virtual Assistant for Wellness Centers",
+  "cat": "Benefits",
+  "spec": {
+   "style": "blob",
+   "root": "../",
+   "icon": "heart"
+  }
+ },
+ {
+  "out": "41-icongrid",
+  "title": "Which Tasks Can You Delegate to a Veterinary Billing Virtual Assistant?",
+  "cat": "Tasks",
+  "spec": {
+   "style": "icongrid",
+   "root": "../",
+   "icon": "coin"
+  }
+ },
+ {
+  "out": "42-question",
+  "title": "Bilingual Virtual Medical Receptionist Interview Questions",
+  "cat": "Hiring",
+  "spec": {
+   "style": "question",
+   "root": "../",
+   "q": "Switching languages mid-call",
+   "icon": "globe"
+  }
+ },
+ {
+  "out": "43-badge",
+  "title": "Bilingual Virtual Medical Assistant Job Description",
+  "cat": "Hiring",
+  "spec": {
+   "style": "badge",
+   "root": "../",
+   "role": "Bilingual medical assistant",
+   "team": "Remote \u00b7 English / Spanish",
+   "photo": "photos/a-day-in-the-life-of-a-bilingual-virtual-medical-receptionist.webp",
+   "focal": [
+    62,
+    20
+   ]
+  }
+ },
+ {
+  "out": "44-receipt",
+  "title": "A Day in the Life of a Medical Billing Virtual Assistant",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "receipt",
+   "root": "../",
+   "head": "Payment posting",
+   "rows": [
+    [
+     "ERA batch",
+     "Posted"
+    ],
+    [
+     "Copays",
+     "Reconciled"
+    ],
+    [
+     "Denials",
+     "Flagged"
+    ],
+    [
+     "Statements",
+     "Sent"
+    ]
+   ]
+  }
+ },
+ {
+  "out": "45-form",
+  "title": "A Day in the Life of a Virtual Patient Intake Coordinator",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "form",
+   "root": "../",
+   "head": "New patient intake",
+   "fields": [
+    [
+     "Patient",
+     "New patient"
+    ],
+    [
+     "Insurance",
+     "Verified"
+    ],
+    [
+     "Reason for visit",
+     "Annual physical"
+    ]
+   ]
+  }
+ },
+ {
+  "out": "46-venn",
+  "title": "Virtual Medical Coder: Agency vs. Freelancer",
+  "cat": "Comparison",
+  "spec": {
+   "style": "venn",
+   "root": "../",
+   "a": "Agency",
+   "b": "Freelancer"
+  }
+ },
+ {
+  "out": "47-orbit",
+  "title": "What Tools and Software Does a Virtual Denial Management Specialist Use?",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "orbit",
+   "root": "../",
+   "icon": "laptop",
+   "items": [
+    "EHR",
+    "Clearinghouse",
+    "Payer portals",
+    "Billing",
+    "Reports"
+   ]
+  }
+ },
+ {
+  "out": "48-tabs",
+  "title": "7 Best Medical Billing Outsourcing Companies",
+  "cat": "Best-of",
+  "spec": {
+   "style": "tabs",
+   "root": "../",
+   "tabs": [
+    "Company A",
+    "Company B",
+    "Company C"
+   ]
+  }
+ },
+ {
+  "out": "49-annotate",
+  "title": "Virtual Medical Receptionist Skills",
+  "cat": "Skills",
+  "spec": {
+   "style": "annotate",
+   "root": "../",
+   "note": "Calm on busy lines",
+   "photo": "photos/virtual-medical-receptionist-skills.webp",
+   "focal": [
+    75,
+    22
+   ]
+  }
+ },
+ {
+  "out": "50-spotlight",
+  "title": "A Day in the Life of a Virtual Referral Coordinator",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "spotlight",
+   "root": "../",
+   "photo": "photos/a-day-in-the-life-of-a-virtual-referral-coordinator.webp",
+   "focal": [
+    60,
+    20
+   ]
+  }
+ },
+ {
+  "out": "51-faces",
+  "title": "7 Best Certified Coding Specialist Companies (2026)",
+  "cat": "Best-of",
+  "spec": {
+   "style": "faces",
+   "root": "../",
+   "pick": 1,
+   "photos": [
+    [
+     "photos/how-to-hire-a-virtual-case-manager.webp",
+     [
+      68,
+      22
+     ]
+    ],
+    [
+     "photos/a-day-in-the-life-of-a-virtual-referral-coordinator.webp",
+     [
+      60,
+      20
+     ]
+    ],
+    [
+     "photos/what-does-a-dermatology-vma-do.webp",
+     [
+      72,
+      25
+     ]
+    ],
+    [
+     "photos/how-much-does-a-telephone-triage-virtual-assistant-cost.webp",
+     [
+      30,
+      22
+     ]
+    ],
+    [
+     "photos/how-much-do-virtual-medical-assistants-earn-sourced-pay-ranges-by-region.webp",
+     [
+      75,
+      25
+     ]
+    ],
+    [
+     "photos/virtual-medical-office-manager-interview-questions.webp",
+     [
+      55,
+      25
+     ]
+    ],
+    [
+     "photos/a-day-in-the-life-of-a-bilingual-virtual-medical-receptionist.webp",
+     [
+      62,
+      20
+     ]
+    ],
+    [
+     "photos/virtual-medical-receptionist-skills.webp",
+     [
+      75,
+      22
+     ]
+    ]
+   ]
+  }
+ },
+ {
+  "out": "52-seal",
+  "title": "Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs",
+  "cat": "Compliance",
+  "spec": {
+   "style": "seal",
+   "root": "../",
+   "eyebrow": "Training record",
+   "head": "HIPAA training completed",
+   "icon": "shield"
+  }
+ },
+ {
+  "out": "53-swiss",
+  "title": "Pharmacy Medical Billing Outsourcing: Services",
+  "cat": "Services",
+  "spec": {
+   "style": "swiss",
+   "root": "../",
+   "big": "Rx<br>bill",
+   "small": "Pharmacy billing, handled end to end",
+   "icon": "rx"
+  }
+ },
+ {
+  "out": "54-transcript",
+  "title": "A Day in the Life of a Virtual Medical Scribe",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "transcript",
+   "root": "../",
+   "head": "Visit note",
+   "lines": [
+    [
+     "Dr.",
+     "Any changes since last visit?"
+    ],
+    [
+     "Pt.",
+     "Knee pain after running."
+    ],
+    [
+     "Plan",
+     "X-ray, PT referral."
+    ]
+   ]
+  }
+ },
+ {
+  "out": "55-vsstack",
+  "title": "7 Best Dental Billing Outsourcing Companies",
+  "cat": "Best-of",
+  "spec": {
+   "style": "vsstack",
+   "root": "../",
+   "items": [
+    "In-house biller",
+    "Outsourced firm",
+    "Virtual assistant"
+   ],
+   "icons": [
+    "clinic",
+    "document",
+    "headset"
+   ]
+  }
+ },
+ {
+  "out": "56-spot",
+  "title": "After-Hours Medical Answering Service: Common Questions",
+  "cat": "FAQ",
+  "spec": {
+   "style": "spot",
+   "root": "../",
+   "phrase": "Every after-hours call, answered",
+   "icon": "phone"
+  }
+ },
+ {
+  "out": "57-serifui",
+  "title": "Bilingual Virtual Medical Assistant Pricing by Hours",
+  "cat": "Cost",
+  "spec": {
+   "style": "serifui",
+   "root": "../",
+   "serif": "More hours covered,",
+   "accent": "fewer calls missed",
+   "rows": [
+    [
+     "Part time",
+     "20 hrs"
+    ],
+    [
+     "Full time",
+     "40 hrs"
+    ],
+    [
+     "Coverage",
+     "Mon\u2013Fri"
+    ]
+   ]
+  }
+ },
+ {
+  "out": "58-glossy",
+  "title": "Which Tasks Can You Delegate to a Veterinary Billing Virtual Assistant?",
+  "cat": "Tasks",
+  "spec": {
+   "style": "glossy",
+   "root": "../",
+   "icons": [
+    "paw",
+    "coin",
+    "document",
+    "calendar",
+    "phone"
+   ]
+  }
+ },
+ {
+  "out": "59-rays",
+  "title": "A Day in the Life of a Bilingual Virtual Medical Receptionist",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "rays",
+   "root": "../",
+   "photo": "photos/a-day-in-the-life-of-a-bilingual-virtual-medical-receptionist.webp",
+   "focal": [
+    62,
+    20
+   ]
+  }
+ },
+ {
+  "out": "60-circuit",
+  "title": "Can a Virtual Assistant Work in Your EHR? How Remote Access Works",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "circuit",
+   "root": "../"
+  }
+ },
+ {
+  "out": "61-opart",
+  "title": "A Day in the Life of a Virtual Patient Follow-Up Coordinator",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "opart",
+   "root": "../",
+   "icon": "calendar"
+  }
+ },
+ {
+  "out": "62-globe",
+  "title": "US-Based vs. Offshore Virtual Insurance Verification Specialist: Cost",
+  "cat": "Comparison",
+  "spec": {
+   "style": "globe",
+   "root": "../",
+   "tag": "HIPAA safeguards"
+  }
+ },
+ {
+  "out": "63-hello",
+  "title": "Bilingual Virtual Dental Receptionist: The Complete Guide",
+  "cat": "Guide",
+  "spec": {
+   "style": "hello",
+   "root": "../",
+   "words": [
+    [
+     "Hola",
+     560,
+     40,
+     90
+    ],
+    [
+     "Hello",
+     800,
+     70,
+     64
+    ],
+    [
+     "Bonjour",
+     600,
+     160,
+     56
+    ],
+    [
+     "Ol\u00e1",
+     880,
+     180,
+     70
+    ],
+    [
+     "Xin ch\u00e0o",
+     640,
+     250,
+     48
+    ]
+   ]
+  }
+ },
+ {
+  "out": "64-serifcard",
+  "title": "Are Virtual Medical Assistants Worth It? The Numbers Behind the Decision",
+  "cat": "Opinion",
+  "spec": {
+   "style": "serifcard",
+   "root": "../",
+   "kicker": "Honest Taskers \u00b7 Analysis",
+   "a": "Are virtual medical assistants",
+   "b": "worth it?",
+   "pill": "Read the breakdown"
+  }
+ },
+ {
+  "out": "65-release",
+  "title": "How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region",
+  "cat": "Cost",
+  "spec": {
+   "style": "release",
+   "root": "../",
+   "kicker": "Updated guide",
+   "head": "Pay ranges by region",
+   "pill": "2026 edition"
+  }
+ },
+ {
+  "out": "66-twin",
+  "title": "A Day in the Life of a Bilingual Virtual Dental Receptionist",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "twin",
+   "root": "../",
+   "photo": "photos/a-day-in-the-life-of-a-bilingual-virtual-medical-receptionist.webp",
+   "focal": [
+    62,
+    20
+   ],
+   "photo2": "photos/virtual-medical-receptionist-skills.webp",
+   "focal2": [
+    75,
+    22
+   ]
+  }
+ },
+ {
+  "out": "67-brush",
+  "title": "Benefits for Concierge Medicine Practices",
+  "cat": "Benefits",
+  "spec": {
+   "style": "brush",
+   "root": "../",
+   "kicker": "Concierge medicine",
+   "head": "More time with members,<br>less time on the phone"
+  }
+ },
+ {
+  "out": "68-pin",
+  "title": "US-Based vs. Offshore Mental Health Virtual Assistant: Cost",
+  "cat": "Comparison",
+  "spec": {
+   "style": "pin",
+   "root": "../",
+   "photo": "photos/a-day-in-the-life-of-a-virtual-referral-coordinator.webp",
+   "focal": [
+    60,
+    20
+   ],
+   "tag": "Remote",
+   "head": "US-based or offshore"
+  }
+ },
+ {
+  "out": "69-qacircle",
+  "title": "Virtual Medical Office Manager Interview Questions",
+  "cat": "Hiring",
+  "spec": {
+   "style": "qacircle",
+   "root": "../",
+   "photo": "photos/what-does-a-dermatology-vma-do.webp",
+   "focal": [
+    72,
+    25
+   ],
+   "label": "Office manager<br>Q&amp;A"
+  }
+ },
+ {
+  "out": "70-network",
+  "title": "A Day in the Life of a Virtual Denial Management Specialist",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "network",
+   "root": "../",
+   "labels": [
+    [
+     "Detect",
+     240,
+     60
+    ],
+    [
+     "Appeal",
+     760,
+     120
+    ],
+    [
+     "Resubmit",
+     420,
+     250
+    ],
+    [
+     "Paid",
+     880,
+     280
+    ]
+   ]
+  }
+ },
+ {
+  "out": "71-report",
+  "title": "How Much Do Virtual Medical Assistants Earn? Sourced Pay Ranges by Region",
+  "cat": "Cost",
+  "spec": {
+   "style": "report",
+   "root": "../",
+   "head": "Virtual medical assistant pay report",
+   "year": "2026"
+  }
+ },
+ {
+  "out": "72-pixel",
+  "title": "Can a Virtual Assistant Work in Your EHR? How Remote Access Works",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "pixel",
+   "root": "../",
+   "word": "Remote access",
+   "icon": "lock"
+  }
+ },
+ {
+  "out": "73-podcast",
+  "title": "A Day in the Life of a Virtual Referral Coordinator",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "podcast",
+   "root": "../",
+   "photo": "photos/a-day-in-the-life-of-a-virtual-referral-coordinator.webp",
+   "focal": [
+    60,
+    20
+   ],
+   "big": "A day at the desk",
+   "small": "Referral coordinator"
+  }
+ },
+ {
+  "out": "74-toggles",
+  "title": "Which Tasks Can You Delegate to a Bilingual Virtual Medical Receptionist?",
+  "cat": "Tasks",
+  "spec": {
+   "style": "toggles",
+   "root": "../",
+   "rows": [
+    [
+     "Appointment reminders",
+     1
+    ],
+    [
+     "Spanish calls",
+     1
+    ],
+    [
+     "Insurance checks",
+     1
+    ],
+    [
+     "Clinical advice",
+     0
+    ]
+   ]
+  }
+ },
+ {
+  "out": "75-ticker",
+  "title": "Medical Answering Service: Common Questions",
+  "cat": "FAQ",
+  "spec": {
+   "style": "ticker",
+   "root": "../",
+   "band": "Common questions",
+   "head": "After-hours<br>answers"
+  }
+ },
+ {
+  "out": "76-cells",
+  "title": "What Tools and Software Does a Virtual Denial Management Specialist Use?",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "cells",
+   "root": "../",
+   "icons": [
+    "laptop",
+    "document",
+    "coin",
+    "shield"
+   ]
+  }
+ },
+ {
+  "out": "77-docline",
+  "title": "Virtual Medical Assistant: The Complete Guide",
+  "cat": "Guide",
+  "spec": {
+   "style": "docline",
+   "root": "../",
+   "head": "The complete guide to virtual medical assistants",
+   "doc": "Hiring a VMA: a practice checklist"
+  }
+ },
+ {
+  "out": "78-gradarrow",
+  "title": "Benefits of a Remote Patient Monitoring Assistant",
+  "cat": "Benefits",
+  "spec": {
+   "style": "gradarrow",
+   "root": "../"
+  }
+ },
+ {
+  "out": "79-photostack",
+  "title": "A Day in the Life of a Medical Billing Virtual Assistant",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "photostack",
+   "root": "../",
+   "a": "A day",
+   "b": "at the desk",
+   "photo": "photos/a-day-in-the-life-of-a-medical-billing-virtual-assistant.webp",
+   "focal": [
+    38,
+    24
+   ],
+   "photo2": "photos/a-day-in-the-life-of-a-bilingual-virtual-medical-receptionist.webp",
+   "focal2": [
+    62,
+    20
+   ]
+  }
+ }
+]

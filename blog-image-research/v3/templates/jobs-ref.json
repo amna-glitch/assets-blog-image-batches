@@ -1,0 +1,133 @@
+[
+ {
+  "out": "r07-lines",
+  "title": "A Day in the Life of a Virtual Medical Scribe",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "lines",
+   "root": "../",
+   "motif": "wave"
+  }
+ },
+ {
+  "out": "r07b-lines",
+  "title": "Medical Answering Service: Common Questions",
+  "cat": "FAQ",
+  "spec": {
+   "style": "lines",
+   "root": "../",
+   "motif": "rings"
+  }
+ },
+ {
+  "out": "r08-sketch",
+  "title": "Virtual Medical Receptionist Skills",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "sketch",
+   "root": "../",
+   "icon": "headset"
+  }
+ },
+ {
+  "out": "r09-sculpt",
+  "title": "A Day in the Life of a Bilingual Virtual Dental Receptionist",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "sculpt",
+   "root": "../",
+   "icon": "tooth"
+  }
+ },
+ {
+  "out": "r09b-sculpt",
+  "title": "Can a Virtual Assistant Be HIPAA Compliant? Safeguards, Training and BAAs",
+  "cat": "Compliance",
+  "spec": {
+   "style": "sculpt",
+   "root": "../",
+   "icon": "shield"
+  }
+ },
+ {
+  "out": "r10-word",
+  "title": "How Much Does a Telephone Triage Virtual Assistant Cost?",
+  "cat": "Cost",
+  "spec": {
+   "style": "word",
+   "root": "../",
+   "word": "Triage",
+   "eyebrow": "Cost guide"
+  }
+ },
+ {
+  "out": "r10b-word",
+  "title": "Medical Answering Service: Common Questions",
+  "cat": "FAQ",
+  "spec": {
+   "style": "word",
+   "root": "../",
+   "word": "FAQ",
+   "eyebrow": "Common questions",
+   "field": "deep"
+  }
+ },
+ {
+  "out": "r11-book",
+  "title": "Virtual Medical Assistant: The Complete Guide",
+  "cat": "Guide",
+  "spec": {
+   "style": "book",
+   "root": "../",
+   "eyebrow": "The complete guide",
+   "label": "Virtual medical assistant",
+   "icon": "stethoscope"
+  }
+ },
+ {
+  "out": "r12-circle",
+  "title": "A Day in the Life of a Virtual Referral Coordinator",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "circle",
+   "root": "../",
+   "icon": "document",
+   "tag": "Referral coordinator",
+   "photo": "photos/a-day-in-the-life-of-a-virtual-referral-coordinator.webp",
+   "focal": [
+    60,
+    20
+   ]
+  }
+ },
+ {
+  "out": "r12b-circle",
+  "title": "Virtual Medical Receptionist Skills",
+  "cat": "Role explainer",
+  "spec": {
+   "style": "circle",
+   "root": "../",
+   "field": "teal",
+   "icon": "phone",
+   "tag": "Front desk, remote",
+   "photo": "photos/virtual-medical-receptionist-skills.webp",
+   "focal": [
+    75,
+    22
+   ]
+  }
+ },
+ {
+  "out": "r13-screen",
+  "title": "Can a Virtual Assistant Work in Your EHR? How Remote Access Works",
+  "cat": "Software & EHR",
+  "spec": {
+   "style": "screen",
+   "root": "../",
+   "app": "Practice EHR",
+   "head": "Remote access",
+   "active": 2,
+   "button": "Secure login"
+  }
+ }
+]
