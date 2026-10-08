@@ -266,8 +266,8 @@ S.s27 = { title: 'How a Physician Answering Service Works?', style: 'Night clock
 } };
 
 // ---------- s28 Giant calendar ----------
-S.s28 = { title: 'How to Outsource Medical Scheduling', style: 'Giant calendar', draw({ add, svg, P, c }) {
-  const wrap = add('abs', { left: 300, top: 18, width: 560, height: 330, transform: 'perspective(1300px) rotateX(24deg) rotateY(-14deg) rotateZ(4deg)', transformOrigin: '50% 60%' });
+S.s28 = { title: 'How to Outsource Medical Scheduling', style: 'Giant calendar', draw({ add, svg, glass, ico, P, c }) {
+  const wrap = add('abs', { left: 290, top: 18, width: 560, height: 330, transform: 'perspective(1300px) rotateX(24deg) rotateY(-14deg) rotateZ(4deg)', transformOrigin: '50% 60%' });
   const page = add('solid', { left: 0, top: 0, width: 560, height: 330, borderRadius: 28, overflow: 'hidden' }, '', wrap);
   add('abs', { left: 0, top: 0, width: 560, height: 56, background: 'linear-gradient(90deg,#2e64fd,#1344fd)' }, '', page);
   for (const x of [120, 440]) add('abs', { left: x - 9, top: -20, width: 18, height: 44, borderRadius: 9, background: '#fff', boxShadow: '0 4px 10px rgba(19,68,253,.3)' }, '', wrap);
@@ -280,10 +280,10 @@ S.s28 = { title: 'How to Outsource Medical Scheduling', style: 'Giant calendar',
   const r = target.getBoundingClientRect(), cr = c.getBoundingClientRect();
   const tx = r.left - cr.left + r.width / 2, ty = r.top - cr.top + r.height / 2;
   const fx = tx + 150, fy = ty - 96;
-  svg(`<path d="M${fx - 40} ${fy + 30} C ${fx - 60} ${fy + 70}, ${tx + 50} ${ty - 40}, ${tx + 22} ${ty - 14}" stroke="#fff" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round" fill="none"/>
+  svg(`<path d="M${fx - 40} ${fy + 30} C ${fx - 60} ${fy + 70}, ${tx + 50} ${ty - 40}, ${tx + 22} ${ty - 14}" stroke="${P.teal}" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round" fill="none"/>
     <g filter="url(#soft)" transform="rotate(-8 ${fx} ${fy})"><rect x="${fx - 70}" y="${fy - 24}" width="140" height="48" rx="24" fill="url(#gGlass)" stroke="#fff" stroke-width="2"/>
     <rect x="${fx - 54}" y="${fy - 8}" width="108" height="16" rx="8" fill="${P.teal}"/></g>
-    <g filter="url(#soft)" transform="translate(${fx + 34} ${fy + 8})"><path d="M0 0 L0 44 L12 33 L21 52 L30 48 L21 30 L37 29 Z" fill="#fff" stroke="${P.blue}" stroke-width="4" stroke-linejoin="round"/></g>`);
+    <g filter="url(#soft)" transform="translate(${fx + 34} ${fy + 8})"><path d="M0 0 L0 44 L12 33 L21 52 L30 48 L21 30 L37 29 Z" fill="#fff" stroke="${P.blue}" stroke-width="4" stroke-linejoin="round"/></g>`);  glass(196, 214, 120, 120, 60, {}, ico('headset', 70, 9));
 } };
 
 // ---------- s29 Keycaps ----------
@@ -294,12 +294,14 @@ S.s29 = { title: 'Virtual Medical Records Specialist Skills', style: 'Keycaps', 
       <rect x="${x}" y="${y + (pressed ? 14 : 0)}" width="${s}" height="${s}" rx="${s * .2}" fill="${pressed ? P.teal : '#fff'}"/>
       <rect x="${x + s * .09}" y="${y + (pressed ? 14 : 0) + s * .07}" width="${s * .82}" height="${s * .78}" rx="${s * .16}" fill="${pressed ? '#5fe0f0' : '#f2f6ff'}"/>
       ${inner(x + s * .2, y + (pressed ? 14 : 0) + s * .16, s * .6)}</g>`; };
-  const ghostKeys = []; for (let r = 0; r < 4; r++) for (let i = 0; i < 12; i++) ghostKeys.push(`<rect x="${92 + i * 86 + (r % 2) * 40}" y="${-30 + r * 96}" width="70" height="70" rx="16" fill="#fff" opacity="${.08 + .06 * ((i + r) % 3)}"/>`);
-  svg(`${ghostKeys.join('')}
-    ${key(196, 120, 176, (x, y, s) => folder(x, y, s))}
-    ${key(404, 64, 176, (x, y, s) => I('lock', x, y, s, 8))}
-    ${key(612, 124, 176, (x, y, s) => I('magnifier', x, y, s, 8, '#fff', '#fff'), true)}
-    ${key(820, 70, 176, (x, y, s) => I('document', x, y, s, 8))}`);
+  const ghostKeys = []; for (let r = 0; r < 5; r++) for (let i = 0; i < 13; i++) { const x = 30 + i * 96 + (r % 2) * 48, y = -100 + r * 104;
+    if (y > 60 && y < 320 && x > 150 && x < 1020) continue; ghostKeys.push(`<rect x="${x}" y="${y}" width="80" height="80" rx="18" fill="#fff" opacity="${.14 + .08 * ((i + r) % 3)}"/>`); }
+  const layer = svg(`<rect x="150" y="70" width="900" height="250" rx="40" fill="#fff" fill-opacity=".22" stroke="#fff" stroke-opacity=".6" stroke-width="2"/>${ghostKeys.join('')}
+    ${key(184, 96, 186, (x, y, s) => folder(x, y, s))}
+    ${key(400, 96, 186, (x, y, s) => I('lock', x, y, s, 8))}
+    ${key(616, 96, 186, (x, y, s) => I('magnifier', x, y, s, 8, '#fff', '#fff'), true)}
+    ${key(832, 96, 186, (x, y, s) => I('document', x, y, s, 8))}`);
+  Object.assign(layer.style, { transform: 'perspective(1100px) rotateX(34deg) rotateZ(-7deg)', transformOrigin: '600px 200px' });
 } };
 
 // ---------- s30 Puzzle ----------
@@ -311,35 +313,34 @@ S.s30 = { title: 'How to Hire a Virtual Care Coordinator', style: 'Puzzle', draw
     const T = (t, n) => [ax + (bx - ax) * t + ox * (-n) * Sz * sign, ay + (by - ay) * t + oy * (-n) * Sz * sign];
     return bump.map(p => p[0] === 'C' ? 'C' + [T(p[1], p[2]), T(p[3], p[4]), T(p[5], p[6])].map(q => q.join(' ')).join(', ') : 'L' + T(p[0], p[1]).join(' ')).join(' '); };
   const piece = (x, y, t, r, b, l) => `M${x} ${y} ${edge(x, y, x + Sz, y, 0, -1, t)} ${edge(x + Sz, y, x + Sz, y + Sz, 1, 0, r)} ${edge(x + Sz, y + Sz, x, y + Sz, 0, 1, b)} ${edge(x, y + Sz, x, y, -1, 0, l)} Z`;
-  const ox = 444, oy = 44;
+  const ox = 380, oy = 44;
   const A = piece(ox, oy, 0, 1, -1, 0), B = piece(ox + Sz, oy, 0, 0, 1, -1), Cp = piece(ox, oy + Sz, 1, -1, 0, 0), D = piece(ox + Sz, oy + Sz, -1, 0, 0, 1);
   const icon = (n, x, y) => I(n, x - 40, y - 40, 80, 9);
   svg(`<path d="${B}" fill="#fff" fill-opacity=".18" stroke="#fff" stroke-width="3" stroke-dasharray="4 10" stroke-linecap="round"/>
-    <g filter="url(#soft)"><path d="${A}" fill="#fff"/><path d="${Cp}" fill="url(#gGlass)" stroke="#fff" stroke-width="2"/><path d="${D}" fill="#fff"/></g>
-    <path d="${Cp}" fill="none" stroke="#fff" stroke-width="2"/>
+    <g filter="url(#soft)"><path d="${A}" fill="#fff"/><path d="${Cp}" fill="#fff" fill-opacity=".82"/><path d="${D}" fill="#fff"/></g>
     ${icon('heart', ox + Sz / 2, oy + Sz / 2)}${icon('person', ox + Sz / 2, oy + Sz * 1.5)}${icon('phone', ox + Sz * 1.5, oy + Sz * 1.5)}
     <g transform="translate(176 14) rotate(10 ${ox + Sz * 1.5} ${oy + Sz / 2})" filter="url(#soft)">
       <path d="${B}" fill="url(#gB)"/>${I('calendar', ox + Sz * 1.5 - 40, oy + Sz / 2 - 40, 80, 9, '#fff', P.aqua)}</g>
-    <path d="M 800 34 C 770 14, 720 20, 690 52" stroke="#fff" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round" fill="none"/>
-    <path d="M688 36 L 688 54 L 705 56" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`);
+    <path d="M 736 34 C 706 10, 660 18, 630 50" stroke="#fff" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round" fill="none"/>
+    <path d="M641.6 46.7 L 626 50 L 628.2 34.2" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`);
 } };
 
 // ---------- s31 Folder fan ----------
 S.s31 = { title: 'Virtual Medical Records Specialist Guide', style: 'Folder fan', draw({ svg, P }) {
   const px = 600, py = 610, w = 220, h = 160, dist = 382;
   const folder = (ang, tab, tabPos, lift = 0, hero = false) => {
-    const x = px - w / 2, y = py - dist - h / 2 - lift, tx = x + 16 + tabPos * 70;
+    const x = px - w / 2, y = py - dist - h / 2 - lift, tx = hero ? x + w - 96 : x + 16 + tabPos * 70;
     return `<g transform="rotate(${ang} ${px} ${py})" filter="url(#soft)">
       <path d="M${x} ${y + 12} a12 12 0 0 1 12 -12 H ${tx} a8 8 0 0 1 7 -4 l 6 -14 h 56 l 6 14 a8 8 0 0 1 7 4 H ${x + w - 12} a12 12 0 0 1 12 12 V ${y + h} H ${x} Z" fill="${tab}"/>
-      <rect x="${x + 14}" y="${y + (hero ? -60 : 8)}" width="${w - 28}" height="${h}" rx="10" fill="#fff"/>
-      ${hero ? `<path d="M${x + 38} ${y - 30}h96M${x + 38} ${y - 8}h140M${x + 38} ${y + 14}h70" stroke="${P.sky}" stroke-width="9" stroke-linecap="round"/>` : `<path d="M${x + 36} ${y + 26}h90" stroke="${P.line}" stroke-width="7" stroke-linecap="round"/>`}
+      <rect x="${x + 14}" y="${y + (hero ? -60 : 8)}" width="${hero ? w - 118 : w - 28}" height="${h}" rx="10" fill="#fff"/>
+      ${hero ? `<path d="M${x + 36} ${y - 34}h56M${x + 36} ${y - 12}h44M${x + 36} ${y + 10}h56" stroke="${P.sky}" stroke-width="9" stroke-linecap="round"/>` : `<path d="M${x + 36} ${y + 26}h90" stroke="${P.line}" stroke-width="7" stroke-linecap="round"/>`}
       <rect x="${x}" y="${y + 36}" width="${w}" height="${h - 36}" rx="12" fill="${hero ? 'url(#gB)' : '#f5f8ff'}"/>
       <rect x="${x + 22}" y="${y + h - 34}" width="${hero ? 70 : 54}" height="10" rx="5" fill="${hero ? '#fff' : tab}" opacity="${hero ? .8 : .45}"/></g>`; };
-  const lx = 690, ly = 74;
+  const lx = 506, ly = 84;
   svg(`${folder(-38, P.deep, 0)}${folder(38, P.cyan, 1)}${folder(-19, P.mid, 1)}${folder(19, P.teal, 0)}${folder(0, P.blue, 0, 80, true)}
     <g filter="url(#soft)"><circle cx="${lx}" cy="${ly}" r="56" fill="#fff" fill-opacity=".35" stroke="#fff" stroke-width="10"/>
-    <path d="M${lx + 42} ${ly + 42} L ${lx + 92} ${ly + 92}" stroke="#fff" stroke-width="22" stroke-linecap="round"/>
-    <path d="M${lx + 46} ${ly + 46} L ${lx + 88} ${ly + 88}" stroke="${P.blue}" stroke-width="12" stroke-linecap="round"/>
+    <path d="M${lx - 42} ${ly + 42} L ${lx - 92} ${ly + 92}" stroke="#fff" stroke-width="22" stroke-linecap="round"/>
+    <path d="M${lx - 46} ${ly + 46} L ${lx - 88} ${ly + 88}" stroke="${P.blue}" stroke-width="12" stroke-linecap="round"/>
     <path d="M${lx - 30} ${ly - 22} a 38 38 0 0 1 28 -16" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/></g>`);
 } };
 
@@ -405,7 +406,7 @@ S.s34 = { title: 'ICD-10 Codes Explained', style: 'Tree', draw({ svg, P }) {
 
 // ---------- s35 Snap-on blocks ----------
 S.s35 = { title: 'Medical Billing Modifiers Explained', style: 'Snap-on blocks', draw({ svg, P }) {
-  const u = 76, pr = isoP(534, 84, u), BW = 4, BD = 2, BH = 1, TH = .7, HZ = BH + 1.0;
+  const u = 76, pr = isoP(470, 112, u), BW = 4, BD = 2, BH = 1, TH = .7;
   const stud = (x, y, z, col, dark) => { const [a, b] = pr(x, y, z), [, d] = pr(x, y, z + .22), rx = .26 * 1.22 * u, ry = .26 * .707 * u;
     return `<path d="M${a - rx} ${b} V ${d} A ${rx} ${ry} 0 0 1 ${a + rx} ${d} V ${b} A ${rx} ${ry} 0 0 1 ${a - rx} ${b} Z" fill="${dark}"/><ellipse cx="${a}" cy="${d}" rx="${rx}" ry="${ry}" fill="${col}"/>`; };
   const onFace = (o, ex, ey, inner) => `<g transform="matrix(${(ex[0] - o[0]) / 120} ${(ex[1] - o[1]) / 120} ${(ey[0] - o[0]) / 120} ${(ey[1] - o[1]) / 120} ${o[0]} ${o[1]})">${inner}</g>`;
@@ -415,7 +416,7 @@ S.s35 = { title: 'Medical Billing Modifiers Explained', style: 'Snap-on blocks',
     `<g fill="none" stroke="${P.blue}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">${window.HT_ICONS.document.replace(/class="ac"/g, `stroke="${P.teal}"`)}</g>`);
   s += onFace(pr(1.4, BD, BH - .32), pr(3.4, BD, BH - .32), pr(1.4, BD, BH - 1.32), `<rect x="0" y="0" width="120" height="9" rx="4.5" fill="${P.line}"/><rect x="0" y="20" width="76" height="9" rx="4.5" fill="${P.line}"/>`);
   const sym = { dot: `<circle cx="60" cy="60" r="20" fill="#fff"/>`, tri: `<path d="M60 36 L 84 78 H 36 Z" fill="#fff"/>`, plus: `<path d="M60 36 V84 M36 60 H84" stroke="#fff" stroke-width="15" stroke-linecap="round"/>`, ring: `<circle cx="60" cy="60" r="19" fill="none" stroke="#fff" stroke-width="10"/>` };
-  const tags = { '1,0': [P.blue, '#1131d6', '#1a3cf0', sym.dot], '0,1': [P.cyan, '#04a3c9', '#03b9e3', sym.tri], '2,1': [P.teal, '#1aa3ba', '#22bbd4', sym.plus] };
+  const tags = { '1,0': [P.blue, '#1131d6', '#1a3cf0', sym.dot], '0,1': [P.cyan, '#04a3c9', '#03b9e3', sym.tri], '1,1': [P.teal, '#1aa3ba', '#22bbd4', sym.plus] };
   const items = [];
   for (let x = 0; x < BW; x++) for (let y = 0; y < BD; y++) {
     const t = tags[x + ',' + y];
@@ -423,10 +424,11 @@ S.s35 = { title: 'Medical Billing Modifiers Explained', style: 'Snap-on blocks',
       : stud(x + .5, y + .5, BH, '#fff', '#c6d5fb')]); }
   items.sort((a, b) => a[0] - b[0]);
   s += items.map(i => i[1]).join('');
-  // hovering modifier block over (3,1) with snap guide
-  const [ax, ay] = pr(3.5, 1.5, BH + .32), [, hy] = pr(3.5, 1.5, HZ - .08);
-  s += `<path d="M${ax} ${hy + 8} V ${ay - 8}" stroke="#fff" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"/><path d="M${ax - 11} ${ay - 22} L ${ax} ${ay - 9} L ${ax + 11} ${ay - 22}" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
-  s += isoBox(pr, 3.04, 1.04, HZ, .92, .92, TH, P.mid, '#2741e3', '#3550f2') + onFace(pr(3.04, 1.04, HZ + TH), pr(3.96, 1.04, HZ + TH), pr(3.04, 1.96, HZ + TH), sym.ring);
+  // a modifier block flying in from the right towards the free stud at (3,0)
+  const [sx, sy] = pr(3.5, .5, BH + .3), [hx, hy] = pr(5.1, -.5, 2.1);
+  s += `<path d="M${hx - 30} ${hy + 40} C ${hx - 60} ${hy + 70}, ${sx + 30} ${sy - 70}, ${sx + 4} ${sy - 14}" stroke="#fff" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round" fill="none"/>
+    <path d="M${sx - 8} ${sy - 26} L ${sx + 3} ${sy - 12} L ${sx + 16} ${sy - 24}" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+  s += `<g>` + isoBox(pr, 4.6, -1, 2.1, .92, .92, TH, P.mid, '#2741e3', '#3550f2') + onFace(pr(4.6, -1, 2.1 + TH), pr(5.52, -1, 2.1 + TH), pr(4.6, -.08, 2.1 + TH), sym.ring) + '</g>';
   svg(`<g filter="url(#soft)">${s}</g>`);
 } };
 

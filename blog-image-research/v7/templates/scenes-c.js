@@ -210,7 +210,7 @@ S.s43 = { title: 'Virtual Medical Scribe vs. AI Medical Scribe: Key Differences 
 S.s44 = { title: 'Front Desk Burnout in Medical Offices, Signs and Fixes', style: 'Chaos desk', draw({ svg, P }) {
   let s = '';
   // sticky-note storm
-  const notes = [[205, 70, -14, P.sky], [300, 34, 10, '#fff'], [395, 98, -6, P.aqua], [470, 28, 18, '#fff'], [560, 84, -20, CORAL], [655, 22, 8, P.sky], [735, 92, 14, '#fff'], [820, 40, -10, P.aqua], [905, 104, 22, '#fff'], [990, 46, -16, P.sky], [250, 160, 24, '#fff'], [960, 170, -8, P.aqua], [610, 150, 6, '#fff']];
+  const notes = [[205, 70, -14, P.sky], [300, 34, 10, '#fff'], [395, 98, -6, P.aqua], [470, 28, 18, '#fff'], [560, 84, -20, CORAL], [655, 22, 8, P.sky], [735, 92, 14, '#fff'], [820, 40, -10, P.aqua], [905, 104, 22, '#fff'], [990, 46, -16, P.sky], [250, 160, 24, '#fff'], [960, 170, -8, P.aqua]];
   notes.forEach(([x, y, r, c], i) => { const z = i % 3 === 0 ? 62 : 50;
     s += `<g transform="translate(${x} ${y}) rotate(${r})" filter="url(#soft)"><path d="M${-z / 2} ${-z / 2} h${z} v${z * .72} l${-z * .28} ${z * .28} h${-z * .72}z" fill="${c}" opacity=".96"/><path d="M${z / 2} ${z * .22} l${-z * .28} ${z * .28} v${-z * .28}z" fill="#000" opacity=".08"/><rect x="${-z / 2 + 9}" y="${-z / 2 + 12}" width="${z * .5}" height="5" rx="2.5" fill="${c === '#fff' ? P.line : '#fff'}" opacity=".85"/><rect x="${-z / 2 + 9}" y="${-z / 2 + 23}" width="${z * .35}" height="5" rx="2.5" fill="${c === '#fff' ? P.line : '#fff'}" opacity=".85"/></g>`; });
   // desk
@@ -269,14 +269,13 @@ S.s46 = { title: 'How to Measure the ROI of a Virtual Medical Assistant', style:
     s += `<clipPath id="tc${i}"><path d="M${x - w / 2 + 6} ${tTop} V${tBot - w / 2} a${w / 2 - 6} ${w / 2 - 6} 0 0 0 ${w - 12} 0 V${tTop}"/></clipPath>`;
     s += `<g clip-path="url(#tc${i})"><rect x="${x - w / 2}" y="${ly}" width="${w}" height="${h + 40}" fill="url(#t46)"/><ellipse cx="${x}" cy="${ly}" rx="${w / 2}" ry="6" fill="#fff" opacity=".45"/>`;
     const n = Math.floor((h - 24) / 13); for (let k = 0; k < n; k++) { const cy = tBot - 26 - k * 13, jx = x + [0, 2, -1, 1, -2][k % 5];
-      s += `<rect x="${jx - 23}" y="${cy - 1}" width="46" height="9" fill="${P.deep}"/><ellipse cx="${jx}" cy="${cy + 8}" rx="23" ry="6" fill="${P.deep}"/><ellipse cx="${jx}" cy="${cy}" rx="23" ry="6" fill="#fff"/><ellipse cx="${jx}" cy="${cy}" rx="14" ry="3.4" fill="none" stroke="${P.sky}" stroke-width="2"/>`; }
+      s += `<rect x="${jx - 23}" y="${cy - 1}" width="46" height="9" fill="${P.blue}"/><ellipse cx="${jx}" cy="${cy + 8}" rx="23" ry="6" fill="${P.blue}"/><ellipse cx="${jx}" cy="${cy}" rx="23" ry="6" fill="#fff"/><ellipse cx="${jx}" cy="${cy}" rx="14" ry="3.4" fill="none" stroke="${P.sky}" stroke-width="2"/>`; }
     s += `</g>`;
     s += `<rect x="${x - w / 2 - 8}" y="${tTop - 8}" width="${w + 16}" height="16" rx="8" fill="#fff"/><rect x="${x - w / 2 + 12}" y="${tTop + 18}" width="8" height="${tBot - tTop - 80}" rx="4" fill="#fff" opacity=".55"/>`;
   });
   // rack
   s += `<rect x="340" y="262" width="520" height="22" rx="11" fill="url(#gB)" filter="url(#soft)"/><rect x="360" y="284" width="14" height="70" rx="7" fill="${P.deep}"/><rect x="826" y="284" width="14" height="70" rx="7" fill="${P.deep}"/>`;
   // rising trend through the levels
-  s += `<path d="M${xs.map((x, i) => `${x} ${tBot - 270 * lv[i] - 18}`).join(' L')}" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>`;
   s += `<g transform="translate(905 70)"><circle r="40" fill="#fff" filter="url(#soft)"/><path d="M-16 14 L16 -16 M-2 -16 H16 V2" fill="none" stroke="${P.teal}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>`;
   svg(s);
 } };
@@ -370,20 +369,20 @@ S.s50 = { title: 'How Virtual Assistants Get Paid by US Companies', style: 'Coin
 
 // s51 Bars from a map: a dot map of Latin America lying flat like a table; pay-range bars rise from five countries.
 S.s51 = { title: 'Virtual Assistant Pay in Latin America, Country-by-Country Ranges', style: 'Bars from a map', draw({ svg, P }) {
-  const k = 5.4, sq = .55, X = (lo, la) => 590 + (lo + 74) * k, Y = la => 348 - (la + 56) * k * sq;
+  const k = 6, sq = .5, X = (lo, la) => 610 + (lo + 70) * k, Y = la => 350 - (la + 56) * k * sq;
   const NA = [[-125, 49], [-95, 49], [-83, 46], [-70, 47], [-67, 45], [-70, 42], [-76, 36], [-81, 31], [-80, 26], [-82, 25], [-85, 30], [-90, 30], [-97, 27], [-97, 22], [-94, 18], [-91, 19], [-88, 21], [-87, 16], [-83, 13], [-83, 9], [-78, 8], [-80, 7], [-85, 10], [-92, 15], [-105, 20], [-110, 24], [-112, 30], [-117, 33], [-124, 40]];
-  const SA = [[-78, 9], [-72, 12], [-62, 11], [-52, 5], [-35, -5], [-38, -13], [-41, -22], [-48, -27], [-53, -34], [-58, -38], [-63, -41], [-65, -46], [-68, -52], [-70, -55], [-74, -50], [-73, -40], [-71, -30], [-70, -18], [-76, -14], [-81, -5], [-80, 0], [-78, 9]];
-  let s = `<ellipse cx="610" cy="262" rx="380" ry="96" fill="url(#gGlass)" opacity=".5" filter="url(#soft)"/><ellipse cx="610" cy="262" rx="380" ry="96" fill="none" stroke="#fff" stroke-width="1.5" opacity=".8"/>`;
-  [NA, SA].forEach((p, i) => s += `<path d="M${p.map(([lo, la]) => `${X(lo, la)} ${Y(la)}`).join(' L')}Z" fill="#fff" opacity="${i ? .38 : .16}" stroke="#fff" stroke-opacity="${i ? .9 : .4}" stroke-width="2" stroke-linejoin="round"/>`);
+  const SA = [[-78, 9], [-76, 10], [-72, 12], [-70, 11.5], [-66, 10.6], [-62, 10.7], [-60, 8.5], [-57, 6], [-52, 5], [-50, 2], [-48, -1], [-44, -2.5], [-40, -3], [-35, -5.5], [-35, -9], [-37, -12], [-39, -15], [-40, -20], [-42, -23], [-46, -24], [-48.5, -27], [-50, -30], [-53, -34], [-57, -36], [-57, -38], [-62, -39], [-65, -41], [-64, -43], [-67, -46], [-66, -48], [-69, -51], [-68.5, -53], [-71, -54], [-74, -52], [-75, -47], [-73.5, -43], [-73.5, -37], [-71.5, -31], [-70.5, -25], [-70, -18], [-72, -17], [-76, -14], [-77, -12], [-79, -8], [-81, -5], [-80, -2], [-80.5, 0], [-79, 2], [-77.5, 4], [-77.5, 7]];
+  let s = `<defs><linearGradient id="r51" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55e0fa"/><stop offset="1" stop-color="#2dd0e8"/></linearGradient></defs><ellipse cx="585" cy="270" rx="400" ry="92" fill="url(#gGlass)" opacity=".5" filter="url(#soft)"/><ellipse cx="585" cy="270" rx="400" ry="92" fill="none" stroke="#fff" stroke-width="1.5" opacity=".8"/>`;
+  [NA, SA].forEach((p, i) => s += `<path d="M${p.map(([lo, la]) => `${X(lo, la)} ${Y(la)}`).join(' L')}Z" fill="${i ? 'url(#gB)' : P.mid}" fill-opacity="${i ? .92 : .35}" stroke="#fff" stroke-opacity="${i ? .9 : .5}" stroke-width="2.5" stroke-linejoin="round" ${i ? 'filter="url(#soft)"' : ''}/>`);
   for (let la = 49; la >= -56; la -= 2.4) for (let lo = -125 + (Math.round(la / 2.4) % 2) * .8; lo <= -33; lo += 1.6) {
     if (![NA, SA].some(p => inPoly(lo, la, p))) continue;
     const latin = la < 31, x = X(lo, la), y = Y(la);
-    s += `<ellipse cx="${x}" cy="${y}" rx="3.2" ry="2.3" fill="#fff" opacity="${latin ? .95 : .35}"/>`; }
+    s += `<ellipse cx="${x}" cy="${y}" rx="2.6" ry="1.9" fill="#fff" opacity="${latin ? .55 : .3}"/>`; }
   // range bars (Mexico, Colombia, Peru, Brazil, Argentina), drawn back to front
   const pts = [[-102, 23, 30, 100], [-74, 5, 40, 130], [-47, -10, 50, 165], [-65, -35, 36, 116]].sort((a, b) => b[1] - a[1]);
   pts.forEach(([lo, la, lowOff, hiOff]) => { const x = X(lo, la), y = Y(la);
     s += `<ellipse cx="${x}" cy="${y}" rx="14" ry="6" fill="${P.deep}" opacity=".35"/><path d="M${x} ${y} V${y - lowOff}" stroke="#fff" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>`;
-    s += `<rect x="${x - 12}" y="${y - hiOff}" width="24" height="${hiOff - lowOff}" rx="12" fill="url(#gBC)" stroke="#fff" stroke-width="2.5" filter="url(#soft)"/>`;
+    s += `<rect x="${x - 12}" y="${y - hiOff}" width="24" height="${hiOff - lowOff}" rx="12" fill="url(#r51)" stroke="#fff" stroke-width="3" filter="url(#soft)"/>`;
     s += `<rect x="${x - 19}" y="${y - hiOff - 3}" width="38" height="7" rx="3.5" fill="#fff"/><rect x="${x - 19}" y="${y - lowOff - 3}" width="38" height="7" rx="3.5" fill="#fff"/>`;
     s += `<circle cx="${x}" cy="${y}" r="7" fill="${P.teal}" stroke="#fff" stroke-width="3"/>`; });
   svg(s);
@@ -392,8 +391,11 @@ S.s51 = { title: 'Virtual Assistant Pay in Latin America, Country-by-Country Ran
 // s52 Islands: the Philippine archipelago in dots on a glass sea; a coin stack on one island, a laptop on another.
 S.s52 = { title: 'Virtual Assistant Salary in the Philippines', style: 'Islands', draw({ svg, P }) {
   const X = lo => 600 + (lo - 122) * 40, Y = la => 22 + (19.4 - la) * 22;
-  let s = `<ellipse cx="600" cy="190" rx="400" ry="162" fill="url(#gGlass)" opacity=".42" filter="url(#soft)"/><ellipse cx="600" cy="190" rx="400" ry="162" fill="none" stroke="#fff" stroke-width="2" opacity=".85"/>`;
-  [[330, 128], [255, 96]].forEach(([rx, ry]) => s += `<ellipse cx="600" cy="190" rx="${rx}" ry="${ry}" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 10" opacity=".5"/>`);
+  let s = '';
+  // sea: soft wave lines across the band
+  for (let i = 0; i < 9; i++) { const y = 40 + i * 38, x0 = 140 + (i % 3) * 30, x1 = 1060 - (i % 2) * 40; let d = `M${x0} ${y}`;
+    for (let x = x0; x < x1; x += 60) d += ` q15 -7 30 0 t30 0`;
+    s += `<path d="${d}" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity="${.18 + .1 * (i % 3)}"/>`; }
   const isl = [
     [[120.6, 18.5], [121.2, 18.6], [122.2, 18.5], [122.3, 17.2], [121.6, 16], [121.6, 15.2], [122, 14.2], [123, 13.9], [124, 13], [124.1, 12.6], [123.3, 13], [122.6, 13.4], [121.8, 13.9], [121, 13.7], [120.6, 14.4], [120.9, 14.7], [120.3, 15.2], [119.8, 16.3], [120.4, 16.4]],
     [[120.4, 13.5], [121.5, 13.2], [121.2, 12.2], [120.6, 12.5]],
@@ -406,10 +408,12 @@ S.s52 = { title: 'Virtual Assistant Salary in the Philippines', style: 'Islands'
     [[123.8, 10.1], [124.5, 10.0], [124.3, 9.6], [123.8, 9.7]],
     [[122.0, 7.0], [123, 8.1], [123.8, 8.6], [124.6, 8.5], [125.2, 9.8], [125.6, 9.7], [126.2, 9.2], [126.6, 7.3], [126.2, 6.3], [125.4, 5.8], [125.2, 6.8], [124.2, 6.2], [124.0, 7.4], [123.6, 7.7], [122.3, 6.9]]
   ].map(p => p.map(([lo, la]) => [X(lo), Y(la)]));
+  isl.forEach(poly => s += `<path d="M${poly.map(p => p.join(' ')).join(' L')}Z" fill="${P.aqua}" fill-opacity=".5" stroke="${P.aqua}" stroke-opacity=".5" stroke-width="30" stroke-linejoin="round"/>`);
+  isl.forEach(poly => s += `<path d="M${poly.map(p => p.join(' ')).join(' L')}Z" fill="#fff" stroke="#fff" stroke-width="12" stroke-linejoin="round" filter="url(#soft)"/>`);
   const g = 9;
   isl.forEach(poly => { let n = 0;
-    for (let y = 10; y < 360; y += g) for (let x = 330; x < 870; x += g) { const xx = x + ((y / g) % 2) * g / 2; if (inPoly(xx, y, poly)) { s += `<circle cx="${xx}" cy="${y}" r="3.7" fill="#fff"/>`; n++; } }
-    if (!n) { const cx = poly.reduce((a, p) => a + p[0], 0) / poly.length, cy = poly.reduce((a, p) => a + p[1], 0) / poly.length; s += `<circle cx="${cx}" cy="${cy}" r="3.4" fill="#fff"/>`; } });
+    for (let y = 10; y < 360; y += g) for (let x = 330; x < 870; x += g) { const xx = x + ((y / g) % 2) * g / 2; if (inPoly(xx, y, poly)) { s += `<circle cx="${xx}" cy="${y}" r="2.2" fill="${P.sky}"/>`; n++; } }
+    if (!n) { const cx = poly.reduce((a, p) => a + p[0], 0) / poly.length, cy = poly.reduce((a, p) => a + p[1], 0) / poly.length; } });
   // coin stack on the southern island
   const coin = (x, y) => `<ellipse cx="${x}" cy="${y + 8}" rx="22" ry="7" fill="${P.blue}"/><rect x="${x - 22}" y="${y}" width="44" height="8" fill="${P.blue}"/><ellipse cx="${x}" cy="${y}" rx="22" ry="7" fill="#fff"/><ellipse cx="${x}" cy="${y}" rx="14" ry="4.3" fill="none" stroke="${P.sky}" stroke-width="2.5"/>`;
   let cs = coin(650, 160); [0, 1, 2, 3, 4].forEach(i => cs += coin(612 + [0, 3, -2, 2, 0][i], 160 - i * 11));
@@ -427,9 +431,9 @@ S.s52 = { title: 'Virtual Assistant Salary in the Philippines', style: 'Islands'
 S.s53 = { title: 'How Virtual Assistants Keep Telehealth Practices Running', style: 'Photo in screen', draw({ svg, photo, glass, P }) {
   svg(`<rect x="370" y="22" width="460" height="290" rx="22" fill="${P.ink}" filter="url(#soft)"/>
     <path d="M330 312 h540 l-24 30 a10 10 0 0 1 -8 4 h-476 a10 10 0 0 1 -8 -4z" fill="#fff"/><rect x="545" y="312" width="110" height="10" rx="5" fill="${P.line}"/>`);
-  photo('virtual-medical-receptionist-skills', [75, 22], 386, 38, 428, 258, 230, 112, 3.0, 12);
+  photo('virtual-medical-receptionist-skills', [75, 22], 386, 38, 428, 258, 186, 112, 3.0, 12);
   svg(`<rect x="386" y="38" width="428" height="258" rx="12" fill="none" stroke="#fff" stroke-opacity=".15"/>
-    <g transform="translate(600 270)"><rect x="-80" y="-18" width="160" height="36" rx="18" fill="${P.ink}" opacity=".55"/><circle cx="-46" cy="0" r="11" fill="#fff"/><circle cx="0" cy="0" r="11" fill="#fff"/><circle cx="46" cy="0" r="11" fill="${CORAL}"/></g>
+    <g transform="translate(700 206)"><rect width="100" height="76" rx="12" fill="${P.sky}" stroke="#fff" stroke-width="3"/>${bust(50, 14, 62, P.blue)}</g>
     <g transform="translate(754 70)"><rect x="-38" y="-16" width="76" height="32" rx="16" fill="${P.ink}" opacity=".5"/><circle cx="-18" cy="0" r="6" fill="${P.teal}"/><rect x="-6" y="-4" width="30" height="8" rx="4" fill="#fff" opacity=".85"/></g>`);
   // gears (left)
   const gear = (x, y, r, n, col, rot = 0) => { let d = ''; for (let i = 0; i < n; i++) { const a = rot + i / n * 360; d += `<rect x="${-r * .16}" y="${-r - r * .26}" width="${r * .32}" height="${r * .4}" rx="${r * .08}" transform="rotate(${a})"/>`; }
