@@ -1,0 +1,47 @@
+<title>People Photo Covers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: short intro, the gradient comparison, 10 covers in a 2-up grid, then the listing replica. */
+:root { --bg:#f5f6fb; --surface:#fff; --ink:#0f1640; --muted:#5a6286; --line:#dde1f0; --accent:#2345ff;
+  --display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; color-scheme:dark } }
+:root[data-theme="dark"] { --bg:#0b1030; --surface:#131a45; --ink:#eef1ff; --muted:#a9b0d6; --line:#27305f; --accent:#7d8dff; color-scheme:dark }
+body { background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); }
+.wrap { max-width:1180px; margin:0 auto; padding-inline:20px; padding-block:40px 80px; }
+h1,h2 { font-family:var(--display); text-wrap:balance; letter-spacing:-.015em; line-height:1.1; margin:0; }
+h1 { font-size:clamp(2rem,5vw,3rem); max-width:22ch; } h2 { font-size:1.6rem; margin-top:52px; }
+.eyebrow { font:500 .76rem var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.lede { max-width:66ch; color:var(--muted); font-size:1.06rem; margin-top:14px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(440px,1fr)); gap:24px; margin-top:20px; }
+figure { margin:0; min-width:0; } figure img { width:100%; border-radius:12px; display:block; border:1px solid var(--line); }
+figcaption { margin-top:10px; display:grid; gap:2px; } figcaption b { font-family:var(--display); font-size:1rem; } figcaption span { color:var(--muted); font-size:.9rem; }
+.pair { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:16px; }
+.pair figcaption { font:500 .78rem var(--mono); color:var(--muted); margin:0 0 8px; }
+.listing { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; margin-top:16px; align-items:start; }
+.listing img { width:100%; border:1px solid var(--line); border-radius:10px; background:#fff; }
+ul { padding-left:1.2em; } li { margin:6px 0; }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } .pair, .listing { grid-template-columns:1fr; } }
+.rules { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:16px; }
+.box { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 22px; }
+.box h3 { font-family:var(--display); margin:0 0 6px; font-size:1.1rem; }
+table { width:100%; border-collapse:collapse; margin-top:12px; font-size:.95rem; } td,th { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font:500 .74rem var(--mono); text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+.tw { overflow-x:auto; }
+@media (max-width:760px) { .rules { grid-template-columns:1fr; } }
+.grid3 { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; margin-top:20px; }
+.grid3 figcaption span.n { font:500 .72rem var(--mono); color:var(--accent); }
+.how { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:24px; margin-top:16px; align-items:center; }
+.how img { width:100%; border-radius:12px; border:1px solid var(--line); }
+@media (max-width:760px) { .how { grid-template-columns:1fr; } }
+</style>
+<div class="wrap">
+<div class="eyebrow">Cover designs · v8 · preview</div>
+<h1>10 photo covers with real people: layout preview</h1>
+<p class="lede">These are the 10 layouts for the people covers. Each has a different frame: arch window, orbit portrait, your current full-photo look, video call, polaroid, phone screen, diagonal split, blob portrait, blue duotone, side-by-side cards. All use the same see-through gradient and frosted glass as the 72 word-free covers, and none has words on it.</p>
+<p class="lede"><b>The people shown are stand-ins</b> from your current images. They show why new photos are needed: they look alike, and some still carry the old floating tiles (most visible in P03 and P09). After you share your Figma plan key, I'll generate 10 new, clearly different people and drop them into these exact layouts.</p>
+<div class="grid3"><figure><img src="a/p01.jpg" alt="What Skills Does a Virtual Dental Assistant Need?" loading="lazy"><figcaption><span class="n">P01 · Arch window</span><b>What Skills Does a Virtual Dental Assistant Need?</b></figcaption></figure><figure><img src="a/p02.jpg" alt="7 Best Virtual Medical Assistant Companies for Specialty Veterinary Hospitals" loading="lazy"><figcaption><span class="n">P02 · Orbit portrait</span><b>7 Best Virtual Medical Assistant Companies for Specialty Veterinary Hospitals</b></figcaption></figure><figure><img src="a/p03.jpg" alt="How to Hire an Internal Medicine Virtual Medical Assistant" loading="lazy"><figcaption><span class="n">P03 · Current look, refined</span><b>How to Hire an Internal Medicine Virtual Medical Assistant</b></figcaption></figure><figure><img src="a/p04.jpg" alt="9 Best After-Hours Medical Answering Service Companies" loading="lazy"><figcaption><span class="n">P04 · Call window</span><b>9 Best After-Hours Medical Answering Service Companies</b></figcaption></figure><figure><img src="a/p05.jpg" alt="Veterinary Billing Virtual Assistant Interview Questions" loading="lazy"><figcaption><span class="n">P05 · Polaroid</span><b>Veterinary Billing Virtual Assistant Interview Questions</b></figcaption></figure><figure><img src="a/p06.jpg" alt="Medical Answering Service Outsourcing Services" loading="lazy"><figcaption><span class="n">P06 · Phone screen</span><b>Medical Answering Service Outsourcing Services</b></figcaption></figure><figure><img src="a/p07.jpg" alt="In-House Staff vs. Virtual Team for Multi-Specialty Medical Groups: Key Differences and Which to Choose" loading="lazy"><figcaption><span class="n">P07 · Diagonal split</span><b>In-House Staff vs. Virtual Team for Multi-Specialty Medical Groups: Key Differences and Which to Choose</b></figcaption></figure><figure><img src="a/p08.jpg" alt="7 Best Medical Transcription Outsourcing Companies" loading="lazy"><figcaption><span class="n">P08 · Blob portrait</span><b>7 Best Medical Transcription Outsourcing Companies</b></figcaption></figure><figure><img src="a/p09.jpg" alt="How Much Does an Orthopedics VMA Cost?" loading="lazy"><figcaption><span class="n">P09 · Duotone</span><b>How Much Does an Orthopedics VMA Cost?</b></figcaption></figure><figure><img src="a/p10.jpg" alt="Virtual Medical Scribe vs In-House Staff" loading="lazy"><figcaption><span class="n">P10 · Side-by-side cards</span><b>Virtual Medical Scribe vs In-House Staff</b></figcaption></figure></div>
+<h2>Who goes in when we generate</h2>
+<ol><li>Nigerian woman, braided updo, scrubs</li><li>Filipino man, short undercut, home office</li><li>Indian woman, long braid, clinic desk</li><li>Somali woman in a hijab, care coordination</li><li>Irish woman, curly red hair, freckles, vet clinic</li><li>Korean man, glasses, side part, billing</li><li>Mexican woman, about 55, grey-streaked bob, dental office</li><li>Black American man, about 45, shaved head and beard, telehealth</li><li>Brazilian woman, natural curls, therapy practice</li><li>Vietnamese woman, pixie cut, scheduling on two monitors</li></ol>
+<p class="lede">The photos will be realistic and natural: no floating UI tiles, no checkmarks, and room left for the glass elements. The plan key looks like <code>team::1234567890</code> or <code>organization::1234567890</code>; the number is in the address bar when you open your team or organization in Figma.</p>
+</div>
