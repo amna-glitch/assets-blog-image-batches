@@ -3,7 +3,7 @@ const path = require('path');
 const { chromium } = require(process.env.PW_MODULE || 'playwright');
 (async () => {
   const b = await chromium.launch();
-  for (const [set, w] of [['after', 1000], ['after', 390]]) {
+  for (const [set, w] of [['after', 1000], ['after', 390], ['round2', 1000], ['round2', 390]]) {
     const p = await b.newPage({ viewport: { width: w + 40, height: 800 }, deviceScaleFactor: 2 });
     await p.goto('file://' + path.join(__dirname, 'ht-listing-mock.html') + `?set=${set}&w=${w}`);
     await p.waitForLoadState('networkidle');

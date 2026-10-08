@@ -34,6 +34,18 @@ Every cover uses one frame, the way Stripe, Mercury and Calendly keep their blog
 | day | Role explainers (photo strip + timeline) |
 | tasks | Tasks to delegate, checklists |
 | ranges | Pay by region (no figures) |
+| week | Scheduling, no-shows |
+| flow | How-it-works explainers |
+| interview | Interview questions |
+| jobpost | Job descriptions |
+| weeks | Onboarding plans |
+| checks | Checklists |
+| codes | Billing & coding |
+| cert | Training & certification |
+| loop | "What is" process explainers |
+| inbox | What a role does (patient messages) |
 
-Render: `PW_MODULE=/opt/node-tools/node_modules/playwright node templates/render.js` → `renders/`.
+Hyphens in headlines are made non-breaking automatically.
+
+Render: `PW_MODULE=/opt/node-tools/node_modules/playwright node templates/render.js [templates/jobs-2.json renders]` → `renders/`.
 Listing check: `node templates/render-ht-listing.js` → `renders/listing/`.
